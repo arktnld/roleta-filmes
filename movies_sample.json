@@ -1,0 +1,92 @@
+[
+  {
+    "title_en": "Avatar",
+    "title_pt": "Avatar",
+    "year": 2009,
+    "genres": "Action|Adventure|Fantasy|Sci-Fi",
+    "imdb_score": 7.9,
+    "director": "James Cameron",
+    "imdb_id": "tt0499549"
+  },
+  {
+    "title_en": "Pirates of the Caribbean: At World's End",
+    "title_pt": "Piratas do Caribe: No Fim do Mundo",
+    "year": 2007,
+    "genres": "Action|Adventure|Fantasy",
+    "imdb_score": 7.1,
+    "director": "Gore Verbinski",
+    "imdb_id": "tt0449088"
+  },
+  {
+    "title_en": "Spectre",
+    "title_pt": "007 Contra Spectre",
+    "year": 2015,
+    "genres": "Action|Adventure|Thriller",
+    "imdb_score": 6.8,
+    "director": "Sam Mendes",
+    "imdb_id": "tt2379713"
+  },
+  {
+    "title_en": "The Dark Knight Rises",
+    "title_pt": "Batman: O Cavaleiro das Trevas Ressurge",
+    "year": 2012,
+    "genres": "Action|Thriller",
+    "imdb_score": 8.5,
+    "director": "Christopher Nolan",
+    "imdb_id": "tt1345836"
+  },
+  {
+    "title_en": "Interstellar",
+    "title_pt": "Interestelar",
+    "year": 2014,
+    "genres": "Adventure|Drama|Sci-Fi",
+    "imdb_score": 8.6,
+    "director": "Christopher Nolan",
+    "imdb_id": "tt0816692"
+  },
+  {
+    "title_en": "The Matrix",
+    "title_pt": "Matrix",
+    "year": 1999,
+    "genres": "Action|Sci-Fi",
+    "imdb_score": 8.7,
+    "director": "Lana Wachowski",
+    "imdb_id": "tt0133093"
+  },
+  {
+    "title_en": "Inception",
+    "title_pt": "A Origem",
+    "year": 2010,
+    "genres": "Action|Adventure|Sci-Fi",
+    "imdb_score": 8.8,
+    "director": "Christopher Nolan",
+    "imdb_id": "tt1375666"
+  },
+  {
+    "title_en": "Pulp Fiction",
+    "title_pt": "Pulp Fiction: Tempo de Violencia",
+    "year": 1994,
+    "genres": "Crime|Drama",
+    "imdb_score": 8.9,
+    "director": "Quentin Tarantino",
+    "imdb_id": "tt0110912"
+  },
+  {
+    "title_en": "Fight Club",
+    "title_pt": "Clube da Luta",
+    "year": 1999,
+    "genres": "Drama",
+    "imdb_score": 8.8,
+    "director": "David Fincher",
+    "imdb_id": "tt0137523"
+  },
+  {
+    "title_en": "Forrest Gump",
+    "title_pt": "Forrest Gump: O Contador de Historias",
+    "year": 1994,
+    "genres": "Drama|Romance",
+    "imdb_score": 8.8,
+    "director": "Robert Zemeckis",
+    "imdb_id": "tt0109830"
+  }
+]

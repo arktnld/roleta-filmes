@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Roleta de Filmes</title>
+
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="Deixe o destino escolher seu próximo filme!">
+    <meta name="theme-color" content="#e53935">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Roleta">
+
+    <!-- Icons -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+    <link rel="apple-touch-icon" href="icon-192.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="stars"></div>
+
+    <div class="container">
+        <header>
+            <h1>Roleta de Filmes</h1>
+            <p class="subtitle">Deixe o destino escolher seu próximo filme</p>
+        </header>
+
+        <!-- Filtros -->
+        <section class="filters">
+            <div class="filter-group">
+                <label for="genre">Gênero</label>
+                <select id="genre">
+                    <option value="">Todos</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="year">Década</label>
+                <select id="year">
+                    <option value="">Todas</option>
+                    <option value="2010">2010s</option>
+                    <option value="2000">2000s</option>
+                    <option value="1990">1990s</option>
+                    <option value="1980">1980s</option>
+                    <option value="1970">1970s e anterior</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="rating">Nota mínima</label>
+                <select id="rating">
+                    <option value="">Qualquer</option>
+                    <option value="8">8+ Excelente</option>
+                    <option value="7">7+ Bom</option>
+                    <option value="6">6+ Regular</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Botão da Roleta -->
+        <div class="roulette-container">
+            <button id="spin-btn" class="spin-button">
+                <span class="spin-icon">🎬</span>
+                <span class="spin-text">Girar Roleta</span>
+            </button>
+        </div>
+
+        <!-- Resultado dos Filmes -->
+        <section id="results" class="results hidden">
+            <h2>Seus filmes sorteados</h2>
+            <div class="movies-grid" id="movies-grid">
+                <!-- Cards serão inseridos via JS -->
+            </div>
+            <button id="spin-again" class="spin-again-btn">Sortear novamente</button>
+        </section>
+    </div>
+
+    <!-- Modal de Detalhes -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <div id="modal-body">
+                <!-- Detalhes do filme -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
