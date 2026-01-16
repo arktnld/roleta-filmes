@@ -44413,5 +44413,23 @@
     "imdb_score": 6.6,
     "director": "Jon Gunn",
     "imdb_id": "tt0378407"
+  },
+  {
+    "title_en": "Oppenheimer",
+    "title_pt": "Oppenheimer",
+    "year": 2023,
+    "genres": "Drama|History",
+    "imdb_score": 8.0,
+    "director": "Christopher Nolan",
+    "imdb_id": "tt15398776"
+  },
+  {
+    "title_en": "Godzilla x Kong: The New Empire",
+    "title_pt": "Godzilla e Kong: O Novo Império",
+    "year": 2024,
+    "genres": "Action|Adventure|Sci-Fi",
+    "imdb_score": 7.1,
+    "director": "Adam Wingard",
+    "imdb_id": "tt14539740"
   }
 ]
