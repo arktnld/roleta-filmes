@@ -10,7 +10,8 @@ const CONFIG = {
     TMDB_TOKEN: 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMTE5OTFiNjk5ZGIzYTk5NzhjOTVmYThkOGM5MWM0NiIsIm5iZiI6MTc0NTk1MDE0My45NzYsInN1YiI6IjY4MTExNWJmMjEzN2YzNGMyNGVhZDY4ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.6yHJrMiDYHRrIlA9Fy9q5qikkGmjnVK23cBuYc-aJ-k',
     TMDB_IMG_BASE: 'https://image.tmdb.org/t/p/w500',
     MOVIES_PER_SPIN: 3,
-    MAX_MOVIES_PER_SPIN: 10, // Limite máximo para não sobrecarregar a API
+    MAX_MOVIES_PER_SPIN: 9, // Limite máximo para não sobrecarregar a API
+    HISTORY_CACHE_SIZE: 30, // Quantidade de filmes no cache circular
     ROULETTE_DURATION: 2000, // ms
     ROULETTE_FLASHES: 15
 };
@@ -33,6 +34,43 @@ let filteredMovies = [];
 let selectedMovies = [];
 let konamiProgress = 0;
 const KONAMI_CODE = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+
+// ============================================
+// CACHE CIRCULAR DE HISTÓRICO (sessionStorage)
+// ============================================
+function getMovieHistory() {
+    try {
+        const stored = sessionStorage.getItem('movieHistory');
+        return stored ? JSON.parse(stored) : [];
+    } catch {
+        return [];
+    }
+}
+
+function saveMovieHistory(history) {
+    try {
+        sessionStorage.setItem('movieHistory', JSON.stringify(history));
+    } catch {
+        // sessionStorage cheio ou indisponível
+    }
+}
+
+function addToHistory(moviesArr) {
+    const history = getMovieHistory();
+
+    moviesArr.forEach(movie => {
+        if (movie.imdb_id && !history.includes(movie.imdb_id)) {
+            history.push(movie.imdb_id);
+        }
+    });
+
+    // Remove os mais antigos se passar do limite (cache circular)
+    while (history.length > CONFIG.HISTORY_CACHE_SIZE) {
+        history.shift();
+    }
+
+    saveMovieHistory(history);
+}
 
 // ============================================
 // SONS 8-BIT (Web Audio API)
@@ -430,8 +468,21 @@ async function showRouletteAnimation() {
 // ============================================
 // OBTER FILMES ALEATÓRIOS
 // ============================================
-function getRandomMovies(count) {
-    const shuffled = [...filteredMovies].sort(() => Math.random() - 0.5);
+function getRandomMovies(count, excludeHistory = false) {
+    // Filtra filmes que já estão no histórico
+    let availableMovies = filteredMovies;
+    const history = getMovieHistory();
+
+    if (excludeHistory && history.length > 0) {
+        availableMovies = filteredMovies.filter(m => !history.includes(m.imdb_id));
+    }
+
+    // Se não tiver filmes suficientes, usa todos (ignora histórico)
+    if (availableMovies.length < count) {
+        availableMovies = filteredMovies;
+    }
+
+    const shuffled = [...availableMovies].sort(() => Math.random() - 0.5);
     return shuffled.slice(0, count);
 }
 
@@ -457,8 +508,11 @@ async function spinRoulette() {
     // Shake screen
     shakeScreen();
 
-    // Selecionar filmes
-    selectedMovies = getRandomMovies(moviesCount);
+    // Selecionar filmes (excluindo histórico)
+    selectedMovies = getRandomMovies(moviesCount, true);
+
+    // Adicionar ao histórico
+    addToHistory(selectedMovies);
 
     // Mostrar animação de roleta
     await showRouletteAnimation();
