@@ -10,9 +10,20 @@ const CONFIG = {
     TMDB_TOKEN: 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMTE5OTFiNjk5ZGIzYTk5NzhjOTVmYThkOGM5MWM0NiIsIm5iZiI6MTc0NTk1MDE0My45NzYsInN1YiI6IjY4MTExNWJmMjEzN2YzNGMyNGVhZDY4ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.6yHJrMiDYHRrIlA9Fy9q5qikkGmjnVK23cBuYc-aJ-k',
     TMDB_IMG_BASE: 'https://image.tmdb.org/t/p/w500',
     MOVIES_PER_SPIN: 3,
+    MAX_MOVIES_PER_SPIN: 5, // Limite máximo para não sobrecarregar a API
     ROULETTE_DURATION: 2000, // ms
     ROULETTE_FLASHES: 15
 };
+
+// ============================================
+// OBTER QUANTIDADE DE FILMES
+// ============================================
+function getMoviesPerSpin() {
+    const select = document.getElementById('movies-count');
+    if (!select) return CONFIG.MOVIES_PER_SPIN;
+    const value = parseInt(select.value, 10);
+    return Math.min(value, CONFIG.MAX_MOVIES_PER_SPIN);
+}
 
 // ============================================
 // ESTADO DA APLICAÇÃO
@@ -370,15 +381,17 @@ function applyFilters() {
 // EFEITO DE ROLETA
 // ============================================
 async function showRouletteAnimation() {
+    const moviesCount = getMoviesPerSpin();
     return new Promise(resolve => {
         const preview = document.createElement('div');
         preview.className = 'roulette-preview';
-        preview.innerHTML = `
-            <div class="roulette-title">SPINNING...</div>
-            <div class="roulette-slot" id="slot1">???</div>
-            <div class="roulette-slot" id="slot2">???</div>
-            <div class="roulette-slot" id="slot3">???</div>
-        `;
+
+        // Criar slots dinamicamente
+        let slotsHtml = '<div class="roulette-title">SPINNING...</div>';
+        for (let i = 1; i <= moviesCount; i++) {
+            slotsHtml += `<div class="roulette-slot" id="slot${i}">???</div>`;
+        }
+        preview.innerHTML = slotsHtml;
         document.body.appendChild(preview);
 
         let flashCount = 0;
@@ -386,10 +399,10 @@ async function showRouletteAnimation() {
 
         const interval = setInterval(() => {
             // Mostrar filmes aleatórios rapidamente
-            const randomMovies = getRandomMovies(3);
-            document.getElementById('slot1').textContent = randomMovies[0]?.title_pt || '???';
-            document.getElementById('slot2').textContent = randomMovies[1]?.title_pt || '???';
-            document.getElementById('slot3').textContent = randomMovies[2]?.title_pt || '???';
+            const randomMovies = getRandomMovies(moviesCount);
+            for (let i = 1; i <= moviesCount; i++) {
+                document.getElementById(`slot${i}`).textContent = randomMovies[i - 1]?.title_pt || '???';
+            }
 
             playSound('spin');
             flashCount++;
@@ -399,9 +412,9 @@ async function showRouletteAnimation() {
                 clearInterval(interval);
 
                 // Mostrar resultado final
-                document.getElementById('slot1').textContent = selectedMovies[0]?.title_pt || '???';
-                document.getElementById('slot2').textContent = selectedMovies[1]?.title_pt || '???';
-                document.getElementById('slot3').textContent = selectedMovies[2]?.title_pt || '???';
+                for (let i = 1; i <= moviesCount; i++) {
+                    document.getElementById(`slot${i}`).textContent = selectedMovies[i - 1]?.title_pt || '???';
+                }
 
                 playSound('reveal');
 
@@ -429,8 +442,9 @@ async function spinRoulette() {
     initAudio();
     const spinBtn = document.getElementById('spin-btn');
     const resultsSection = document.getElementById('results');
+    const moviesCount = getMoviesPerSpin();
 
-    if (filteredMovies.length < CONFIG.MOVIES_PER_SPIN) {
+    if (filteredMovies.length < moviesCount) {
         showPowerUp('NOT ENOUGH MOVIES!');
         playSound('gameover');
         return;
@@ -444,7 +458,7 @@ async function spinRoulette() {
     shakeScreen();
 
     // Selecionar filmes
-    selectedMovies = getRandomMovies(CONFIG.MOVIES_PER_SPIN);
+    selectedMovies = getRandomMovies(moviesCount);
 
     // Mostrar animação de roleta
     await showRouletteAnimation();
@@ -585,9 +599,9 @@ async function displayResults() {
     grid.innerHTML = cards.join('');
 
     // Som de reveal para cada card
-    setTimeout(() => playSound('reveal'), 100);
-    setTimeout(() => playSound('reveal'), 300);
-    setTimeout(() => playSound('reveal'), 500);
+    selectedMovies.forEach((_, index) => {
+        setTimeout(() => playSound('reveal'), 100 + index * 200);
+    });
 }
 
 // ============================================
@@ -879,6 +893,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('rating').addEventListener('change', () => {
         if (isTouch) vibrate([20]);
         applyFilters();
+    });
+    document.getElementById('movies-count').addEventListener('change', () => {
+        if (isTouch) vibrate([20]);
+        playSound('click');
     });
 
     // Konami code
