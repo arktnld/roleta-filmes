@@ -55,6 +55,191 @@ function saveMovieHistory(history) {
     }
 }
 
+// ============================================
+// WATCHED MOVIES (localStorage - permanente)
+// ============================================
+function getWatchedMovies() {
+    try {
+        const stored = localStorage.getItem('watchedMovies');
+        return stored ? JSON.parse(stored) : [];
+    } catch {
+        return [];
+    }
+}
+
+function toggleWatched(imdbId) {
+    const watched = getWatchedMovies();
+    const index = watched.indexOf(imdbId);
+
+    if (index === -1) {
+        watched.push(imdbId);
+        playSound('coin');
+    } else {
+        watched.splice(index, 1);
+        playSound('click');
+    }
+
+    try {
+        localStorage.setItem('watchedMovies', JSON.stringify(watched));
+    } catch {
+        // localStorage cheio
+    }
+
+    return index === -1; // retorna true se adicionou
+}
+
+function isWatched(imdbId) {
+    return getWatchedMovies().includes(imdbId);
+}
+
+// ============================================
+// WATCHLIST (localStorage - permanente)
+// ============================================
+function getWatchlist() {
+    try {
+        const stored = localStorage.getItem('watchlist');
+        return stored ? JSON.parse(stored) : [];
+    } catch {
+        return [];
+    }
+}
+
+function toggleWatchlist(imdbId) {
+    const watchlist = getWatchlist();
+    const index = watchlist.indexOf(imdbId);
+
+    if (index === -1) {
+        watchlist.push(imdbId);
+        playSound('powerup');
+    } else {
+        watchlist.splice(index, 1);
+        playSound('click');
+    }
+
+    try {
+        localStorage.setItem('watchlist', JSON.stringify(watchlist));
+    } catch {
+        // localStorage cheio
+    }
+
+    return index === -1; // retorna true se adicionou
+}
+
+function isInWatchlist(imdbId) {
+    return getWatchlist().includes(imdbId);
+}
+
+// ============================================
+// CRIAR BOTÕES DE AÇÃO
+// ============================================
+function createActionButtons(imdbId) {
+    const watchedActive = isWatched(imdbId) ? 'active' : '';
+    const watchlistActive = isInWatchlist(imdbId) ? 'active' : '';
+
+    return `
+        <div class="movie-actions">
+            <button class="action-btn watched ${watchedActive}" onclick="handleWatchedClick(event, '${imdbId}')">
+                <span class="icon">${isWatched(imdbId) ? '✓' : '👁'}</span>
+                <span>${isWatched(imdbId) ? 'VISTO' : 'JÁ VI'}</span>
+            </button>
+            <button class="action-btn watchlist ${watchlistActive}" onclick="handleWatchlistClick(event, '${imdbId}')">
+                <span class="icon">${isInWatchlist(imdbId) ? '★' : '☆'}</span>
+                <span>${isInWatchlist(imdbId) ? 'NA LISTA' : 'QUERO VER'}</span>
+            </button>
+        </div>
+    `;
+}
+
+function handleWatchedClick(event, imdbId) {
+    event.stopPropagation();
+    const added = toggleWatched(imdbId);
+    const btn = event.currentTarget;
+
+    btn.classList.toggle('active', added);
+    btn.querySelector('.icon').textContent = added ? '✓' : '👁';
+    btn.querySelector('span:last-child').textContent = added ? 'VISTO' : 'JÁ VI';
+
+    if (added) {
+        showPowerUp('WATCHED!');
+    }
+}
+
+function handleWatchlistClick(event, imdbId) {
+    event.stopPropagation();
+    const added = toggleWatchlist(imdbId);
+    const btn = event.currentTarget;
+
+    btn.classList.toggle('active', added);
+    btn.querySelector('.icon').textContent = added ? '★' : '☆';
+    btn.querySelector('span:last-child').textContent = added ? 'NA LISTA' : 'QUERO VER';
+
+    if (added) {
+        showPowerUp('+1 WATCHLIST!');
+    }
+}
+
+// ============================================
+// FILME DO DIA
+// ============================================
+function getDateSeed() {
+    const today = new Date();
+    return `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+}
+
+function hashCode(str) {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+        const char = str.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash; // Convert to 32bit integer
+    }
+    return Math.abs(hash);
+}
+
+function getMovieOfDay() {
+    if (movies.length === 0) return null;
+
+    const seed = getDateSeed();
+    const index = hashCode(seed) % movies.length;
+    return movies[index];
+}
+
+async function displayMovieOfDay() {
+    const movie = getMovieOfDay();
+    if (!movie) return;
+
+    const section = document.getElementById('movie-of-day');
+    const details = await fetchMovieDetails(movie.imdb_id);
+
+    const posterUrl = details?.poster_path
+        ? `${CONFIG.TMDB_IMG_BASE}${details.poster_path}`
+        : null;
+
+    // Formatar data
+    const today = new Date();
+    const dateStr = today.toLocaleDateString('pt-BR', {
+        weekday: 'long',
+        day: 'numeric',
+        month: 'long'
+    });
+
+    document.getElementById('mod-date').textContent = dateStr;
+    document.getElementById('mod-title').textContent = movie.title_pt;
+    document.getElementById('mod-year').textContent = movie.year;
+    document.getElementById('mod-rating').textContent = movie.imdb_score;
+    document.getElementById('mod-actions').innerHTML = createActionButtons(movie.imdb_id);
+
+    const posterEl = document.getElementById('mod-poster');
+    if (posterUrl) {
+        posterEl.src = posterUrl;
+        posterEl.alt = movie.title_pt;
+    } else {
+        posterEl.style.display = 'none';
+    }
+
+    section.classList.remove('hidden');
+}
+
 function addToHistory(moviesArr) {
     const history = getMovieHistory();
 
@@ -353,6 +538,9 @@ async function loadMovies() {
         populateFilters();
         console.log(`Loaded ${movies.length} movies`);
         showPowerUp(`${movies.length} FILMES!`);
+
+        // Exibir filme do dia
+        displayMovieOfDay();
     } catch (error) {
         console.error('Error loading movies:', error);
         showPowerUp('ERROR LOADING!');
@@ -421,16 +609,29 @@ function applyFilters() {
 async function showRouletteAnimation() {
     const moviesCount = getMoviesPerSpin();
     return new Promise(resolve => {
-        const preview = document.createElement('div');
-        preview.className = 'roulette-preview';
+        const slotMachine = document.createElement('div');
+        slotMachine.className = 'slot-machine';
 
-        // Criar slots dinamicamente
-        let slotsHtml = '<div class="roulette-title">SPINNING...</div>';
+        // Criar reels dinamicamente
+        let reelsHtml = `
+            <div class="slot-machine-title">★ GIRANDO ★</div>
+            <div class="slot-machine-reels">
+        `;
         for (let i = 1; i <= moviesCount; i++) {
-            slotsHtml += `<div class="roulette-slot" id="slot${i}">???</div>`;
+            reelsHtml += `<div class="slot-reel spinning" id="reel${i}">???</div>`;
         }
-        preview.innerHTML = slotsHtml;
-        document.body.appendChild(preview);
+        reelsHtml += `
+            </div>
+            <div class="slot-machine-lights">
+                <div class="slot-light"></div>
+                <div class="slot-light"></div>
+                <div class="slot-light"></div>
+                <div class="slot-light"></div>
+                <div class="slot-light"></div>
+            </div>
+        `;
+        slotMachine.innerHTML = reelsHtml;
+        document.body.appendChild(slotMachine);
 
         let flashCount = 0;
         const maxFlashes = CONFIG.ROULETTE_FLASHES;
@@ -439,30 +640,52 @@ async function showRouletteAnimation() {
             // Mostrar filmes aleatórios rapidamente
             const randomMovies = getRandomMovies(moviesCount);
             for (let i = 1; i <= moviesCount; i++) {
-                document.getElementById(`slot${i}`).textContent = randomMovies[i - 1]?.title_pt || '???';
+                const reel = document.getElementById(`reel${i}`);
+                if (reel && reel.classList.contains('spinning')) {
+                    reel.textContent = randomMovies[i - 1]?.title_pt || '???';
+                }
             }
 
             playSound('spin');
             flashCount++;
 
-            // Diminuir velocidade gradualmente
+            // Parar reels um por um
             if (flashCount >= maxFlashes) {
                 clearInterval(interval);
-
-                // Mostrar resultado final
-                for (let i = 1; i <= moviesCount; i++) {
-                    document.getElementById(`slot${i}`).textContent = selectedMovies[i - 1]?.title_pt || '???';
-                }
-
-                playSound('reveal');
-
-                setTimeout(() => {
-                    preview.remove();
-                    resolve();
-                }, 500);
+                stopReelsSequentially(moviesCount, slotMachine, resolve);
             }
         }, CONFIG.ROULETTE_DURATION / maxFlashes);
     });
+}
+
+function stopReelsSequentially(moviesCount, slotMachine, resolve) {
+    let stopped = 0;
+    const stopInterval = setInterval(() => {
+        const reel = document.getElementById(`reel${stopped + 1}`);
+        if (reel) {
+            reel.classList.remove('spinning');
+            reel.classList.add('stopped');
+            reel.textContent = selectedMovies[stopped]?.title_pt || '???';
+            playSound('reveal');
+        }
+        stopped++;
+
+        if (stopped >= moviesCount) {
+            clearInterval(stopInterval);
+
+            // Atualizar título
+            const title = slotMachine.querySelector('.slot-machine-title');
+            if (title) {
+                title.textContent = '★ PRONTO! ★';
+                title.style.color = 'var(--luigi-green)';
+            }
+
+            setTimeout(() => {
+                slotMachine.remove();
+                resolve();
+            }, 800);
+        }
+    }, 300);
 }
 
 // ============================================
@@ -592,13 +815,37 @@ function createHPBar(rating) {
         }
     }
 
+    // Mensagens baseadas na nota
     let label = 'SUPER STAR!';
-    if (rating < 5) {
-        label = 'GAME OVER';
+    if (rating < 4) {
+        // Mensagens engraçadas para filmes muito ruins
+        const gameOverMsgs = [
+            'WASTED!',
+            'YOU DIED',
+            'FATALITY!',
+            'K.O.!',
+            'MISSION FAILED',
+            'CONTINUE? 9..8..7..',
+            'INSERT COIN',
+            'RETRY?',
+            'F',
+            'PRESS F',
+            'RIP',
+            'NOT STONKS',
+            'BRUH...'
+        ];
+        label = gameOverMsgs[Math.floor(Math.random() * gameOverMsgs.length)];
+    } else if (rating < 5) {
+        const badMsgs = ['MEH...', 'GAME OVER', 'TRY AGAIN', 'OOF!'];
+        label = badMsgs[Math.floor(Math.random() * badMsgs.length)];
+    } else if (rating < 6) {
+        label = 'OK...';
     } else if (rating < 7) {
         label = 'NICE!';
     } else if (rating < 8) {
         label = 'GREAT!';
+    } else if (rating < 9) {
+        label = 'AMAZING!';
     }
 
     return `
@@ -645,6 +892,7 @@ async function displayResults() {
                     <div class="movie-genres">
                         ${genres.slice(0, 3).map(g => `<span class="genre-tag">${g}</span>`).join('')}
                     </div>
+                    ${createActionButtons(movie.imdb_id)}
                 </div>
             </div>
         `;
