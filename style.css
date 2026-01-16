@@ -361,6 +361,31 @@
         text-shadow: 2px 2px 0 oklch(0% 0 0 / 0.3);
     }
 
+    .download-btn {
+        display: inline-block;
+        margin-top: var(--space-sm);
+        padding: 0.6rem 1.2rem;
+        font-family: 'Press Start 2P', monospace;
+        font-size: 0.5rem;
+        color: var(--bg-primary);
+        background: var(--luigi-green);
+        border: 3px solid var(--coin-gold);
+        border-radius: var(--radius-md);
+        text-decoration: none;
+        box-shadow: 0 4px 0 oklch(45% 0.2 145);
+        transition: all 0.15s ease;
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 oklch(45% 0.2 145);
+        }
+
+        &:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 oklch(45% 0.2 145);
+        }
+    }
+
     /* Filters - Nintendo Menu Style */
     .filters {
         display: flex;
