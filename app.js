@@ -10,7 +10,7 @@ const CONFIG = {
     TMDB_TOKEN: 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMTE5OTFiNjk5ZGIzYTk5NzhjOTVmYThkOGM5MWM0NiIsIm5iZiI6MTc0NTk1MDE0My45NzYsInN1YiI6IjY4MTExNWJmMjEzN2YzNGMyNGVhZDY4ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.6yHJrMiDYHRrIlA9Fy9q5qikkGmjnVK23cBuYc-aJ-k',
     TMDB_IMG_BASE: 'https://image.tmdb.org/t/p/w500',
     MOVIES_PER_SPIN: 3,
-    MAX_MOVIES_PER_SPIN: 5, // Limite máximo para não sobrecarregar a API
+    MAX_MOVIES_PER_SPIN: 10, // Limite máximo para não sobrecarregar a API
     ROULETTE_DURATION: 2000, // ms
     ROULETTE_FLASHES: 15
 };
