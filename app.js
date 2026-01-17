@@ -387,6 +387,10 @@ function toggleListView(type) {
     listSection.classList.remove('hidden');
     mainContent.forEach(el => el.classList.add('hidden'));
 
+    // Esconder botão de girar na navbar mobile
+    const navbarSpinBtn = document.getElementById('navbar-spin-btn');
+    if (navbarSpinBtn) navbarSpinBtn.style.display = 'none';
+
     // Atualizar botões ativos
     watchlistBtn.classList.toggle('active', type === 'watchlist');
     watchedBtn.classList.toggle('active', type === 'watched');
@@ -422,6 +426,10 @@ function closeListView() {
     // Remover estado ativo dos botões
     watchlistBtn.classList.remove('active');
     watchedBtn.classList.remove('active');
+
+    // Mostrar botão de girar na navbar mobile
+    const navbarSpinBtn = document.getElementById('navbar-spin-btn');
+    if (navbarSpinBtn) navbarSpinBtn.style.display = '';
 
     playSound('click');
 }
@@ -1077,35 +1085,30 @@ function applyFilters() {
 const SLOT_ITEMS_COUNT = 15;
 
 // Criar slot machine overlay
-function createSlotMachine() {
+function createSlotMachine(selected) {
     const existing = document.querySelector('.slot-machine');
     if (existing) existing.remove();
 
-    const moviesCount = getMoviesPerSpin();
-    const reelMovies = [];
+    const moviesCount = selected.length;
 
-    // Pegar filmes aleatórios para cada rolo
-    for (let i = 0; i < moviesCount; i++) {
-        const movies = getRandomMovies(SLOT_ITEMS_COUNT);
-        reelMovies.push(movies);
-    }
+    // Misturar filmes aleatórios com os selecionados para a animação
+    const randomMovies = getRandomMovies(SLOT_ITEMS_COUNT - selected.length);
+    const reelMovies = [...randomMovies, ...selected].sort(() => Math.random() - 0.5);
 
     const slotMachine = document.createElement('div');
     slotMachine.className = 'slot-machine';
     slotMachine.innerHTML = `
         <div class="slot-machine-cabinet">
-            <div class="slot-machine-title">★ JACKPOT ★</div>
+            <div class="slot-machine-title">★ SORTEANDO ${moviesCount} FILME${moviesCount > 1 ? 'S' : ''} ★</div>
             <div class="slot-machine-display">
                 <div class="slot-machine-reels">
-                    ${reelMovies.map((movies, reelIndex) => `
-                        <div class="slot-reel-container">
-                            <div class="slot-reel" data-reel="${reelIndex}">
-                                ${movies.map(m => `
-                                    <div class="slot-reel-item">${(m.title_pt || '???').substring(0, 18)}</div>
-                                `).join('')}
-                            </div>
+                    <div class="slot-reel-container">
+                        <div class="slot-reel" data-reel="0">
+                            ${reelMovies.map(m => `
+                                <div class="slot-reel-item">${(m.title_pt || '???').substring(0, 20)}</div>
+                            `).join('')}
                         </div>
-                    `).join('')}
+                    </div>
                 </div>
             </div>
             <div class="slot-machine-lights">
@@ -1128,13 +1131,13 @@ async function showRouletteAnimation() {
     const moviesCount = getMoviesPerSpin();
 
     return new Promise(resolve => {
-        const { slotMachine } = createSlotMachine();
-        const reels = slotMachine.querySelectorAll('.slot-reel');
+        const { slotMachine } = createSlotMachine(selectedMovies);
+        const reel = slotMachine.querySelector('.slot-reel');
         const status = slotMachine.querySelector('.slot-machine-status');
         const lights = slotMachine.querySelectorAll('.slot-light');
 
-        // Iniciar spin de todos os rolos
-        reels.forEach(reel => reel.classList.add('spinning'));
+        // Iniciar spin do rolo
+        reel.classList.add('spinning');
 
         // Animação das luzes
         lights.forEach((light, i) => {
@@ -1144,44 +1147,33 @@ async function showRouletteAnimation() {
         // Som de spinning
         const spinSound = setInterval(() => playSound('spin'), 200);
 
-        // Parar rolos um a um
-        const stopReel = (index) => {
-            if (index >= moviesCount) {
-                clearInterval(spinSound);
-                status.textContent = '★ JACKPOT! ★';
-                status.style.color = '#FFD700';
-                playSound('reveal');
-
-                // Remover slot machine após delay
-                setTimeout(() => {
-                    slotMachine.style.animation = 'slot-fade-out 0.3s ease forwards';
-                    setTimeout(() => {
-                        slotMachine.remove();
-                        resolve();
-                    }, 300);
-                }, 800);
-                return;
-            }
-
-            const reel = reels[index];
+        // Parar após 2 segundos
+        setTimeout(() => {
+            clearInterval(spinSound);
             reel.classList.remove('spinning');
             reel.classList.add('stopping');
 
-            // Atualizar rolo com filme selecionado
-            const selectedMovie = selectedMovies[index];
-            if (selectedMovie) {
-                const title = (selectedMovie.title_pt || '???').substring(0, 18);
+            // Mostrar o primeiro filme selecionado quando parar
+            const firstMovie = selectedMovies[0];
+            if (firstMovie) {
+                const title = (firstMovie.title_pt || '???').substring(0, 20);
                 reel.innerHTML = `<div class="slot-reel-item winner">${title}</div>`;
             }
 
-            playSound('click');
+            // Mostrar mensagem de sucesso
+            status.textContent = `★ ${moviesCount} FILME${moviesCount > 1 ? 'S' : ''} SORTEADO${moviesCount > 1 ? 'S' : ''}! ★`;
+            status.style.color = '#FFD700';
+            playSound('reveal');
 
-            // Próximo rolo após delay
-            setTimeout(() => stopReel(index + 1), 600);
-        };
-
-        // Começar a parar após tempo inicial
-        setTimeout(() => stopReel(0), 1500);
+            // Remover slot machine após delay
+            setTimeout(() => {
+                slotMachine.style.animation = 'slot-fade-out 0.3s ease forwards';
+                setTimeout(() => {
+                    slotMachine.remove();
+                    resolve();
+                }, 300);
+            }, 800);
+        }, 2000);
     });
 }
 
@@ -2056,6 +2048,10 @@ function toggleSearchView() {
     // Mostrar busca
     searchSection.classList.remove('hidden');
 
+    // Esconder botão de girar na navbar mobile
+    const navbarSpinBtn = document.getElementById('navbar-spin-btn');
+    if (navbarSpinBtn) navbarSpinBtn.style.display = 'none';
+
     // Focar no input
     const searchInput = document.getElementById('search-input');
     if (searchInput) {
@@ -2094,6 +2090,10 @@ function closeSearchView() {
     document.getElementById('search-results-info').innerHTML = '';
     document.getElementById('search-pagination').innerHTML = '';
     document.getElementById('search-empty').classList.add('hidden');
+
+    // Mostrar botão de girar na navbar mobile
+    const navbarSpinBtn = document.getElementById('navbar-spin-btn');
+    if (navbarSpinBtn) navbarSpinBtn.style.display = '';
 
     playSound('click');
 }
