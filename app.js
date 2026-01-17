@@ -394,6 +394,10 @@ function toggleListView(type) {
 
     // Exibir lista
     displayList(type);
+
+    // Scroll para o topo
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
     playSound('click');
 }
 
@@ -1971,6 +1975,9 @@ function toggleSearchView() {
     if (searchGenreSelect && searchGenreSelect.options.length <= 1) {
         populateSearchGenres();
     }
+
+    // Scroll para o topo
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 
     playSound('click');
 }
