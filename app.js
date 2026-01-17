@@ -304,7 +304,7 @@ async function displayWatchlist() {
             : null;
 
         return `
-            <div class="watchlist-card" data-imdb="${movie.imdb_id}">
+            <div class="watchlist-card" data-imdb="${movie.imdb_id}" onclick="openModalByImdbId('${movie.imdb_id}')">
                 <div class="watchlist-poster-wrapper">
                     ${posterUrl
                         ? `<img class="watchlist-poster" src="${posterUrl}" alt="${movie.title_pt}" loading="lazy">`
@@ -319,11 +319,11 @@ async function displayWatchlist() {
                     </div>
                     <div class="watchlist-actions">
                         <button class="action-btn watched ${isWatched(movie.imdb_id) ? 'active' : ''}"
-                                onclick="handleWatchedClick(event, '${movie.imdb_id}')">
+                                onclick="event.stopPropagation(); handleWatchedClick(event, '${movie.imdb_id}')">
                             <span class="icon">${isWatched(movie.imdb_id) ? '✓' : '👁'}</span>
                             <span>${isWatched(movie.imdb_id) ? 'VISTO' : 'JÁ VI'}</span>
                         </button>
-                        <button class="action-btn remove" onclick="removeFromWatchlistView('${movie.imdb_id}')">
+                        <button class="action-btn remove" onclick="event.stopPropagation(); removeFromWatchlistView('${movie.imdb_id}')">
                             <span class="icon">✕</span>
                             <span>REMOVER</span>
                         </button>
@@ -1098,6 +1098,93 @@ async function openModal(index) {
                         ${(details?.genres || []).map(g => `<span class="genre-tag">${g.name}</span>`).join('')}
                     </div>
                 </div>
+            </div>
+        </div>
+    `;
+
+    playSound('reveal');
+}
+
+// ============================================
+// ABRIR MODAL POR IMDB ID (para watchlist)
+// ============================================
+async function openModalByImdbId(imdbId) {
+    const movie = movies.find(m => m.imdb_id === imdbId);
+    if (!movie) {
+        console.error('Movie not found:', imdbId);
+        return;
+    }
+
+    initAudio();
+    playSound('click');
+
+    const modal = document.getElementById('modal');
+    const modalBody = document.getElementById('modal-body');
+
+    modalBody.innerHTML = '<div class="loading"><div class="loading-spinner"></div><div class="loading-text">LOADING...</div></div>';
+    modal.classList.remove('hidden');
+
+    const details = await fetchMovieDetails(movie.imdb_id);
+
+    const posterUrl = details?.poster_path
+        ? `${CONFIG.TMDB_IMG_BASE}${details.poster_path}`
+        : null;
+
+    const cast = details?.credits?.cast?.slice(0, 8) || [];
+    const crew = details?.credits?.crew?.filter(c => c.job === 'Director') || [];
+    const runtime = details?.runtime || 'N/A';
+
+    modalBody.innerHTML = `
+        <div class="modal-movie">
+            <div>
+                ${posterUrl
+                    ? `<img class="modal-poster" src="${posterUrl}" alt="${movie.title_pt}">`
+                    : `<div class="no-poster modal-poster"></div>`
+                }
+            </div>
+            <div class="modal-details">
+                <h2 class="modal-title">${details?.title || movie.title_pt}</h2>
+                <p class="modal-original-title">${movie.title_en}</p>
+
+                <div class="modal-meta">
+                    <span class="modal-meta-item">${movie.year}</span>
+                    <span class="modal-meta-item">${runtime} min</span>
+                    <span class="modal-meta-item rating">★ ${movie.imdb_score}</span>
+                </div>
+
+                ${createHPBar(movie.imdb_score)}
+
+                <div class="modal-section">
+                    <h4 class="modal-section-title">Sinopse</h4>
+                    <p class="modal-overview">${details?.overview || 'No description available.'}</p>
+                </div>
+
+                ${crew.length > 0 ? `
+                    <div class="modal-section">
+                        <h4 class="modal-section-title">Diretor</h4>
+                        <div class="cast-list">
+                            ${crew.map(c => `<span class="cast-item">${c.name}</span>`).join('')}
+                        </div>
+                    </div>
+                ` : ''}
+
+                ${cast.length > 0 ? `
+                    <div class="modal-section">
+                        <h4 class="modal-section-title">Elenco</h4>
+                        <div class="cast-list">
+                            ${cast.map(c => `<span class="cast-item">${c.name}</span>`).join('')}
+                        </div>
+                    </div>
+                ` : ''}
+
+                <div class="modal-section">
+                    <h4 class="modal-section-title">Gêneros</h4>
+                    <div class="movie-genres">
+                        ${(details?.genres || []).map(g => `<span class="genre-tag">${g.name}</span>`).join('')}
+                    </div>
+                </div>
+
+                ${createActionButtons(movie.imdb_id)}
             </div>
         </div>
     `;
