@@ -2678,12 +2678,12 @@
 
 .search-poster-wrapper {
     flex-shrink: 0;
-    width: 80px;
+    width: 100px;
 }
 
 .search-poster {
-    width: 80px;
-    height: 120px;
+    width: 100px;
+    height: 150px;
     object-fit: cover;
     border-radius: 4px;
     border: 2px solid var(--border-retro);
@@ -2840,12 +2840,12 @@
     }
 
     .search-poster-wrapper {
-        width: 70px;
+        width: 90px;
     }
 
     .search-poster {
-        width: 70px;
-        height: 105px;
+        width: 90px;
+        height: 135px;
     }
 
     .search-title {

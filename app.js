@@ -1952,7 +1952,7 @@ async function displaySearchResults() {
                         <span>${movie.year}</span>
                         <span class="movie-rating">★ ${movie.imdb_score}</span>
                     </div>
-                    <div class="search-director">${movie.director || ''}</div>
+                    ${movie.director ? `<div class="search-director">${movie.director}</div>` : ''}
                     <div class="search-actions">
                         <button class="action-btn watched ${isWatched(movie.imdb_id) ? 'active' : ''}"
                                 onclick="event.stopPropagation(); handleSearchWatchedClick(event, '${movie.imdb_id}')">
