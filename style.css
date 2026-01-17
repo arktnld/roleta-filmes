@@ -2653,7 +2653,7 @@
 /* Search Grid */
 .search-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: var(--space-md);
     margin-bottom: var(--space-md);
 }
@@ -2661,8 +2661,8 @@
 /* Search Card */
 .search-card {
     display: flex;
-    gap: var(--space-sm);
-    padding: var(--space-sm);
+    gap: var(--space-md);
+    padding: var(--space-md);
     background: var(--bg-card);
     border: 3px solid var(--border-retro);
     border-radius: 8px;
@@ -2678,14 +2678,14 @@
 
 .search-poster-wrapper {
     flex-shrink: 0;
-    width: 100px;
+    width: 140px;
 }
 
 .search-poster {
-    width: 100px;
-    height: 150px;
+    width: 140px;
+    height: 210px;
     object-fit: cover;
-    border-radius: 4px;
+    border-radius: 6px;
     border: 2px solid var(--border-retro);
 }
 
@@ -2836,16 +2836,16 @@
     }
 
     .search-card {
-        padding: var(--space-xs);
+        padding: var(--space-sm);
     }
 
     .search-poster-wrapper {
-        width: 90px;
+        width: 120px;
     }
 
     .search-poster {
-        width: 90px;
-        height: 135px;
+        width: 120px;
+        height: 180px;
     }
 
     .search-title {
