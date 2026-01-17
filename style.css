@@ -296,6 +296,15 @@
         color: var(--text-primary);
         margin-block-end: var(--space-sm);
         letter-spacing: -0.02em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .title-logo {
+        width: 36px;
+        height: 36px;
     }
 
     .subtitle {

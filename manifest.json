@@ -1,6 +1,6 @@
 {
-  "name": "Roleta de Filmes",
-  "short_name": "Roleta",
+  "name": "Filmes",
+  "short_name": "Filmes",
   "description": "Deixe o destino escolher seu próximo filme!",
   "start_url": "/roleta-filmes/",
   "scope": "/roleta-filmes/",
