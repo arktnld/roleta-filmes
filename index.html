@@ -31,11 +31,6 @@
         <header>
             <h1>Roleta de Filmes</h1>
             <p class="subtitle">Deixe o destino escolher seu próximo filme</p>
-            <button id="watchlist-btn" class="watchlist-toggle-btn" onclick="toggleWatchlistView()">
-                <span class="icon">☆</span>
-                <span class="text">Minha Lista</span>
-                <span class="count" id="watchlist-count">0</span>
-            </button>
         </header>
 
         <!-- Filtros -->
@@ -74,6 +69,14 @@
                     <option value="6">6</option>
                     <option value="9">9</option>
                 </select>
+            </div>
+            <div class="filter-group">
+                <label>Lista</label>
+                <button id="watchlist-btn" class="watchlist-filter-btn" onclick="toggleWatchlistView()">
+                    <span class="icon">☆</span>
+                    <span class="text">Minha Lista</span>
+                    <span class="count" id="watchlist-count">0</span>
+                </button>
             </div>
         </section>
 

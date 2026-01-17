@@ -105,6 +105,13 @@ function getWatchlist() {
 }
 
 function toggleWatchlist(imdbId) {
+    console.log('toggleWatchlist called with:', imdbId);
+
+    if (!imdbId) {
+        console.error('imdbId is undefined or null!');
+        return false;
+    }
+
     const watchlist = getWatchlist();
     const index = watchlist.indexOf(imdbId);
 
@@ -118,6 +125,7 @@ function toggleWatchlist(imdbId) {
 
     try {
         localStorage.setItem('watchlist', JSON.stringify(watchlist));
+        console.log('Watchlist saved:', watchlist);
     } catch {
         // localStorage cheio
     }
@@ -264,6 +272,9 @@ async function displayWatchlist() {
     const emptyMsg = document.getElementById('watchlist-empty');
     const watchlist = getWatchlist();
 
+    console.log('Watchlist IDs:', watchlist);
+    console.log('Total movies loaded:', movies.length);
+
     if (watchlist.length === 0) {
         grid.innerHTML = '';
         emptyMsg.classList.remove('hidden');
@@ -275,6 +286,15 @@ async function displayWatchlist() {
 
     // Buscar filmes da watchlist
     const watchlistMovies = movies.filter(m => watchlist.includes(m.imdb_id));
+    console.log('Watchlist movies found:', watchlistMovies.length);
+
+    // Se não encontrou filmes mas a watchlist não está vazia, mostrar mensagem
+    if (watchlistMovies.length === 0) {
+        grid.innerHTML = '';
+        emptyMsg.textContent = 'Não foi possível carregar os filmes da lista.';
+        emptyMsg.classList.remove('hidden');
+        return;
+    }
 
     const cards = await Promise.all(watchlistMovies.map(async (movie) => {
         const details = await fetchMovieDetails(movie.imdb_id);
