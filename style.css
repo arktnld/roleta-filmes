@@ -2611,17 +2611,45 @@
         }
 
         .list-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-sm);
         }
 
         .list-card {
             flex-direction: column;
-            align-items: center;
+            align-items: stretch;
             text-align: center;
+            padding: var(--space-xs);
+        }
+
+        .list-card .poster {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 2/3;
+        }
+
+        .list-info {
+            padding: var(--space-xs);
+        }
+
+        .list-info h3 {
+            font-size: 0.75rem;
+            line-height: 1.2;
+        }
+
+        .list-info .list-meta {
+            font-size: 0.65rem;
         }
 
         .list-actions {
             justify-content: center;
+            flex-wrap: wrap;
+            gap: var(--space-xs);
+        }
+
+        .list-actions button {
+            font-size: 0.7rem;
+            padding: 0.3rem 0.5rem;
         }
     }
 
@@ -2677,8 +2705,7 @@
         .filter-group select,
         .spin-button,
         .spin-again-btn,
-        .modal-close,
-        .genre-tag {
+        .modal-close {
             min-height: 48px;
             min-width: 48px;
         }
@@ -3238,6 +3265,7 @@
     .mobile-fab.hidden {
         transform: scale(0);
         opacity: 0;
+        pointer-events: none;
     }
 }
 

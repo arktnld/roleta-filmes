@@ -1682,41 +1682,6 @@ function setupScrollProtection() {
     }, { passive: true });
 }
 
-// ============================================
-// SWIPE GESTURE SUPPORT
-// ============================================
-let touchStartY = 0;
-let touchEndY = 0;
-
-function handleSwipeGesture() {
-    const swipeDistance = touchStartY - touchEndY;
-    const minSwipe = 100;
-    const resultsVisible = !document.getElementById('results').classList.contains('hidden');
-
-    // Desabilitar swipe quando resultados estão visíveis
-    if (resultsVisible) {
-        return;
-    }
-
-    // Swipe up to spin (só quando não tem resultados)
-    if (swipeDistance > minSwipe) {
-        vibrate([50, 30, 50]);
-        spinRoulette();
-    }
-}
-
-function setupSwipeGestures() {
-    const container = document.querySelector('.container');
-
-    container.addEventListener('touchstart', (e) => {
-        touchStartY = e.changedTouches[0].screenY;
-    }, { passive: true });
-
-    container.addEventListener('touchend', (e) => {
-        touchEndY = e.changedTouches[0].screenY;
-        handleSwipeGesture();
-    }, { passive: true });
-}
 
 // ============================================
 // PULL TO REFRESH PREVENTION
@@ -1876,7 +1841,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mobile-specific setup
     if (isTouch) {
-        setupSwipeGestures();
         preventPullToRefresh();
         setupMobileModalHandling();
         setupScrollProtection();
