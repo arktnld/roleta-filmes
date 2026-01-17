@@ -31,26 +31,12 @@
         <header>
             <h1>Roleta de Filmes</h1>
             <p class="subtitle">Deixe o destino escolher seu próximo filme</p>
+            <button id="watchlist-btn" class="watchlist-toggle-btn" onclick="toggleWatchlistView()">
+                <span class="icon">☆</span>
+                <span class="text">Minha Lista</span>
+                <span class="count" id="watchlist-count">0</span>
+            </button>
         </header>
-
-        <!-- Filme do Dia -->
-        <section id="movie-of-day" class="movie-of-day hidden">
-            <div class="movie-of-day-header">
-                <span class="movie-of-day-badge">★ Filme do Dia</span>
-                <span class="movie-of-day-date" id="mod-date"></span>
-            </div>
-            <div class="movie-of-day-content">
-                <img class="movie-of-day-poster" id="mod-poster" src="" alt="">
-                <div class="movie-of-day-info">
-                    <h3 class="movie-of-day-title" id="mod-title"></h3>
-                    <div class="movie-of-day-meta">
-                        <span id="mod-year"></span>
-                        <span class="rating">★ <span id="mod-rating"></span></span>
-                    </div>
-                    <div id="mod-actions"></div>
-                </div>
-            </div>
-        </section>
 
         <!-- Filtros -->
         <section class="filters">
@@ -98,6 +84,20 @@
                 <span class="spin-text">Girar Roleta</span>
             </button>
         </div>
+
+        <!-- Watchlist -->
+        <section id="watchlist-section" class="watchlist-section hidden">
+            <div class="watchlist-header">
+                <h2>Minha Lista</h2>
+                <button class="watchlist-close" onclick="toggleWatchlistView()">✕ Voltar</button>
+            </div>
+            <div class="watchlist-grid" id="watchlist-grid">
+                <!-- Cards serão inseridos via JS -->
+            </div>
+            <p class="watchlist-empty hidden" id="watchlist-empty">
+                Sua lista está vazia! Clique em "☆ QUERO VER" nos filmes para adicionar.
+            </p>
+        </section>
 
         <!-- Resultado dos Filmes -->
         <section id="results" class="results hidden">

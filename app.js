@@ -150,6 +150,40 @@ function createActionButtons(imdbId) {
     `;
 }
 
+// ============================================
+// EFEITOS DE GAME OVER BASEADOS NA NOTA
+// ============================================
+function getGameOverEffect(rating) {
+    // Nota < 4: Efeitos pesados (imagem acinzentada + overlay)
+    if (rating < 4) {
+        const heavyEffects = [
+            'effect-wasted',
+            'effect-skull',
+            'effect-rip',
+            'effect-glitch',
+            'effect-bomb',
+            'effect-wanted',
+            'effect-tomato',
+            'effect-ghost'
+        ];
+        return heavyEffects[Math.floor(Math.random() * heavyEffects.length)];
+    }
+
+    // Nota 4-5: Efeitos leves (só um emoji no canto)
+    if (rating < 5) {
+        const lightEffects = [
+            'effect-meh',
+            'effect-sleepy',
+            'effect-clown',
+            'effect-trash',
+            'effect-warning'
+        ];
+        return lightEffects[Math.floor(Math.random() * lightEffects.length)];
+    }
+
+    return ''; // Nota >= 5: sem efeito
+}
+
 function handleWatchedClick(event, imdbId) {
     event.stopPropagation();
     const added = toggleWatched(imdbId);
@@ -173,71 +207,134 @@ function handleWatchlistClick(event, imdbId) {
     btn.querySelector('.icon').textContent = added ? '★' : '☆';
     btn.querySelector('span:last-child').textContent = added ? 'NA LISTA' : 'QUERO VER';
 
+    updateWatchlistCount();
+
     if (added) {
         showPowerUp('+1 WATCHLIST!');
     }
 }
 
 // ============================================
-// FILME DO DIA
+// VISUALIZAÇÃO DA WATCHLIST
 // ============================================
-function getDateSeed() {
-    const today = new Date();
-    return `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
-}
+let watchlistViewActive = false;
 
-function hashCode(str) {
-    let hash = 0;
-    for (let i = 0; i < str.length; i++) {
-        const char = str.charCodeAt(i);
-        hash = ((hash << 5) - hash) + char;
-        hash = hash & hash; // Convert to 32bit integer
+function updateWatchlistCount() {
+    const count = getWatchlist().length;
+    const countEl = document.getElementById('watchlist-count');
+    if (countEl) {
+        countEl.textContent = count;
+        countEl.style.display = count > 0 ? 'inline' : 'none';
     }
-    return Math.abs(hash);
 }
 
-function getMovieOfDay() {
-    if (movies.length === 0) return null;
+function toggleWatchlistView() {
+    watchlistViewActive = !watchlistViewActive;
 
-    const seed = getDateSeed();
-    const index = hashCode(seed) % movies.length;
-    return movies[index];
-}
+    const watchlistSection = document.getElementById('watchlist-section');
+    const mainContent = document.querySelectorAll('.filters, .roulette-container, #results');
+    const btn = document.getElementById('watchlist-btn');
 
-async function displayMovieOfDay() {
-    const movie = getMovieOfDay();
-    if (!movie) return;
-
-    const section = document.getElementById('movie-of-day');
-    const details = await fetchMovieDetails(movie.imdb_id);
-
-    const posterUrl = details?.poster_path
-        ? `${CONFIG.TMDB_IMG_BASE}${details.poster_path}`
-        : null;
-
-    // Formatar data
-    const today = new Date();
-    const dateStr = today.toLocaleDateString('pt-BR', {
-        weekday: 'long',
-        day: 'numeric',
-        month: 'long'
-    });
-
-    document.getElementById('mod-date').textContent = dateStr;
-    document.getElementById('mod-title').textContent = movie.title_pt;
-    document.getElementById('mod-year').textContent = movie.year;
-    document.getElementById('mod-rating').textContent = movie.imdb_score;
-    document.getElementById('mod-actions').innerHTML = createActionButtons(movie.imdb_id);
-
-    const posterEl = document.getElementById('mod-poster');
-    if (posterUrl) {
-        posterEl.src = posterUrl;
-        posterEl.alt = movie.title_pt;
+    if (watchlistViewActive) {
+        // Mostrar watchlist
+        watchlistSection.classList.remove('hidden');
+        mainContent.forEach(el => el.classList.add('hidden'));
+        btn.classList.add('active');
+        displayWatchlist();
+        playSound('click');
     } else {
-        posterEl.style.display = 'none';
+        // Esconder watchlist
+        watchlistSection.classList.add('hidden');
+        mainContent.forEach(el => {
+            if (!el.id || el.id !== 'results' || selectedMovies.length > 0) {
+                el.classList.remove('hidden');
+            }
+        });
+        // Esconder resultados se não tiver filmes selecionados
+        if (selectedMovies.length === 0) {
+            document.getElementById('results').classList.add('hidden');
+        }
+        btn.classList.remove('active');
+        playSound('click');
+    }
+}
+
+async function displayWatchlist() {
+    const grid = document.getElementById('watchlist-grid');
+    const emptyMsg = document.getElementById('watchlist-empty');
+    const watchlist = getWatchlist();
+
+    if (watchlist.length === 0) {
+        grid.innerHTML = '';
+        emptyMsg.classList.remove('hidden');
+        return;
     }
 
-    section.classList.remove('hidden');
+    emptyMsg.classList.add('hidden');
+    grid.innerHTML = '<div class="loading"><div class="loading-spinner"></div><div class="loading-text"></div></div>';
+
+    // Buscar filmes da watchlist
+    const watchlistMovies = movies.filter(m => watchlist.includes(m.imdb_id));
+
+    const cards = await Promise.all(watchlistMovies.map(async (movie) => {
+        const details = await fetchMovieDetails(movie.imdb_id);
+
+        const posterUrl = details?.poster_path
+            ? `${CONFIG.TMDB_IMG_BASE}${details.poster_path}`
+            : null;
+
+        return `
+            <div class="watchlist-card" data-imdb="${movie.imdb_id}">
+                <div class="watchlist-poster-wrapper">
+                    ${posterUrl
+                        ? `<img class="watchlist-poster" src="${posterUrl}" alt="${movie.title_pt}" loading="lazy">`
+                        : `<div class="no-poster watchlist-poster"></div>`
+                    }
+                </div>
+                <div class="watchlist-info">
+                    <h3 class="watchlist-title">${movie.title_pt}</h3>
+                    <div class="watchlist-meta">
+                        <span>${movie.year}</span>
+                        <span class="movie-rating">★ ${movie.imdb_score}</span>
+                    </div>
+                    <div class="watchlist-actions">
+                        <button class="action-btn watched ${isWatched(movie.imdb_id) ? 'active' : ''}"
+                                onclick="handleWatchedClick(event, '${movie.imdb_id}')">
+                            <span class="icon">${isWatched(movie.imdb_id) ? '✓' : '👁'}</span>
+                            <span>${isWatched(movie.imdb_id) ? 'VISTO' : 'JÁ VI'}</span>
+                        </button>
+                        <button class="action-btn remove" onclick="removeFromWatchlistView('${movie.imdb_id}')">
+                            <span class="icon">✕</span>
+                            <span>REMOVER</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+    }));
+
+    grid.innerHTML = cards.join('');
+}
+
+function removeFromWatchlistView(imdbId) {
+    toggleWatchlist(imdbId);
+    updateWatchlistCount();
+
+    // Remover card com animação
+    const card = document.querySelector(`[data-imdb="${imdbId}"]`);
+    if (card) {
+        card.style.transform = 'scale(0.8)';
+        card.style.opacity = '0';
+        setTimeout(() => {
+            card.remove();
+            // Verificar se lista ficou vazia
+            if (getWatchlist().length === 0) {
+                document.getElementById('watchlist-empty').classList.remove('hidden');
+            }
+        }, 200);
+    }
+
+    showPowerUp('REMOVIDO!');
 }
 
 function addToHistory(moviesArr) {
@@ -539,8 +636,8 @@ async function loadMovies() {
         console.log(`Loaded ${movies.length} movies`);
         showPowerUp(`${movies.length} FILMES!`);
 
-        // Exibir filme do dia
-        displayMovieOfDay();
+        // Atualizar contador da watchlist
+        updateWatchlistCount();
     } catch (error) {
         console.error('Error loading movies:', error);
         showPowerUp('ERROR LOADING!');
@@ -873,8 +970,10 @@ async function displayResults() {
         const overview = details?.overview || 'No description available.';
         const genres = details?.genres?.map(g => g.name) || movie.genres?.split('|') || [];
 
+        const gameOverEffect = getGameOverEffect(movie.imdb_score);
+
         return `
-            <div class="movie-card" onclick="openModal(${index})" data-index="${index}">
+            <div class="movie-card ${gameOverEffect}" onclick="openModal(${index})" data-index="${index}">
                 <div class="poster-wrapper">
                     ${posterUrl
                         ? `<img class="movie-poster" src="${posterUrl}" alt="${movie.title_pt}" loading="lazy">`
