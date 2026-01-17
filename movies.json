@@ -462,7 +462,7 @@
     "title_en": "Pacific Rim",
     "title_pt": "Círculo de Fogo",
     "year": 2013,
-    "genres": "Action|Adventure|Sci-Fi",
+    "genres": "Action|Adventure|Sci-Fi|Anime",
     "imdb_score": 7.0,
     "director": "Guillermo del Toro",
     "imdb_id": "tt1663662"
@@ -669,7 +669,7 @@
     "title_en": "Edge of Tomorrow",
     "title_pt": "No Limite do Amanhã",
     "year": 2014,
-    "genres": "Action|Adventure|Sci-Fi",
+    "genres": "Action|Adventure|Sci-Fi|Anime",
     "imdb_score": 7.9,
     "director": "Doug Liman",
     "imdb_id": "tt1631867"
@@ -2073,7 +2073,7 @@
     "title_en": "Speed Racer",
     "title_pt": "Speed Racer",
     "year": 2008,
-    "genres": "Action|Family|Sport",
+    "genres": "Action|Family|Sport|Anime",
     "imdb_score": 6.1,
     "director": "Lana Wachowski",
     "imdb_id": "tt0811080"
@@ -2469,7 +2469,7 @@
     "title_en": "The Princess and the Frog",
     "title_pt": "A Princesa e o Sapo",
     "year": 2009,
-    "genres": "Animation|Family|Fantasy|Musical|Romance",
+    "genres": "Animation|Family|Fantasy|Musical|Romance|Anime",
     "imdb_score": 7.1,
     "director": "Ron Clements",
     "imdb_id": "tt0780521"
@@ -7005,7 +7005,7 @@
     "title_en": "Priest",
     "title_pt": "Padre",
     "year": 2011,
-    "genres": "Action|Fantasy|Horror|Sci-Fi|Thriller",
+    "genres": "Action|Fantasy|Horror|Sci-Fi|Thriller|Anime",
     "imdb_score": 5.7,
     "director": "Scott Stewart",
     "imdb_id": "tt0822847"
@@ -9606,7 +9606,7 @@
     "title_en": "Blade",
     "title_pt": "Blade: O Caçador de Vampiros",
     "year": 1998,
-    "genres": "Action|Horror",
+    "genres": "Action|Horror|Anime",
     "imdb_score": 7.1,
     "director": "Stephen Norrington",
     "imdb_id": "tt0120611"
@@ -11703,7 +11703,7 @@
     "title_en": "Snowpiercer",
     "title_pt": "Expresso do Amanhã",
     "year": 2013,
-    "genres": "Action|Drama|Sci-Fi|Thriller",
+    "genres": "Action|Drama|Sci-Fi|Thriller|Anime",
     "imdb_score": 7.0,
     "director": "Joon-ho Bong",
     "imdb_id": "tt1706620"
@@ -13395,7 +13395,7 @@
     "title_en": "Ponyo",
     "title_pt": "Ponyo - Uma Amizade que Veio do Mar",
     "year": 2008,
-    "genres": "Adventure|Animation|Family|Fantasy",
+    "genres": "Adventure|Animation|Family|Fantasy|Anime",
     "imdb_score": 7.7,
     "director": "Hayao Miyazaki",
     "imdb_id": "tt0876563"
@@ -15033,7 +15033,7 @@
     "title_en": "Dragonball: Evolution",
     "title_pt": "Dragonball Evolution",
     "year": 2009,
-    "genres": "Action|Adventure|Fantasy|Sci-Fi|Thriller",
+    "genres": "Action|Adventure|Fantasy|Sci-Fi|Thriller|Anime",
     "imdb_score": 2.7,
     "director": "James Wong",
     "imdb_id": "tt1098327"
@@ -15546,7 +15546,7 @@
     "title_en": "Harlock: Space Pirate",
     "title_pt": "Capitão Harlock Pirata do Espaço",
     "year": 2013,
-    "genres": "Adventure|Animation|Sci-Fi",
+    "genres": "Adventure|Animation|Sci-Fi|Anime",
     "imdb_score": 6.5,
     "director": "Shinji Aramaki",
     "imdb_id": "tt2668134"
@@ -18075,7 +18075,7 @@
     "title_en": "Howl's Moving Castle",
     "title_pt": "O Castelo Animado",
     "year": 2004,
-    "genres": "Adventure|Animation|Family|Fantasy",
+    "genres": "Adventure|Animation|Family|Fantasy|Anime",
     "imdb_score": 8.2,
     "director": "Hayao Miyazaki",
     "imdb_id": "tt0347149"
@@ -20505,7 +20505,7 @@
     "title_en": "Princess Mononoke",
     "title_pt": "Princesa Mononoke",
     "year": 1997,
-    "genres": "Adventure|Animation|Fantasy",
+    "genres": "Adventure|Animation|Fantasy|Anime",
     "imdb_score": 8.4,
     "director": "Hayao Miyazaki",
     "imdb_id": "tt0119698"
@@ -20604,7 +20604,7 @@
     "title_en": "Steamboy",
     "title_pt": "Steamboy",
     "year": 2004,
-    "genres": "Action|Adventure|Animation|Family|Sci-Fi|Thriller",
+    "genres": "Action|Adventure|Animation|Family|Sci-Fi|Thriller|Anime",
     "imdb_score": 6.9,
     "director": "Katsuhiro Ôtomo",
     "imdb_id": "tt0348121"
@@ -20937,7 +20937,7 @@
     "title_en": "Spirited Away",
     "title_pt": "A Viagem de Chihiro",
     "year": 2001,
-    "genres": "Adventure|Animation|Family|Fantasy",
+    "genres": "Adventure|Animation|Family|Fantasy|Anime",
     "imdb_score": 8.6,
     "director": "Hayao Miyazaki",
     "imdb_id": "tt0245429"
@@ -24114,7 +24114,7 @@
     "title_en": "Metropolis",
     "title_pt": "Metrópolis",
     "year": 1927,
-    "genres": "Drama|Sci-Fi",
+    "genres": "Drama|Sci-Fi|Anime",
     "imdb_score": 8.3,
     "director": "Fritz Lang",
     "imdb_id": "tt0017136"
@@ -26013,7 +26013,7 @@
     "title_en": "Prophecy",
     "title_pt": "Semente do Diabo",
     "year": 1979,
-    "genres": "Horror|Sci-Fi",
+    "genres": "Horror|Sci-Fi|Anime",
     "imdb_score": 5.4,
     "director": "John Frankenheimer",
     "imdb_id": "tt0079758"
@@ -30189,7 +30189,7 @@
     "title_en": "Akira",
     "title_pt": "Akira",
     "year": 1988,
-    "genres": "Action|Animation|Sci-Fi",
+    "genres": "Action|Animation|Sci-Fi|Anime",
     "imdb_score": 8.1,
     "director": "Katsuhiro Ôtomo",
     "imdb_id": "tt0094625"
@@ -32835,7 +32835,7 @@
     "title_en": "Our Idiot Brother",
     "title_pt": "O Idiota do Meu Irmão",
     "year": 2011,
-    "genres": "Comedy|Drama",
+    "genres": "Comedy|Drama|Anime",
     "imdb_score": 6.4,
     "director": "Jesse Peretz",
     "imdb_id": "tt1637706"
@@ -36138,7 +36138,7 @@
     "title_en": "Oldboy",
     "title_pt": "Oldboy",
     "year": 2003,
-    "genres": "Drama|Mystery|Thriller",
+    "genres": "Drama|Mystery|Thriller|Anime",
     "imdb_score": 8.4,
     "director": "Chan-wook Park",
     "imdb_id": "tt0364569"
@@ -46011,7 +46011,7 @@
     "title_en": "Dragon Ball Z: The World's Strongest",
     "title_pt": "Dragon Ball Z: O Homem Mais Forte do Mundo",
     "year": 1990,
-    "genres": "Action|Animation|Sci-Fi",
+    "genres": "Action|Animation|Sci-Fi|Anime",
     "imdb_score": 6.6,
     "director": "西尾大介",
     "imdb_id": "tt0142240"
@@ -49323,7 +49323,7 @@
     "title_en": "Godzilla",
     "title_pt": "Godzilla",
     "year": 1998,
-    "genres": "Sci-Fi|Action|Thriller",
+    "genres": "Sci-Fi|Action|Thriller|Anime",
     "imdb_score": 5.6,
     "director": "Roland Emmerich",
     "imdb_id": "tt0120685"
@@ -49665,7 +49665,7 @@
     "title_en": "The Girl Who Leapt Through Time",
     "title_pt": "A Garota que Conquistou o Tempo",
     "year": 2006,
-    "genres": "Fantasy|Animation|Drama|Sci-Fi",
+    "genres": "Fantasy|Animation|Drama|Sci-Fi|Anime",
     "imdb_score": 7.8,
     "director": "細田守",
     "imdb_id": "tt0808506"
@@ -63579,7 +63579,7 @@
     "title_en": "Ghost in the Shell",
     "title_pt": "A Vigilante do Amanhã: Ghost in the Shell",
     "year": 2017,
-    "genres": "Sci-Fi|Drama|Action",
+    "genres": "Sci-Fi|Drama|Action|Anime",
     "imdb_score": 6.1,
     "director": "Rupert Sanders",
     "imdb_id": "tt1219827"
@@ -64758,7 +64758,7 @@
     "title_en": "Paprika",
     "title_pt": "O Bordel de Paprika",
     "year": 1991,
-    "genres": "Drama",
+    "genres": "Drama|Anime",
     "imdb_score": 7.1,
     "director": "Tinto Brass",
     "imdb_id": "tt0098063"
@@ -66882,7 +66882,7 @@
     "title_en": "A Silent Voice: The Movie",
     "title_pt": "A Voz do Silêncio",
     "year": 2016,
-    "genres": "Animation|Drama|Romance",
+    "genres": "Animation|Drama|Romance|Anime",
     "imdb_score": 8.4,
     "director": "Naoko Yamada",
     "imdb_id": "tt5323662"
@@ -69744,7 +69744,7 @@
     "title_en": "A Whisker Away",
     "title_pt": "Olhos de Gato",
     "year": 2020,
-    "genres": "Animation|Drama|Romance|Fantasy",
+    "genres": "Animation|Drama|Romance|Fantasy|Anime",
     "imdb_score": 7.9,
     "director": "柴山智隆",
     "imdb_id": "tt11958344"
@@ -71571,7 +71571,7 @@
     "title_en": "The Diary of Anne Frank",
     "title_pt": "O Diário de Anne Frank",
     "year": 1959,
-    "genres": "Drama|History",
+    "genres": "Drama|History|Anime",
     "imdb_score": 7.2,
     "director": "George Stevens",
     "imdb_id": "tt0052738"
@@ -72867,7 +72867,7 @@
     "title_en": "When Marnie Was There",
     "title_pt": "As Memórias de Marnie",
     "year": 2014,
-    "genres": "Animation|Drama|Family|Mystery",
+    "genres": "Animation|Drama|Family|Mystery|Anime",
     "imdb_score": 7.9,
     "director": "米林宏昌",
     "imdb_id": "tt3398268"
@@ -75054,7 +75054,7 @@
     "title_en": "Alita: Battle Angel",
     "title_pt": "Alita: Anjo de Combate",
     "year": 2019,
-    "genres": "Action|Sci-Fi|Adventure",
+    "genres": "Action|Sci-Fi|Adventure|Anime",
     "imdb_score": 7.2,
     "director": "Robert Rodriguez",
     "imdb_id": "tt0437086"
@@ -75405,7 +75405,7 @@
     "title_en": "Rurouni Kenshin: The Final",
     "title_pt": "Samurai X: O Final",
     "year": 2021,
-    "genres": "Action|Adventure|History|Drama",
+    "genres": "Action|Adventure|History|Drama|Anime",
     "imdb_score": 7.7,
     "director": "大友啓史",
     "imdb_id": "tt11809034"
@@ -75576,7 +75576,7 @@
     "title_en": "Ocean Waves",
     "title_pt": "Eu Posso Ouvir o Oceano",
     "year": 1993,
-    "genres": "Animation|Drama|Romance",
+    "genres": "Animation|Drama|Romance|Anime",
     "imdb_score": 6.4,
     "director": "望月智充",
     "imdb_id": "tt0108432"
@@ -75684,7 +75684,7 @@
     "title_en": "The Secret World of Arrietty",
     "title_pt": "O Mundo dos Pequeninos",
     "year": 2010,
-    "genres": "Fantasy|Animation|Family",
+    "genres": "Fantasy|Animation|Family|Anime",
     "imdb_score": 7.7,
     "director": "米林宏昌",
     "imdb_id": "tt1568921"
@@ -75963,7 +75963,7 @@
     "title_en": "Tales from Earthsea",
     "title_pt": "Contos de Terramar",
     "year": 2006,
-    "genres": "Animation|Fantasy|Adventure",
+    "genres": "Animation|Fantasy|Adventure|Anime",
     "imdb_score": 6.5,
     "director": "宮崎吾朗",
     "imdb_id": "tt0495596"
@@ -76242,7 +76242,7 @@
     "title_en": "The Boy and the Heron",
     "title_pt": "O Menino e a Garça",
     "year": 2023,
-    "genres": "Animation|Adventure|Fantasy|Drama|Family",
+    "genres": "Animation|Adventure|Fantasy|Drama|Family|Anime",
     "imdb_score": 7.4,
     "director": "Hayao Miyazaki",
     "imdb_id": "tt6587046"
@@ -79734,7 +79734,7 @@
     "title_en": "Knights of the Zodiac",
     "title_pt": "Os Cavaleiros do Zodíaco - Saint Seiya: O Começo",
     "year": 2023,
-    "genres": "Fantasy|Action|Adventure|Sci-Fi",
+    "genres": "Fantasy|Action|Adventure|Sci-Fi|Anime",
     "imdb_score": 6.3,
     "director": "Tomek Bagiński",
     "imdb_id": "tt6528290"
@@ -81705,7 +81705,7 @@
     "title_en": "Final Fantasy VII: Advent Children",
     "title_pt": "Final Fantasy VII: Advent Children",
     "year": 2005,
-    "genres": "Animation|Action|Adventure|Fantasy|Sci-Fi",
+    "genres": "Animation|Action|Adventure|Fantasy|Sci-Fi|Anime",
     "imdb_score": 7.2,
     "director": "野村哲也",
     "imdb_id": "tt0385700"
@@ -82146,7 +82146,7 @@
     "title_en": "Belle",
     "title_pt": "Belle",
     "year": 2013,
-    "genres": "Drama",
+    "genres": "Drama|Anime",
     "imdb_score": 7.1,
     "director": "Amma Asante",
     "imdb_id": "tt2404181"
@@ -82173,7 +82173,7 @@
     "title_en": "First Squad: The Moment of Truth",
     "title_pt": "First Squad: A Hora da Verdade",
     "year": 2009,
-    "genres": "Fantasy|Animation|Action|Sci-Fi",
+    "genres": "Fantasy|Animation|Action|Sci-Fi|Anime",
     "imdb_score": 6.2,
     "director": "Alexey Klimov",
     "imdb_id": "tt1343712"
@@ -94206,7 +94206,7 @@
     "title_en": "Grave of the Fireflies",
     "title_pt": "O Túmulo dos Vagalumes",
     "year": 2005,
-    "genres": "Drama",
+    "genres": "Drama|Anime",
     "imdb_score": 7.9,
     "director": "佐藤東弥",
     "imdb_id": "tt0491652"
@@ -95475,7 +95475,7 @@
     "title_en": "Perfect Blue",
     "title_pt": "Perfect Blue",
     "year": 1998,
-    "genres": "Animation|Thriller",
+    "genres": "Animation|Thriller|Anime",
     "imdb_score": 8.3,
     "director": "今敏",
     "imdb_id": "tt0156887"
@@ -95484,7 +95484,7 @@
     "title_en": "Neon Genesis Evangelion: The End of Evangelion",
     "title_pt": "Neon Genesis Evangelion: O Fim do Evangelho",
     "year": 1997,
-    "genres": "Animation|Sci-Fi|Drama|Fantasy",
+    "genres": "Animation|Sci-Fi|Drama|Fantasy|Anime",
     "imdb_score": 8.3,
     "director": "Hideaki Anno",
     "imdb_id": "tt0169858"
@@ -95628,7 +95628,7 @@
     "title_en": "Dragon Ball Z: Battle of Gods",
     "title_pt": "Dragon Ball Z: A Batalha dos Deuses",
     "year": 2013,
-    "genres": "Animation|Action|Sci-Fi",
+    "genres": "Animation|Action|Sci-Fi|Anime",
     "imdb_score": 6.8,
     "director": "細田雅弘",
     "imdb_id": "tt2263944"
@@ -95781,7 +95781,7 @@
     "title_en": "My Neighbor Totoro",
     "title_pt": "Meu Amigo Totoro",
     "year": 1988,
-    "genres": "Fantasy|Animation|Family",
+    "genres": "Fantasy|Animation|Family|Anime",
     "imdb_score": 8.1,
     "director": "Hayao Miyazaki",
     "imdb_id": "tt0096283"
@@ -95997,7 +95997,7 @@
     "title_en": "Whisper of the Heart",
     "title_pt": "Sussurros do Coração",
     "year": 1995,
-    "genres": "Animation|Drama|Family",
+    "genres": "Animation|Drama|Family|Anime",
     "imdb_score": 7.9,
     "director": "近藤喜文",
     "imdb_id": "tt0113824"
@@ -96033,7 +96033,7 @@
     "title_en": "Air Doll",
     "title_pt": "Boneca Inflável",
     "year": 2009,
-    "genres": "Drama|Fantasy",
+    "genres": "Drama|Fantasy|Anime",
     "imdb_score": 6.9,
     "director": "Hirokazu Kore-eda",
     "imdb_id": "tt1371630"
@@ -96078,7 +96078,7 @@
     "title_en": "The Tale of The Princess Kaguya",
     "title_pt": "O Conto da Princesa Kaguya",
     "year": 2013,
-    "genres": "Animation|Drama|Fantasy",
+    "genres": "Animation|Drama|Fantasy|Anime",
     "imdb_score": 8.1,
     "director": "高畑勲",
     "imdb_id": "tt2576852"
@@ -96114,7 +96114,7 @@
     "title_en": "Tokyo Godfathers",
     "title_pt": "Padrinhos de Tóquio",
     "year": 2003,
-    "genres": "Animation|Drama|Comedy",
+    "genres": "Animation|Drama|Comedy|Anime",
     "imdb_score": 7.9,
     "director": "今敏",
     "imdb_id": "tt0388473"
@@ -96123,7 +96123,7 @@
     "title_en": "Millennium Actress",
     "title_pt": "Atriz Milenar",
     "year": 2002,
-    "genres": "Drama|Animation|Romance|Fantasy",
+    "genres": "Drama|Animation|Romance|Fantasy|Anime",
     "imdb_score": 7.8,
     "director": "今敏",
     "imdb_id": "tt0291350"
@@ -96429,7 +96429,7 @@
     "title_en": "Mind Game",
     "title_pt": "Mind Game",
     "year": 2004,
-    "genres": "Animation|Romance|Comedy|Drama|Fantasy",
+    "genres": "Animation|Romance|Comedy|Drama|Fantasy|Anime",
     "imdb_score": 7.5,
     "director": "湯浅政明",
     "imdb_id": "tt0452039"
@@ -96492,7 +96492,7 @@
     "title_en": "Nausicaä of the Valley of the Wind",
     "title_pt": "Nausicaä do Vale do Vento",
     "year": 1984,
-    "genres": "Adventure|Animation|Fantasy",
+    "genres": "Adventure|Animation|Fantasy|Anime",
     "imdb_score": 7.9,
     "director": "Hayao Miyazaki",
     "imdb_id": "tt0087544"
@@ -96582,7 +96582,7 @@
     "title_en": "Evangelion: 3.0 You Can (Not) Redo",
     "title_pt": "Evangelion: 3.0 Você (Não) Pode Refazer",
     "year": 2012,
-    "genres": "Animation|Sci-Fi|Action|Drama",
+    "genres": "Animation|Sci-Fi|Action|Drama|Anime",
     "imdb_score": 7.2,
     "director": "Hideaki Anno",
     "imdb_id": "tt0860907"
@@ -96591,7 +96591,7 @@
     "title_en": "The Piano Forest",
     "title_pt": "Piano no Mori",
     "year": 2007,
-    "genres": "Music|Animation|Drama",
+    "genres": "Music|Animation|Drama|Anime",
     "imdb_score": 7.0,
     "director": "小島正幸",
     "imdb_id": "tt1119194"
@@ -99093,7 +99093,7 @@
     "title_en": "Cowboy Bebop: The Movie",
     "title_pt": "Cowboy Bebop: O Filme",
     "year": 2001,
-    "genres": "Action|Animation|Sci-Fi",
+    "genres": "Action|Animation|Sci-Fi|Anime",
     "imdb_score": 7.7,
     "director": "Shinichiro Watanabe",
     "imdb_id": "tt0275277"
@@ -99102,7 +99102,7 @@
     "title_en": "Kiki's Delivery Service",
     "title_pt": "O Serviço de Entregas da Kiki",
     "year": 1989,
-    "genres": "Animation|Family|Fantasy|Drama",
+    "genres": "Animation|Family|Fantasy|Drama|Anime",
     "imdb_score": 7.8,
     "director": "Hayao Miyazaki",
     "imdb_id": "tt0097814"
@@ -99219,7 +99219,7 @@
     "title_en": "Deceiver",
     "title_pt": "O Impostor",
     "year": 1997,
-    "genres": "Mystery|Crime|Drama|Thriller",
+    "genres": "Mystery|Crime|Drama|Thriller|Anime",
     "imdb_score": 6.0,
     "director": "Jonas Pate",
     "imdb_id": "tt0119527"
@@ -99309,7 +99309,7 @@
     "title_en": "Zom 100: Bucket List of the Dead",
     "title_pt": "100 Coisas para Fazer Antes de Virar Zumbi",
     "year": 2023,
-    "genres": "Comedy|Horror",
+    "genres": "Comedy|Horror|Anime",
     "imdb_score": 6.6,
     "director": "石田雄介",
     "imdb_id": "tt20672534"
@@ -107751,7 +107751,7 @@
     "title_en": "The Wind Rises",
     "title_pt": "Vidas ao Vento",
     "year": 2013,
-    "genres": "Drama|Animation|Romance|War|History",
+    "genres": "Drama|Animation|Romance|War|History|Anime",
     "imdb_score": 7.8,
     "director": "Hayao Miyazaki",
     "imdb_id": "tt2013293"
@@ -109380,7 +109380,7 @@
     "title_en": "Barefoot Gen",
     "title_pt": "Gen Pés Descalços",
     "year": 1983,
-    "genres": "Animation|Drama|War|History",
+    "genres": "Animation|Drama|War|History|Anime",
     "imdb_score": 7.6,
     "director": "Mori Masaki",
     "imdb_id": "tt0085218"
@@ -115428,7 +115428,7 @@
     "title_en": "Re/Member",
     "title_pt": "Re/Member",
     "year": 2022,
-    "genres": "Horror|Thriller",
+    "genres": "Horror|Thriller|Anime",
     "imdb_score": 6.7,
     "director": "羽住英一郎",
     "imdb_id": "tt21250176"
@@ -116076,7 +116076,7 @@
     "title_en": "Bleach",
     "title_pt": "Bleach",
     "year": 2021,
-    "genres": "Drama",
+    "genres": "Drama|Anime",
     "imdb_score": 6.0,
     "director": "Mattias Graham",
     "imdb_id": "tt15721456"
@@ -116733,7 +116733,7 @@
     "title_en": "Dampyr",
     "title_pt": "Dampyr: O Filho do Vampiro",
     "year": 2022,
-    "genres": "Horror|Fantasy|Action",
+    "genres": "Horror|Fantasy|Action|Anime",
     "imdb_score": 6.2,
     "director": "Riccardo Chemello",
     "imdb_id": "tt10315050"
@@ -118578,7 +118578,7 @@
     "title_en": "Fairy Tales",
     "title_pt": "Fairy Tales",
     "year": 1978,
-    "genres": "Adventure|Comedy|Romance",
+    "genres": "Adventure|Comedy|Romance|Anime",
     "imdb_score": 6.0,
     "director": "Harry Hurwitz",
     "imdb_id": "tt0077534"
@@ -120162,7 +120162,7 @@
     "title_en": "The Horde",
     "title_pt": "Legião do Mal",
     "year": 2010,
-    "genres": "Action|Horror|Thriller",
+    "genres": "Action|Horror|Thriller|Anime",
     "imdb_score": 6.0,
     "director": "Yannick Dahan",
     "imdb_id": "tt1183276"
@@ -121120,5 +121120,3191 @@
     "imdb_score": 5.1,
     "director": "Michael Gottlieb",
     "imdb_id": "tt0107612"
+  },
+  {
+    "title_en": "The Collector",
+    "title_pt": "O Colecionador",
+    "year": 2019,
+    "genres": "",
+    "imdb_score": 0.0,
+    "director": "Enrico Alchimim",
+    "imdb_id": null
+  },
+  {
+    "title_en": "1001 Nights",
+    "title_pt": "1001 Nights",
+    "year": 1998,
+    "genres": "Animation|Drama|Fantasy|Anime",
+    "imdb_score": 6.6,
+    "director": "天野喜孝",
+    "imdb_id": "tt0193688"
+  },
+  {
+    "title_en": "Fumiko's Confession",
+    "title_pt": "Fumiko no Kokuhaku",
+    "year": 2009,
+    "genres": "Animation|Comedy|Romance",
+    "imdb_score": 5.7,
+    "director": "石田祐康",
+    "imdb_id": "tt3970004"
+  },
+  {
+    "title_en": "Angel's Egg",
+    "title_pt": "A Menina e o Ovo de Anjo",
+    "year": 1985,
+    "genres": "Animation|Fantasy|Mystery|Anime",
+    "imdb_score": 7.7,
+    "director": "Mamoru Oshii",
+    "imdb_id": "tt0208502"
+  },
+  {
+    "title_en": "Cencoroll",
+    "title_pt": "Cencoroll",
+    "year": 2009,
+    "genres": "Animation|Sci-Fi|Anime",
+    "imdb_score": 6.2,
+    "director": "宇木敦哉",
+    "imdb_id": "tt1492151"
+  },
+  {
+    "title_en": "On Your Mark",
+    "title_pt": "On Your Mark CHAGE & ASKA",
+    "year": 1995,
+    "genres": "Animation|Sci-Fi",
+    "imdb_score": 7.1,
+    "director": "Hayao Miyazaki",
+    "imdb_id": "tt0114038"
+  },
+  {
+    "title_en": "Ringing Bell",
+    "title_pt": "Chirin no Suzu",
+    "year": 1978,
+    "genres": "Animation|Drama|Family|Anime",
+    "imdb_score": 6.7,
+    "director": "波多正美",
+    "imdb_id": "tt0306646"
+  },
+  {
+    "title_en": "Clover",
+    "title_pt": "Clover",
+    "year": 2016,
+    "genres": "Action|Adventure|Anime",
+    "imdb_score": 7.0,
+    "director": "Ryan Bliss",
+    "imdb_id": "tt4953592"
+  },
+  {
+    "title_en": "Colorful",
+    "title_pt": "Colorful",
+    "year": 2021,
+    "genres": "Anime",
+    "imdb_score": 0.0,
+    "director": "Jae hyeon Cha",
+    "imdb_id": null
+  },
+  {
+    "title_en": "Wonder Garden",
+    "title_pt": "Wonder Garden",
+    "year": 2013,
+    "genres": "Music|Fantasy|Animation|Family",
+    "imdb_score": 7.0,
+    "director": "新井陽次郎",
+    "imdb_id": "tt5068570"
+  },
+  {
+    "title_en": "Death Billiards",
+    "title_pt": "Death Billiards",
+    "year": 2013,
+    "genres": "Animation|Drama|Mystery|Anime",
+    "imdb_score": 7.3,
+    "director": "立川譲",
+    "imdb_id": "tt2807626"
+  },
+  {
+    "title_en": "Furiko",
+    "title_pt": "振り子",
+    "year": 2015,
+    "genres": "Drama|Family|Anime",
+    "imdb_score": 0.0,
+    "director": "Norihiro Takenaga",
+    "imdb_id": "tt3731846"
+  },
+  {
+    "title_en": "Summer Wars",
+    "title_pt": "Guerras de Verão",
+    "year": 2009,
+    "genres": "Animation|Sci-Fi|Anime",
+    "imdb_score": 7.5,
+    "director": "細田守",
+    "imdb_id": "tt1474276"
+  },
+  {
+    "title_en": "Hal",
+    "title_pt": "Hal",
+    "year": 2019,
+    "genres": "Documentary|Anime",
+    "imdb_score": 6.5,
+    "director": "Amy Scott",
+    "imdb_id": "tt5844196"
+  },
+  {
+    "title_en": "Jungle Emperor Leo",
+    "title_pt": "Kimba, o Leão Branco",
+    "year": 1997,
+    "genres": "Adventure|Animation|Family|Anime",
+    "imdb_score": 7.0,
+    "director": "竹内啓雄",
+    "imdb_id": "tt0119406"
+  },
+  {
+    "title_en": "Junkers Come Here",
+    "title_pt": "ユンカース・カム・ヒア",
+    "year": 1994,
+    "genres": "Animation|Family|Anime",
+    "imdb_score": 6.8,
+    "director": "佐藤順一",
+    "imdb_id": "tt0382114"
+  },
+  {
+    "title_en": "Little Witch Academia",
+    "title_pt": "Little Witch Academia",
+    "year": 2013,
+    "genres": "Action|Animation|Comedy|Fantasy|Anime",
+    "imdb_score": 7.2,
+    "director": "吉成曜",
+    "imdb_id": "tt2704454"
+  },
+  {
+    "title_en": "Little Witch Academia: The Enchanted Parade",
+    "title_pt": "Little Witch Academia: A Parada Encantada",
+    "year": 2015,
+    "genres": "Action|Animation|Fantasy|Comedy|Anime",
+    "imdb_score": 7.2,
+    "director": "吉成曜",
+    "imdb_id": "tt4831682"
+  },
+  {
+    "title_en": "Magical Sisters Yoyo & Nene",
+    "title_pt": "As Irmãs Mágicas Yoyo & Nene",
+    "year": 2013,
+    "genres": "Animation|Fantasy|Adventure",
+    "imdb_score": 6.7,
+    "director": "平尾隆之",
+    "imdb_id": "tt3341598"
+  },
+  {
+    "title_en": "Castle in the Sky",
+    "title_pt": "O Castelo no Céu",
+    "year": 1986,
+    "genres": "Adventure|Fantasy|Animation|Action|Family|Anime",
+    "imdb_score": 8.0,
+    "director": "Hayao Miyazaki",
+    "imdb_id": "tt0092067"
+  },
+  {
+    "title_en": "Big Fish & Begonia",
+    "title_pt": "O Peixe Grande & Begônia",
+    "year": 2016,
+    "genres": "Animation|Adventure|Fantasy|Anime",
+    "imdb_score": 7.4,
+    "director": "Liang Xuan",
+    "imdb_id": "tt1920885"
+  },
+  {
+    "title_en": "The Cat Returns",
+    "title_pt": "O Reino dos Gatos",
+    "year": 2002,
+    "genres": "Adventure|Fantasy|Animation|Drama|Family|Anime",
+    "imdb_score": 7.1,
+    "director": "森田宏幸",
+    "imdb_id": "tt0347618"
+  },
+  {
+    "title_en": "Origin: Spirits of the Past",
+    "title_pt": "Origem: Espíritos do Passado",
+    "year": 2006,
+    "genres": "Animation|Sci-Fi|Adventure|Drama|Fantasy|Romance|Action|Anime",
+    "imdb_score": 6.9,
+    "director": "杉山慶一",
+    "imdb_id": "tt0493247"
+  },
+  {
+    "title_en": "Pom Poko",
+    "title_pt": "PomPoko: A Grande Batalha dos Guaxinins",
+    "year": 1994,
+    "genres": "Adventure|Animation|Fantasy|Anime",
+    "imdb_score": 7.2,
+    "director": "高畑勲",
+    "imdb_id": "tt0110008"
+  },
+  {
+    "title_en": "Porco Rosso",
+    "title_pt": "Porco Rosso: O Último Herói Romântico",
+    "year": 1992,
+    "genres": "Family|Comedy|Animation|Adventure|Fantasy|Anime",
+    "imdb_score": 7.8,
+    "director": "Hayao Miyazaki",
+    "imdb_id": "tt0104652"
+  },
+  {
+    "title_en": "Paulette's Chair",
+    "title_pt": "ポレットのイス",
+    "year": 2014,
+    "genres": "Animation|Comedy|Family|Music",
+    "imdb_score": 6.5,
+    "director": "石田祐康",
+    "imdb_id": "tt5106650"
+  },
+  {
+    "title_en": "Saint☆Young Men",
+    "title_pt": "Saint☆Onii-san",
+    "year": 2013,
+    "genres": "Animation|Comedy",
+    "imdb_score": 7.7,
+    "director": "高雄統子",
+    "imdb_id": "tt2431934"
+  },
+  {
+    "title_en": "Superflat Monogram",
+    "title_pt": "Superflat Monogram",
+    "year": 2003,
+    "genres": "Animation|Anime",
+    "imdb_score": 5.4,
+    "director": "細田守",
+    "imdb_id": "tt2206068"
+  },
+  {
+    "title_en": "Welcome to the Space Show",
+    "title_pt": "宇宙ショーへようこそ",
+    "year": 2010,
+    "genres": "Animation|Sci-Fi",
+    "imdb_score": 6.5,
+    "director": "舛成孝二",
+    "imdb_id": "tt1679681"
+  },
+  {
+    "title_en": "A Letter to Momo",
+    "title_pt": "Uma Carta para Momo",
+    "year": 2012,
+    "genres": "Comedy|Fantasy|Animation|Drama|Family|Anime",
+    "imdb_score": 7.3,
+    "director": "沖浦啓之",
+    "imdb_id": "tt1853614"
+  },
+  {
+    "title_en": "Children Who Chase Lost Voices",
+    "title_pt": "Viagem para Agartha",
+    "year": 2011,
+    "genres": "Animation|Adventure|Fantasy|Family|Anime",
+    "imdb_score": 7.2,
+    "director": "Makoto Shinkai",
+    "imdb_id": "tt1839494"
+  },
+  {
+    "title_en": "Li'l Spider Girl",
+    "title_pt": "Wasurenagumo",
+    "year": 2012,
+    "genres": "Animation|Comedy|Fantasy|Horror|Anime",
+    "imdb_score": 6.2,
+    "director": "海谷敏久",
+    "imdb_id": "tt2345761"
+  },
+  {
+    "title_en": "Windaria",
+    "title_pt": "Windaria",
+    "year": 1986,
+    "genres": "Fantasy|Animation|Action|Anime",
+    "imdb_score": 6.4,
+    "director": "湯山邦彦",
+    "imdb_id": "tt0092218"
+  },
+  {
+    "title_en": "Yobi, The Five-Tailed Fox",
+    "title_pt": "A Lenda de Yobi",
+    "year": 2007,
+    "genres": "Animation|Family|Fantasy|Adventure|Drama|Sci-Fi",
+    "imdb_score": 6.6,
+    "director": "Lee Sung-gang",
+    "imdb_id": "tt1077274"
+  },
+  {
+    "title_en": "Wolf Children",
+    "title_pt": "Crianças Lobo",
+    "year": 2012,
+    "genres": "Animation|Family|Drama|Fantasy|Anime",
+    "imdb_score": 8.2,
+    "director": "細田守",
+    "imdb_id": "tt2140203"
+  },
+  {
+    "title_en": "The Garden of Words",
+    "title_pt": "O Jardim das Palavras",
+    "year": 2013,
+    "genres": "Animation|Drama|Romance|Anime",
+    "imdb_score": 7.6,
+    "director": "Makoto Shinkai",
+    "imdb_id": "tt2591814"
+  },
+  {
+    "title_en": "5 Centimeters per Second",
+    "title_pt": "Cinco Centímetros por Segundo",
+    "year": 2025,
+    "genres": "Romance|Drama|Anime",
+    "imdb_score": 9.8,
+    "director": "Yoshiyuki Okuyama",
+    "imdb_id": "tt33477484"
+  },
+  {
+    "title_en": "The Garden of Sinners: Overlooking View",
+    "title_pt": "The Garden of Sinners: Vista Panorâmica (Tânato)",
+    "year": 2007,
+    "genres": "Animation|Crime|Action|Fantasy|Mystery|Anime",
+    "imdb_score": 6.7,
+    "director": "あおきえい",
+    "imdb_id": "tt1155650"
+  },
+  {
+    "title_en": "Mr. Piper And The Story Of Brave Molly",
+    "title_pt": "Mr. Piper And The Story Of Brave Molly",
+    "year": 1963,
+    "genres": "Animation",
+    "imdb_score": 0.0,
+    "director": "Martin Andrews",
+    "imdb_id": "tt1593308"
+  },
+  {
+    "title_en": "Sword of the Stranger Pilot",
+    "title_pt": "Sword of the Stranger Pilot",
+    "year": 2009,
+    "genres": "Animation|History|Anime",
+    "imdb_score": 0.0,
+    "director": "Unknown",
+    "imdb_id": "tt11576584"
+  },
+  {
+    "title_en": "The Place Promised in Our Early Days",
+    "title_pt": "O Lugar Prometido em Nossa Juventude",
+    "year": 2004,
+    "genres": "Animation|Adventure|Drama|Romance|Anime",
+    "imdb_score": 6.6,
+    "director": "Makoto Shinkai",
+    "imdb_id": "tt0381348"
+  },
+  {
+    "title_en": "Suzume",
+    "title_pt": "Suzume",
+    "year": 2022,
+    "genres": "Animation|Drama|Adventure|Fantasy|Anime",
+    "imdb_score": 7.9,
+    "director": "Makoto Shinkai",
+    "imdb_id": "tt16428256"
+  },
+  {
+    "title_en": "Patlabor 2: The Movie",
+    "title_pt": "Patlabor 2 - O Filme",
+    "year": 1993,
+    "genres": "Animation|Sci-Fi|Action|Thriller|Anime",
+    "imdb_score": 7.4,
+    "director": "Mamoru Oshii",
+    "imdb_id": "tt0124770"
+  },
+  {
+    "title_en": "Royal Space Force - The Wings of Honneamise",
+    "title_pt": "Royal Space Force: The Wings of Honneamise",
+    "year": 1987,
+    "genres": "Animation|Sci-Fi",
+    "imdb_score": 6.8,
+    "director": "山賀博之",
+    "imdb_id": "tt0093207"
+  },
+  {
+    "title_en": "Macross: Do You Remember Love?",
+    "title_pt": "Macross: A Batalha Final",
+    "year": 1984,
+    "genres": "Animation|Sci-Fi|War|Action",
+    "imdb_score": 7.2,
+    "director": "河森正治",
+    "imdb_id": "tt0087660"
+  },
+  {
+    "title_en": "Belladonna of Sadness",
+    "title_pt": "A Tragédia de Belladonna",
+    "year": 1973,
+    "genres": "Animation|Drama|Fantasy|Anime",
+    "imdb_score": 7.3,
+    "director": "山本暎一",
+    "imdb_id": "tt0071203"
+  },
+  {
+    "title_en": "The Tale of the White Serpent",
+    "title_pt": "A Lenda da Serpente Branca",
+    "year": 1958,
+    "genres": "Animation|Fantasy|Anime",
+    "imdb_score": 6.2,
+    "director": "藪下泰司",
+    "imdb_id": "tt0051694"
+  },
+  {
+    "title_en": "Ninja Scroll",
+    "title_pt": "Ninja Scroll: O Filme",
+    "year": 1993,
+    "genres": "Fantasy|Adventure|Animation|Action|Anime",
+    "imdb_score": 7.8,
+    "director": "川尻善昭",
+    "imdb_id": "tt0107692"
+  },
+  {
+    "title_en": "Only Yesterday",
+    "title_pt": "Memórias de Ontem",
+    "year": 1991,
+    "genres": "Animation|Drama|Romance|Anime",
+    "imdb_score": 7.4,
+    "director": "高畑勲",
+    "imdb_id": "tt0102587"
+  },
+  {
+    "title_en": "Tekkonkinkreet",
+    "title_pt": "Tekkonkinkreet",
+    "year": 2006,
+    "genres": "Action|Adventure|Animation|Anime",
+    "imdb_score": 7.4,
+    "director": "Michael Arias",
+    "imdb_id": "tt0831888"
+  },
+  {
+    "title_en": "Roujin Z",
+    "title_pt": "Roujin Z",
+    "year": 1991,
+    "genres": "Animation|Drama|Sci-Fi|Anime",
+    "imdb_score": 6.5,
+    "director": "北久保弘之",
+    "imdb_id": "tt0102812"
+  },
+  {
+    "title_en": "Urusei Yatsura: Beautiful Dreamer",
+    "title_pt": "うる星やつら2 ビューティフル・ドリーマー",
+    "year": 1984,
+    "genres": "Animation|Comedy|Romance|Sci-Fi|Anime",
+    "imdb_score": 7.2,
+    "director": "Mamoru Oshii",
+    "imdb_id": "tt0088334"
+  },
+  {
+    "title_en": "Mobile Suit Gundam: Char's Counterattack",
+    "title_pt": "Mobile Suit Gundam: Char Contra-ataca!",
+    "year": 1988,
+    "genres": "Animation|Action|Sci-Fi|Anime",
+    "imdb_score": 7.2,
+    "director": "富野由悠季",
+    "imdb_id": "tt0095262"
+  },
+  {
+    "title_en": "The Memory of Robot Carnival: A Look Back at the History of the Classic Anthology",
+    "title_pt": "The Memory of Robot Carnival: A Look Back at the History of the Classic Anthology",
+    "year": 2018,
+    "genres": "Documentary",
+    "imdb_score": 0.0,
+    "director": "Justin Sevakis",
+    "imdb_id": "tt8816546"
+  },
+  {
+    "title_en": "Panda! Go Panda!",
+    "title_pt": "As Aventuras de Panda e seus Amigos",
+    "year": 1972,
+    "genres": "Animation|Family|Comedy|Anime",
+    "imdb_score": 6.2,
+    "director": "高畑勲",
+    "imdb_id": "tt0069058"
+  },
+  {
+    "title_en": "Appleseed",
+    "title_pt": "Appleseed",
+    "year": 1988,
+    "genres": "Crime|Animation|Sci-Fi|Anime",
+    "imdb_score": 6.4,
+    "director": "片山一良",
+    "imdb_id": "tt0094668"
+  },
+  {
+    "title_en": "Interstella 5555: The 5tory of the 5ecret 5tar 5ystem",
+    "title_pt": "Interstella 5555",
+    "year": 2003,
+    "genres": "Animation|Sci-Fi|Music|Adventure|Anime",
+    "imdb_score": 7.8,
+    "director": "竹之内和久",
+    "imdb_id": "tt0368667"
+  },
+  {
+    "title_en": "Galaxy Express 999: The Movie",
+    "title_pt": "Galaxy Express 999",
+    "year": 1979,
+    "genres": "Adventure|Animation|Sci-Fi|Anime",
+    "imdb_score": 6.8,
+    "director": "りんたろう",
+    "imdb_id": "tt0080772"
+  },
+  {
+    "title_en": "Jin-Roh: The Wolf Brigade",
+    "title_pt": "Jin-Roh: A Brigada dos Lobos",
+    "year": 1999,
+    "genres": "Animation|Drama|Romance|Thriller|Sci-Fi|Anime",
+    "imdb_score": 7.4,
+    "director": "沖浦啓之",
+    "imdb_id": "tt0193253"
+  },
+  {
+    "title_en": "Voices of a Distant Star",
+    "title_pt": "Vozes de Uma Estrela Distante",
+    "year": 2002,
+    "genres": "Animation|Sci-Fi|Romance|Anime",
+    "imdb_score": 6.5,
+    "director": "Makoto Shinkai",
+    "imdb_id": "tt0370754"
+  },
+  {
+    "title_en": "Cat Soup",
+    "title_pt": "Nekojiru-sou",
+    "year": 2001,
+    "genres": "Fantasy|Animation|Sci-Fi|Anime",
+    "imdb_score": 7.0,
+    "director": "佐藤竜雄",
+    "imdb_id": "tt0385586"
+  },
+  {
+    "title_en": "My Neighbors the Yamadas",
+    "title_pt": "Meus Vizinhos, Os Yamadas",
+    "year": 1999,
+    "genres": "Animation|Comedy|Family|Anime",
+    "imdb_score": 7.0,
+    "director": "高畑勲",
+    "imdb_id": "tt0206013"
+  },
+  {
+    "title_en": "Gundam Wing: The Endless Waltz",
+    "title_pt": "Mobile Suit Gundam Wing: Endless Waltz",
+    "year": 1998,
+    "genres": "Drama|Animation|Sci-Fi|Anime",
+    "imdb_score": 7.3,
+    "director": "青木康直",
+    "imdb_id": "tt0260191"
+  },
+  {
+    "title_en": "The Animatrix",
+    "title_pt": "Animatrix",
+    "year": 2003,
+    "genres": "Animation|Sci-Fi|Anime",
+    "imdb_score": 7.2,
+    "director": "川尻善昭",
+    "imdb_id": "tt0328832"
+  },
+  {
+    "title_en": "A Thousand and One Nights",
+    "title_pt": "Aladin e a Princesa de Bagdá",
+    "year": 1945,
+    "genres": "Adventure|Comedy|Fantasy|Anime",
+    "imdb_score": 5.8,
+    "director": "Alfred E. Green",
+    "imdb_id": "tt0038165"
+  },
+  {
+    "title_en": "The Castle of Cagliostro",
+    "title_pt": "Lupin III: O Castelo de Cagliostro",
+    "year": 1979,
+    "genres": "Animation|Adventure|Comedy|Crime",
+    "imdb_score": 7.5,
+    "director": "Hayao Miyazaki",
+    "imdb_id": "tt0079833"
+  },
+  {
+    "title_en": "Night on the Galactic Railroad",
+    "title_pt": "Viagem Noturna no Trem da Via Láctea",
+    "year": 1985,
+    "genres": "Adventure|Animation|Drama|Family|Mystery|Fantasy|Anime",
+    "imdb_score": 7.2,
+    "director": "杉井ギサブロー",
+    "imdb_id": "tt0089206"
+  },
+  {
+    "title_en": "The Disappearance of Haruhi Suzumiya",
+    "title_pt": "The Disappearance of Haruhi Suzumiya",
+    "year": 2010,
+    "genres": "Animation|Comedy|Sci-Fi|Mystery|Drama",
+    "imdb_score": 7.8,
+    "director": "Yasuhiro Takemoto",
+    "imdb_id": "tt1572781"
+  },
+  {
+    "title_en": "Dragon Ball Z: Broly - The Legendary Super Saiyan",
+    "title_pt": "Dragon Ball Z: O Poder Invencível",
+    "year": 1993,
+    "genres": "Animation|Sci-Fi|Action|Anime",
+    "imdb_score": 7.2,
+    "director": "山内重保",
+    "imdb_id": "tt0142242"
+  },
+  {
+    "title_en": "Blood: The Last Vampire",
+    "title_pt": "BLOOD THE LAST VAMPIRE",
+    "year": 2000,
+    "genres": "Animation|Fantasy|Horror",
+    "imdb_score": 6.8,
+    "director": "北久保弘之",
+    "imdb_id": "tt0275230"
+  },
+  {
+    "title_en": "Phoenix 2772",
+    "title_pt": "火の鳥2772 愛のコスモゾーン",
+    "year": 1980,
+    "genres": "Animation|Sci-Fi|Mystery|Drama",
+    "imdb_score": 5.8,
+    "director": "杉山卓",
+    "imdb_id": "tt0079293"
+  },
+  {
+    "title_en": "Macross Plus: The Movie",
+    "title_pt": "マクロスプラス MOVIE EDITION",
+    "year": 1995,
+    "genres": "Action|Adventure|Animation|Sci-Fi",
+    "imdb_score": 7.1,
+    "director": "河森正治",
+    "imdb_id": "tt2330912"
+  },
+  {
+    "title_en": "Spriggan",
+    "title_pt": "Spriggan",
+    "year": 2019,
+    "genres": "Fantasy|Action|Adventure|Anime",
+    "imdb_score": 4.7,
+    "director": "Robert Gill",
+    "imdb_id": "tt9730866"
+  },
+  {
+    "title_en": "Gyo: Tokyo Fish Attack",
+    "title_pt": "Gyo: O Cheiro da Morte",
+    "year": 2012,
+    "genres": "Animation|Horror|Anime",
+    "imdb_score": 5.4,
+    "director": "平尾隆之",
+    "imdb_id": "tt1857718"
+  },
+  {
+    "title_en": "Fist of the North Star: The Legend of Kenshiro",
+    "title_pt": "Hokuto no Ken Zero: Kenshirou Den",
+    "year": 2008,
+    "genres": "Animation|Action|Drama",
+    "imdb_score": 6.7,
+    "director": "静野孔文",
+    "imdb_id": "tt0456978"
+  },
+  {
+    "title_en": "Evangelion: 1.0 You Are (Not) Alone",
+    "title_pt": "Evangelion: 1.0 Você (Não) Está Sozinho",
+    "year": 2007,
+    "genres": "Animation|Sci-Fi|Action|Drama|Anime",
+    "imdb_score": 7.6,
+    "director": "摩砂雪",
+    "imdb_id": "tt0923811"
+  },
+  {
+    "title_en": "A Wind Named Amnesia",
+    "title_pt": "Um Vento Chamado Amnésia",
+    "year": 1990,
+    "genres": "Animation|Drama|Sci-Fi",
+    "imdb_score": 5.9,
+    "director": "やまざきかずお",
+    "imdb_id": "tt0108570"
+  },
+  {
+    "title_en": "Genius Party",
+    "title_pt": "Genius Party",
+    "year": 2007,
+    "genres": "Animation|Sci-Fi|Fantasy|Action|Drama|Comedy|Anime",
+    "imdb_score": 6.5,
+    "director": "福島敦子",
+    "imdb_id": "tt0962762"
+  },
+  {
+    "title_en": "Deep Imagination",
+    "title_pt": "スウェットパンチ",
+    "year": 2006,
+    "genres": "Animation|Fantasy|Action|History",
+    "imdb_score": 5.2,
+    "director": "中澤一登",
+    "imdb_id": "tt6614620"
+  },
+  {
+    "title_en": "Giovanni's Island",
+    "title_pt": "Giovanni no Shima",
+    "year": 2014,
+    "genres": "Animation|Drama|History|Anime",
+    "imdb_score": 7.5,
+    "director": "西久保瑞穂",
+    "imdb_id": "tt3178174"
+  },
+  {
+    "title_en": "Venus Wars",
+    "title_pt": "Venus Wars",
+    "year": 1989,
+    "genres": "Action|Animation|Sci-Fi|Anime",
+    "imdb_score": 6.7,
+    "director": "安彦良和",
+    "imdb_id": "tt0135037"
+  },
+  {
+    "title_en": "Short Peace",
+    "title_pt": "Short Peace",
+    "year": 2013,
+    "genres": "Animation|Anime",
+    "imdb_score": 6.4,
+    "director": "安藤裕章",
+    "imdb_id": "tt3392330"
+  },
+  {
+    "title_en": "Vampire Hunter D: Bloodlust",
+    "title_pt": "Vampire Hunter D: Bloodlust",
+    "year": 2001,
+    "genres": "Animation|Fantasy|Horror|Action|Adventure|Sci-Fi|Anime",
+    "imdb_score": 7.7,
+    "director": "川尻善昭",
+    "imdb_id": "tt0216651"
+  },
+  {
+    "title_en": "Golgo 13: The Professional",
+    "title_pt": "Golgo 13 - O Profissional",
+    "year": 1983,
+    "genres": "Crime|Animation|Action",
+    "imdb_score": 6.2,
+    "director": "出崎統",
+    "imdb_id": "tt0086148"
+  },
+  {
+    "title_en": "The Dog of Flanders",
+    "title_pt": "フランダースの犬",
+    "year": 1997,
+    "genres": "Animation|Drama|Romance",
+    "imdb_score": 7.5,
+    "director": "黒田昌郎",
+    "imdb_id": "tt0304072"
+  },
+  {
+    "title_en": "Mrs. Dalloway",
+    "title_pt": "Sra. Dalloway",
+    "year": 1997,
+    "genres": "Drama|Romance",
+    "imdb_score": 5.5,
+    "director": "Marleen Gorris",
+    "imdb_id": "tt0119723"
+  },
+  {
+    "title_en": "Ah! My Goddess: The Movie",
+    "title_pt": "Ah! Megami-Sama: O Filme",
+    "year": 2000,
+    "genres": "Fantasy|Animation|Drama|Comedy|Sci-Fi|Romance",
+    "imdb_score": 6.1,
+    "director": "合田浩章",
+    "imdb_id": "tt0265018"
+  },
+  {
+    "title_en": "Mobile Suit Gundam F91",
+    "title_pt": "Mobile Suit Gundam F91",
+    "year": 1991,
+    "genres": "Animation|Sci-Fi|Anime",
+    "imdb_score": 6.5,
+    "director": "富野由悠季",
+    "imdb_id": "tt0159568"
+  },
+  {
+    "title_en": "The Boy and the Beast",
+    "title_pt": "O Rapaz e o Monstro",
+    "year": 2015,
+    "genres": "Action|Adventure|Animation|Drama|Family|Fantasy|Anime",
+    "imdb_score": 7.9,
+    "director": "細田守",
+    "imdb_id": "tt4272866"
+  },
+  {
+    "title_en": "anohana: The Flower We Saw That Day - The Movie",
+    "title_pt": "Ano Hana: O Filme",
+    "year": 2013,
+    "genres": "Animation|Drama",
+    "imdb_score": 7.5,
+    "director": "長井龍雪",
+    "imdb_id": "tt2323836"
+  },
+  {
+    "title_en": "Flavors of Youth",
+    "title_pt": "Shiki Oriori - O Sabor da Juventude",
+    "year": 2018,
+    "genres": "Animation|Romance|Drama|Anime",
+    "imdb_score": 6.9,
+    "director": "易振兴",
+    "imdb_id": "tt8176578"
+  },
+  {
+    "title_en": "Blue Exorcist: The Movie",
+    "title_pt": "Blue Exorcist: O Filme",
+    "year": 2012,
+    "genres": "Animation|Fantasy|Mystery|Horror|Action",
+    "imdb_score": 7.3,
+    "director": "高橋敦史",
+    "imdb_id": "tt3028018"
+  },
+  {
+    "title_en": "Golden Kamuy",
+    "title_pt": "Golden Kamuy",
+    "year": 2024,
+    "genres": "Action|Adventure|Comedy|Anime",
+    "imdb_score": 6.9,
+    "director": "久保茂昭",
+    "imdb_id": "tt19759618"
+  },
+  {
+    "title_en": "City Hunter",
+    "title_pt": "City Hunter",
+    "year": 2024,
+    "genres": "Action|Anime",
+    "imdb_score": 6.5,
+    "director": "Yuichi Satoh",
+    "imdb_id": "tt24478470"
+  },
+  {
+    "title_en": "Yu Yu Hakusho: The Movie - Poltergeist Report",
+    "title_pt": "Yu Yu Hakusho: Invasores do Inferno",
+    "year": 1994,
+    "genres": "Animation|Fantasy|Action",
+    "imdb_score": 7.6,
+    "director": "飯島正勝",
+    "imdb_id": "tt0203237"
+  },
+  {
+    "title_en": "Godzilla Minus One",
+    "title_pt": "Godzilla Minus One",
+    "year": 2023,
+    "genres": "Sci-Fi|Horror|Action|Anime",
+    "imdb_score": 7.6,
+    "director": "Takashi Yamazaki",
+    "imdb_id": "tt23289160"
+  },
+  {
+    "title_en": "Fullmetal Alchemist: The Final Alchemy",
+    "title_pt": "Fullmetal Alchemist: A Alquimia Final",
+    "year": 2022,
+    "genres": "Action|Adventure|Fantasy|Anime",
+    "imdb_score": 6.3,
+    "director": "曽利文彦",
+    "imdb_id": "tt18671660"
+  },
+  {
+    "title_en": "Rurouni Kenshin: The Beginning",
+    "title_pt": "Samurai X: A Origem",
+    "year": 2021,
+    "genres": "Action|Adventure|Drama|Romance|Anime",
+    "imdb_score": 7.6,
+    "director": "大友啓史",
+    "imdb_id": "tt11991748"
+  },
+  {
+    "title_en": "Tokyo Ghoul 'S'",
+    "title_pt": "Tokyo Ghoul S",
+    "year": 2019,
+    "genres": "Action|Horror|Sci-Fi|Fantasy|Anime",
+    "imdb_score": 6.5,
+    "director": "平牧和彦",
+    "imdb_id": "tt9179260"
+  },
+  {
+    "title_en": "Kakegurui 2: Desperate Russian Roulette",
+    "title_pt": "Kakegurui 2: A Roleta Russa da Morte Certa",
+    "year": 2021,
+    "genres": "Mystery|Thriller|Drama|Anime",
+    "imdb_score": 6.6,
+    "director": "英勉",
+    "imdb_id": "tt13017168"
+  },
+  {
+    "title_en": "Ultraman Geed the Movie: Connect! The Wishes!!",
+    "title_pt": "Ultraman Geed - O Filme",
+    "year": 2018,
+    "genres": "Action|Sci-Fi|Anime",
+    "imdb_score": 7.1,
+    "director": "坂本浩一",
+    "imdb_id": "tt7772394"
+  },
+  {
+    "title_en": "Godzilla: King of the Monsters",
+    "title_pt": "Godzilla II: Rei dos Monstros",
+    "year": 2019,
+    "genres": "Sci-Fi|Action|Anime",
+    "imdb_score": 6.7,
+    "director": "Michael Dougherty",
+    "imdb_id": "tt3741700"
+  },
+  {
+    "title_en": "Rainbow Days",
+    "title_pt": "虹色デイズ",
+    "year": 2018,
+    "genres": "Comedy|Drama",
+    "imdb_score": 6.8,
+    "director": "飯塚健",
+    "imdb_id": "tt7493804"
+  },
+  {
+    "title_en": "Pacific Rim: Uprising",
+    "title_pt": "Círculo de Fogo: A Revolta",
+    "year": 2018,
+    "genres": "Action|Fantasy|Sci-Fi|Adventure|Anime",
+    "imdb_score": 6.1,
+    "director": "Steven S. DeKnight",
+    "imdb_id": "tt2557478"
+  },
+  {
+    "title_en": "JoJo's Bizarre Adventure: Diamond Is Unbreakable – Chapter 1",
+    "title_pt": "JoJo's Bizarre Adventure: Diamond is Unbreakable - Chapter 1",
+    "year": 2017,
+    "genres": "Action|Adventure|Fantasy|Thriller|Anime",
+    "imdb_score": 6.6,
+    "director": "Takashi Miike",
+    "imdb_id": "tt6105880"
+  },
+  {
+    "title_en": "Death Note: Light Up the NEW World",
+    "title_pt": "Death Note: Iluminando um Novo Mundo",
+    "year": 2016,
+    "genres": "Crime|Horror|Sci-Fi|Thriller|Anime",
+    "imdb_score": 6.4,
+    "director": "佐藤信介",
+    "imdb_id": "tt5058340"
+  },
+  {
+    "title_en": "The Anthem of the Heart",
+    "title_pt": "心が叫びたがってるんだ。",
+    "year": 2017,
+    "genres": "Drama",
+    "imdb_score": 7.6,
+    "director": "熊澤尚人",
+    "imdb_id": "tt6738046"
+  },
+  {
+    "title_en": "The Peach Girl",
+    "title_pt": "The Peach Girl",
+    "year": 1931,
+    "genres": "Romance|Drama",
+    "imdb_score": 6.0,
+    "director": "Bu Wan-Cang",
+    "imdb_id": "tt0192665"
+  },
+  {
+    "title_en": "The Phantom of Regular Size",
+    "title_pt": "Futsu Saizu no Kaijin",
+    "year": 1986,
+    "genres": "Horror|Sci-Fi",
+    "imdb_score": 6.3,
+    "director": "Shinya Tsukamoto",
+    "imdb_id": "tt0166304"
+  },
+  {
+    "title_en": "Kamui",
+    "title_pt": "A Lenda de Kamui",
+    "year": 2009,
+    "genres": "Drama|Action|Anime",
+    "imdb_score": 6.1,
+    "director": "崔洋一",
+    "imdb_id": "tt1156479"
+  },
+  {
+    "title_en": "Blood: The Last Vampire",
+    "title_pt": "Caçadores de Vampiros",
+    "year": 2009,
+    "genres": "Action|Adventure|Horror|Sci-Fi|Thriller|Anime",
+    "imdb_score": 5.8,
+    "director": "Chris Nahon",
+    "imdb_id": "tt0806027"
+  },
+  {
+    "title_en": "City Hunter",
+    "title_pt": "City Hunter: O Caçador de Encrencas",
+    "year": 1993,
+    "genres": "Action|Adventure|Comedy|Romance",
+    "imdb_score": 6.6,
+    "director": "王晶",
+    "imdb_id": "tt0103950"
+  },
+  {
+    "title_en": "My Little Monster",
+    "title_pt": "Tonari no Kaibutsu-kun",
+    "year": 2018,
+    "genres": "Romance|Comedy|Drama|Anime",
+    "imdb_score": 7.5,
+    "director": "月川翔",
+    "imdb_id": "tt6893370"
+  },
+  {
+    "title_en": "Marmalade Boy",
+    "title_pt": "Marmalade Boy",
+    "year": 2018,
+    "genres": "Romance|Comedy|Drama|Anime",
+    "imdb_score": 6.4,
+    "director": "廣木隆一",
+    "imdb_id": "tt7286500"
+  },
+  {
+    "title_en": "Donten: Laughing Under the Clouds - Gaiden: Chapter 2 - The Tragedy of Fuuma Ninja Tribe",
+    "title_pt": "Donten ni Warau Gaiden: Shukumei, Soutou no Fuuma",
+    "year": 2018,
+    "genres": "Animation|Action|Adventure|Fantasy",
+    "imdb_score": 6.7,
+    "director": "若野哲也",
+    "imdb_id": "tt11847928"
+  },
+  {
+    "title_en": "Tokyo Ghoul: Jack",
+    "title_pt": "Tokyo Ghoul: Jack",
+    "year": 2015,
+    "genres": "Horror|Action|Animation|Drama",
+    "imdb_score": 7.6,
+    "director": "Soichi Shimada",
+    "imdb_id": "tt5265536"
+  },
+  {
+    "title_en": "Hyouka: Forbidden Secrets",
+    "title_pt": "氷菓",
+    "year": 2017,
+    "genres": "Drama|Mystery",
+    "imdb_score": 5.5,
+    "director": "安里麻里",
+    "imdb_id": "tt5573852"
+  },
+  {
+    "title_en": "Anonymous Noise",
+    "title_pt": "覆面系ノイズ",
+    "year": 2017,
+    "genres": "Romance|Comedy|Drama|Music",
+    "imdb_score": 7.7,
+    "director": "三木康一郎",
+    "imdb_id": "tt6131672"
+  },
+  {
+    "title_en": "Corpse Party: Book of Shadows",
+    "title_pt": "コープスパーティー Book of Shadows",
+    "year": 2016,
+    "genres": "Horror|Anime",
+    "imdb_score": 6.2,
+    "director": "山田雅史",
+    "imdb_id": "tt5641606"
+  },
+  {
+    "title_en": "Parasyte: Part 1",
+    "title_pt": "Parasita - Parte 1",
+    "year": 2014,
+    "genres": "Sci-Fi|Horror|Action|Drama|Anime",
+    "imdb_score": 7.1,
+    "director": "Takashi Yamazaki",
+    "imdb_id": "tt3345472"
+  },
+  {
+    "title_en": "Another Gantz",
+    "title_pt": "Another Gantz",
+    "year": 2011,
+    "genres": "Action|Sci-Fi|Mystery|Anime",
+    "imdb_score": 7.0,
+    "director": "佐藤信介",
+    "imdb_id": "tt1912350"
+  },
+  {
+    "title_en": "BECK",
+    "title_pt": "BECK",
+    "year": 2010,
+    "genres": "Drama|Music|Anime",
+    "imdb_score": 6.5,
+    "director": "堤幸彦",
+    "imdb_id": "tt1587118"
+  },
+  {
+    "title_en": "MW",
+    "title_pt": "MW",
+    "year": 2009,
+    "genres": "Drama|Sci-Fi|Thriller|Anime",
+    "imdb_score": 6.3,
+    "director": "岩本仁志",
+    "imdb_id": "tt1242755"
+  },
+  {
+    "title_en": "Goth",
+    "title_pt": "GOTH",
+    "year": 2008,
+    "genres": "Thriller|Drama|Mystery|Crime|Horror|Anime",
+    "imdb_score": 6.3,
+    "director": "高橋玄",
+    "imdb_id": "tt1092006"
+  },
+  {
+    "title_en": "Kojiro of the Fuma: Fuma Rebellion Chapter",
+    "title_pt": "風魔の小次郎 最終章 風魔反乱篇",
+    "year": 1992,
+    "genres": "Fantasy|Action|Animation",
+    "imdb_score": 5.3,
+    "director": "Kazuhito Kikuchi",
+    "imdb_id": ""
+  },
+  {
+    "title_en": "Saikano: The Last Love Song on This Little Planet",
+    "title_pt": "最終兵器彼女",
+    "year": 2006,
+    "genres": "Action|Thriller|Sci-Fi|Romance|Anime",
+    "imdb_score": 4.2,
+    "director": "Taikan Suga",
+    "imdb_id": "tt0826175"
+  },
+  {
+    "title_en": "Azumi 2: Death or Love",
+    "title_pt": "Azumi 2",
+    "year": 2005,
+    "genres": "Action|Anime",
+    "imdb_score": 6.6,
+    "director": "金子修介",
+    "imdb_id": "tt0431641"
+  },
+  {
+    "title_en": "Sakamoto Days",
+    "title_pt": "SAKAMOTO DAYS",
+    "year": 2026,
+    "genres": "Action|Comedy|Family|Adventure|Anime",
+    "imdb_score": 0.0,
+    "director": "福田雄一",
+    "imdb_id": "tt38488719"
+  },
+  {
+    "title_en": "WIND BREAKER／Uindo Bureikā",
+    "title_pt": "WIND BREAKER／ウィンドブレイカー",
+    "year": 2025,
+    "genres": "Adventure",
+    "imdb_score": 0.0,
+    "director": "萩原健太郎",
+    "imdb_id": "tt37370906"
+  },
+  {
+    "title_en": "Mieruko-chan",
+    "title_pt": "見える子ちゃん",
+    "year": 2025,
+    "genres": "Horror|Comedy|Anime",
+    "imdb_score": 5.8,
+    "director": "中村義洋",
+    "imdb_id": "tt33829458"
+  },
+  {
+    "title_en": "Cells at Work!",
+    "title_pt": "Cells at Work!",
+    "year": 2024,
+    "genres": "Adventure|Action|Comedy|Fantasy|Anime",
+    "imdb_score": 7.9,
+    "director": "武内英樹",
+    "imdb_id": "tt27192829"
+  },
+  {
+    "title_en": "Watch Me When I Kill",
+    "title_pt": "Il gatto dagli occhi di giada",
+    "year": 1977,
+    "genres": "Horror|Mystery|Thriller",
+    "imdb_score": 5.5,
+    "director": "Antonio Bido",
+    "imdb_id": "tt0076068"
+  },
+  {
+    "title_en": "Fullmetal Alchemist: The Revenge of Scar",
+    "title_pt": "Fullmetal Alchemist: A Vingança de Scar",
+    "year": 2022,
+    "genres": "Fantasy|Action|Adventure|Anime",
+    "imdb_score": 6.5,
+    "director": "曽利文彦",
+    "imdb_id": "tt18671386"
+  },
+  {
+    "title_en": "Love Stage!!",
+    "title_pt": "LOVE STAGE!!",
+    "year": 2020,
+    "genres": "Romance|Comedy|Drama|Anime",
+    "imdb_score": 5.0,
+    "director": "Hiroki Inoue",
+    "imdb_id": "tt10702938"
+  },
+  {
+    "title_en": "Tokyo Revengers",
+    "title_pt": "Tokyo Revengers",
+    "year": 2021,
+    "genres": "Action|Drama|Crime|Anime",
+    "imdb_score": 7.8,
+    "director": "英勉",
+    "imdb_id": "tt11923304"
+  },
+  {
+    "title_en": "Grand Blue",
+    "title_pt": "Grand Blue",
+    "year": 2020,
+    "genres": "Comedy|Anime",
+    "imdb_score": 5.7,
+    "director": "英勉",
+    "imdb_id": "tt11312092"
+  },
+  {
+    "title_en": "Kiss Him, Not Me",
+    "title_pt": "私がモテてどうすんだ",
+    "year": 2020,
+    "genres": "Romance|Comedy",
+    "imdb_score": 6.3,
+    "director": "平沼紀久",
+    "imdb_id": "tt11595702"
+  },
+  {
+    "title_en": "Back Street Girls: Gokudoruzu",
+    "title_pt": "BACK STREET GIRLS -ゴクドルズ-",
+    "year": 2019,
+    "genres": "Action|Comedy|Anime",
+    "imdb_score": 5.5,
+    "director": "原桂之介",
+    "imdb_id": "tt9261594"
+  },
+  {
+    "title_en": "Nisekoi: False Love",
+    "title_pt": "ニセコイ",
+    "year": 2018,
+    "genres": "Romance|Comedy|Anime",
+    "imdb_score": 7.4,
+    "director": "河合勇人",
+    "imdb_id": "tt8319778"
+  },
+  {
+    "title_en": "Real Girl",
+    "title_pt": "3D彼女 リアルガール",
+    "year": 2018,
+    "genres": "Romance",
+    "imdb_score": 6.4,
+    "director": "英勉",
+    "imdb_id": "tt8746914"
+  },
+  {
+    "title_en": "Gintama 2: Rules are Made to Be Broken",
+    "title_pt": "Gintama 2: Quebrando As Regras",
+    "year": 2018,
+    "genres": "Comedy|Action|Sci-Fi|Fantasy",
+    "imdb_score": 7.1,
+    "director": "福田雄一",
+    "imdb_id": "tt7639528"
+  },
+  {
+    "title_en": "After the Rain",
+    "title_pt": "After The Rain",
+    "year": 2018,
+    "genres": "Romance|Drama",
+    "imdb_score": 7.5,
+    "director": "永井聡",
+    "imdb_id": "tt7637350"
+  },
+  {
+    "title_en": "Inuyashiki",
+    "title_pt": "Inuyashiki",
+    "year": 2018,
+    "genres": "Action|Adventure|Sci-Fi|Fantasy|Anime",
+    "imdb_score": 7.6,
+    "director": "佐藤信介",
+    "imdb_id": "tt6340500"
+  },
+  {
+    "title_en": "Erased",
+    "title_pt": "僕だけがいない街",
+    "year": 2016,
+    "genres": "Thriller|Fantasy",
+    "imdb_score": 6.7,
+    "director": "平川雄一朗",
+    "imdb_id": "tt4882964"
+  },
+  {
+    "title_en": "Fullmetal Alchemist",
+    "title_pt": "Fullmetal Alchemist",
+    "year": 2017,
+    "genres": "Fantasy|Action|Sci-Fi|Adventure|Anime",
+    "imdb_score": 5.4,
+    "director": "曽利文彦",
+    "imdb_id": "tt5607028"
+  },
+  {
+    "title_en": "Blade of the Immortal",
+    "title_pt": "A Espada do Imortal",
+    "year": 2017,
+    "genres": "Action|Fantasy|Adventure|Anime",
+    "imdb_score": 6.7,
+    "director": "Takashi Miike",
+    "imdb_id": "tt5084170"
+  },
+  {
+    "title_en": "Ajin: Demi-Human",
+    "title_pt": "Ajin: Semi-Humano",
+    "year": 2017,
+    "genres": "Action|Horror|Mystery|Anime",
+    "imdb_score": 7.3,
+    "director": "本広克行",
+    "imdb_id": "tt6215712"
+  },
+  {
+    "title_en": "Gintama: The Final Chapter - Be Forever Yorozuya",
+    "title_pt": "Gintama: The Final Chapter - Be Forever Yorozuya",
+    "year": 2013,
+    "genres": "Action|Comedy|Animation",
+    "imdb_score": 7.9,
+    "director": "藤田陽一",
+    "imdb_id": "tt2374144"
+  },
+  {
+    "title_en": "March Goes out Like a Lamb",
+    "title_pt": "3月のライオン 後編",
+    "year": 2017,
+    "genres": "Drama",
+    "imdb_score": 7.1,
+    "director": "大友啓史",
+    "imdb_id": "tt5556068"
+  },
+  {
+    "title_en": "ReLIFE",
+    "title_pt": "ReLIFE",
+    "year": 2017,
+    "genres": "Comedy|Drama|Romance|Anime",
+    "imdb_score": 7.5,
+    "director": "古澤健",
+    "imdb_id": "tt6121428"
+  },
+  {
+    "title_en": "One Week Friends",
+    "title_pt": "一週間フレンズ。",
+    "year": 2017,
+    "genres": "Romance|Drama",
+    "imdb_score": 6.7,
+    "director": "村上正典",
+    "imdb_id": "tt5167966"
+  },
+  {
+    "title_en": "Mischievous Kiss the Movie Part 1: High School",
+    "title_pt": "Mischievous Kiss the Movie: High School",
+    "year": 2016,
+    "genres": "Comedy|Romance|Anime",
+    "imdb_score": 6.4,
+    "director": "Minoru Mizoguchi",
+    "imdb_id": "tt5336230"
+  },
+  {
+    "title_en": "Cutie Honey: Tears",
+    "title_pt": "Cutie Honey: Lágrimas",
+    "year": 2016,
+    "genres": "Action|Sci-Fi|Anime",
+    "imdb_score": 5.4,
+    "director": "Takeshi Asai",
+    "imdb_id": "tt5520970"
+  },
+  {
+    "title_en": "Your Lie in April: Moments",
+    "title_pt": "四月は君の嘘 MOMENTS",
+    "year": 2015,
+    "genres": "Animation|Romance|Drama",
+    "imdb_score": 4.0,
+    "director": "イシグロキョウヘイ",
+    "imdb_id": "tt7521902"
+  },
+  {
+    "title_en": "The Werewolf Game: Prison Break",
+    "title_pt": "人狼ゲーム プリズン・ブレイク",
+    "year": 2016,
+    "genres": "Thriller|Horror|Anime",
+    "imdb_score": 6.4,
+    "director": "綾部真弥",
+    "imdb_id": "tt5923124"
+  },
+  {
+    "title_en": "Midori",
+    "title_pt": "Midori",
+    "year": 2006,
+    "genres": "Drama|Anime",
+    "imdb_score": 0.0,
+    "director": "Koldo Almandoz",
+    "imdb_id": "tt1563727"
+  },
+  {
+    "title_en": "Terra Formars",
+    "title_pt": "Terra Formars - Missão em Marte",
+    "year": 2016,
+    "genres": "Action|Horror|Sci-Fi|Anime",
+    "imdb_score": 6.1,
+    "director": "Takashi Miike",
+    "imdb_id": "tt4433646"
+  },
+  {
+    "title_en": "Assassination Classroom: Graduation",
+    "title_pt": "Assassination Classroom: Graduation",
+    "year": 2016,
+    "genres": "Comedy|Action|Sci-Fi|Anime",
+    "imdb_score": 7.1,
+    "director": "羽住英一郎",
+    "imdb_id": "tt4641264"
+  },
+  {
+    "title_en": "Reform School",
+    "title_pt": "Reform School",
+    "year": 1939,
+    "genres": "Action|Crime|Drama",
+    "imdb_score": 0.0,
+    "director": "Leo C. Popkin",
+    "imdb_id": "tt0031843"
+  },
+  {
+    "title_en": "Bakuman",
+    "title_pt": "Bakuman",
+    "year": 2015,
+    "genres": "Drama|Comedy|Anime",
+    "imdb_score": 6.4,
+    "director": "大根仁",
+    "imdb_id": "tt3715854"
+  },
+  {
+    "title_en": "Lychee Light Club",
+    "title_pt": "ライチDE光クラブ",
+    "year": 2012,
+    "genres": "Animation|Comedy|Drama|Horror|Romance",
+    "imdb_score": 1.0,
+    "director": "高田真宏",
+    "imdb_id": "tt6311828"
+  },
+  {
+    "title_en": "Attack on Titan: Crimson Bow and Arrow",
+    "title_pt": "Attack on Titan - Parte 1: O Arco e Flecha Escarlate",
+    "year": 2014,
+    "genres": "Animation|Action|Adventure|Fantasy",
+    "imdb_score": 8.1,
+    "director": "荒木哲郎",
+    "imdb_id": "tt3646944"
+  },
+  {
+    "title_en": "Parasyte: Part 2",
+    "title_pt": "Parasita - Parte 2",
+    "year": 2015,
+    "genres": "Sci-Fi|Horror|Action|Drama|Anime",
+    "imdb_score": 7.1,
+    "director": "Takashi Yamazaki",
+    "imdb_id": "tt3345474"
+  },
+  {
+    "title_en": "Joker Game",
+    "title_pt": "Joker Game",
+    "year": 2015,
+    "genres": "Action|Thriller|Anime",
+    "imdb_score": 5.8,
+    "director": "入江悠",
+    "imdb_id": "tt3446906"
+  },
+  {
+    "title_en": "As the Gods Will",
+    "title_pt": "As the Gods Will",
+    "year": 2014,
+    "genres": "Thriller|Horror|Comedy|Anime",
+    "imdb_score": 7.1,
+    "director": "Takashi Miike",
+    "imdb_id": "tt3354222"
+  },
+  {
+    "title_en": "Rurouni Kenshin Part III: The Legend Ends",
+    "title_pt": "Samurai X 3: O Fim de Uma Lenda",
+    "year": 2014,
+    "genres": "Action|Adventure|Fantasy|Anime",
+    "imdb_score": 7.7,
+    "director": "大友啓史",
+    "imdb_id": "tt3029556"
+  },
+  {
+    "title_en": "Lupin the 3rd",
+    "title_pt": "Lupin III e o Coração Púrpura de Cleópatra",
+    "year": 2014,
+    "genres": "Action|Adventure|Comedy|Crime|Anime",
+    "imdb_score": 6.0,
+    "director": "北村龍平",
+    "imdb_id": "tt0862748"
+  },
+  {
+    "title_en": "Rurouni Kenshin Part II: Kyoto Inferno",
+    "title_pt": "Samurai X 2: O Inferno de Kyoto",
+    "year": 2014,
+    "genres": "Action|Adventure|Drama|Fantasy|Anime",
+    "imdb_score": 7.6,
+    "director": "大友啓史",
+    "imdb_id": "tt3029558"
+  },
+  {
+    "title_en": "Kite",
+    "title_pt": "Anjo da Vingança",
+    "year": 2014,
+    "genres": "Drama|Action|Anime",
+    "imdb_score": 4.3,
+    "director": "Ralph Ziman",
+    "imdb_id": "tt2044801"
+  },
+  {
+    "title_en": "Black Butler",
+    "title_pt": "Black Butler: O Mordomo de Preto",
+    "year": 2014,
+    "genres": "Horror|Fantasy|Action|Adventure|Mystery|Crime|Drama",
+    "imdb_score": 7.1,
+    "director": "大谷健太郎",
+    "imdb_id": "tt2630336"
+  },
+  {
+    "title_en": "009-1: The End of the Beginning",
+    "title_pt": "009ノ1（ゼロゼロクノイチ） THE END OF THE BEGINNING",
+    "year": 2013,
+    "genres": "Action|Sci-Fi|Crime|Drama|Anime",
+    "imdb_score": 5.8,
+    "director": "坂本浩一",
+    "imdb_id": "tt3008816"
+  },
+  {
+    "title_en": "Infini-T Force the Movie: Farewell Gatchaman My Friend",
+    "title_pt": "Infini-T Force: Gatchaman - Saraba Tomo yo",
+    "year": 2018,
+    "genres": "Action|Adventure|Animation|Crime|Sci-Fi",
+    "imdb_score": 5.5,
+    "director": "松本淳",
+    "imdb_id": "tt9072902"
+  },
+  {
+    "title_en": "xxxHolic: Rō",
+    "title_pt": "×××HOLiC・籠",
+    "year": 2010,
+    "genres": "Animation|Mystery",
+    "imdb_score": 7.2,
+    "director": "水島努",
+    "imdb_id": "tt1648133"
+  },
+  {
+    "title_en": "Love for Beginners",
+    "title_pt": "Love for Beginners",
+    "year": 2012,
+    "genres": "Romance|Comedy|Anime",
+    "imdb_score": 7.2,
+    "director": "古澤健",
+    "imdb_id": "tt2118667"
+  },
+  {
+    "title_en": "Rurouni Kenshin Part I: Origins",
+    "title_pt": "Samurai X: O Filme",
+    "year": 2012,
+    "genres": "Adventure|Action|Fantasy|War|History|Anime",
+    "imdb_score": 7.5,
+    "director": "大友啓史",
+    "imdb_id": "tt1979319"
+  },
+  {
+    "title_en": "Another",
+    "title_pt": "Another",
+    "year": 2013,
+    "genres": "Animation|Anime",
+    "imdb_score": 5.7,
+    "director": "Sean Buckelew",
+    "imdb_id": "tt2556636"
+  },
+  {
+    "title_en": "We Were There: True Love",
+    "title_pt": "僕等がいた 後篇",
+    "year": 2012,
+    "genres": "Drama|Romance",
+    "imdb_score": 8.2,
+    "director": "三木孝浩",
+    "imdb_id": "tt2002626"
+  },
+  {
+    "title_en": "Ouran High School Host Club",
+    "title_pt": "Ouran High School Host Club Movie",
+    "year": 2012,
+    "genres": "Comedy|Anime",
+    "imdb_score": 6.2,
+    "director": "Satoshi Kan",
+    "imdb_id": "tt2036375"
+  },
+  {
+    "title_en": "We Were There: First Love",
+    "title_pt": "僕等がいた 前篇",
+    "year": 2012,
+    "genres": "Romance|Drama",
+    "imdb_score": 7.6,
+    "director": "三木孝浩",
+    "imdb_id": "tt1866931"
+  },
+  {
+    "title_en": "Frank Lloyd Wright: Phoenix From the Ashes",
+    "title_pt": "Frank Lloyd Wright – Der Phoenix aus der Asche",
+    "year": 2020,
+    "genres": "Documentary|History|TV Movie",
+    "imdb_score": 7.7,
+    "director": "Sigrid Faltin",
+    "imdb_id": "tt13510950"
+  },
+  {
+    "title_en": "Arakawa Under the Bridge",
+    "title_pt": "Arakawa Under the Bridge",
+    "year": 2012,
+    "genres": "Comedy|Anime",
+    "imdb_score": 6.8,
+    "director": "飯塚健",
+    "imdb_id": "tt1880923"
+  },
+  {
+    "title_en": "Ranma ½",
+    "title_pt": "らんま1/2",
+    "year": 2011,
+    "genres": "Action|Comedy|Fantasy|TV Movie",
+    "imdb_score": 6.8,
+    "director": "西村了",
+    "imdb_id": "tt2072214"
+  },
+  {
+    "title_en": "Ousama Game",
+    "title_pt": "王様ゲーム",
+    "year": 2011,
+    "genres": "Horror|Thriller|Mystery|Anime",
+    "imdb_score": 6.2,
+    "director": "鶴田法男",
+    "imdb_id": "tt1986089"
+  },
+  {
+    "title_en": "Bunny Drop",
+    "title_pt": "Bunny Drop: Surpresas da Vida",
+    "year": 2011,
+    "genres": "Drama|Comedy|Anime",
+    "imdb_score": 7.1,
+    "director": "SABU",
+    "imdb_id": "tt1672214"
+  },
+  {
+    "title_en": "Paradise Kiss",
+    "title_pt": "パラダイス・キス",
+    "year": 2011,
+    "genres": "Drama|Romance|Anime",
+    "imdb_score": 7.1,
+    "director": "新城毅彦",
+    "imdb_id": "tt1693989"
+  },
+  {
+    "title_en": "Gantz: Perfect Answer",
+    "title_pt": "Gantz: Resposta Perfeita",
+    "year": 2011,
+    "genres": "Action|Mystery|Sci-Fi|Horror|Anime",
+    "imdb_score": 6.7,
+    "director": "佐藤信介",
+    "imdb_id": "tt1525836"
+  },
+  {
+    "title_en": "Young Black Jack",
+    "title_pt": "ヤング ブラック・ジャック",
+    "year": 2011,
+    "genres": "Thriller|Drama|Anime",
+    "imdb_score": 7.5,
+    "director": "大谷健太郎",
+    "imdb_id": "tt1882164"
+  },
+  {
+    "title_en": "Tomorrow's Joe The Movie",
+    "title_pt": "Tomorrow's Joe The Movie",
+    "year": 1980,
+    "genres": "Action|Animation|Drama",
+    "imdb_score": 8.8,
+    "director": "出崎統",
+    "imdb_id": "tt1682222"
+  },
+  {
+    "title_en": "Bartender",
+    "title_pt": "Bartender",
+    "year": 1997,
+    "genres": "Anime",
+    "imdb_score": 0.0,
+    "director": "Gabe Torres",
+    "imdb_id": "tt0135791"
+  },
+  {
+    "title_en": "Gantz",
+    "title_pt": "Gantz",
+    "year": 2010,
+    "genres": "Horror|Action|Sci-Fi|Anime",
+    "imdb_score": 6.5,
+    "director": "佐藤信介",
+    "imdb_id": "tt1525835"
+  },
+  {
+    "title_en": "Pure Heart",
+    "title_pt": "純情",
+    "year": 2010,
+    "genres": "Romance|Drama",
+    "imdb_score": 5.0,
+    "director": "金田敬",
+    "imdb_id": "tt1710397"
+  },
+  {
+    "title_en": "Black Dynamite",
+    "title_pt": "Black Dynamite",
+    "year": 2009,
+    "genres": "Comedy|Action|Anime",
+    "imdb_score": 7.1,
+    "director": "Scott Sanders",
+    "imdb_id": "tt1190536"
+  },
+  {
+    "title_en": "Antique",
+    "title_pt": "Antique",
+    "year": 0,
+    "genres": "Anime",
+    "imdb_score": 0.0,
+    "director": "Hadi Naeeji",
+    "imdb_id": "tt35615501"
+  },
+  {
+    "title_en": "Kitaro and the Millennium Curse",
+    "title_pt": "ゲゲゲの鬼太郎 千年呪い歌",
+    "year": 2008,
+    "genres": "Fantasy|Adventure",
+    "imdb_score": 4.9,
+    "director": "本木克英",
+    "imdb_id": "tt1169147"
+  },
+  {
+    "title_en": "Dive, Dive, Dive! with Robert Llewellyn",
+    "title_pt": "Dive, Dive, Dive! with Robert Llewellyn",
+    "year": 2010,
+    "genres": "Documentary",
+    "imdb_score": 5.0,
+    "director": "Jenny MacLeod",
+    "imdb_id": "tt11238054"
+  },
+  {
+    "title_en": "Honey and Clover: A Recipe for Disaster",
+    "title_pt": "Honey and Clover: A Recipe for Disaster",
+    "year": 2019,
+    "genres": "Comedy",
+    "imdb_score": 0.0,
+    "director": "Andrea Maxwell",
+    "imdb_id": "tt10481058"
+  },
+  {
+    "title_en": "Shrill Cries of Summer",
+    "title_pt": "ひぐらしのなく頃に",
+    "year": 2008,
+    "genres": "Drama|Horror|Comedy|Anime",
+    "imdb_score": 5.4,
+    "director": "及川中",
+    "imdb_id": "tt1116935"
+  },
+  {
+    "title_en": "Tokyo Train Girls 2: Supervixen",
+    "title_pt": "Tokyo Train Girls 2: Supervixen",
+    "year": 2009,
+    "genres": "Drama",
+    "imdb_score": 4.9,
+    "director": "Tadashi Kyouya",
+    "imdb_id": "tt2345178"
+  },
+  {
+    "title_en": "Death Note: L Change the WorLd",
+    "title_pt": "Death Note: L Muda o Mundo",
+    "year": 2008,
+    "genres": "Fantasy|Action|Thriller|Sci-Fi|Mystery",
+    "imdb_score": 6.0,
+    "director": "Hideo Nakata",
+    "imdb_id": "tt0912597"
+  },
+  {
+    "title_en": "The Birth of Kitaro: The Mystery of GeGeGe",
+    "title_pt": "Kitaro Tanjou: GeGeGe no Nazo",
+    "year": 2023,
+    "genres": "Animation|Comedy|Mystery|Fantasy|Horror",
+    "imdb_score": 7.5,
+    "director": "古賀豪",
+    "imdb_id": "tt16270512"
+  },
+  {
+    "title_en": "Mushi-Shi: The Movie",
+    "title_pt": "蟲師",
+    "year": 2007,
+    "genres": "Fantasy",
+    "imdb_score": 6.1,
+    "director": "大友克洋",
+    "imdb_id": "tt0862946"
+  },
+  {
+    "title_en": "Dororo",
+    "title_pt": "Dororo",
+    "year": 2007,
+    "genres": "Action|Fantasy|Horror|Sci-Fi|Anime",
+    "imdb_score": 7.0,
+    "director": "塩田明彦",
+    "imdb_id": "tt0780503"
+  },
+  {
+    "title_en": "Hell Girl",
+    "title_pt": "地獄少女",
+    "year": 2019,
+    "genres": "Horror|Fantasy",
+    "imdb_score": 6.2,
+    "director": "白石晃士",
+    "imdb_id": "tt8991564"
+  },
+  {
+    "title_en": "Death Note: The Last Name",
+    "title_pt": "Death Note - O Último Nome",
+    "year": 2006,
+    "genres": "Fantasy|Thriller|Mystery|Anime",
+    "imdb_score": 7.1,
+    "director": "金子修介",
+    "imdb_id": "tt0810827"
+  },
+  {
+    "title_en": "Looking Up at the Half-Moon",
+    "title_pt": "Hanbun no Tsuki ga Noboru Sora",
+    "year": 2010,
+    "genres": "Drama|Romance|Anime",
+    "imdb_score": 6.0,
+    "director": "深川栄洋",
+    "imdb_id": "tt1542892"
+  },
+  {
+    "title_en": "Lovely Complex",
+    "title_pt": "ラブ★コン",
+    "year": 2006,
+    "genres": "Comedy|Romance|Anime",
+    "imdb_score": 6.0,
+    "director": "Kitaji Ishikawa",
+    "imdb_id": "tt0810415"
+  },
+  {
+    "title_en": "Death Note",
+    "title_pt": "Death Note - O Primeiro Nome",
+    "year": 2006,
+    "genres": "Fantasy|Mystery|Thriller|Anime",
+    "imdb_score": 7.1,
+    "director": "金子修介",
+    "imdb_id": "tt0758742"
+  },
+  {
+    "title_en": "Nana",
+    "title_pt": "Nana",
+    "year": 2023,
+    "genres": "Drama|Romance|Anime",
+    "imdb_score": 0.0,
+    "director": "Maryna Bogdan",
+    "imdb_id": "tt21830924"
+  },
+  {
+    "title_en": "Cromartie High School: The Movie",
+    "title_pt": "魁!!クロマティ高校　THE★MOVIE",
+    "year": 2005,
+    "genres": "Comedy",
+    "imdb_score": 5.5,
+    "director": "山口雄大",
+    "imdb_id": "tt0454250"
+  },
+  {
+    "title_en": "Devilman - Volume 1: The Birth",
+    "title_pt": "Devilman: Volume 1",
+    "year": 1987,
+    "genres": "Action|Fantasy|Horror|Animation",
+    "imdb_score": 6.9,
+    "director": "飯田馬之介",
+    "imdb_id": "tt4463070"
+  },
+  {
+    "title_en": "Cutie Honey",
+    "title_pt": "Cutie Honey",
+    "year": 2004,
+    "genres": "Action",
+    "imdb_score": 6.3,
+    "director": "Hideaki Anno",
+    "imdb_id": "tt0409860"
+  },
+  {
+    "title_en": "Pretty Guardian Sailor Moon Cosmos the Movie Part 1",
+    "title_pt": "Pretty Guardian Sailor Moon Cosmos: O Filme – Parte 1",
+    "year": 2023,
+    "genres": "Animation|Action|Adventure|Fantasy|Romance",
+    "imdb_score": 7.2,
+    "director": "高橋知也",
+    "imdb_id": "tt19861160"
+  },
+  {
+    "title_en": "Perfect Blue: Yume Nara Samete",
+    "title_pt": "PERFECT BLUE 夢なら醒めて",
+    "year": 2002,
+    "genres": "Drama|Mystery|Thriller",
+    "imdb_score": 6.4,
+    "director": "サトウトシキ",
+    "imdb_id": "tt0367257"
+  },
+  {
+    "title_en": "Crying Freeman",
+    "title_pt": "O Combate - Lágrimas do Guerreiro",
+    "year": 1995,
+    "genres": "Action|Crime|Anime",
+    "imdb_score": 6.3,
+    "director": "Christophe Gans",
+    "imdb_id": "tt0112750"
+  },
+  {
+    "title_en": "Fist of the North Star",
+    "title_pt": "O Guerreiro da Estrela Polar",
+    "year": 1995,
+    "genres": "Action|Sci-Fi|Thriller|Anime",
+    "imdb_score": 4.3,
+    "director": "Tony Randel",
+    "imdb_id": "tt0113074"
+  },
+  {
+    "title_en": "Dragon Ball Z: Resurrection 'F'",
+    "title_pt": "Dragon Ball Z: O Renascimento de Freeza",
+    "year": 2015,
+    "genres": "Action|Animation|Sci-Fi|Anime",
+    "imdb_score": 6.9,
+    "director": "山室直儀",
+    "imdb_id": "tt3819668"
+  },
+  {
+    "title_en": "Solo Leveling -ReAwakening-",
+    "title_pt": "Solo Leveling -Segundo Despertar-",
+    "year": 2024,
+    "genres": "Action|Adventure|Fantasy|Animation",
+    "imdb_score": 7.1,
+    "director": "中重俊祐",
+    "imdb_id": "tt33428606"
+  },
+  {
+    "title_en": "Azumi",
+    "title_pt": "Azumi",
+    "year": 2003,
+    "genres": "Adventure|Drama|Action|Thriller|Romance|Anime",
+    "imdb_score": 6.9,
+    "director": "北村龍平",
+    "imdb_id": "tt0384819"
+  },
+  {
+    "title_en": "Fireworks",
+    "title_pt": "Luzes no Céu: Fireworks",
+    "year": 2017,
+    "genres": "Animation|Drama|Fantasy|Romance|Anime",
+    "imdb_score": 6.6,
+    "director": "武内宣之",
+    "imdb_id": "tt6317962"
+  },
+  {
+    "title_en": "From Up on Poppy Hill",
+    "title_pt": "Da Colina Kokuriko",
+    "year": 2011,
+    "genres": "Animation|Drama|Anime",
+    "imdb_score": 7.5,
+    "director": "宮崎吾朗",
+    "imdb_id": "tt1798188"
+  },
+  {
+    "title_en": "Evangelion: 2.0 You Can (Not) Advance",
+    "title_pt": "Evangelion: 2.0 Você (Não) Pode Avançar",
+    "year": 2009,
+    "genres": "Animation|Sci-Fi|Action|Drama|Anime",
+    "imdb_score": 7.8,
+    "director": "摩砂雪",
+    "imdb_id": "tt0860906"
+  },
+  {
+    "title_en": "Ghost in the Shell 2.0",
+    "title_pt": "Ghost in the Shell 2.0",
+    "year": 2008,
+    "genres": "Action|Animation|Crime|Sci-Fi|Anime",
+    "imdb_score": 7.4,
+    "director": "Mamoru Oshii",
+    "imdb_id": "tt1260502"
+  },
+  {
+    "title_en": "Neon Genesis Evangelion: Death and Rebirth",
+    "title_pt": "Neon Genesis Evangelion: Morte e Renascimento",
+    "year": 1997,
+    "genres": "Animation|Drama|Sci-Fi|Anime",
+    "imdb_score": 7.4,
+    "director": "Hideaki Anno",
+    "imdb_id": "tt0169880"
+  },
+  {
+    "title_en": "The Last: Naruto the Movie",
+    "title_pt": "The Last Naruto: O Filme",
+    "year": 2014,
+    "genres": "Action|Romance|Animation|Anime",
+    "imdb_score": 7.5,
+    "director": "小林常夫",
+    "imdb_id": "tt3717532"
+  },
+  {
+    "title_en": "In This Corner of the World",
+    "title_pt": "Neste Canto do Mundo",
+    "year": 2016,
+    "genres": "Drama|Animation|Romance|War|History|Anime",
+    "imdb_score": 7.9,
+    "director": "片渕須直",
+    "imdb_id": "tt4769824"
+  },
+  {
+    "title_en": "Mr. Dough and the Egg Princess",
+    "title_pt": "パン種とタマゴ姫",
+    "year": 2010,
+    "genres": "Animation|Fantasy",
+    "imdb_score": 6.8,
+    "director": "Hayao Miyazaki",
+    "imdb_id": "tt1857816"
+  },
+  {
+    "title_en": "Mei and the Kittenbus",
+    "title_pt": "めいとこねこバス",
+    "year": 2002,
+    "genres": "Animation|Adventure|Family|Fantasy",
+    "imdb_score": 7.2,
+    "director": "Hayao Miyazaki",
+    "imdb_id": "tt0803038"
+  },
+  {
+    "title_en": "Dou kyu sei – Classmates",
+    "title_pt": "Colegas de Classe",
+    "year": 2016,
+    "genres": "Romance|Animation|Anime",
+    "imdb_score": 8.3,
+    "director": "中村章子",
+    "imdb_id": "tt5526028"
+  },
+  {
+    "title_en": "Gurren Lagann the Movie: The Lights in the Sky Are Stars",
+    "title_pt": "Gurren Lagann The Movie: The Lights in the Sky are Stars",
+    "year": 2009,
+    "genres": "Action|Sci-Fi|Animation|Adventure",
+    "imdb_score": 7.9,
+    "director": "今石洋之",
+    "imdb_id": "tt1422651"
+  },
+  {
+    "title_en": "Rascal Does Not Dream of a Dreaming Girl",
+    "title_pt": "Rascal Does Not Dream of a Dreaming Girl",
+    "year": 2019,
+    "genres": "Animation|Romance|Drama|Fantasy",
+    "imdb_score": 8.2,
+    "director": "増井壮一",
+    "imdb_id": "tt9881586"
+  },
+  {
+    "title_en": "Koro's Big Day Out",
+    "title_pt": "Koro no dai-sanpo",
+    "year": 2002,
+    "genres": "Animation|Anime",
+    "imdb_score": 7.1,
+    "director": "Hayao Miyazaki",
+    "imdb_id": "tt0803021"
+  },
+  {
+    "title_en": "Iblard Time",
+    "title_pt": "Iblard Jikan",
+    "year": 2007,
+    "genres": "Animation|Fantasy|Adventure|Mystery|Anime",
+    "imdb_score": 6.6,
+    "director": "井上直久",
+    "imdb_id": "tt1161426"
+  },
+  {
+    "title_en": "Heidi",
+    "title_pt": "Heidi",
+    "year": 2015,
+    "genres": "Adventure|Family|Drama|Anime",
+    "imdb_score": 7.2,
+    "director": "Alain Gsponer",
+    "imdb_id": "tt3700392"
+  },
+  {
+    "title_en": "Anne of Green Gables: Road to Green Gables",
+    "title_pt": "Anne of Green Gables: Road to Green Gables",
+    "year": 2010,
+    "genres": "Drama|Animation|Adventure|Anime",
+    "imdb_score": 7.0,
+    "director": "高畑勲",
+    "imdb_id": "tt2555422"
+  },
+  {
+    "title_en": "I Want to Eat Your Pancreas",
+    "title_pt": "Eu Quero Comer seu Pâncreas",
+    "year": 2018,
+    "genres": "Animation|Drama|Romance|Anime",
+    "imdb_score": 8.2,
+    "director": "牛嶋新一郎",
+    "imdb_id": "tt7236034"
+  },
+  {
+    "title_en": "Summer Days with Coo",
+    "title_pt": "Férias de Verão com Coo",
+    "year": 2007,
+    "genres": "Animation|Fantasy|Comedy|Romance|Drama|Family|Anime",
+    "imdb_score": 7.8,
+    "director": "原恵一",
+    "imdb_id": "tt1179773"
+  },
+  {
+    "title_en": "The Red Turtle",
+    "title_pt": "A Tartaruga Vermelha",
+    "year": 2016,
+    "genres": "Animation|Drama|Fantasy|Family|Anime",
+    "imdb_score": 7.4,
+    "director": "Michael Dudok de Wit",
+    "imdb_id": "tt3666024"
+  },
+  {
+    "title_en": "Detonator Orgun",
+    "title_pt": "デトネイター・オーガン",
+    "year": 1991,
+    "genres": "Animation|Sci-Fi|Anime",
+    "imdb_score": 4.3,
+    "director": "大張正己",
+    "imdb_id": "tt0101718"
+  },
+  {
+    "title_en": "A Journey Through Fairyland",
+    "title_pt": "妖精フローレンス",
+    "year": 1985,
+    "genres": "Fantasy|Family|Animation",
+    "imdb_score": 4.2,
+    "director": "波多正美",
+    "imdb_id": "tt0297215"
+  },
+  {
+    "title_en": "Mon Mon the Water Spider",
+    "title_pt": "水グモもんもん",
+    "year": 2006,
+    "genres": "Animation|Anime",
+    "imdb_score": 7.1,
+    "director": "Hayao Miyazaki",
+    "imdb_id": "tt0768132"
+  },
+  {
+    "title_en": "Oblivion Island: Haruka and the Magic Mirror",
+    "title_pt": "Hottarake no Shima: Haruka to Mahou no Kagami",
+    "year": 2009,
+    "genres": "Animation|Adventure|Anime",
+    "imdb_score": 6.5,
+    "director": "佐藤信介",
+    "imdb_id": "tt1468322"
+  },
+  {
+    "title_en": "Night Is Short, Walk On Girl",
+    "title_pt": "Night Is Short, Walk on Girl",
+    "year": 2017,
+    "genres": "Comedy|Romance|Animation|Fantasy|Anime",
+    "imdb_score": 7.4,
+    "director": "湯浅政明",
+    "imdb_id": "tt6335734"
+  },
+  {
+    "title_en": "Time of EVE: The Movie",
+    "title_pt": "A Hora de Eve",
+    "year": 2010,
+    "genres": "Animation|Sci-Fi|Drama",
+    "imdb_score": 7.1,
+    "director": "吉浦康裕",
+    "imdb_id": "tt1715210"
+  },
+  {
+    "title_en": "The Anthem of the Heart",
+    "title_pt": "O Hino do Coração",
+    "year": 2015,
+    "genres": "Animation|Drama|Music|Romance|Anime",
+    "imdb_score": 7.6,
+    "director": "長井龍雪",
+    "imdb_id": "tt4489416"
+  },
+  {
+    "title_en": "Book Girl",
+    "title_pt": "Gekijouban Bungaku Shoujo",
+    "year": 2010,
+    "genres": "Animation|Drama|Romance",
+    "imdb_score": 6.1,
+    "director": "多田俊介",
+    "imdb_id": "tt1546649"
+  },
+  {
+    "title_en": "Tatsumi",
+    "title_pt": "Tatsumi",
+    "year": 2011,
+    "genres": "Animation|History|Drama|Anime",
+    "imdb_score": 6.4,
+    "director": "Eric Khoo",
+    "imdb_id": "tt1922736"
+  },
+  {
+    "title_en": "Patema Inverted",
+    "title_pt": "Patema: Mundos Invertidos",
+    "year": 2013,
+    "genres": "Animation|Sci-Fi|Adventure|Drama",
+    "imdb_score": 7.4,
+    "director": "吉浦康裕",
+    "imdb_id": "tt2981768"
+  },
+  {
+    "title_en": "Oseam",
+    "title_pt": "Oseam",
+    "year": 2003,
+    "genres": "Drama|Animation|Anime",
+    "imdb_score": 6.3,
+    "director": "성백엽",
+    "imdb_id": "tt0359784"
+  },
+  {
+    "title_en": "Taro the Dragon Boy",
+    "title_pt": "Tatsu no Ko Tarou",
+    "year": 1979,
+    "genres": "Fantasy|Animation|Family|Adventure|Anime",
+    "imdb_score": 6.5,
+    "director": "浦山桐郎",
+    "imdb_id": "tt0061069"
+  },
+  {
+    "title_en": "Weathering with You",
+    "title_pt": "O Tempo com Você",
+    "year": 2019,
+    "genres": "Animation|Drama|Fantasy|Romance|Anime",
+    "imdb_score": 8.0,
+    "director": "Makoto Shinkai",
+    "imdb_id": "tt9426210"
+  },
+  {
+    "title_en": "Fate/stay night: Unlimited Blade Works",
+    "title_pt": "Fate/Stay Night: Unlimited Blade Works",
+    "year": 2010,
+    "genres": "Action|Fantasy|Animation|Drama|Anime",
+    "imdb_score": 6.8,
+    "director": "山口祐司",
+    "imdb_id": "tt1587156"
+  },
+  {
+    "title_en": "Afro Samurai: Resurrection",
+    "title_pt": "Afro Samurai: Resurrection",
+    "year": 2009,
+    "genres": "Animation|Action|Adventure|Drama|Fantasy|Sci-Fi|TV Movie|Anime",
+    "imdb_score": 6.8,
+    "director": "木崎文智",
+    "imdb_id": "tt1265998"
+  },
+  {
+    "title_en": "Tokyo Babylon 2",
+    "title_pt": "東京BABYLON 2",
+    "year": 1994,
+    "genres": "Animation|Fantasy|Anime",
+    "imdb_score": 0.0,
+    "director": "千明孝一",
+    "imdb_id": "tt4667646"
+  },
+  {
+    "title_en": "Barefoot Gen 2",
+    "title_pt": "Gen Pés Descalços 2",
+    "year": 1986,
+    "genres": "Animation|Drama|War|Anime",
+    "imdb_score": 6.5,
+    "director": "平田敏夫",
+    "imdb_id": "tt0171357"
+  },
+  {
+    "title_en": "Strike Witches the Movie",
+    "title_pt": "Strike Witches: O Filme",
+    "year": 2012,
+    "genres": "Animation|Action|Fantasy|Anime",
+    "imdb_score": 5.6,
+    "director": "高村和宏",
+    "imdb_id": "tt2322603"
+  },
+  {
+    "title_en": "Trigun: Badlands Rumble",
+    "title_pt": "Trigun: Badlands Rumble",
+    "year": 2010,
+    "genres": "Action|Animation|Sci-Fi|Adventure|Anime",
+    "imdb_score": 7.5,
+    "director": "西村聡",
+    "imdb_id": "tt1703049"
+  },
+  {
+    "title_en": "Lupin the Third: The Mystery of Mamo",
+    "title_pt": "Lupin III: O Segredo de Mamo",
+    "year": 1978,
+    "genres": "Animation|Adventure|Comedy|Crime|Drama|Anime",
+    "imdb_score": 7.0,
+    "director": "吉川惣司",
+    "imdb_id": "tt0078187"
+  },
+  {
+    "title_en": "10,000 Days",
+    "title_pt": "10,000 Days",
+    "year": 2014,
+    "genres": "Sci-Fi",
+    "imdb_score": 2.9,
+    "director": "Eric Small",
+    "imdb_id": "tt3530690"
+  },
+  {
+    "title_en": "Promare",
+    "title_pt": "Promare",
+    "year": 2019,
+    "genres": "Animation|Action|Sci-Fi|Anime",
+    "imdb_score": 7.1,
+    "director": "今石洋之",
+    "imdb_id": "tt9116358"
+  },
+  {
+    "title_en": "Tales of Vesperia: The First Strike",
+    "title_pt": "Tales of Vesperia: The First Strike",
+    "year": 2009,
+    "genres": "Animation|Action|Adventure|Fantasy|Anime",
+    "imdb_score": 6.4,
+    "director": "亀井幹太",
+    "imdb_id": "tt1520392"
+  },
+  {
+    "title_en": "Gauche the Cellist",
+    "title_pt": "Goshu: O Violoncelista",
+    "year": 1982,
+    "genres": "Animation|Music|Fantasy|Anime",
+    "imdb_score": 7.2,
+    "director": "高畑勲",
+    "imdb_id": "tt0083053"
+  },
+  {
+    "title_en": "Asura",
+    "title_pt": "Asura",
+    "year": 2015,
+    "genres": "Romance|Action|Thriller|Anime",
+    "imdb_score": 6.0,
+    "director": "Krishna Vijay",
+    "imdb_id": "tt4786606"
+  },
+  {
+    "title_en": "Chie the Brat",
+    "title_pt": "Jarinko Chie",
+    "year": 1981,
+    "genres": "Family|Animation|Comedy|Drama",
+    "imdb_score": 6.7,
+    "director": "高畑勲",
+    "imdb_id": "tt0081881"
+  },
+  {
+    "title_en": "Aladdin and His Wonder Lamp",
+    "title_pt": "Aladdin e a Lâmpada Maravilhosa",
+    "year": 1906,
+    "genres": "Fantasy|Anime",
+    "imdb_score": 6.2,
+    "director": "Albert Capellani",
+    "imdb_id": "tt0257381"
+  },
+  {
+    "title_en": "The Dreams of Jinsha",
+    "title_pt": "梦回金沙城",
+    "year": 2010,
+    "genres": "Animation|Anime",
+    "imdb_score": 5.5,
+    "director": "Daming Chen",
+    "imdb_id": "tt1777620"
+  },
+  {
+    "title_en": "Street Fighter II: The Animated Movie",
+    "title_pt": "Street Fighter II: O Filme",
+    "year": 1994,
+    "genres": "Animation|Action|Anime",
+    "imdb_score": 7.1,
+    "director": "杉井ギサブロー",
+    "imdb_id": "tt0114563"
+  },
+  {
+    "title_en": "Love, Chunibyo & Other Delusions! Rikka Version",
+    "title_pt": "Takanashi Rikka Kai: Chuunibyou demo Koi ga Shitai! Movie",
+    "year": 2013,
+    "genres": "Comedy|Animation|Drama|Romance|Anime",
+    "imdb_score": 7.2,
+    "director": "石原立也",
+    "imdb_id": "tt3203996"
+  },
+  {
+    "title_en": "The Boy Who Saw the Wind",
+    "title_pt": "風を見た少年",
+    "year": 2000,
+    "genres": "Adventure|Family|Animation|Fantasy",
+    "imdb_score": 6.9,
+    "director": "大森一樹",
+    "imdb_id": "tt0784145"
+  },
+  {
+    "title_en": "The Laws of Eternity",
+    "title_pt": "As Leis da Eternidade",
+    "year": 2006,
+    "genres": "Animation|Fantasy|Anime",
+    "imdb_score": 1.8,
+    "director": "今掛勇",
+    "imdb_id": "tt0936472"
+  },
+  {
+    "title_en": "Eden of the East Movie II: Paradise Lost",
+    "title_pt": "Eden of the East Movie II: Paradise Lost",
+    "year": 2010,
+    "genres": "Animation|Mystery|Sci-Fi|Action",
+    "imdb_score": 6.8,
+    "director": "神山健治",
+    "imdb_id": "tt1468321"
+  },
+  {
+    "title_en": "The Sky Crawlers",
+    "title_pt": "The Sky Crawlers: Eternamente",
+    "year": 2008,
+    "genres": "Animation|Action|Adventure|War|Sci-Fi|Anime",
+    "imdb_score": 6.7,
+    "director": "Mamoru Oshii",
+    "imdb_id": "tt1056437"
+  },
+  {
+    "title_en": "Mary and The Witch's Flower",
+    "title_pt": "Mary e a Flor da Feiticeira",
+    "year": 2017,
+    "genres": "Adventure|Animation|Family|Fantasy|Anime",
+    "imdb_score": 7.1,
+    "director": "米林宏昌",
+    "imdb_id": "tt6336356"
+  },
+  {
+    "title_en": "Hello World",
+    "title_pt": "Hello World",
+    "year": 2019,
+    "genres": "Animation|Romance|Sci-Fi|Drama|Anime",
+    "imdb_score": 7.3,
+    "director": "伊藤智彦",
+    "imdb_id": "tt9418812"
+  },
+  {
+    "title_en": "The Life of Budori Gusuko",
+    "title_pt": "Guskou Budori no Denki (2012)",
+    "year": 2012,
+    "genres": "Drama|Animation|Fantasy|Anime",
+    "imdb_score": 6.7,
+    "director": "杉井ギサブロー",
+    "imdb_id": "tt2391821"
+  },
+  {
+    "title_en": "Miss Hokusai",
+    "title_pt": "Sarusuberi: Miss Hokusai",
+    "year": 2015,
+    "genres": "Animation|Drama|History|Anime",
+    "imdb_score": 6.7,
+    "director": "原恵一",
+    "imdb_id": "tt3689910"
+  },
+  {
+    "title_en": "Mirai",
+    "title_pt": "Mirai",
+    "year": 2018,
+    "genres": "Animation|Family|Fantasy|Adventure|Drama|Anime",
+    "imdb_score": 7.1,
+    "director": "細田守",
+    "imdb_id": "tt6900448"
+  },
+  {
+    "title_en": "Like the Clouds, Like the Wind",
+    "title_pt": "Kumo no You ni Kaze no You ni",
+    "year": 1990,
+    "genres": "Romance|Animation|Comedy|History|Anime",
+    "imdb_score": 6.9,
+    "director": "鳥海永行",
+    "imdb_id": "tt0185429"
+  },
+  {
+    "title_en": "Princess Arete",
+    "title_pt": "Princesa Arete",
+    "year": 2001,
+    "genres": "Adventure|Animation|Fantasy|Mystery|Anime",
+    "imdb_score": 6.9,
+    "director": "片渕須直",
+    "imdb_id": "tt0306474"
+  },
+  {
+    "title_en": "Giant God Warrior Appears in Tokyo",
+    "title_pt": "O Deus Guerreiro Gigante surge em Tokyo",
+    "year": 2012,
+    "genres": "Sci-Fi|Horror|Action|Animation|Anime",
+    "imdb_score": 6.6,
+    "director": "Shinji Higuchi",
+    "imdb_id": "tt2511906"
+  },
+  {
+    "title_en": "Lupin the Third vs. Detective Conan: The Movie",
+    "title_pt": "Lupin III vs. Detetive Conan: O Filme",
+    "year": 2013,
+    "genres": "Animation|Action|Thriller",
+    "imdb_score": 6.9,
+    "director": "亀垣一",
+    "imdb_id": "tt3335192"
+  },
+  {
+    "title_en": "Hells",
+    "title_pt": "Hells Angels",
+    "year": 2008,
+    "genres": "Action|Animation|Comedy|Fantasy|Horror|Anime",
+    "imdb_score": 6.7,
+    "director": "山川吉樹",
+    "imdb_id": "tt1313120"
+  },
+  {
+    "title_en": "Escaflowne: The Movie",
+    "title_pt": "Escaflowne: A Girl in Gaea",
+    "year": 2000,
+    "genres": "Animation|Adventure|Drama|Fantasy",
+    "imdb_score": 6.7,
+    "director": "赤根和樹",
+    "imdb_id": "tt0270933"
+  },
+  {
+    "title_en": "Blue Sky",
+    "title_pt": "Céu Azul",
+    "year": 1994,
+    "genres": "Drama|Romance|Anime",
+    "imdb_score": 6.1,
+    "director": "Tony Richardson",
+    "imdb_id": "tt0109306"
+  },
+  {
+    "title_en": "King of Thorn",
+    "title_pt": "Rei dos Espinhos",
+    "year": 2010,
+    "genres": "Fantasy|Animation|Sci-Fi",
+    "imdb_score": 6.6,
+    "director": "片山一良",
+    "imdb_id": "tt1690483"
+  },
+  {
+    "title_en": "Street Fighter Alpha: Generations",
+    "title_pt": "Street Fighter Alpha - Generations",
+    "year": 2005,
+    "genres": "Action|Animation|Anime",
+    "imdb_score": 6.9,
+    "director": "桑名郁朗",
+    "imdb_id": "tt0495900"
+  },
+  {
+    "title_en": "My Sister, My Love",
+    "title_pt": "My Sister, My Love",
+    "year": 2007,
+    "genres": "Romance|Drama",
+    "imdb_score": 5.7,
+    "director": "安藤尋",
+    "imdb_id": "tt0871977"
+  },
+  {
+    "title_en": "Street Fighter Alpha: The Movie",
+    "title_pt": "Street Fighter Alpha: O Filme",
+    "year": 2001,
+    "genres": "Action|Animation|Anime",
+    "imdb_score": 6.4,
+    "director": "山内重保",
+    "imdb_id": "tt0185708"
+  },
+  {
+    "title_en": "Horus: Prince of the Sun",
+    "title_pt": "Horus o Príncipe do Sol",
+    "year": 1968,
+    "genres": "Adventure|Drama|Animation|Fantasy|Anime",
+    "imdb_score": 6.3,
+    "director": "高畑勲",
+    "imdb_id": "tt0063668"
+  },
+  {
+    "title_en": "The Rebirth of Buddha",
+    "title_pt": "Buddha Saitan",
+    "year": 2009,
+    "genres": "Romance|Fantasy|Animation|Anime",
+    "imdb_score": 3.7,
+    "director": "石山タカ明",
+    "imdb_id": "tt1525803"
+  },
+  {
+    "title_en": "SOS! Tokyo Metro Explorers: The Next",
+    "title_pt": "Shin SOS Dai Tokyo Tankentai",
+    "year": 2007,
+    "genres": "Animation|Adventure|Anime",
+    "imdb_score": 3.7,
+    "director": "高木真司",
+    "imdb_id": "tt1160937"
+  },
+  {
+    "title_en": "Legend of the Millennium Dragon",
+    "title_pt": "A Lenda do Dragão Milenar",
+    "year": 2011,
+    "genres": "Animation|Adventure|Fantasy|Anime",
+    "imdb_score": 6.0,
+    "director": "川崎博嗣",
+    "imdb_id": "tt1849027"
+  },
+  {
+    "title_en": "A Chinese Ghost Story: The Tsui Hark Animation",
+    "title_pt": "小倩",
+    "year": 1997,
+    "genres": "Fantasy|Animation|Comedy|Romance",
+    "imdb_score": 6.1,
+    "director": "Andrew Chen Wei-Wen",
+    "imdb_id": "tt0125037"
+  },
+  {
+    "title_en": "Family Pack",
+    "title_pt": "Lobisomens",
+    "year": 2024,
+    "genres": "Adventure|Comedy|Fantasy|Action|Family",
+    "imdb_score": 5.6,
+    "director": "François Uzan",
+    "imdb_id": "tt29195603"
+  },
+  {
+    "title_en": "The Empire of Corpses",
+    "title_pt": "Shisha no Teikoku",
+    "year": 2015,
+    "genres": "Animation|Horror|Sci-Fi|Thriller|Anime",
+    "imdb_score": 6.2,
+    "director": "牧原亮太郎",
+    "imdb_id": "tt4235644"
+  },
+  {
+    "title_en": "My Son Goku",
+    "title_pt": "ぼくの孫悟空",
+    "year": 2003,
+    "genres": "Animation|Family|Fantasy|Anime",
+    "imdb_score": 7.0,
+    "director": "吉村文宏",
+    "imdb_id": "tt21448334"
+  },
+  {
+    "title_en": "Magic Tree House: Space Mission",
+    "title_pt": "Magic Tree House: Space Mission",
+    "year": 2010,
+    "genres": "",
+    "imdb_score": 0.0,
+    "director": "Richard McColman",
+    "imdb_id": "tt2321407"
+  },
+  {
+    "title_en": "NiNoKuni",
+    "title_pt": "Ni no Kuni",
+    "year": 2019,
+    "genres": "Animation|Action|Adventure|Family|Fantasy|Romance|Anime",
+    "imdb_score": 6.6,
+    "director": "百瀬義行",
+    "imdb_id": "tt9760504"
+  },
+  {
+    "title_en": "Josee, the Tiger and the Fish",
+    "title_pt": "Josee, o Tigre e o Peixe",
+    "year": 2020,
+    "genres": "Animation|Drama|Romance|Anime",
+    "imdb_score": 8.3,
+    "director": "タムラコータロー",
+    "imdb_id": "tt12879624"
+  },
+  {
+    "title_en": "Strange Days",
+    "title_pt": "Estranhos Prazeres",
+    "year": 1995,
+    "genres": "Crime|Drama|Sci-Fi|Thriller",
+    "imdb_score": 7.0,
+    "director": "Kathryn Bigelow",
+    "imdb_id": "tt0114558"
+  },
+  {
+    "title_en": "Look Back",
+    "title_pt": "Look Back",
+    "year": 2024,
+    "genres": "Animation|Drama|Anime",
+    "imdb_score": 8.1,
+    "director": "押山清高",
+    "imdb_id": "tt31711040"
+  },
+  {
+    "title_en": "Blue Giant",
+    "title_pt": "BLUE GIANT",
+    "year": 2023,
+    "genres": "Animation|Drama|Music|Anime",
+    "imdb_score": 7.8,
+    "director": "立川譲",
+    "imdb_id": "tt15737898"
+  },
+  {
+    "title_en": "Genocyber",
+    "title_pt": "ジェノサイバー",
+    "year": 1994,
+    "genres": "Animation|Horror|Sci-Fi|Anime",
+    "imdb_score": 5.5,
+    "director": "大畑晃一",
+    "imdb_id": "tt0158634"
+  },
+  {
+    "title_en": "M.D. Geist",
+    "title_pt": "M.D. Geist",
+    "year": 1986,
+    "genres": "Sci-Fi|Action|Animation|Anime",
+    "imdb_score": 4.8,
+    "director": "Hayato Ikeda",
+    "imdb_id": "tt0215948"
+  },
+  {
+    "title_en": "M.D. Geist II: Death Force",
+    "title_pt": "M.D. Geist 2: Death Force",
+    "year": 1996,
+    "genres": "Sci-Fi|Animation|Action|Anime",
+    "imdb_score": 4.8,
+    "director": "大畑晃一",
+    "imdb_id": "tt0217635"
+  },
+  {
+    "title_en": "Mobile Suit Gundam I",
+    "title_pt": "Mobile Suit Gundam I",
+    "year": 1981,
+    "genres": "Animation|Sci-Fi|Action|Anime",
+    "imdb_score": 6.8,
+    "director": "藤原良二",
+    "imdb_id": "tt0159509"
+  },
+  {
+    "title_en": "Mobile Suit Gundam II: Soldiers of Sorrow",
+    "title_pt": "Mobile Suit Gundam II: Soldados da Desolação",
+    "year": 1981,
+    "genres": "Animation|Sci-Fi|Action|Anime",
+    "imdb_score": 7.2,
+    "director": "富野由悠季",
+    "imdb_id": "tt0159510"
+  },
+  {
+    "title_en": "Mobile Suit Gundam III: Encounters in Space",
+    "title_pt": "Mobile Suit Gundam III: Confrontos no Espaço",
+    "year": 1982,
+    "genres": "Animation|Sci-Fi|Action|Anime",
+    "imdb_score": 7.5,
+    "director": "富野由悠季",
+    "imdb_id": "tt0159511"
+  },
+  {
+    "title_en": "Fatal Fury: Legend of the Hungry Wolf",
+    "title_pt": "Fatal Fury: Rei dos Lutadores",
+    "year": 1992,
+    "genres": "Action|Animation|Anime",
+    "imdb_score": 6.4,
+    "director": "福冨博",
+    "imdb_id": "tt0221169"
+  },
+  {
+    "title_en": "Fatal Fury 2: The New Battle",
+    "title_pt": "Fatal Fury 2: O Desafio de Krauser",
+    "year": 1993,
+    "genres": "Action|Animation|Anime",
+    "imdb_score": 6.7,
+    "director": "古橋一浩",
+    "imdb_id": "tt0220454"
+  },
+  {
+    "title_en": "Fatal Fury: The Motion Picture",
+    "title_pt": "Fatal Fury 3: A Fúria",
+    "year": 1994,
+    "genres": "Action|Animation|Fantasy|Anime",
+    "imdb_score": 7.3,
+    "director": "大張正己",
+    "imdb_id": "tt0109872"
+  },
+  {
+    "title_en": "Saint Seiya: Evil Goddess Eris",
+    "title_pt": "Os Cavaleiros do Zodíaco: O Santo Guerreiro",
+    "year": 1987,
+    "genres": "Action|Animation|Fantasy|Anime",
+    "imdb_score": 7.0,
+    "director": "森下孝三",
+    "imdb_id": "tt0323869"
+  },
+  {
+    "title_en": "Saint Seiya: The Heated Battle of the Gods",
+    "title_pt": "Os Cavaleiros do Zodíaco: A Grande Batalha dos Deuses",
+    "year": 1988,
+    "genres": "Action|Animation|Fantasy|Anime",
+    "imdb_score": 7.6,
+    "director": "山内重保",
+    "imdb_id": "tt0322918"
+  },
+  {
+    "title_en": "Saint Seiya: Warriors of the Final Holy Battle",
+    "title_pt": "Os Cavaleiros do Zodíaco: Os Guerreiros do Armagedon",
+    "year": 1989,
+    "genres": "Action|Animation|Fantasy|Anime",
+    "imdb_score": 7.3,
+    "director": "明比正行",
+    "imdb_id": "tt0326101"
+  },
+  {
+    "title_en": "Saint Seiya Heaven Chapter: Overture",
+    "title_pt": "Os Cavaleiros do Zodíaco: Prólogo do Céu",
+    "year": 2004,
+    "genres": "Animation|Fantasy|Anime",
+    "imdb_score": 7.7,
+    "director": "山内重保",
+    "imdb_id": "tt0805605"
+  },
+  {
+    "title_en": "Saint Seiya: Legend of Sanctuary",
+    "title_pt": "Os Cavaleiros do Zodíaco: A Lenda do Santuário",
+    "year": 2014,
+    "genres": "Action|Animation|Fantasy|Anime",
+    "imdb_score": 6.6,
+    "director": "さとうけいいち",
+    "imdb_id": "tt2231489"
+  },
+  {
+    "title_en": "Dragon Ball Z: Dead Zone",
+    "title_pt": "Dragon Ball Z: Devolva-me Gohan",
+    "year": 1989,
+    "genres": "Animation|Action|Fantasy|Anime",
+    "imdb_score": 6.8,
+    "director": "西尾大介",
+    "imdb_id": "tt0142235"
+  },
+  {
+    "title_en": "Dragon Ball Z: The Tree of Might",
+    "title_pt": "Dragon Ball Z: A Árvore do Poder",
+    "year": 1990,
+    "genres": "Action|Animation|Sci-Fi|Anime",
+    "imdb_score": 6.5,
+    "director": "西尾大介",
+    "imdb_id": "tt0142233"
+  },
+  {
+    "title_en": "Dragon Ball Z: Lord Slug",
+    "title_pt": "Dragon Ball Z: Goku, o Super Saiyajin",
+    "year": 1991,
+    "genres": "Action|Animation|Sci-Fi|Anime",
+    "imdb_score": 6.5,
+    "director": "橋本みつお",
+    "imdb_id": "tt0142244"
+  },
+  {
+    "title_en": "Dragon Ball Z: Cooler's Revenge",
+    "title_pt": "Dragon Ball Z: Uma Vingança Para Freeza",
+    "year": 1991,
+    "genres": "Action|Animation|Sci-Fi|Anime",
+    "imdb_score": 7.0,
+    "director": "橋本みつお",
+    "imdb_id": "tt1125254"
+  },
+  {
+    "title_en": "Dragon Ball Z: Super Android 13!",
+    "title_pt": "Dragon Ball Z: O Retorno dos Andróides",
+    "year": 1992,
+    "genres": "Action|Animation|Sci-Fi|Anime",
+    "imdb_score": 6.9,
+    "director": "西尾大介",
+    "imdb_id": "tt0142241"
+  },
+  {
+    "title_en": "Dragon Ball Z: Bojack Unbound",
+    "title_pt": "Dragon Ball Z: A Batalha nos Dois Mundos",
+    "year": 1993,
+    "genres": "Action|Animation|Sci-Fi|Anime",
+    "imdb_score": 7.2,
+    "director": "上田芳裕",
+    "imdb_id": "tt0142238"
+  },
+  {
+    "title_en": "Dragon Ball Z: Broly - Second Coming",
+    "title_pt": "Dragon Ball Z: O Retorno do Guerreiro Lendário",
+    "year": 1994,
+    "genres": "Animation|Action|Sci-Fi|Anime",
+    "imdb_score": 6.8,
+    "director": "山内重保",
+    "imdb_id": "tt0142239"
+  },
+  {
+    "title_en": "Dragon Ball Z: Bio-Broly",
+    "title_pt": "Dragon Ball Z: O Combate Final, Bio-Broly",
+    "year": 1994,
+    "genres": "Animation|Action|Sci-Fi|Anime",
+    "imdb_score": 5.8,
+    "director": "上田芳裕",
+    "imdb_id": "tt0142234"
+  },
+  {
+    "title_en": "Dragon Ball Z: Fusion Reborn",
+    "title_pt": "Dragon Ball Z: Uma Nova Fusão",
+    "year": 1995,
+    "genres": "Animation|Action|Sci-Fi|Anime",
+    "imdb_score": 7.5,
+    "director": "山内重保",
+    "imdb_id": "tt0142236"
+  },
+  {
+    "title_en": "Dragon Ball Z: Wrath of the Dragon",
+    "title_pt": "Dragon Ball Z: O Ataque do Dragão",
+    "year": 1995,
+    "genres": "Animation|Action|Sci-Fi|Anime",
+    "imdb_score": 7.3,
+    "director": "橋本みつお",
+    "imdb_id": "tt0142243"
+  },
+  {
+    "title_en": "Dragon Ball Z: Plan to Eradicate the Super Saiyans",
+    "title_pt": "Dragon Ball Z: O Plano Para Erradicar os Saiyajins",
+    "year": 2010,
+    "genres": "Action|Animation|Adventure|Anime",
+    "imdb_score": 7.1,
+    "director": "上田芳裕",
+    "imdb_id": "tt4008518"
+  },
+  {
+    "title_en": "Tsubasa RESERVoir CHRoNiCLE: Tokyo Revelations",
+    "title_pt": "ツバサ TOKYO REVELATIONS",
+    "year": 2007,
+    "genres": "Fantasy|Animation|Action|Adventure|Sci-Fi|Drama|Romance|Anime",
+    "imdb_score": 7.1,
+    "director": "Akiko Honda",
+    "imdb_id": "tt1234258"
+  },
+  {
+    "title_en": "Dragon Ball Super: Broly",
+    "title_pt": "Dragon Ball Super: Broly",
+    "year": 2018,
+    "genres": "Action|Sci-Fi|Animation|Anime",
+    "imdb_score": 7.9,
+    "director": "長峯達也",
+    "imdb_id": "tt7961060"
+  },
+  {
+    "title_en": "Blood Reign: Curse of the Yoma",
+    "title_pt": "妖魔",
+    "year": 1989,
+    "genres": "Horror|Fantasy|Animation|Sci-Fi",
+    "imdb_score": 5.5,
+    "director": "安濃高志",
+    "imdb_id": "tt0161113"
+  },
+  {
+    "title_en": "The Legend of the Galactic Heroes: Die Neue These Collision 1",
+    "title_pt": "The Legend of the Galactic Heroes: Die Neue These Collision",
+    "year": 2022,
+    "genres": "Animation|Sci-Fi",
+    "imdb_score": 8.8,
+    "director": "多田俊介",
+    "imdb_id": "tt32909346"
+  },
+  {
+    "title_en": "Legend of the Galactic Heroes: My Conquest Is the Sea of Stars",
+    "title_pt": "銀河英雄伝説　わが征くは星の大海",
+    "year": 1988,
+    "genres": "Animation|Sci-Fi|War|Anime",
+    "imdb_score": 7.9,
+    "director": "石黒昇",
+    "imdb_id": "tt0095512"
+  },
+  {
+    "title_en": "Legend of the Galactic Heroes: Overture to a New War",
+    "title_pt": "Ginga Eiyuu Densetsu: Arata Naru Tatakai no Overture",
+    "year": 1993,
+    "genres": "Animation|Sci-Fi|War|Anime",
+    "imdb_score": 8.2,
+    "director": "Kenichi Maeda",
+    "imdb_id": "tt0107382"
+  },
+  {
+    "title_en": "Inu-Oh",
+    "title_pt": "Inu-Oh",
+    "year": 2022,
+    "genres": "Animation|Drama|Music|Fantasy|History|Anime",
+    "imdb_score": 7.2,
+    "director": "湯浅政明",
+    "imdb_id": "tt10540510"
+  },
+  {
+    "title_en": "Pompo the Cinephile",
+    "title_pt": "Pompo, A Cinéfila",
+    "year": 2021,
+    "genres": "Animation|Comedy|Drama|Anime",
+    "imdb_score": 7.1,
+    "director": "平尾隆之",
+    "imdb_id": "tt12439248"
+  },
+  {
+    "title_en": "Children of the Sea",
+    "title_pt": "Filhos do Mar",
+    "year": 2019,
+    "genres": "Animation|Fantasy|Adventure|Mystery|Anime",
+    "imdb_score": 7.1,
+    "director": "渡辺歩",
+    "imdb_id": "tt9850064"
+  },
+  {
+    "title_en": "The Pig King",
+    "title_pt": "O Rei Porco",
+    "year": 2020,
+    "genres": "Drama|Romance",
+    "imdb_score": 4.5,
+    "director": "代艺霖",
+    "imdb_id": "tt12800092"
+  },
+  {
+    "title_en": "Grandfather's Lamp",
+    "title_pt": "おぢいさんのランプ",
+    "year": 2011,
+    "genres": "Drama|Animation|History",
+    "imdb_score": 7.8,
+    "director": "滝口禎一",
+    "imdb_id": "tt17047406"
+  },
+  {
+    "title_en": "Gintama: The Movie",
+    "title_pt": "Gintama, O Filme: Uma Nova Reinterpretação do Arco Benizakura",
+    "year": 2010,
+    "genres": "Action|Comedy|Sci-Fi|Animation",
+    "imdb_score": 7.4,
+    "director": "高松信司",
+    "imdb_id": "tt1636780"
+  },
+  {
+    "title_en": "Mardock Scramble: The First Compression",
+    "title_pt": "Mardock Scramble: The First Compression",
+    "year": 2010,
+    "genres": "Thriller|Animation|Action|Drama|Anime",
+    "imdb_score": 6.8,
+    "director": "工藤進",
+    "imdb_id": "tt1754177"
+  },
+  {
+    "title_en": "Mardock Scramble: The Second Combustion",
+    "title_pt": "Mardock Scramble: The Second Combustion",
+    "year": 2011,
+    "genres": "Animation|Sci-Fi|Anime",
+    "imdb_score": 6.4,
+    "director": "工藤進",
+    "imdb_id": "tt2048804"
+  },
+  {
+    "title_en": "Mardock Scramble: The Third Exhaust",
+    "title_pt": "Mardock Scramble: The Third Exhaust",
+    "year": 2012,
+    "genres": "Animation|Sci-Fi|Anime",
+    "imdb_score": 6.6,
+    "director": "工藤進",
+    "imdb_id": "tt2423504"
+  },
+  {
+    "title_en": "GANTZ:O",
+    "title_pt": "GANTZ:O",
+    "year": 2016,
+    "genres": "Animation|Sci-Fi|Action|Anime",
+    "imdb_score": 7.3,
+    "director": "川村泰",
+    "imdb_id": "tt5923962"
+  },
+  {
+    "title_en": "Hide and Seek",
+    "title_pt": "Kakurenbo",
+    "year": 2013,
+    "genres": "Drama|Fantasy|Horror|Anime",
+    "imdb_score": 8.0,
+    "director": "朝倉加葉子",
+    "imdb_id": "tt2838932"
+  },
+  {
+    "title_en": "One Piece Film: Strong World",
+    "title_pt": "One Piece: Strong World",
+    "year": 2009,
+    "genres": "Animation|Fantasy|Adventure|Anime",
+    "imdb_score": 7.4,
+    "director": "境宗久",
+    "imdb_id": "tt1485763"
+  },
+  {
+    "title_en": "Eden of the East Movie I: The King of Eden",
+    "title_pt": "Eden of the East Movie I: The King of Eden",
+    "year": 2009,
+    "genres": "Animation|Drama|Mystery|Sci-Fi|Romance",
+    "imdb_score": 6.8,
+    "director": "神山健治",
+    "imdb_id": "tt1460738"
+  },
+  {
+    "title_en": "Bayonetta: Bloody Fate",
+    "title_pt": "Bayonetta: Destino Sangrento",
+    "year": 2013,
+    "genres": "Animation|Action|Fantasy|Anime",
+    "imdb_score": 6.8,
+    "director": "木崎文智",
+    "imdb_id": "tt3306776"
+  },
+  {
+    "title_en": "Yu-Gi-Oh! The Movie",
+    "title_pt": "Yu-Gi-Oh! O Filme: Pirâmide de Luz",
+    "year": 2004,
+    "genres": "Animation|Fantasy|Action|Sci-Fi",
+    "imdb_score": 6.1,
+    "director": "辻初樹",
+    "imdb_id": "tt0403703"
+  },
+  {
+    "title_en": "Arei's Mirror ~ Way to Virgin Space",
+    "title_pt": "アレイの鏡 Way to the Virgin Space",
+    "year": 1985,
+    "genres": "Animation|Adventure|Sci-Fi",
+    "imdb_score": 6.5,
+    "director": "森下孝三",
+    "imdb_id": "tt0185162"
+  },
+  {
+    "title_en": "My Beautiful Girl, Mari",
+    "title_pt": "Minha Linda Garota, Mari",
+    "year": 2002,
+    "genres": "Animation|Drama|Fantasy|Anime",
+    "imdb_score": 5.8,
+    "director": "Lee Sung-gang",
+    "imdb_id": "tt0302758"
+  },
+  {
+    "title_en": "Seoul Station",
+    "title_pt": "Seoul Station",
+    "year": 2016,
+    "genres": "Animation|Horror|Sci-Fi|Action|Thriller|Anime",
+    "imdb_score": 6.5,
+    "director": "연상호",
+    "imdb_id": "tt3845670"
+  },
+  {
+    "title_en": "Appleseed Alpha",
+    "title_pt": "Appleseed Alpha",
+    "year": 2014,
+    "genres": "Animation|Sci-Fi|Action|Anime",
+    "imdb_score": 6.7,
+    "director": "荒牧伸志",
+    "imdb_id": "tt3638012"
+  },
+  {
+    "title_en": "Godzilla: Planet of the Monsters",
+    "title_pt": "Godzilla: Planeta dos Monstros",
+    "year": 2017,
+    "genres": "Animation|Action|Sci-Fi|Anime",
+    "imdb_score": 6.4,
+    "director": "瀬下寛之",
+    "imdb_id": "tt5979874"
+  },
+  {
+    "title_en": "Lu Over the Wall",
+    "title_pt": "Lu Está Livre",
+    "year": 2017,
+    "genres": "Animation|Family|Fantasy|Adventure|Comedy|Music|Anime",
+    "imdb_score": 7.0,
+    "director": "湯浅政明",
+    "imdb_id": "tt6452332"
+  },
+  {
+    "title_en": "Dragon Ball Super: Super Hero",
+    "title_pt": "Dragon Ball Super: Super Hero",
+    "year": 2022,
+    "genres": "Animation|Sci-Fi|Action",
+    "imdb_score": 7.9,
+    "director": "児玉徹郎",
+    "imdb_id": "tt14614892"
   }
 ]

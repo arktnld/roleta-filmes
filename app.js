@@ -1756,5 +1756,292 @@ function updateNavbarCounts() {
 // Adicionar listener de scroll
 window.addEventListener('scroll', onScroll, { passive: true });
 
+// ============================================
+// BUSCA DE FILMES
+// ============================================
+let currentSearchView = false;
+let searchResults = [];
+let searchPage = 1;
+const SEARCH_PER_PAGE = 12;
+
+function populateSearchGenres() {
+    const searchGenreSelect = document.getElementById('search-genre');
+    if (!searchGenreSelect) return;
+
+    const genres = new Set();
+    movies.forEach(movie => {
+        if (movie.genres) {
+            movie.genres.split('|').forEach(g => genres.add(g.trim()));
+        }
+    });
+
+    Array.from(genres).sort().forEach(genre => {
+        const option = document.createElement('option');
+        option.value = genre;
+        option.textContent = translateGenre(genre);
+        searchGenreSelect.appendChild(option);
+    });
+}
+
+function toggleSearchView() {
+    const searchSection = document.getElementById('search-section');
+    const mainContent = document.querySelectorAll('.filters, .roulette-container, #results, #list-section');
+
+    if (currentSearchView) {
+        closeSearchView();
+        return;
+    }
+
+    // Fechar lista se estiver aberta
+    if (currentListView) {
+        currentListView = null;
+    }
+
+    currentSearchView = true;
+
+    // Esconder conteúdo principal
+    mainContent.forEach(el => el.classList.add('hidden'));
+
+    // Mostrar busca
+    searchSection.classList.remove('hidden');
+
+    // Focar no input
+    const searchInput = document.getElementById('search-input');
+    if (searchInput) {
+        searchInput.focus();
+    }
+
+    // Popular gêneros se ainda não populado
+    const searchGenreSelect = document.getElementById('search-genre');
+    if (searchGenreSelect && searchGenreSelect.options.length <= 1) {
+        populateSearchGenres();
+    }
+
+    playSound('click');
+}
+
+function closeSearchView() {
+    currentSearchView = false;
+
+    const searchSection = document.getElementById('search-section');
+    const mainContent = document.querySelectorAll('.filters, .roulette-container');
+
+    // Esconder busca
+    searchSection.classList.add('hidden');
+
+    // Mostrar conteúdo principal
+    mainContent.forEach(el => el.classList.remove('hidden'));
+
+    // Mostrar resultados se tiver filmes selecionados
+    if (selectedMovies.length > 0) {
+        document.getElementById('results').classList.remove('hidden');
+    }
+
+    // Limpar busca
+    document.getElementById('search-input').value = '';
+    document.getElementById('search-grid').innerHTML = '';
+    document.getElementById('search-results-info').innerHTML = '';
+    document.getElementById('search-pagination').innerHTML = '';
+    document.getElementById('search-empty').classList.add('hidden');
+
+    playSound('click');
+}
+
+function performSearch() {
+    const query = document.getElementById('search-input').value.trim().toLowerCase();
+    const genre = document.getElementById('search-genre').value;
+    const decade = document.getElementById('search-year').value;
+    const minRating = document.getElementById('search-rating').value;
+    const sortOrder = document.getElementById('search-sort').value;
+
+    searchResults = movies.filter(movie => {
+        // Filtro de palavra-chave (título PT, EN ou diretor)
+        if (query) {
+            const titlePt = (movie.title_pt || '').toLowerCase();
+            const titleEn = (movie.title_en || '').toLowerCase();
+            const director = (movie.director || '').toLowerCase();
+
+            if (!titlePt.includes(query) && !titleEn.includes(query) && !director.includes(query)) {
+                return false;
+            }
+        }
+
+        // Filtro de gênero
+        if (genre && (!movie.genres || !movie.genres.includes(genre))) {
+            return false;
+        }
+
+        // Filtro de década
+        if (decade) {
+            const decadeNum = parseInt(decade);
+            if (decadeNum === 1970) {
+                if (movie.year >= 1980) return false;
+            } else {
+                if (movie.year < decadeNum || movie.year >= decadeNum + 10) return false;
+            }
+        }
+
+        // Filtro de nota
+        if (minRating && movie.imdb_score < parseFloat(minRating)) {
+            return false;
+        }
+
+        return true;
+    });
+
+    // Ordenar por nota conforme selecionado
+    if (sortOrder === 'desc') {
+        searchResults.sort((a, b) => b.imdb_score - a.imdb_score);
+    } else if (sortOrder === 'asc') {
+        searchResults.sort((a, b) => a.imdb_score - b.imdb_score);
+    }
+    // Se sortOrder vazio, mantém ordem original (sem ordenação)
+
+    searchPage = 1;
+    displaySearchResults();
+    playSound('click');
+}
+
+async function displaySearchResults() {
+    const grid = document.getElementById('search-grid');
+    const info = document.getElementById('search-results-info');
+    const pagination = document.getElementById('search-pagination');
+    const emptyMsg = document.getElementById('search-empty');
+
+    if (searchResults.length === 0) {
+        grid.innerHTML = '';
+        info.innerHTML = '';
+        pagination.innerHTML = '';
+        emptyMsg.classList.remove('hidden');
+        return;
+    }
+
+    emptyMsg.classList.add('hidden');
+
+    // Calcular paginação
+    const totalPages = Math.ceil(searchResults.length / SEARCH_PER_PAGE);
+    const start = (searchPage - 1) * SEARCH_PER_PAGE;
+    const end = start + SEARCH_PER_PAGE;
+    const pageResults = searchResults.slice(start, end);
+
+    // Info
+    info.innerHTML = `<span class="search-count">${searchResults.length} filme${searchResults.length !== 1 ? 's' : ''} encontrado${searchResults.length !== 1 ? 's' : ''}</span>`;
+
+    // Loading
+    grid.innerHTML = '<div class="loading"><div class="loading-spinner"></div></div>';
+
+    // Gerar cards
+    const cards = await Promise.all(pageResults.map(async (movie) => {
+        const details = await fetchMovieDetails(movie.imdb_id);
+
+        const posterUrl = details?.poster_path
+            ? `${CONFIG.TMDB_IMG_BASE}${details.poster_path}`
+            : null;
+
+        return `
+            <div class="search-card" data-imdb="${movie.imdb_id}" onclick="openModalByImdbId('${movie.imdb_id}')">
+                <div class="search-poster-wrapper">
+                    ${posterUrl
+                        ? `<img class="search-poster" src="${posterUrl}" alt="${movie.title_pt}" loading="lazy">`
+                        : `<div class="no-poster search-poster"></div>`
+                    }
+                </div>
+                <div class="search-info">
+                    <h3 class="search-title">${movie.title_pt}</h3>
+                    <div class="search-meta">
+                        <span>${movie.year}</span>
+                        <span class="movie-rating">★ ${movie.imdb_score}</span>
+                    </div>
+                    <div class="search-director">${movie.director || ''}</div>
+                    <div class="search-actions">
+                        <button class="action-btn watched ${isWatched(movie.imdb_id) ? 'active' : ''}"
+                                onclick="event.stopPropagation(); handleSearchWatchedClick(event, '${movie.imdb_id}')">
+                            <span class="icon">${isWatched(movie.imdb_id) ? '✓' : '👁'}</span>
+                        </button>
+                        <button class="action-btn watchlist ${isInWatchlist(movie.imdb_id) ? 'active' : ''}"
+                                onclick="event.stopPropagation(); handleSearchWatchlistClick(event, '${movie.imdb_id}')">
+                            <span class="icon">${isInWatchlist(movie.imdb_id) ? '★' : '☆'}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+    }));
+
+    grid.innerHTML = cards.join('');
+
+    // Paginação
+    if (totalPages > 1) {
+        let paginationHtml = '<div class="pagination-buttons">';
+
+        // Botão anterior
+        if (searchPage > 1) {
+            paginationHtml += `<button class="pagination-btn" onclick="searchGoToPage(${searchPage - 1})">◀ Anterior</button>`;
+        }
+
+        // Info da página
+        paginationHtml += `<span class="pagination-info">Página ${searchPage} de ${totalPages}</span>`;
+
+        // Botão próximo
+        if (searchPage < totalPages) {
+            paginationHtml += `<button class="pagination-btn" onclick="searchGoToPage(${searchPage + 1})">Próxima ▶</button>`;
+        }
+
+        paginationHtml += '</div>';
+        pagination.innerHTML = paginationHtml;
+    } else {
+        pagination.innerHTML = '';
+    }
+}
+
+function searchGoToPage(page) {
+    searchPage = page;
+    displaySearchResults();
+
+    // Scroll para o topo da seção
+    const searchSection = document.getElementById('search-section');
+    if (searchSection) {
+        searchSection.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    playSound('click');
+}
+
+async function handleSearchWatchedClick(event, imdbId) {
+    event.stopPropagation();
+    const btn = event.currentTarget;
+    btn.disabled = true;
+
+    const added = await toggleWatched(imdbId);
+
+    btn.classList.toggle('active', added);
+    btn.querySelector('.icon').textContent = added ? '✓' : '👁';
+    btn.disabled = false;
+
+    updateListCounts();
+
+    if (added) {
+        showPowerUp('WATCHED!');
+    }
+}
+
+async function handleSearchWatchlistClick(event, imdbId) {
+    event.stopPropagation();
+    const btn = event.currentTarget;
+    btn.disabled = true;
+
+    const added = await toggleWatchlist(imdbId);
+
+    btn.classList.toggle('active', added);
+    btn.querySelector('.icon').textContent = added ? '★' : '☆';
+    btn.disabled = false;
+
+    updateWatchlistCount();
+
+    if (added) {
+        showPowerUp('+1 WATCHLIST!');
+    }
+}
+
 console.log('%c🎬 ROLETA DE FILMES 🎬', 'font-size: 24px; color: #00fff5; text-shadow: 2px 2px #ff00ff;');
 console.log('%cTry the Konami Code! ↑↑↓↓←→←→BA', 'color: #ffff00;');

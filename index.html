@@ -53,6 +53,10 @@
                 <span class="label">Já Vi</span>
                 <span class="badge" id="navbar-watched-count">0</span>
             </button>
+            <button class="navbar-btn" onclick="toggleSearchView()">
+                <span class="icon">🔍</span>
+                <span class="label">Buscar</span>
+            </button>
         </div>
     </nav>
 
@@ -161,6 +165,10 @@
                         <span class="text">Já Vi</span>
                         <span class="count" id="watched-count">0</span>
                     </button>
+                    <button id="search-btn" class="list-filter-btn search" onclick="toggleSearchView()">
+                        <span class="icon">🔍</span>
+                        <span class="text">Buscar</span>
+                    </button>
                 </div>
             </div>
         </section>
@@ -185,6 +193,70 @@
             <p class="list-empty hidden" id="list-empty">
                 Sua lista está vazia!
             </p>
+        </section>
+
+        <!-- Seção de Busca -->
+        <section id="search-section" class="search-section hidden">
+            <div class="search-header">
+                <h2>Buscar Filmes</h2>
+                <button class="list-close" onclick="closeSearchView()">✕ Voltar</button>
+            </div>
+
+            <!-- Campo de busca -->
+            <div class="search-input-container">
+                <input type="text" id="search-input" placeholder="Digite o nome do filme..." onkeypress="if(event.key==='Enter')performSearch()">
+                <button id="search-submit" onclick="performSearch()">🔍</button>
+            </div>
+
+            <!-- Filtros de busca -->
+            <div class="search-filters">
+                <div class="search-filter-group">
+                    <label>Gênero</label>
+                    <select id="search-genre">
+                        <option value="">Todos</option>
+                    </select>
+                </div>
+                <div class="search-filter-group">
+                    <label>Década</label>
+                    <select id="search-year">
+                        <option value="">Todas</option>
+                        <option value="2020">2020s</option>
+                        <option value="2010">2010s</option>
+                        <option value="2000">2000s</option>
+                        <option value="1990">1990s</option>
+                        <option value="1980">1980s</option>
+                        <option value="1970">Antes de 1980</option>
+                    </select>
+                </div>
+                <div class="search-filter-group">
+                    <label>Nota mínima</label>
+                    <select id="search-rating">
+                        <option value="">Qualquer</option>
+                        <option value="8">8+ Excelente</option>
+                        <option value="7">7+ Bom</option>
+                        <option value="6">6+ Regular</option>
+                    </select>
+                </div>
+                <div class="search-filter-group">
+                    <label>Ordenar</label>
+                    <select id="search-sort">
+                        <option value="">Sem ordenação</option>
+                        <option value="desc">Nota: Maior → Menor</option>
+                        <option value="asc">Nota: Menor → Maior</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Info dos resultados -->
+            <div class="search-results-info" id="search-results-info"></div>
+
+            <!-- Grid de resultados -->
+            <div class="search-grid" id="search-grid"></div>
+
+            <!-- Paginação -->
+            <div class="search-pagination" id="search-pagination"></div>
+
+            <p class="list-empty hidden" id="search-empty">Nenhum filme encontrado</p>
         </section>
 
         <!-- Resultado dos Filmes -->
