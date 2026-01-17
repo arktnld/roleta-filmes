@@ -6,6 +6,42 @@
 // ============================================
 // CONFIGURAÇÃO
 // ============================================
+// ============================================
+// TRADUÇÃO DE GÊNEROS
+// ============================================
+const GENRES_PT = {
+    'Action': 'Ação',
+    'Adventure': 'Aventura',
+    'Animation': 'Animação',
+    'Biography': 'Biografia',
+    'Comedy': 'Comédia',
+    'Crime': 'Crime',
+    'Documentary': 'Documentário',
+    'Drama': 'Drama',
+    'Family': 'Família',
+    'Fantasy': 'Fantasia',
+    'Film-Noir': 'Film Noir',
+    'History': 'História',
+    'Horror': 'Terror',
+    'Music': 'Música',
+    'Musical': 'Musical',
+    'Mystery': 'Mistério',
+    'Nacional': 'Nacional',
+    'News': 'Notícias',
+    'Romance': 'Romance',
+    'Sci-Fi': 'Ficção Científica',
+    'Short': 'Curta',
+    'Sport': 'Esporte',
+    'Thriller': 'Suspense',
+    'TV Movie': 'Filme de TV',
+    'War': 'Guerra',
+    'Western': 'Faroeste'
+};
+
+function translateGenre(genre) {
+    return GENRES_PT[genre] || genre;
+}
+
 const CONFIG = {
     TMDB_TOKEN: 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMTE5OTFiNjk5ZGIzYTk5NzhjOTVmYThkOGM5MWM0NiIsIm5iZiI6MTc0NTk1MDE0My45NzYsInN1YiI6IjY4MTExNWJmMjEzN2YzNGMyNGVhZDY4ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.6yHJrMiDYHRrIlA9Fy9q5qikkGmjnVK23cBuYc-aJ-k',
     TMDB_IMG_BASE: 'https://image.tmdb.org/t/p/w500',
@@ -13,7 +49,10 @@ const CONFIG = {
     MAX_MOVIES_PER_SPIN: 9, // Limite máximo para não sobrecarregar a API
     HISTORY_CACHE_SIZE: 30, // Quantidade de filmes no cache circular
     ROULETTE_DURATION: 2000, // ms
-    ROULETTE_FLASHES: 15
+    ROULETTE_FLASHES: 15,
+    // Supabase
+    SUPABASE_URL: 'https://cfoqjlqtrhdvjelqhgvq.supabase.co',
+    SUPABASE_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNmb3FqbHF0cmhkdmplbHFoZ3ZxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njg2MjExMDYsImV4cCI6MjA4NDE5NzEwNn0.ix5s_gHMC7qjLmARPNbPrbbqHUFq2UbrWRfZCJej2Wc'
 };
 
 // ============================================
@@ -56,36 +95,67 @@ function saveMovieHistory(history) {
 }
 
 // ============================================
-// WATCHED MOVIES (localStorage - permanente)
+// SUPABASE API HELPERS
 // ============================================
-function getWatchedMovies() {
+async function supabaseRequest(table, method = 'GET', body = null, query = '') {
+    const url = `${CONFIG.SUPABASE_URL}/rest/v1/${table}${query}`;
+    const options = {
+        method,
+        headers: {
+            'apikey': CONFIG.SUPABASE_KEY,
+            'Authorization': `Bearer ${CONFIG.SUPABASE_KEY}`,
+            'Content-Type': 'application/json',
+            'Prefer': method === 'POST' ? 'return=minimal' : undefined
+        }
+    };
+    if (body) options.body = JSON.stringify(body);
+
+    const response = await fetch(url, options);
+    if (method === 'GET') return response.json();
+    return response.ok;
+}
+
+// Cache local para evitar muitas requisições
+let watchedCache = null;
+let watchlistCache = null;
+
+// ============================================
+// WATCHED MOVIES (Supabase - global)
+// ============================================
+async function fetchWatchedMovies() {
     try {
-        const stored = localStorage.getItem('watchedMovies');
-        return stored ? JSON.parse(stored) : [];
-    } catch {
-        return [];
+        const data = await supabaseRequest('watched', 'GET', null, '?select=imdb_id');
+        watchedCache = data.map(item => item.imdb_id);
+        return watchedCache;
+    } catch (error) {
+        console.error('Error fetching watched:', error);
+        return watchedCache || [];
     }
 }
 
-function toggleWatched(imdbId) {
-    const watched = getWatchedMovies();
-    const index = watched.indexOf(imdbId);
+function getWatchedMovies() {
+    return watchedCache || [];
+}
 
-    if (index === -1) {
-        watched.push(imdbId);
-        playSound('coin');
-    } else {
-        watched.splice(index, 1);
-        playSound('click');
-    }
+async function toggleWatched(imdbId) {
+    const watched = getWatchedMovies();
+    const isCurrentlyWatched = watched.includes(imdbId);
 
     try {
-        localStorage.setItem('watchedMovies', JSON.stringify(watched));
-    } catch {
-        // localStorage cheio
+        if (isCurrentlyWatched) {
+            await supabaseRequest('watched', 'DELETE', null, `?imdb_id=eq.${imdbId}`);
+            watchedCache = watched.filter(id => id !== imdbId);
+            playSound('click');
+        } else {
+            await supabaseRequest('watched', 'POST', { imdb_id: imdbId });
+            watchedCache = [...watched, imdbId];
+            playSound('coin');
+        }
+    } catch (error) {
+        console.error('Error toggling watched:', error);
     }
 
-    return index === -1; // retorna true se adicionou
+    return !isCurrentlyWatched;
 }
 
 function isWatched(imdbId) {
@@ -93,18 +163,24 @@ function isWatched(imdbId) {
 }
 
 // ============================================
-// WATCHLIST (localStorage - permanente)
+// WATCHLIST (Supabase - global)
 // ============================================
-function getWatchlist() {
+async function fetchWatchlist() {
     try {
-        const stored = localStorage.getItem('watchlist');
-        return stored ? JSON.parse(stored) : [];
-    } catch {
-        return [];
+        const data = await supabaseRequest('watchlist', 'GET', null, '?select=imdb_id');
+        watchlistCache = data.map(item => item.imdb_id);
+        return watchlistCache;
+    } catch (error) {
+        console.error('Error fetching watchlist:', error);
+        return watchlistCache || [];
     }
 }
 
-function toggleWatchlist(imdbId) {
+function getWatchlist() {
+    return watchlistCache || [];
+}
+
+async function toggleWatchlist(imdbId) {
     console.log('toggleWatchlist called with:', imdbId);
 
     if (!imdbId) {
@@ -113,24 +189,24 @@ function toggleWatchlist(imdbId) {
     }
 
     const watchlist = getWatchlist();
-    const index = watchlist.indexOf(imdbId);
-
-    if (index === -1) {
-        watchlist.push(imdbId);
-        playSound('powerup');
-    } else {
-        watchlist.splice(index, 1);
-        playSound('click');
-    }
+    const isCurrentlyInList = watchlist.includes(imdbId);
 
     try {
-        localStorage.setItem('watchlist', JSON.stringify(watchlist));
-        console.log('Watchlist saved:', watchlist);
-    } catch {
-        // localStorage cheio
+        if (isCurrentlyInList) {
+            await supabaseRequest('watchlist', 'DELETE', null, `?imdb_id=eq.${imdbId}`);
+            watchlistCache = watchlist.filter(id => id !== imdbId);
+            playSound('click');
+        } else {
+            await supabaseRequest('watchlist', 'POST', { imdb_id: imdbId });
+            watchlistCache = [...watchlist, imdbId];
+            playSound('powerup');
+        }
+        console.log('Watchlist updated:', watchlistCache);
+    } catch (error) {
+        console.error('Error toggling watchlist:', error);
     }
 
-    return index === -1; // retorna true se adicionou
+    return !isCurrentlyInList;
 }
 
 function isInWatchlist(imdbId) {
@@ -192,14 +268,17 @@ function getGameOverEffect(rating) {
     return ''; // Nota >= 5: sem efeito
 }
 
-function handleWatchedClick(event, imdbId) {
+async function handleWatchedClick(event, imdbId) {
     event.stopPropagation();
-    const added = toggleWatched(imdbId);
     const btn = event.currentTarget;
+    btn.disabled = true;
+
+    const added = await toggleWatched(imdbId);
 
     btn.classList.toggle('active', added);
     btn.querySelector('.icon').textContent = added ? '✓' : '👁';
     btn.querySelector('span:last-child').textContent = added ? 'VISTO' : 'JÁ VI';
+    btn.disabled = false;
 
     updateListCounts();
 
@@ -208,14 +287,17 @@ function handleWatchedClick(event, imdbId) {
     }
 }
 
-function handleWatchlistClick(event, imdbId) {
+async function handleWatchlistClick(event, imdbId) {
     event.stopPropagation();
-    const added = toggleWatchlist(imdbId);
     const btn = event.currentTarget;
+    btn.disabled = true;
+
+    const added = await toggleWatchlist(imdbId);
 
     btn.classList.toggle('active', added);
     btn.querySelector('.icon').textContent = added ? '★' : '☆';
     btn.querySelector('span:last-child').textContent = added ? 'NA LISTA' : 'QUERO VER';
+    btn.disabled = false;
 
     updateWatchlistCount();
 
@@ -245,6 +327,9 @@ function updateListCounts() {
         watchedCountEl.textContent = watchedCount;
         watchedCountEl.style.display = watchedCount > 0 ? 'inline' : 'none';
     }
+
+    // Atualizar contadores da navbar
+    updateNavbarCounts();
 }
 
 // Alias para manter compatibilidade
@@ -338,8 +423,10 @@ async function displayList(type) {
     emptyMsg.classList.add('hidden');
     grid.innerHTML = '<div class="loading"><div class="loading-spinner"></div><div class="loading-text"></div></div>';
 
-    // Buscar filmes da lista
-    const listMovies = movies.filter(m => listIds.includes(m.imdb_id));
+    // Buscar filmes da lista e ordenar por nota (maior para menor)
+    const listMovies = movies
+        .filter(m => listIds.includes(m.imdb_id))
+        .sort((a, b) => b.imdb_score - a.imdb_score);
     console.log(`${type} movies found:`, listMovies.length);
 
     // Se não encontrou filmes mas a lista não está vazia
@@ -405,11 +492,11 @@ async function displayList(type) {
     grid.innerHTML = cards.join('');
 }
 
-function removeFromListView(imdbId, type) {
+async function removeFromListView(imdbId, type) {
     if (type === 'watchlist') {
-        toggleWatchlist(imdbId);
+        await toggleWatchlist(imdbId);
     } else {
-        toggleWatched(imdbId);
+        await toggleWatched(imdbId);
     }
     updateListCounts();
 
@@ -726,18 +813,37 @@ function shakeScreen() {
 // CARREGAR FILMES
 // ============================================
 async function loadMovies() {
+    const loadingOverlay = document.getElementById('app-loading');
+
     try {
-        const response = await fetch('movies.json');
-        movies = await response.json();
+        // Carregar filmes e listas do Supabase em paralelo
+        const [moviesResponse] = await Promise.all([
+            fetch('movies.json'),
+            fetchWatchlist(),
+            fetchWatchedMovies()
+        ]);
+
+        movies = await moviesResponse.json();
         filteredMovies = [...movies];
         populateFilters();
         console.log(`Loaded ${movies.length} movies`);
-        showPowerUp(`${movies.length} FILMES!`);
+        console.log(`Watchlist: ${getWatchlist().length} items`);
+        console.log(`Watched: ${getWatchedMovies().length} items`);
 
         // Atualizar contadores das listas
         updateListCounts();
+
+        // Esconder loading
+        if (loadingOverlay) {
+            loadingOverlay.classList.add('hidden');
+        }
+
+        showPowerUp(`${movies.length} FILMES!`);
     } catch (error) {
         console.error('Error loading movies:', error);
+        if (loadingOverlay) {
+            loadingOverlay.classList.add('hidden');
+        }
         showPowerUp('ERROR LOADING!');
     }
 }
@@ -747,6 +853,7 @@ async function loadMovies() {
 // ============================================
 function populateFilters() {
     const genreSelect = document.getElementById('genre');
+    const genreCustomOptions = document.querySelector('.custom-select[data-target="genre"] .custom-select-options');
     const genres = new Set();
 
     movies.forEach(movie => {
@@ -756,10 +863,31 @@ function populateFilters() {
     });
 
     Array.from(genres).sort().forEach(genre => {
+        const genrePt = translateGenre(genre);
+
+        // Select escondido
         const option = document.createElement('option');
         option.value = genre;
-        option.textContent = genre;
+        option.textContent = genrePt;
         genreSelect.appendChild(option);
+
+        // Custom select
+        if (genreCustomOptions) {
+            const customOption = document.createElement('div');
+            customOption.className = 'custom-select-option';
+            customOption.dataset.value = genre;
+            customOption.textContent = genrePt;
+            customOption.addEventListener('click', () => {
+                genreCustomOptions.querySelectorAll('.custom-select-option').forEach(o => o.classList.remove('selected'));
+                customOption.classList.add('selected');
+                document.querySelector('.custom-select[data-target="genre"] .custom-select-value').textContent = genrePt;
+                genreSelect.value = genre;
+                genreSelect.dispatchEvent(new Event('change'));
+                customOption.closest('.custom-select').classList.remove('open');
+                playSound('click');
+            });
+            genreCustomOptions.appendChild(customOption);
+        }
     });
 }
 
@@ -1058,8 +1186,12 @@ async function displayResults() {
     const grid = document.getElementById('movies-grid');
     grid.innerHTML = '<div class="loading"><div class="loading-spinner"></div><div class="loading-text">LOADING...</div></div>';
 
-    const cards = await Promise.all(selectedMovies.map(async (movie, index) => {
+    // Ordenar por nota (maior para menor)
+    const sortedMovies = [...selectedMovies].sort((a, b) => b.imdb_score - a.imdb_score);
+
+    const cards = await Promise.all(sortedMovies.map(async (movie, index) => {
         const details = await fetchMovieDetails(movie.imdb_id);
+        const rank = index + 1;
 
         const posterUrl = details?.poster_path
             ? `${CONFIG.TMDB_IMG_BASE}${details.poster_path}`
@@ -1071,7 +1203,8 @@ async function displayResults() {
         const gameOverEffect = getGameOverEffect(movie.imdb_score);
 
         return `
-            <div class="movie-card ${gameOverEffect}" onclick="openModal(${index})" data-index="${index}">
+            <div class="movie-card ${gameOverEffect}" onclick="openModalByImdbId('${movie.imdb_id}')" data-index="${index}">
+                <div class="rank-badge">${rank}</div>
                 <div class="poster-wrapper">
                     ${posterUrl
                         ? `<img class="movie-poster" src="${posterUrl}" alt="${movie.title_pt}" loading="lazy">`
@@ -1087,7 +1220,7 @@ async function displayResults() {
                     ${createHPBar(movie.imdb_score)}
                     <p class="movie-overview">${overview}</p>
                     <div class="movie-genres">
-                        ${genres.slice(0, 3).map(g => `<span class="genre-tag">${g}</span>`).join('')}
+                        ${genres.slice(0, 3).map(g => `<span class="genre-tag">${translateGenre(g)}</span>`).join('')}
                     </div>
                     ${createActionButtons(movie.imdb_id)}
                 </div>
@@ -1173,7 +1306,7 @@ async function openModal(index) {
                 <div class="modal-section">
                     <h4 class="modal-section-title">Gêneros</h4>
                     <div class="movie-genres">
-                        ${(details?.genres || []).map(g => `<span class="genre-tag">${g.name}</span>`).join('')}
+                        ${(details?.genres || []).map(g => `<span class="genre-tag">${translateGenre(g.name)}</span>`).join('')}
                     </div>
                 </div>
             </div>
@@ -1261,7 +1394,7 @@ async function openModalByImdbId(imdbId) {
                 <div class="modal-section">
                     <h4 class="modal-section-title">Gêneros</h4>
                     <div class="movie-genres">
-                        ${(details?.genres || []).map(g => `<span class="genre-tag">${g.name}</span>`).join('')}
+                        ${(details?.genres || []).map(g => `<span class="genre-tag">${translateGenre(g.name)}</span>`).join('')}
                     </div>
                 </div>
 
@@ -1450,6 +1583,7 @@ function handleOrientationChange() {
 // EVENT LISTENERS
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
+    initCustomSelects();
     loadMovies();
 
     // Botão principal
@@ -1515,6 +1649,112 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('%cSwipe UP to spin!', 'color: #ffff00;');
     }
 });
+
+// ============================================
+// CUSTOM SELECT
+// ============================================
+function initCustomSelects() {
+    const customSelects = document.querySelectorAll('.custom-select');
+
+    customSelects.forEach(select => {
+        const trigger = select.querySelector('.custom-select-trigger');
+        const options = select.querySelectorAll('.custom-select-option');
+        const targetId = select.dataset.target;
+        const hiddenSelect = document.getElementById(targetId);
+        const valueDisplay = select.querySelector('.custom-select-value');
+
+        // Abrir/fechar
+        trigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            // Fechar outros selects abertos
+            customSelects.forEach(s => {
+                if (s !== select) s.classList.remove('open');
+            });
+            select.classList.toggle('open');
+            playSound('click');
+        });
+
+        // Selecionar opção
+        options.forEach(option => {
+            option.addEventListener('click', () => {
+                const value = option.dataset.value;
+                const text = option.textContent;
+
+                // Atualizar visual
+                options.forEach(o => o.classList.remove('selected'));
+                option.classList.add('selected');
+                valueDisplay.textContent = text;
+
+                // Atualizar select escondido
+                if (hiddenSelect) {
+                    hiddenSelect.value = value;
+                    hiddenSelect.dispatchEvent(new Event('change'));
+                }
+
+                select.classList.remove('open');
+                playSound('click');
+            });
+        });
+    });
+
+    // Fechar ao clicar fora
+    document.addEventListener('click', () => {
+        customSelects.forEach(s => s.classList.remove('open'));
+    });
+}
+
+// ============================================
+// MOBILE NAVBAR (esconde/aparece com scroll)
+// ============================================
+let lastScrollY = 0;
+let ticking = false;
+
+function updateNavbar() {
+    const navbar = document.getElementById('mobile-navbar');
+    if (!navbar) return;
+
+    const currentScrollY = window.scrollY;
+
+    // Mostra quando rola para baixo
+    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        navbar.classList.add('visible');
+    } else if (currentScrollY < lastScrollY) {
+        // Esconde quando rola para cima
+        navbar.classList.remove('visible');
+    }
+
+    lastScrollY = currentScrollY;
+    ticking = false;
+}
+
+function onScroll() {
+    if (!ticking) {
+        requestAnimationFrame(updateNavbar);
+        ticking = true;
+    }
+}
+
+// Atualizar contadores da navbar
+function updateNavbarCounts() {
+    const watchlistCount = getWatchlist().length;
+    const watchedCount = getWatchedMovies().length;
+
+    const navWatchlistCount = document.getElementById('navbar-watchlist-count');
+    const navWatchedCount = document.getElementById('navbar-watched-count');
+
+    if (navWatchlistCount) {
+        navWatchlistCount.textContent = watchlistCount;
+        navWatchlistCount.style.display = watchlistCount > 0 ? 'flex' : 'none';
+    }
+
+    if (navWatchedCount) {
+        navWatchedCount.textContent = watchedCount;
+        navWatchedCount.style.display = watchedCount > 0 ? 'flex' : 'none';
+    }
+}
+
+// Adicionar listener de scroll
+window.addEventListener('scroll', onScroll, { passive: true });
 
 console.log('%c🎬 ROLETA DE FILMES 🎬', 'font-size: 24px; color: #00fff5; text-shadow: 2px 2px #ff00ff;');
 console.log('%cTry the Konami Code! ↑↑↓↓←→←→BA', 'color: #ffff00;');

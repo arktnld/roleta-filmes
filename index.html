@@ -25,7 +25,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Loading Overlay -->
+    <div id="app-loading" class="app-loading">
+        <div class="app-loading-content">
+            <div class="app-loading-spinner"></div>
+            <p class="app-loading-text">CARREGANDO...</p>
+        </div>
+    </div>
+
     <div class="stars"></div>
+
+    <!-- Navbar Mobile -->
+    <nav class="mobile-navbar" id="mobile-navbar">
+        <div class="navbar-title">🎬 Roleta</div>
+        <div class="navbar-actions">
+            <button class="navbar-btn" onclick="spinRoulette()">
+                <span class="icon">🎲</span>
+                <span class="label">Girar</span>
+            </button>
+            <button class="navbar-btn" onclick="toggleListView('watchlist')">
+                <span class="icon">☆</span>
+                <span class="label">Quero Ver</span>
+                <span class="badge" id="navbar-watchlist-count">0</span>
+            </button>
+            <button class="navbar-btn" onclick="toggleListView('watched')">
+                <span class="icon">✓</span>
+                <span class="label">Já Vi</span>
+                <span class="badge" id="navbar-watched-count">0</span>
+            </button>
+        </div>
+    </nav>
 
     <div class="container">
         <header>
@@ -36,25 +65,62 @@
         <!-- Filtros -->
         <section class="filters">
             <div class="filter-group">
-                <label for="genre">Gênero</label>
-                <select id="genre">
+                <label>Gênero</label>
+                <div class="custom-select" data-target="genre">
+                    <div class="custom-select-trigger">
+                        <span class="custom-select-value">Todos</span>
+                        <span class="custom-select-arrow">▼</span>
+                    </div>
+                    <div class="custom-select-options">
+                        <div class="custom-select-option selected" data-value="">Todos</div>
+                    </div>
+                </div>
+                <select id="genre" class="hidden-select">
                     <option value="">Todos</option>
                 </select>
             </div>
             <div class="filter-group">
-                <label for="year">Década</label>
-                <select id="year">
+                <label>Década</label>
+                <div class="custom-select" data-target="year">
+                    <div class="custom-select-trigger">
+                        <span class="custom-select-value">Todas</span>
+                        <span class="custom-select-arrow">▼</span>
+                    </div>
+                    <div class="custom-select-options">
+                        <div class="custom-select-option selected" data-value="">Todas</div>
+                        <div class="custom-select-option" data-value="2020">2020s</div>
+                        <div class="custom-select-option" data-value="2010">2010s</div>
+                        <div class="custom-select-option" data-value="2000">2000s</div>
+                        <div class="custom-select-option" data-value="1990">1990s</div>
+                        <div class="custom-select-option" data-value="1980">1980s</div>
+                        <div class="custom-select-option" data-value="1970">Antes de 1980</div>
+                    </div>
+                </div>
+                <select id="year" class="hidden-select">
                     <option value="">Todas</option>
+                    <option value="2020">2020s</option>
                     <option value="2010">2010s</option>
                     <option value="2000">2000s</option>
                     <option value="1990">1990s</option>
                     <option value="1980">1980s</option>
-                    <option value="1970">1970s e anterior</option>
+                    <option value="1970">Antes de 1980</option>
                 </select>
             </div>
             <div class="filter-group">
-                <label for="rating">Nota mínima</label>
-                <select id="rating">
+                <label>Nota mínima</label>
+                <div class="custom-select" data-target="rating">
+                    <div class="custom-select-trigger">
+                        <span class="custom-select-value">Qualquer</span>
+                        <span class="custom-select-arrow">▼</span>
+                    </div>
+                    <div class="custom-select-options">
+                        <div class="custom-select-option selected" data-value="">Qualquer</div>
+                        <div class="custom-select-option" data-value="8">8+ Excelente</div>
+                        <div class="custom-select-option" data-value="7">7+ Bom</div>
+                        <div class="custom-select-option" data-value="6">6+ Regular</div>
+                    </div>
+                </div>
+                <select id="rating" class="hidden-select">
                     <option value="">Qualquer</option>
                     <option value="8">8+ Excelente</option>
                     <option value="7">7+ Bom</option>
@@ -62,8 +128,20 @@
                 </select>
             </div>
             <div class="filter-group">
-                <label for="movies-count">Filmes</label>
-                <select id="movies-count">
+                <label>Filmes</label>
+                <div class="custom-select" data-target="movies-count">
+                    <div class="custom-select-trigger">
+                        <span class="custom-select-value">3</span>
+                        <span class="custom-select-arrow">▼</span>
+                    </div>
+                    <div class="custom-select-options">
+                        <div class="custom-select-option" data-value="1">1</div>
+                        <div class="custom-select-option selected" data-value="3">3</div>
+                        <div class="custom-select-option" data-value="6">6</div>
+                        <div class="custom-select-option" data-value="9">9</div>
+                    </div>
+                </div>
+                <select id="movies-count" class="hidden-select">
                     <option value="1">1</option>
                     <option value="3" selected>3</option>
                     <option value="6">6</option>

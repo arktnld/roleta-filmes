@@ -427,27 +427,133 @@
         letter-spacing: 0.1em;
     }
 
+    .filter-group select.hidden-select {
+        display: none;
+    }
+
+    /* Custom Select */
+    .custom-select {
+        position: relative;
+        min-width: 130px;
+    }
+
+    .custom-select-trigger {
+        font-family: 'Press Start 2P', monospace;
+        background: oklch(38% 0.06 250);
+        border: 2px solid oklch(50% 0.08 250);
+        border-radius: 12px;
+        color: var(--text-primary);
+        padding: 0.7rem 2.2rem 0.7rem 0.9rem;
+        font-size: 0.45rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .custom-select-trigger:hover {
+        border-color: var(--coin-gold);
+        background: oklch(42% 0.06 250);
+    }
+
+    .custom-select.open .custom-select-trigger {
+        border-color: var(--coin-gold);
+        border-radius: 12px 12px 0 0;
+    }
+
+    .custom-select-arrow {
+        font-size: 0.4rem;
+        color: var(--coin-gold);
+        transition: transform 0.2s ease;
+        position: absolute;
+        right: 10px;
+    }
+
+    .custom-select.open .custom-select-arrow {
+        transform: rotate(180deg);
+    }
+
+    .custom-select-options {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: oklch(35% 0.06 250);
+        border: 2px solid var(--coin-gold);
+        border-top: none;
+        border-radius: 0 0 12px 12px;
+        max-height: 200px;
+        overflow-y: auto;
+        z-index: 100;
+        display: none;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .custom-select.open .custom-select-options {
+        display: block;
+    }
+
+    .custom-select-option {
+        font-family: 'Press Start 2P', monospace;
+        font-size: 0.45rem;
+        padding: 0.7rem 0.9rem;
+        cursor: pointer;
+        transition: background 0.15s ease;
+        color: var(--text-primary);
+    }
+
+    .custom-select-option:hover {
+        background: oklch(45% 0.08 250);
+    }
+
+    .custom-select-option.selected {
+        background: var(--coin-gold);
+        color: var(--bg-primary);
+    }
+
+    /* Scrollbar do dropdown */
+    .custom-select-options::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .custom-select-options::-webkit-scrollbar-track {
+        background: oklch(30% 0.05 250);
+        border-radius: 3px;
+    }
+
+    .custom-select-options::-webkit-scrollbar-thumb {
+        background: var(--coin-gold);
+        border-radius: 3px;
+    }
+
     .filter-group select {
         font-family: 'Press Start 2P', monospace;
-        background: var(--bg-primary);
-        border: 4px solid var(--mushroom-cream);
-        border-radius: var(--radius-md);
+        background: oklch(38% 0.06 250);
+        border: 2px solid oklch(50% 0.08 250);
+        border-radius: 12px;
         color: var(--text-primary);
-        padding: 0.75rem 1rem;
-        font-size: 0.5rem;
+        padding: 0.7rem 2rem 0.7rem 0.9rem;
+        font-size: 0.45rem;
         cursor: pointer;
-        transition: all 0.15s ease;
-        min-width: 140px;
+        transition: all 0.2s ease;
+        min-width: 130px;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23ffd700' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 
-        box-shadow:
-            0 4px 0 oklch(10% 0.02 280),
-            inset 0 2px 0 oklch(30% 0.03 260);
+        &:hover {
+            border-color: var(--coin-gold);
+            background-color: oklch(42% 0.06 250);
+        }
 
-        /* Modern focus-visible */
         &:focus-visible {
-            outline: 3px solid var(--star-yellow);
-            outline-offset: 2px;
-            border-color: var(--star-yellow);
+            outline: none;
+            border-color: var(--coin-gold);
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
         }
 
         &:hover {
@@ -622,6 +728,7 @@
         --card-light: oklch(70% 0.28 25);
         --card-dark: oklch(45% 0.28 25);
 
+        position: relative;
         background: linear-gradient(
             180deg,
             var(--bg-card) 0%,
@@ -630,7 +737,7 @@
         border: 5px solid var(--card-color);
         border-radius: var(--radius-lg);
         cursor: pointer;
-        overflow: hidden;
+        overflow: visible;
 
         box-shadow:
             0 6px 0 var(--card-dark),
@@ -1559,55 +1666,63 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        padding: 0.75rem 1rem;
-        font-size: 0.5rem;
-        background: var(--bg-primary);
-        border: 4px solid var(--mushroom-cream);
-        border-radius: var(--radius-md);
+        padding: 0.7rem 1rem;
+        font-size: 0.45rem;
+        border: 2px solid;
+        border-radius: 12px;
         color: var(--text-primary);
         cursor: pointer;
-        transition: all 0.15s ease;
-        box-shadow:
-            0 4px 0 oklch(10% 0.02 280),
-            inset 0 2px 0 oklch(30% 0.03 260);
+        transition: all 0.2s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
 
     .list-filter-btn .icon {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
+    }
+
+    /* Quero Ver - Amarelo/Dourado */
+    .list-filter-btn.watchlist {
+        background: linear-gradient(135deg, oklch(45% 0.12 85) 0%, oklch(38% 0.1 85) 100%);
+        border-color: var(--coin-gold);
     }
 
     .list-filter-btn.watchlist .icon {
         color: var(--star-yellow);
     }
 
+    .list-filter-btn.watchlist:hover {
+        background: linear-gradient(135deg, oklch(50% 0.14 85) 0%, oklch(42% 0.12 85) 100%);
+        box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    }
+
+    /* Já Vi - Verde */
+    .list-filter-btn.watched {
+        background: linear-gradient(135deg, oklch(40% 0.12 145) 0%, oklch(33% 0.1 145) 100%);
+        border-color: var(--luigi-green);
+    }
+
     .list-filter-btn.watched .icon {
         color: var(--luigi-green);
     }
 
-    .list-filter-btn:hover {
-        border-color: var(--coin-gold);
-        background: var(--bg-card);
-        transform: translateY(-2px);
-        box-shadow:
-            0 6px 0 oklch(10% 0.02 280),
-            0 0 20px var(--gold-glow);
+    .list-filter-btn.watched:hover {
+        background: linear-gradient(135deg, oklch(45% 0.14 145) 0%, oklch(38% 0.12 145) 100%);
+        box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
     }
 
     .list-filter-btn.active {
-        border-color: var(--coin-gold);
-        background: var(--bg-card);
+        transform: scale(0.98);
     }
 
     .list-filter-btn:active {
-        transform: translateY(2px);
-        box-shadow: 0 2px 0 oklch(10% 0.02 280);
+        transform: scale(0.96);
     }
 
     .list-filter-btn .count {
-        background: var(--mario-red);
+        background: rgba(0, 0, 0, 0.3);
         color: white;
-        padding: 0.2rem 0.4rem;
-        border-radius: var(--radius-sm);
+        padding: 0.2rem 0.5rem;
+        border-radius: 8px;
         font-size: 0.4rem;
         min-width: 1.2rem;
         text-align: center;
@@ -2224,5 +2339,184 @@
         select {
             font-size: 16px !important; /* Prevents iOS zoom */
         }
+    }
+}
+
+/* ============================================
+   APP LOADING OVERLAY
+   ============================================ */
+.app-loading {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.app-loading.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.app-loading-content {
+    text-align: center;
+}
+
+.app-loading-spinner {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1.5rem;
+    border: 6px solid var(--bg-card);
+    border-top-color: var(--coin-gold);
+    border-radius: 50%;
+    animation: app-spin 0.8s linear infinite;
+}
+
+.app-loading-text {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.8rem;
+    color: var(--coin-gold);
+    animation: app-blink 1s steps(1) infinite;
+}
+
+@keyframes app-spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes app-blink {
+    50% { opacity: 0.5; }
+}
+
+/* ============================================
+   RANK BADGE (Estrela dourada)
+   ============================================ */
+.rank-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    z-index: 10;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.8rem;
+    color: #1a1a2e;
+    font-weight: bold;
+    text-shadow: none;
+    background: linear-gradient(135deg, #ffd700 0%, #ffec8b 30%, #ffd700 60%, #b8860b 100%);
+    clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+    );
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.5));
+    animation: rank-pulse 2s ease-in-out infinite;
+}
+
+@keyframes rank-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* ============================================
+   MOBILE NAVBAR (só mobile)
+   ============================================ */
+.mobile-navbar {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 16px;
+        padding-top: calc(12px + env(safe-area-inset-top));
+        background: oklch(42% 0.08 250);
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.35);
+    }
+
+    .mobile-navbar.visible {
+        transform: translateY(0);
+    }
+
+    .navbar-title {
+        font-family: 'Press Start 2P', monospace;
+        font-size: 0.55rem;
+        color: var(--coin-gold);
+    }
+
+    .navbar-actions {
+        display: flex;
+        gap: 8px;
+    }
+
+    .navbar-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        background: transparent;
+        border: none;
+        border-radius: 50%;
+        font-family: 'Press Start 2P', monospace;
+        color: var(--text-primary);
+        cursor: pointer;
+        transition: background 0.2s ease;
+        position: relative;
+    }
+
+    .navbar-btn:active {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .navbar-btn .icon {
+        font-size: 1.2rem;
+    }
+
+    .navbar-btn .label {
+        display: none;
+    }
+
+    .navbar-btn .badge {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        min-width: 18px;
+        height: 18px;
+        padding: 0 5px;
+        background: var(--mario-red);
+        border-radius: 9px;
+        font-size: 0.4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+
+    .navbar-btn .badge:empty {
+        display: none;
     }
 }

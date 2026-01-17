@@ -678,7 +678,7 @@
     "title_en": "Waterworld",
     "title_pt": "Waterworld: O Segredo das Águas",
     "year": 1995,
-    "genres": "Action|Adventure|Sci-Fi|Thriller",
+    "genres": "Action|Adventure|Sci-Fi|Thriller|Sessão da tarde",
     "imdb_score": 6.1,
     "director": "Kevin Reynolds",
     "imdb_id": "tt0114898"
@@ -1056,7 +1056,7 @@
     "title_en": "Charlie and the Chocolate Factory",
     "title_pt": "A Fantástica Fábrica de Chocolate",
     "year": 2005,
-    "genres": "Adventure|Comedy|Family|Fantasy",
+    "genres": "Adventure|Comedy|Family|Fantasy|Sessão da tarde",
     "imdb_score": 6.7,
     "director": "Tim Burton",
     "imdb_id": "tt0367594"
@@ -1488,7 +1488,7 @@
     "title_en": "Lethal Weapon 4",
     "title_pt": "Máquina Mortífera 4",
     "year": 1998,
-    "genres": "Action|Crime|Thriller",
+    "genres": "Action|Crime|Thriller|Sessão da tarde",
     "imdb_score": 6.6,
     "director": "Richard Donner",
     "imdb_id": "tt0122151"
@@ -2190,7 +2190,7 @@
     "title_en": "Teenage Mutant Ninja Turtles",
     "title_pt": "As Tartarugas Ninja",
     "year": 2014,
-    "genres": "Action|Adventure|Comedy|Sci-Fi",
+    "genres": "Action|Adventure|Comedy|Sci-Fi|Sessão da tarde",
     "imdb_score": 5.9,
     "director": "Jonathan Liebesman",
     "imdb_id": "tt1291150"
@@ -2379,7 +2379,7 @@
     "title_en": "Speed 2: Cruise Control",
     "title_pt": "Velocidade Máxima 2",
     "year": 1997,
-    "genres": "Action|Crime|Romance|Thriller",
+    "genres": "Action|Crime|Romance|Thriller|Sessão da tarde",
     "imdb_score": 3.7,
     "director": "Jan de Bont",
     "imdb_id": "tt0120179"
@@ -2550,7 +2550,7 @@
     "title_en": "Planet of the Apes",
     "title_pt": "Planeta dos Macacos",
     "year": 2001,
-    "genres": "Action|Adventure|Sci-Fi|Thriller",
+    "genres": "Action|Adventure|Sci-Fi|Thriller|Sessão da tarde",
     "imdb_score": 5.7,
     "director": "Tim Burton",
     "imdb_id": "tt0133152"
@@ -2586,7 +2586,7 @@
     "title_en": "True Lies",
     "title_pt": "True Lies",
     "year": 1994,
-    "genres": "Action|Comedy|Thriller",
+    "genres": "Action|Comedy|Thriller|Sessão da tarde",
     "imdb_score": 7.2,
     "director": "James Cameron",
     "imdb_id": "tt0111503"
@@ -2955,7 +2955,7 @@
     "title_en": "The Fifth Element",
     "title_pt": "O Quinto Elemento",
     "year": 1997,
-    "genres": "Action|Adventure|Sci-Fi",
+    "genres": "Action|Adventure|Sci-Fi|Sessão da tarde",
     "imdb_score": 7.7,
     "director": "Luc Besson",
     "imdb_id": "tt0119116"
@@ -2991,7 +2991,7 @@
     "title_en": "Cinderella",
     "title_pt": "Cinderela",
     "year": 2015,
-    "genres": "Drama|Family|Fantasy|Romance",
+    "genres": "Drama|Family|Fantasy|Romance|Sessão da tarde",
     "imdb_score": 7.0,
     "director": "Kenneth Branagh",
     "imdb_id": "tt1661199"
@@ -3117,7 +3117,7 @@
     "title_en": "Cutthroat Island",
     "title_pt": "A Ilha da Garganta Cortada",
     "year": 1995,
-    "genres": "Action|Adventure|Comedy",
+    "genres": "Action|Adventure|Comedy|Sessão da tarde",
     "imdb_score": 5.6,
     "director": "Renny Harlin",
     "imdb_id": "tt0112760"
@@ -3342,7 +3342,7 @@
     "title_en": "Contact",
     "title_pt": "Contato",
     "year": 1997,
-    "genres": "Drama|Mystery|Sci-Fi|Thriller",
+    "genres": "Drama|Mystery|Sci-Fi|Thriller|Sessão da tarde",
     "imdb_score": 7.4,
     "director": "Robert Zemeckis",
     "imdb_id": "tt0118884"
@@ -3477,7 +3477,7 @@
     "title_en": "Conan the Barbarian",
     "title_pt": "Conan, o Bárbaro",
     "year": 1982,
-    "genres": "Adventure|Fantasy",
+    "genres": "Adventure|Fantasy|Sessão da tarde",
     "imdb_score": 6.9,
     "director": "John Milius",
     "imdb_id": "tt0082198"
@@ -3576,7 +3576,7 @@
     "title_en": "The Three Musketeers",
     "title_pt": "Os Três Mosqueteiros",
     "year": 2011,
-    "genres": "Action|Adventure|Romance",
+    "genres": "Action|Adventure|Romance|Sessão da tarde",
     "imdb_score": 5.8,
     "director": "Paul W.S. Anderson",
     "imdb_id": "tt1509767"
@@ -4125,7 +4125,7 @@
     "title_en": "Flubber",
     "title_pt": "Flubber: Uma Invenção Desmiolada",
     "year": 1997,
-    "genres": "Comedy|Family|Sci-Fi",
+    "genres": "Comedy|Family|Sci-Fi|Sessão da tarde",
     "imdb_score": 5.2,
     "director": "Les Mayfield",
     "imdb_id": "tt0119137"
@@ -4143,7 +4143,7 @@
     "title_en": "Space Jam",
     "title_pt": "Space Jam: O Jogo do Século",
     "year": 1996,
-    "genres": "Adventure|Animation|Comedy|Family|Fantasy|Sci-Fi|Sport",
+    "genres": "Adventure|Animation|Comedy|Family|Fantasy|Sci-Fi|Sport|Sessão da tarde",
     "imdb_score": 6.3,
     "director": "Joe Pytka",
     "imdb_id": "tt0117705"
@@ -4188,7 +4188,7 @@
     "title_en": "Six Days Seven Nights",
     "title_pt": "Seis Dias, Sete Noites",
     "year": 1998,
-    "genres": "Action|Adventure|Comedy|Romance",
+    "genres": "Action|Adventure|Comedy|Romance|Sessão da tarde",
     "imdb_score": 5.7,
     "director": "Ivan Reitman",
     "imdb_id": "tt0120828"
@@ -4278,7 +4278,7 @@
     "title_en": "Mighty Joe Young",
     "title_pt": "Poderoso Joe",
     "year": 1998,
-    "genres": "Action|Adventure|Family|Fantasy|Thriller",
+    "genres": "Action|Adventure|Family|Fantasy|Thriller|Sessão da tarde",
     "imdb_score": 5.6,
     "director": "Ron Underwood",
     "imdb_id": "tt0120751"
@@ -4296,7 +4296,7 @@
     "title_en": "The Legend of Zorro",
     "title_pt": "A Lenda do Zorro",
     "year": 2005,
-    "genres": "Action|Adventure|Western",
+    "genres": "Action|Adventure|Western|Sessão da tarde",
     "imdb_score": 5.9,
     "director": "Martin Campbell",
     "imdb_id": "tt0386140"
@@ -4332,7 +4332,7 @@
     "title_en": "Mars Attacks!",
     "title_pt": "Marte Ataca!",
     "year": 1996,
-    "genres": "Action|Comedy|Sci-Fi",
+    "genres": "Action|Comedy|Sci-Fi|Sessão da tarde",
     "imdb_score": 6.3,
     "director": "Tim Burton",
     "imdb_id": "tt0116996"
@@ -4377,7 +4377,7 @@
     "title_en": "Daylight",
     "title_pt": "Daylight",
     "year": 1996,
-    "genres": "Action|Adventure|Drama|Thriller",
+    "genres": "Action|Adventure|Drama|Thriller|Sessão da tarde",
     "imdb_score": 5.8,
     "director": "Rob Cohen",
     "imdb_id": "tt0116040"
@@ -4440,7 +4440,7 @@
     "title_en": "Babe: Pig in the City",
     "title_pt": "Babe, o Porquinho Atrapalhado na Cidade",
     "year": 1998,
-    "genres": "Adventure|Comedy|Drama|Family|Fantasy",
+    "genres": "Adventure|Comedy|Drama|Family|Fantasy|Sessão da tarde",
     "imdb_score": 5.8,
     "director": "George Miller",
     "imdb_id": "tt0120595"
@@ -4602,7 +4602,7 @@
     "title_en": "The Adventures of Rocky & Bullwinkle",
     "title_pt": "As Aventuras de Alceu e Dentinho",
     "year": 2000,
-    "genres": "Adventure|Animation|Comedy|Family|Fantasy",
+    "genres": "Adventure|Animation|Comedy|Family|Fantasy|Sessão da tarde",
     "imdb_score": 4.1,
     "director": "Des McAnuff",
     "imdb_id": "tt0131704"
@@ -4638,7 +4638,7 @@
     "title_en": "Independence Day",
     "title_pt": "Independence Day",
     "year": 1996,
-    "genres": "Action|Adventure|Sci-Fi",
+    "genres": "Action|Adventure|Sci-Fi|Sessão da tarde",
     "imdb_score": 6.9,
     "director": "Roland Emmerich",
     "imdb_id": "tt0116629"
@@ -4944,7 +4944,7 @@
     "title_en": "Soldier",
     "title_pt": "O Soldado do Futuro",
     "year": 1998,
-    "genres": "Action|Drama|Sci-Fi",
+    "genres": "Action|Drama|Sci-Fi|Sessão da tarde",
     "imdb_score": 6.0,
     "director": "Paul W.S. Anderson",
     "imdb_id": "tt0120157"
@@ -5142,7 +5142,7 @@
     "title_en": "Doctor Dolittle",
     "title_pt": "Dr. Dolittle",
     "year": 1998,
-    "genres": "Comedy|Family|Fantasy",
+    "genres": "Comedy|Family|Fantasy|Sessão da tarde",
     "imdb_score": 5.3,
     "director": "Betty Thomas",
     "imdb_id": "tt0118998"
@@ -5223,7 +5223,7 @@
     "title_en": "Hook",
     "title_pt": "Hook: A Volta do Capitão Gancho",
     "year": 1991,
-    "genres": "Adventure|Comedy|Family|Fantasy",
+    "genres": "Adventure|Comedy|Family|Fantasy|Sessão da tarde",
     "imdb_score": 6.7,
     "director": "Steven Spielberg",
     "imdb_id": "tt0102057"
@@ -5754,7 +5754,7 @@
     "title_en": "What Women Want",
     "title_pt": "Do Que as Mulheres Gostam",
     "year": 2000,
-    "genres": "Comedy|Fantasy|Romance",
+    "genres": "Comedy|Fantasy|Romance|Sessão da tarde",
     "imdb_score": 6.4,
     "director": "Nancy Meyers",
     "imdb_id": "tt0207201"
@@ -6168,7 +6168,7 @@
     "title_en": "Jurassic Park",
     "title_pt": "Jurassic Park: O Parque dos Dinossauros",
     "year": 1993,
-    "genres": "Adventure|Sci-Fi|Thriller",
+    "genres": "Adventure|Sci-Fi|Thriller|Sessão da tarde",
     "imdb_score": 8.1,
     "director": "Steven Spielberg",
     "imdb_id": "tt0107290"
@@ -6384,7 +6384,7 @@
     "title_en": "Daddy Day Care",
     "title_pt": "A Creche do Papai",
     "year": 2003,
-    "genres": "Comedy|Family",
+    "genres": "Comedy|Family|Sessão da tarde",
     "imdb_score": 5.5,
     "director": "Steve Carr",
     "imdb_id": "tt0317303"
@@ -6447,7 +6447,7 @@
     "title_en": "Days of Thunder",
     "title_pt": "Dias de Trovão",
     "year": 1990,
-    "genres": "Action|Drama|Sport",
+    "genres": "Action|Drama|Sport|Sessão da tarde",
     "imdb_score": 5.9,
     "director": "Tony Scott",
     "imdb_id": "tt0099371"
@@ -6483,7 +6483,7 @@
     "title_en": "The Family Man",
     "title_pt": "Um Homem de Família",
     "year": 2000,
-    "genres": "Comedy|Drama|Fantasy|Romance",
+    "genres": "Comedy|Drama|Fantasy|Romance|Sessão da tarde",
     "imdb_score": 6.7,
     "director": "Brett Ratner",
     "imdb_id": "tt0218967"
@@ -6636,7 +6636,7 @@
     "title_en": "Jingle All the Way",
     "title_pt": "Um Herói de Brinquedo",
     "year": 1996,
-    "genres": "Comedy|Family",
+    "genres": "Comedy|Family|Sessão da tarde",
     "imdb_score": 5.4,
     "director": "Brian Levant",
     "imdb_id": "tt0116705"
@@ -6987,7 +6987,7 @@
     "title_en": "Garfield 2",
     "title_pt": "Garfield 2",
     "year": 2006,
-    "genres": "Animation|Comedy|Family|Fantasy",
+    "genres": "Animation|Comedy|Family|Fantasy|Sessão da tarde",
     "imdb_score": 5.0,
     "director": "Tim Hill",
     "imdb_id": "tt0455499"
@@ -7419,7 +7419,7 @@
     "title_en": "Superman",
     "title_pt": "Superman: O Filme",
     "year": 1978,
-    "genres": "Action|Adventure|Drama|Romance|Sci-Fi",
+    "genres": "Action|Adventure|Drama|Romance|Sci-Fi|Sessão da tarde",
     "imdb_score": 7.3,
     "director": "Richard Donner",
     "imdb_id": "tt0078346"
@@ -7428,7 +7428,7 @@
     "title_en": "The Nutty Professor",
     "title_pt": "O Professor Aloprado",
     "year": 1996,
-    "genres": "Comedy|Romance|Sci-Fi",
+    "genres": "Comedy|Romance|Sci-Fi|Sessão da tarde",
     "imdb_score": 5.6,
     "director": "Tom Shadyac",
     "imdb_id": "tt0117218"
@@ -7446,7 +7446,7 @@
     "title_en": "George of the Jungle",
     "title_pt": "George, o Rei da Floresta",
     "year": 1997,
-    "genres": "Action|Adventure|Comedy|Family|Romance",
+    "genres": "Action|Adventure|Comedy|Family|Romance|Sessão da tarde",
     "imdb_score": 5.4,
     "director": "Sam Weisman",
     "imdb_id": "tt0119190"
@@ -7482,7 +7482,7 @@
     "title_en": "Casper",
     "title_pt": "Gasparzinho, o Fantasminha Camarada",
     "year": 1995,
-    "genres": "Comedy|Family|Fantasy",
+    "genres": "Comedy|Family|Fantasy|Sessão da tarde",
     "imdb_score": 6.0,
     "director": "Brad Silberling",
     "imdb_id": "tt0112642"
@@ -7545,7 +7545,7 @@
     "title_en": "City of Angels",
     "title_pt": "Cidade dos Anjos",
     "year": 1998,
-    "genres": "Drama|Fantasy|Romance",
+    "genres": "Drama|Fantasy|Romance|Sessão da tarde",
     "imdb_score": 6.7,
     "director": "Brad Silberling",
     "imdb_id": "tt0120632"
@@ -7581,7 +7581,7 @@
     "title_en": "Tango & Cash",
     "title_pt": "Tango & Cash: Os Vingadores",
     "year": 1989,
-    "genres": "Action|Comedy|Crime|Thriller",
+    "genres": "Action|Comedy|Crime|Thriller|Sessão da tarde",
     "imdb_score": 6.3,
     "director": "Andrey Konchalovskiy",
     "imdb_id": "tt0098439"
@@ -7590,7 +7590,7 @@
     "title_en": "Death Becomes Her",
     "title_pt": "A Morte lhe Cai Bem",
     "year": 1992,
-    "genres": "Comedy|Fantasy|Horror",
+    "genres": "Comedy|Fantasy|Horror|Sessão da tarde",
     "imdb_score": 6.4,
     "director": "Robert Zemeckis",
     "imdb_id": "tt0104070"
@@ -7671,7 +7671,7 @@
     "title_en": "The Ghost and the Darkness",
     "title_pt": "A Sombra e a Escuridão",
     "year": 1996,
-    "genres": "Adventure|Drama|Horror|Thriller",
+    "genres": "Adventure|Drama|Horror|Thriller|Sessão da tarde",
     "imdb_score": 6.8,
     "director": "Stephen Hopkins",
     "imdb_id": "tt0116409"
@@ -7968,7 +7968,7 @@
     "title_en": "Anastasia",
     "title_pt": "Anastasia",
     "year": 1997,
-    "genres": "Adventure|Animation|Drama|Family|Fantasy|Musical|Mystery|Romance",
+    "genres": "Adventure|Animation|Drama|Family|Fantasy|Musical|Mystery|Romance|Sessão da tarde",
     "imdb_score": 7.1,
     "director": "Don Bluth",
     "imdb_id": "tt0118617"
@@ -8157,7 +8157,7 @@
     "title_en": "Me, Myself & Irene",
     "title_pt": "Eu, Eu Mesmo & Irene",
     "year": 2000,
-    "genres": "Comedy",
+    "genres": "Comedy|Sessão da tarde",
     "imdb_score": 6.5,
     "director": "Bobby Farrelly",
     "imdb_id": "tt0183505"
@@ -8211,7 +8211,7 @@
     "title_en": "Robin Hood: Prince of Thieves",
     "title_pt": "Robin Hood: O Príncipe dos Ladrões",
     "year": 1991,
-    "genres": "Action|Adventure|Drama|Romance",
+    "genres": "Action|Adventure|Drama|Romance|Sessão da tarde",
     "imdb_score": 6.9,
     "director": "Kevin Reynolds",
     "imdb_id": "tt0102798"
@@ -8247,7 +8247,7 @@
     "title_en": "Patch Adams",
     "title_pt": "Patch Adams: O Amor é Contagioso",
     "year": 1998,
-    "genres": "Biography|Comedy|Drama|Romance",
+    "genres": "Biography|Comedy|Drama|Romance|Sessão da tarde",
     "imdb_score": 6.7,
     "director": "Tom Shadyac",
     "imdb_id": "tt0129290"
@@ -8382,7 +8382,7 @@
     "title_en": "Congo",
     "title_pt": "Congo",
     "year": 1995,
-    "genres": "Action|Adventure|Mystery|Sci-Fi",
+    "genres": "Action|Adventure|Mystery|Sci-Fi|Sessão da tarde",
     "imdb_score": 5.0,
     "director": "Frank Marshall",
     "imdb_id": "tt0112715"
@@ -8436,7 +8436,7 @@
     "title_en": "Garfield",
     "title_pt": "Garfield: O Filme",
     "year": 2004,
-    "genres": "Animation|Comedy|Family|Fantasy",
+    "genres": "Animation|Comedy|Family|Fantasy|Sessão da tarde",
     "imdb_score": 5.0,
     "director": "Peter Hewitt",
     "imdb_id": "tt0356634"
@@ -8670,7 +8670,7 @@
     "title_en": "Beverly Hills Cop III",
     "title_pt": "Um Tira da Pesada 3",
     "year": 1994,
-    "genres": "Action|Comedy|Crime|Thriller",
+    "genres": "Action|Comedy|Crime|Thriller|Sessão da tarde",
     "imdb_score": 5.5,
     "director": "John Landis",
     "imdb_id": "tt0109254"
@@ -8679,7 +8679,7 @@
     "title_en": "Gremlins 2: The New Batch",
     "title_pt": "Gremlins 2: A Nova Geração",
     "year": 1990,
-    "genres": "Comedy|Fantasy|Horror",
+    "genres": "Comedy|Fantasy|Horror|Sessão da tarde",
     "imdb_score": 6.3,
     "director": "Joe Dante",
     "imdb_id": "tt0099700"
@@ -8895,7 +8895,7 @@
     "title_en": "The Iron Giant",
     "title_pt": "O Gigante de Ferro",
     "year": 1999,
-    "genres": "Action|Adventure|Animation|Comedy|Drama|Family|Sci-Fi",
+    "genres": "Action|Adventure|Animation|Comedy|Drama|Family|Sci-Fi|Sessão da tarde",
     "imdb_score": 8.0,
     "director": "Brad Bird",
     "imdb_id": "tt0129167"
@@ -9003,7 +9003,7 @@
     "title_en": "Baby's Day Out",
     "title_pt": "Ninguém Segura Este Bebê",
     "year": 1994,
-    "genres": "Adventure|Comedy|Crime|Drama|Family",
+    "genres": "Adventure|Comedy|Crime|Drama|Family|Sessão da tarde",
     "imdb_score": 5.9,
     "director": "Patrick Read Johnson",
     "imdb_id": "tt0109190"
@@ -9345,7 +9345,7 @@
     "title_en": "First Blood",
     "title_pt": "Rambo: Programado Para Matar",
     "year": 1982,
-    "genres": "Action|Adventure|Drama",
+    "genres": "Action|Adventure|Drama|Sessão da tarde",
     "imdb_score": 7.7,
     "director": "Ted Kotcheff",
     "imdb_id": "tt0083944"
@@ -9381,7 +9381,7 @@
     "title_en": "My Best Friend's Wedding",
     "title_pt": "O Casamento do Meu Melhor Amigo",
     "year": 1997,
-    "genres": "Comedy|Romance",
+    "genres": "Comedy|Romance|Sessão da tarde",
     "imdb_score": 6.3,
     "director": "P.J. Hogan",
     "imdb_id": "tt0119738"
@@ -9489,7 +9489,7 @@
     "title_en": "Miss Congeniality",
     "title_pt": "Miss Simpatia",
     "year": 2000,
-    "genres": "Action|Comedy|Crime|Romance",
+    "genres": "Action|Comedy|Crime|Romance|Sessão da tarde",
     "imdb_score": 6.2,
     "director": "Donald Petrie",
     "imdb_id": "tt0212346"
@@ -9633,7 +9633,7 @@
     "title_en": "Anaconda",
     "title_pt": "Anaconda",
     "year": 1997,
-    "genres": "Action|Adventure|Horror|Thriller",
+    "genres": "Action|Adventure|Horror|Thriller|Sessão da tarde",
     "imdb_score": 4.6,
     "director": "Luis Llosa",
     "imdb_id": "tt0118615"
@@ -9759,7 +9759,7 @@
     "title_en": "The River Wild",
     "title_pt": "O Rio Selvagem",
     "year": 1994,
-    "genres": "Action|Adventure|Crime|Thriller",
+    "genres": "Action|Adventure|Crime|Thriller|Sessão da tarde",
     "imdb_score": 6.3,
     "director": "Curtis Hanson",
     "imdb_id": "tt0110997"
@@ -9768,7 +9768,7 @@
     "title_en": "The Indian in the Cupboard",
     "title_pt": "A Chave Mágica",
     "year": 1995,
-    "genres": "Drama|Family|Fantasy",
+    "genres": "Drama|Family|Fantasy|Sessão da tarde",
     "imdb_score": 5.9,
     "director": "Frank Oz",
     "imdb_id": "tt0113419"
@@ -9912,7 +9912,7 @@
     "title_en": "The Phantom",
     "title_pt": "O Fantasma",
     "year": 1996,
-    "genres": "Action|Adventure|Comedy|Fantasy",
+    "genres": "Action|Adventure|Comedy|Fantasy|Sessão da tarde",
     "imdb_score": 4.9,
     "director": "Simon Wincer",
     "imdb_id": "tt0117331"
@@ -10128,7 +10128,7 @@
     "title_en": "28 Days",
     "title_pt": "28 Dias",
     "year": 2000,
-    "genres": "Comedy|Drama",
+    "genres": "Comedy|Drama|Sessão da tarde",
     "imdb_score": 6.0,
     "director": "Betty Thomas",
     "imdb_id": "tt0191754"
@@ -10191,7 +10191,7 @@
     "title_en": "Notting Hill",
     "title_pt": "Um Lugar Chamado Notting Hill",
     "year": 1999,
-    "genres": "Comedy|Drama|Romance",
+    "genres": "Comedy|Drama|Romance|Sessão da tarde",
     "imdb_score": 7.0,
     "director": "Roger Michell",
     "imdb_id": "tt0125439"
@@ -10218,7 +10218,7 @@
     "title_en": "Boomerang",
     "title_pt": "O Príncipe das Mulheres",
     "year": 1992,
-    "genres": "Comedy|Drama|Romance",
+    "genres": "Comedy|Drama|Romance|Sessão da tarde",
     "imdb_score": 5.4,
     "director": "Reginald Hudlin",
     "imdb_id": "tt0103859"
@@ -10317,7 +10317,7 @@
     "title_en": "Super Mario Bros.",
     "title_pt": "Super Mario Bros.",
     "year": 1993,
-    "genres": "Adventure|Comedy|Family|Fantasy|Sci-Fi",
+    "genres": "Adventure|Comedy|Family|Fantasy|Sci-Fi|Sessão da tarde",
     "imdb_score": 4.0,
     "director": "Annabel Jankel",
     "imdb_id": "tt0108255"
@@ -10398,7 +10398,7 @@
     "title_en": "A Knight's Tale",
     "title_pt": "Coração de Cavaleiro",
     "year": 2001,
-    "genres": "Action|Adventure|Romance",
+    "genres": "Action|Adventure|Romance|Sessão da tarde",
     "imdb_score": 6.9,
     "director": "Brian Helgeland",
     "imdb_id": "tt0183790"
@@ -10443,7 +10443,7 @@
     "title_en": "The Karate Kid",
     "title_pt": "Karatê Kid: A Hora da Verdade",
     "year": 1984,
-    "genres": "Action|Drama|Family|Sport",
+    "genres": "Action|Drama|Family|Sport|Sessão da tarde",
     "imdb_score": 7.2,
     "director": "John G. Avildsen",
     "imdb_id": "tt0087538"
@@ -10542,7 +10542,7 @@
     "title_en": "A League of Their Own",
     "title_pt": "Uma Equipe Muito Especial",
     "year": 1992,
-    "genres": "Comedy|Drama|Sport",
+    "genres": "Comedy|Drama|Sport|Sessão da tarde",
     "imdb_score": 7.2,
     "director": "Penny Marshall",
     "imdb_id": "tt0104694"
@@ -10731,7 +10731,7 @@
     "title_en": "Shallow Hal",
     "title_pt": "O Amor é Cego",
     "year": 2001,
-    "genres": "Comedy|Drama|Fantasy|Romance",
+    "genres": "Comedy|Drama|Fantasy|Romance|Sessão da tarde",
     "imdb_score": 5.9,
     "director": "Bobby Farrelly",
     "imdb_id": "tt0256380"
@@ -10839,7 +10839,7 @@
     "title_en": "Small Soldiers",
     "title_pt": "Pequenos Guerreiros",
     "year": 1998,
-    "genres": "Action|Adventure|Comedy|Family|Sci-Fi",
+    "genres": "Action|Adventure|Comedy|Family|Sci-Fi|Sessão da tarde",
     "imdb_score": 6.1,
     "director": "Joe Dante",
     "imdb_id": "tt0122718"
@@ -11046,7 +11046,7 @@
     "title_en": "Ri¢hie Ri¢h",
     "title_pt": "Riquinho",
     "year": 1994,
-    "genres": "Comedy|Family",
+    "genres": "Comedy|Family|Sessão da tarde",
     "imdb_score": 5.2,
     "director": "Donald Petrie",
     "imdb_id": "tt0110989"
@@ -11334,7 +11334,7 @@
     "title_en": "The Magic Sword: Quest for Camelot",
     "title_pt": "A Espada Mágica: A Lenda de Camelot",
     "year": 1998,
-    "genres": "Adventure|Animation|Comedy|Drama|Family|Fantasy|Musical",
+    "genres": "Adventure|Animation|Comedy|Drama|Family|Fantasy|Musical|Sessão da tarde",
     "imdb_score": 6.2,
     "director": "Frederik Du Chau",
     "imdb_id": "tt0120800"
@@ -11451,7 +11451,7 @@
     "title_en": "Memoirs of an Invisible Man",
     "title_pt": "Memórias de um Homem Invisível",
     "year": 1992,
-    "genres": "Comedy|Romance|Sci-Fi|Thriller",
+    "genres": "Comedy|Romance|Sci-Fi|Thriller|Sessão da tarde",
     "imdb_score": 5.9,
     "director": "John Carpenter",
     "imdb_id": "tt0104850"
@@ -11847,7 +11847,7 @@
     "title_en": "Sgt. Bilko",
     "title_pt": "O Sargento Trapalhão",
     "year": 1996,
-    "genres": "Comedy",
+    "genres": "Comedy|Sessão da tarde",
     "imdb_score": 5.7,
     "director": "Jonathan Lynn",
     "imdb_id": "tt0117608"
@@ -12216,7 +12216,7 @@
     "title_en": "Breakdown",
     "title_pt": "Breakdown: Implacável Perseguição",
     "year": 1997,
-    "genres": "Action|Crime|Drama|Mystery|Thriller",
+    "genres": "Action|Crime|Drama|Mystery|Thriller|Sessão da tarde",
     "imdb_score": 6.9,
     "director": "Jonathan Mostow",
     "imdb_id": "tt0118771"
@@ -12387,7 +12387,7 @@
     "title_en": "Lethal Weapon 3",
     "title_pt": "Máquina Mortífera 3",
     "year": 1992,
-    "genres": "Action|Crime|Thriller",
+    "genres": "Action|Crime|Thriller|Sessão da tarde",
     "imdb_score": 6.7,
     "director": "Richard Donner",
     "imdb_id": "tt0104714"
@@ -12576,7 +12576,7 @@
     "title_en": "TMNT",
     "title_pt": "As Tartarugas Ninja: O Retorno",
     "year": 2007,
-    "genres": "Action|Adventure|Animation|Comedy|Family|Fantasy|Sci-Fi",
+    "genres": "Action|Adventure|Animation|Comedy|Family|Fantasy|Sci-Fi|Sessão da tarde",
     "imdb_score": 6.3,
     "director": "Kevin Munroe",
     "imdb_id": "tt0453556"
@@ -12702,7 +12702,7 @@
     "title_en": "Poltergeist",
     "title_pt": "Poltergeist: O Fenômeno",
     "year": 1982,
-    "genres": "Fantasy|Horror",
+    "genres": "Fantasy|Horror|Sessão da tarde",
     "imdb_score": 7.4,
     "director": "Tobe Hooper",
     "imdb_id": "tt0084516"
@@ -12774,7 +12774,7 @@
     "title_en": "Street Fighter",
     "title_pt": "Street Fighter: A Última Batalha",
     "year": 1994,
-    "genres": "Action|Adventure|Comedy|Thriller",
+    "genres": "Action|Adventure|Comedy|Thriller|Sessão da tarde",
     "imdb_score": 3.8,
     "director": "Steven E. de Souza",
     "imdb_id": "tt0111301"
@@ -12882,7 +12882,7 @@
     "title_en": "Flash Gordon",
     "title_pt": "Flash Gordon",
     "year": 1980,
-    "genres": "Action|Adventure|Sci-Fi",
+    "genres": "Action|Adventure|Sci-Fi|Sessão da tarde",
     "imdb_score": 6.4,
     "director": "Mike Hodges",
     "imdb_id": "tt0080745"
@@ -13089,7 +13089,7 @@
     "title_en": "Krull",
     "title_pt": "Krull",
     "year": 1983,
-    "genres": "Action|Adventure|Fantasy",
+    "genres": "Action|Adventure|Fantasy|Sessão da tarde",
     "imdb_score": 6.0,
     "director": "Peter Yates",
     "imdb_id": "tt0085811"
@@ -13224,7 +13224,7 @@
     "title_en": "Warriors of Virtue",
     "title_pt": "Guerreiros da Virtude",
     "year": 1997,
-    "genres": "Action|Adventure|Fantasy",
+    "genres": "Action|Adventure|Fantasy|Sessão da tarde",
     "imdb_score": 4.6,
     "director": "Ronny Yu",
     "imdb_id": "tt0120479"
@@ -13242,7 +13242,7 @@
     "title_en": "Radio Flyer",
     "title_pt": "Radio Flyer",
     "year": 1992,
-    "genres": "Drama",
+    "genres": "Drama|Sessão da tarde",
     "imdb_score": 6.9,
     "director": "Richard Donner",
     "imdb_id": "tt0105211"
@@ -13620,7 +13620,7 @@
     "title_en": "Snow Dogs",
     "title_pt": "Neve pra Cachorro",
     "year": 2002,
-    "genres": "Adventure|Comedy|Family|Sport",
+    "genres": "Adventure|Comedy|Family|Sport|Sessão da tarde",
     "imdb_score": 5.1,
     "director": "Brian Levant",
     "imdb_id": "tt0281373"
@@ -13629,7 +13629,7 @@
     "title_en": "Scrooged",
     "title_pt": "Os Fantasmas Contra-Atacam",
     "year": 1988,
-    "genres": "Comedy|Drama|Fantasy",
+    "genres": "Comedy|Drama|Fantasy|Sessão da tarde",
     "imdb_score": 7.0,
     "director": "Richard Donner",
     "imdb_id": "tt0096061"
@@ -13719,7 +13719,7 @@
     "title_en": "Alive",
     "title_pt": "Vivos",
     "year": 1993,
-    "genres": "Adventure|Biography|Drama|Thriller",
+    "genres": "Adventure|Biography|Drama|Thriller|Sessão da tarde",
     "imdb_score": 7.1,
     "director": "Frank Marshall",
     "imdb_id": "tt0106246"
@@ -13827,7 +13827,7 @@
     "title_en": "Bogus",
     "title_pt": "Bogus: Meu Amigo Secreto",
     "year": 1996,
-    "genres": "Comedy|Family|Fantasy",
+    "genres": "Comedy|Family|Fantasy|Sessão da tarde",
     "imdb_score": 5.3,
     "director": "Norman Jewison",
     "imdb_id": "tt0115725"
@@ -13845,7 +13845,7 @@
     "title_en": "Cats Don't Dance",
     "title_pt": "Gatos Não Sabem Dançar",
     "year": 1997,
-    "genres": "Animation|Comedy|Family|Fantasy|Musical",
+    "genres": "Animation|Comedy|Family|Fantasy|Musical|Sessão da tarde",
     "imdb_score": 6.9,
     "director": "Mark Dindal",
     "imdb_id": "tt0118829"
@@ -13962,7 +13962,7 @@
     "title_en": "Arachnophobia",
     "title_pt": "Aracnofobia",
     "year": 1990,
-    "genres": "Comedy|Fantasy|Horror|Thriller",
+    "genres": "Comedy|Fantasy|Horror|Thriller|Sessão da tarde",
     "imdb_score": 6.3,
     "director": "Frank Marshall",
     "imdb_id": "tt0099052"
@@ -13989,7 +13989,7 @@
     "title_en": "Vacation",
     "title_pt": "Férias Frustradas",
     "year": 2015,
-    "genres": "Adventure|Comedy",
+    "genres": "Adventure|Comedy|Sessão da tarde",
     "imdb_score": 6.1,
     "director": "John Francis Daley",
     "imdb_id": "tt1524930"
@@ -14016,7 +14016,7 @@
     "title_en": "Big Daddy",
     "title_pt": "O Paizão",
     "year": 1999,
-    "genres": "Comedy|Drama",
+    "genres": "Comedy|Drama|Sessão da tarde",
     "imdb_score": 6.4,
     "director": "Dennis Dugan",
     "imdb_id": "tt0142342"
@@ -14043,7 +14043,7 @@
     "title_en": "Speed",
     "title_pt": "Velocidade Máxima",
     "year": 1994,
-    "genres": "Action|Adventure|Crime|Thriller",
+    "genres": "Action|Adventure|Crime|Thriller|Sessão da tarde",
     "imdb_score": 7.2,
     "director": "Jan de Bont",
     "imdb_id": "tt0111257"
@@ -14106,7 +14106,7 @@
     "title_en": "The Addams Family",
     "title_pt": "A Família Addams",
     "year": 1991,
-    "genres": "Comedy|Fantasy",
+    "genres": "Comedy|Fantasy|Sessão da tarde",
     "imdb_score": 6.8,
     "director": "Barry Sonnenfeld",
     "imdb_id": "tt0101272"
@@ -14124,7 +14124,7 @@
     "title_en": "The Princess Diaries",
     "title_pt": "O Diário da Princesa",
     "year": 2001,
-    "genres": "Comedy|Family|Romance",
+    "genres": "Comedy|Family|Romance|Sessão da tarde",
     "imdb_score": 6.2,
     "director": "Garry Marshall",
     "imdb_id": "tt0247638"
@@ -14133,7 +14133,7 @@
     "title_en": "The First Wives Club",
     "title_pt": "O Clube das Desquitadas",
     "year": 1996,
-    "genres": "Comedy",
+    "genres": "Comedy|Sessão da tarde",
     "imdb_score": 6.2,
     "director": "Hugh Wilson",
     "imdb_id": "tt0116313"
@@ -14295,7 +14295,7 @@
     "title_en": "Babe",
     "title_pt": "Babe, o Porquinho Atrapalhado",
     "year": 1995,
-    "genres": "Comedy|Drama|Family",
+    "genres": "Comedy|Drama|Family|Sessão da tarde",
     "imdb_score": 6.8,
     "director": "Chris Noonan",
     "imdb_id": "tt0112431"
@@ -14664,7 +14664,7 @@
     "title_en": "Mortal Kombat: Annihilation",
     "title_pt": "Mortal Kombat: A Aniquilação",
     "year": 1997,
-    "genres": "Action|Adventure|Fantasy|Sci-Fi|Thriller",
+    "genres": "Action|Adventure|Fantasy|Sci-Fi|Thriller|Sessão da tarde",
     "imdb_score": 3.7,
     "director": "John R. Leonetti",
     "imdb_id": "tt0119707"
@@ -14952,7 +14952,7 @@
     "title_en": "Howard the Duck",
     "title_pt": "Howard, o Super-Herói",
     "year": 1986,
-    "genres": "Action|Adventure|Comedy|Romance|Sci-Fi",
+    "genres": "Action|Adventure|Comedy|Romance|Sci-Fi|Sessão da tarde",
     "imdb_score": 4.6,
     "director": "Willard Huyck",
     "imdb_id": "tt0091225"
@@ -15438,7 +15438,7 @@
     "title_en": "Indiana Jones and the Temple of Doom",
     "title_pt": "Indiana Jones e o Templo da Perdição",
     "year": 1984,
-    "genres": "Action|Adventure",
+    "genres": "Action|Adventure|Sessão da tarde",
     "imdb_score": 7.6,
     "director": "Steven Spielberg",
     "imdb_id": "tt0087469"
@@ -15627,7 +15627,7 @@
     "title_en": "Hocus Pocus",
     "title_pt": "Abracadabra",
     "year": 1993,
-    "genres": "Comedy|Family|Fantasy",
+    "genres": "Comedy|Family|Fantasy|Sessão da tarde",
     "imdb_score": 6.7,
     "director": "Kenny Ortega",
     "imdb_id": "tt0107120"
@@ -15951,7 +15951,7 @@
     "title_en": "The Blues Brothers",
     "title_pt": "Os Irmãos Cara de Pau",
     "year": 1980,
-    "genres": "Action|Comedy|Crime|Music",
+    "genres": "Action|Comedy|Crime|Music|Sessão da tarde",
     "imdb_score": 7.9,
     "director": "John Landis",
     "imdb_id": "tt0080455"
@@ -16023,7 +16023,7 @@
     "title_en": "The NeverEnding Story",
     "title_pt": "A História sem Fim",
     "year": 1984,
-    "genres": "Adventure|Drama|Family|Fantasy",
+    "genres": "Adventure|Drama|Family|Fantasy|Sessão da tarde",
     "imdb_score": 7.4,
     "director": "Wolfgang Petersen",
     "imdb_id": "tt0088323"
@@ -16212,7 +16212,7 @@
     "title_en": "Kindergarten Cop",
     "title_pt": "Um Tira no Jardim de Infância",
     "year": 1990,
-    "genres": "Action|Comedy|Crime",
+    "genres": "Action|Comedy|Crime|Sessão da tarde",
     "imdb_score": 6.0,
     "director": "Ivan Reitman",
     "imdb_id": "tt0099938"
@@ -16437,7 +16437,7 @@
     "title_en": "Flipper",
     "title_pt": "Flipper",
     "year": 1996,
-    "genres": "Adventure|Family",
+    "genres": "Adventure|Family|Sessão da tarde",
     "imdb_score": 5.2,
     "director": "Alan Shapiro",
     "imdb_id": "tt0116322"
@@ -16473,7 +16473,7 @@
     "title_en": "Mrs. Doubtfire",
     "title_pt": "Uma Babá Quase Perfeita",
     "year": 1993,
-    "genres": "Comedy|Drama|Family|Romance",
+    "genres": "Comedy|Drama|Family|Romance|Sessão da tarde",
     "imdb_score": 6.9,
     "director": "Chris Columbus",
     "imdb_id": "tt0107614"
@@ -16527,7 +16527,7 @@
     "title_en": "The Bodyguard",
     "title_pt": "O Guarda-Costas",
     "year": 1992,
-    "genres": "Action|Drama|Music|Romance",
+    "genres": "Action|Drama|Music|Romance|Sessão da tarde",
     "imdb_score": 6.1,
     "director": "Mick Jackson",
     "imdb_id": "tt0103855"
@@ -16617,7 +16617,7 @@
     "title_en": "Teenage Mutant Ninja Turtles II: The Secret of the Ooze",
     "title_pt": "As Tartarugas Ninja II: O Segredo do Ooze",
     "year": 1991,
-    "genres": "Action|Adventure|Comedy|Family|Sci-Fi",
+    "genres": "Action|Adventure|Comedy|Family|Sci-Fi|Sessão da tarde",
     "imdb_score": 6.0,
     "director": "Michael Pressman",
     "imdb_id": "tt0103060"
@@ -16806,7 +16806,7 @@
     "title_en": "Agent Cody Banks",
     "title_pt": "O Agente Teen",
     "year": 2003,
-    "genres": "Action|Adventure|Comedy|Crime|Family|Romance|Thriller",
+    "genres": "Action|Adventure|Comedy|Crime|Family|Romance|Thriller|Sessão da tarde",
     "imdb_score": 5.0,
     "director": "Harald Zwart",
     "imdb_id": "tt0313911"
@@ -16833,7 +16833,7 @@
     "title_en": "Nothing to Lose",
     "title_pt": "Nada a Perder",
     "year": 1997,
-    "genres": "Action|Adventure|Comedy|Crime",
+    "genres": "Action|Adventure|Comedy|Crime|Sessão da tarde",
     "imdb_score": 6.7,
     "director": "Steve Oedekerk",
     "imdb_id": "tt0119807"
@@ -16959,7 +16959,7 @@
     "title_en": "What a Girl Wants",
     "title_pt": "Tudo Que Uma Garota Quer",
     "year": 2003,
-    "genres": "Comedy|Drama|Family|Romance",
+    "genres": "Comedy|Drama|Family|Romance|Sessão da tarde",
     "imdb_score": 5.8,
     "director": "Dennie Gordon",
     "imdb_id": "tt0286788"
@@ -17112,7 +17112,7 @@
     "title_en": "Crocodile Dundee in Los Angeles",
     "title_pt": "Crocodilo Dundee em Hollywood",
     "year": 2001,
-    "genres": "Adventure|Comedy|Crime",
+    "genres": "Adventure|Comedy|Crime|Sessão da tarde",
     "imdb_score": 4.8,
     "director": "Simon Wincer",
     "imdb_id": "tt0231402"
@@ -17310,7 +17310,7 @@
     "title_en": "The Next Best Thing",
     "title_pt": "Sobrou Pra Você",
     "year": 2000,
-    "genres": "Comedy|Drama|Romance",
+    "genres": "Comedy|Drama|Romance|Sessão da tarde",
     "imdb_score": 4.7,
     "director": "John Schlesinger",
     "imdb_id": "tt0156841"
@@ -17436,7 +17436,7 @@
     "title_en": "Big Trouble in Little China",
     "title_pt": "Os Aventureiros do Bairro Proibido",
     "year": 1986,
-    "genres": "Action|Adventure|Comedy|Fantasy",
+    "genres": "Action|Adventure|Comedy|Fantasy|Sessão da tarde",
     "imdb_score": 7.3,
     "director": "John Carpenter",
     "imdb_id": "tt0090728"
@@ -17562,7 +17562,7 @@
     "title_en": "Sheena",
     "title_pt": "Sheena, a Rainha das Selvas",
     "year": 1984,
-    "genres": "Adventure|Fantasy",
+    "genres": "Adventure|Fantasy|Sessão da tarde",
     "imdb_score": 4.8,
     "director": "John Guillermin",
     "imdb_id": "tt0088103"
@@ -18039,7 +18039,7 @@
     "title_en": "Meet the Deedles",
     "title_pt": "Os Irmãos Id & Ota",
     "year": 1998,
-    "genres": "Comedy|Family",
+    "genres": "Comedy|Family|Sessão da tarde",
     "imdb_score": 3.9,
     "director": "Steve Boyum",
     "imdb_id": "tt0120645"
@@ -18354,7 +18354,7 @@
     "title_en": "Spaceballs",
     "title_pt": "S.O.S.: Tem um Louco Solto no Espaço",
     "year": 1987,
-    "genres": "Adventure|Comedy|Sci-Fi",
+    "genres": "Adventure|Comedy|Sci-Fi|Sessão da tarde",
     "imdb_score": 7.1,
     "director": "Mel Brooks",
     "imdb_id": "tt0094012"
@@ -18372,7 +18372,7 @@
     "title_en": "Ghost",
     "title_pt": "Ghost: Do Outro Lado da Vida",
     "year": 1990,
-    "genres": "Drama|Fantasy|Romance|Thriller",
+    "genres": "Drama|Fantasy|Romance|Thriller|Sessão da tarde",
     "imdb_score": 7.0,
     "director": "Jerry Zucker",
     "imdb_id": "tt0099653"
@@ -18426,7 +18426,7 @@
     "title_en": "The Animal",
     "title_pt": "Animal",
     "year": 2001,
-    "genres": "Comedy|Sci-Fi",
+    "genres": "Comedy|Sci-Fi|Sessão da tarde",
     "imdb_score": 4.8,
     "director": "Luke Greenfield",
     "imdb_id": "tt0255798"
@@ -18633,7 +18633,7 @@
     "title_en": "The Little Vampire",
     "title_pt": "O Pequeno Vampiro",
     "year": 2000,
-    "genres": "Adventure|Comedy|Family|Fantasy",
+    "genres": "Adventure|Comedy|Family|Fantasy|Sessão da tarde",
     "imdb_score": 5.7,
     "director": "Uli Edel",
     "imdb_id": "tt0192255"
@@ -18651,7 +18651,7 @@
     "title_en": "RoboCop 3",
     "title_pt": "RoboCop 3",
     "year": 1993,
-    "genres": "Action|Crime|Sci-Fi|Thriller",
+    "genres": "Action|Crime|Sci-Fi|Thriller|Sessão da tarde",
     "imdb_score": 3.9,
     "director": "Fred Dekker",
     "imdb_id": "tt0107978"
@@ -18732,7 +18732,7 @@
     "title_en": "Mad Money",
     "title_pt": "Loucas Por Amor, Viciadas em Dinheiro",
     "year": 2008,
-    "genres": "Comedy|Crime|Thriller",
+    "genres": "Comedy|Crime|Thriller|Sessão da tarde",
     "imdb_score": 5.8,
     "director": "Callie Khouri",
     "imdb_id": "tt0951216"
@@ -18858,7 +18858,7 @@
     "title_en": "Teenage Mutant Ninja Turtles III",
     "title_pt": "As Tartarugas Ninja III",
     "year": 1993,
-    "genres": "Action|Adventure|Comedy|Family|Fantasy|Sci-Fi",
+    "genres": "Action|Adventure|Comedy|Family|Fantasy|Sci-Fi|Sessão da tarde",
     "imdb_score": 4.8,
     "director": "Stuart Gillard",
     "imdb_id": "tt0108308"
@@ -19011,7 +19011,7 @@
     "title_en": "Home Alone 2: Lost in New York",
     "title_pt": "Esqueceram de Mim 2: Perdido em Nova York",
     "year": 1992,
-    "genres": "Adventure|Comedy|Family",
+    "genres": "Adventure|Comedy|Family|Sessão da tarde",
     "imdb_score": 6.6,
     "director": "Chris Columbus",
     "imdb_id": "tt0104431"
@@ -19146,7 +19146,7 @@
     "title_en": "Mortal Kombat",
     "title_pt": "Mortal Kombat",
     "year": 1995,
-    "genres": "Action|Adventure|Fantasy|Sci-Fi|Thriller",
+    "genres": "Action|Adventure|Fantasy|Sci-Fi|Thriller|Sessão da tarde",
     "imdb_score": 5.8,
     "director": "Paul W.S. Anderson",
     "imdb_id": "tt0113855"
@@ -19227,7 +19227,7 @@
     "title_en": "Edward Scissorhands",
     "title_pt": "Edward Mãos de Tesoura",
     "year": 1990,
-    "genres": "Fantasy|Romance",
+    "genres": "Fantasy|Romance|Sessão da tarde",
     "imdb_score": 7.9,
     "director": "Tim Burton",
     "imdb_id": "tt0099487"
@@ -19407,7 +19407,7 @@
     "title_en": "Bill & Ted's Bogus Journey",
     "title_pt": "Bill & Ted: Dois Loucos no Tempo",
     "year": 1991,
-    "genres": "Adventure|Comedy|Fantasy|Music|Sci-Fi",
+    "genres": "Adventure|Comedy|Fantasy|Music|Sci-Fi|Sessão da tarde",
     "imdb_score": 6.2,
     "director": "Peter Hewitt",
     "imdb_id": "tt0101452"
@@ -19839,7 +19839,7 @@
     "title_en": "Ladyhawke",
     "title_pt": "O Feitiço de Áquila",
     "year": 1985,
-    "genres": "Adventure|Comedy|Drama|Fantasy",
+    "genres": "Adventure|Comedy|Drama|Fantasy|Sessão da tarde",
     "imdb_score": 7.0,
     "director": "Richard Donner",
     "imdb_id": "tt0089457"
@@ -19893,7 +19893,7 @@
     "title_en": "From Dusk Till Dawn",
     "title_pt": "Um Drink no Inferno",
     "year": 1996,
-    "genres": "Crime|Fantasy|Horror",
+    "genres": "Crime|Fantasy|Horror|Sessão da tarde",
     "imdb_score": 7.3,
     "director": "Robert Rodriguez",
     "imdb_id": "tt0116367"
@@ -20217,7 +20217,7 @@
     "title_en": "We're No Angels",
     "title_pt": "Não Somos Anjos",
     "year": 1989,
-    "genres": "Comedy|Crime",
+    "genres": "Comedy|Crime|Sessão da tarde",
     "imdb_score": 6.0,
     "director": "Neil Jordan",
     "imdb_id": "tt0098625"
@@ -20793,7 +20793,7 @@
     "title_en": "Dances with Wolves",
     "title_pt": "Dança com Lobos",
     "year": 1990,
-    "genres": "Adventure|Drama|Western",
+    "genres": "Adventure|Drama|Western|Sessão da tarde",
     "imdb_score": 8.0,
     "director": "Kevin Costner",
     "imdb_id": "tt0099348"
@@ -20856,7 +20856,7 @@
     "title_en": "Back to the Future",
     "title_pt": "De Volta para o Futuro",
     "year": 1985,
-    "genres": "Adventure|Comedy|Sci-Fi",
+    "genres": "Adventure|Comedy|Sci-Fi|Sessão da tarde",
     "imdb_score": 8.5,
     "director": "Robert Zemeckis",
     "imdb_id": "tt0088763"
@@ -21108,7 +21108,7 @@
     "title_en": "The Mask",
     "title_pt": "O Máskara",
     "year": 1994,
-    "genres": "Action|Comedy|Crime|Fantasy",
+    "genres": "Action|Comedy|Crime|Fantasy|Sessão da tarde",
     "imdb_score": 6.9,
     "director": "Chuck Russell",
     "imdb_id": "tt0110475"
@@ -21117,7 +21117,7 @@
     "title_en": "Big",
     "title_pt": "Quero Ser Grande",
     "year": 1988,
-    "genres": "Comedy|Drama|Family|Fantasy|Romance",
+    "genres": "Comedy|Drama|Family|Fantasy|Romance|Sessão da tarde",
     "imdb_score": 7.3,
     "director": "Penny Marshall",
     "imdb_id": "tt0094737"
@@ -21342,7 +21342,7 @@
     "title_en": "Spy Hard",
     "title_pt": "Duro de Espiar",
     "year": 1996,
-    "genres": "Action|Comedy",
+    "genres": "Action|Comedy|Sessão da tarde",
     "imdb_score": 5.3,
     "director": "Rick Friedberg",
     "imdb_id": "tt0117723"
@@ -21387,7 +21387,7 @@
     "title_en": "Conan the Destroyer",
     "title_pt": "Conan, o Destruidor",
     "year": 1984,
-    "genres": "Action|Adventure|Fantasy",
+    "genres": "Action|Adventure|Fantasy|Sessão da tarde",
     "imdb_score": 5.8,
     "director": "Richard Fleischer",
     "imdb_id": "tt0087078"
@@ -21414,7 +21414,7 @@
     "title_en": "Young Sherlock Holmes",
     "title_pt": "O Enigma da Pirâmide",
     "year": 1985,
-    "genres": "Adventure|Fantasy|Mystery|Thriller",
+    "genres": "Adventure|Fantasy|Mystery|Thriller|Sessão da tarde",
     "imdb_score": 6.8,
     "director": "Barry Levinson",
     "imdb_id": "tt0090357"
@@ -22332,7 +22332,7 @@
     "title_en": "My Girl",
     "title_pt": "Meu Primeiro Amor",
     "year": 1991,
-    "genres": "Comedy|Drama|Family|Romance",
+    "genres": "Comedy|Drama|Family|Romance|Sessão da tarde",
     "imdb_score": 6.8,
     "director": "Howard Zieff",
     "imdb_id": "tt0102492"
@@ -22683,7 +22683,7 @@
     "title_en": "My Stepmother Is an Alien",
     "title_pt": "Minha Noiva é uma Extraterrestre",
     "year": 1988,
-    "genres": "Comedy|Romance|Sci-Fi",
+    "genres": "Comedy|Romance|Sci-Fi|Sessão da tarde",
     "imdb_score": 5.2,
     "director": "Richard Benjamin",
     "imdb_id": "tt0095687"
@@ -22773,7 +22773,7 @@
     "title_en": "Steel",
     "title_pt": "Steel - O Homem de Aço",
     "year": 1997,
-    "genres": "Action|Crime|Sci-Fi",
+    "genres": "Action|Crime|Sci-Fi|Sessão da tarde",
     "imdb_score": 2.8,
     "director": "Kenneth Johnson",
     "imdb_id": "tt0120207"
@@ -22944,7 +22944,7 @@
     "title_en": "Home Alone",
     "title_pt": "Esqueceram de Mim",
     "year": 1990,
-    "genres": "Comedy|Family",
+    "genres": "Comedy|Family|Sessão da tarde",
     "imdb_score": 7.5,
     "director": "Chris Columbus",
     "imdb_id": "tt0099785"
@@ -22953,7 +22953,7 @@
     "title_en": "3 Men and a Baby",
     "title_pt": "Três Solteirões e um Bebê",
     "year": 1987,
-    "genres": "Comedy|Drama|Family",
+    "genres": "Comedy|Drama|Family|Sessão da tarde",
     "imdb_score": 5.9,
     "director": "Leonard Nimoy",
     "imdb_id": "tt0094137"
@@ -22971,7 +22971,7 @@
     "title_en": "Top Gun",
     "title_pt": "Top Gun - Ases Indomáveis",
     "year": 1986,
-    "genres": "Action|Drama|Romance",
+    "genres": "Action|Drama|Romance|Sessão da tarde",
     "imdb_score": 6.9,
     "director": "Tony Scott",
     "imdb_id": "tt0092099"
@@ -23007,7 +23007,7 @@
     "title_en": "Twins",
     "title_pt": "Irmãos Gêmeos",
     "year": 1988,
-    "genres": "Comedy|Crime",
+    "genres": "Comedy|Crime|Sessão da tarde",
     "imdb_score": 6.0,
     "director": "Ivan Reitman",
     "imdb_id": "tt0096320"
@@ -23133,7 +23133,7 @@
     "title_en": "Beetlejuice",
     "title_pt": "Os Fantasmas se Divertem",
     "year": 1988,
-    "genres": "Comedy|Fantasy",
+    "genres": "Comedy|Fantasy|Sessão da tarde",
     "imdb_score": 7.5,
     "director": "Tim Burton",
     "imdb_id": "tt0094721"
@@ -23205,7 +23205,7 @@
     "title_en": "The Lizzie McGuire Movie",
     "title_pt": "Lizzie McGuire: Um Sonho Popstar",
     "year": 2003,
-    "genres": "Adventure|Comedy|Family|Music|Romance",
+    "genres": "Adventure|Comedy|Family|Music|Romance|Sessão da tarde",
     "imdb_score": 5.3,
     "director": "Jim Fall",
     "imdb_id": "tt0306841"
@@ -23493,7 +23493,7 @@
     "title_en": "The Craft",
     "title_pt": "Jovens Bruxas",
     "year": 1996,
-    "genres": "Drama|Fantasy|Horror|Thriller",
+    "genres": "Drama|Fantasy|Horror|Thriller|Sessão da tarde",
     "imdb_score": 6.2,
     "director": "Andrew Fleming",
     "imdb_id": "tt0115963"
@@ -24420,7 +24420,7 @@
     "title_en": "Cool Runnings",
     "title_pt": "Jamaica Abaixo de Zero",
     "year": 1993,
-    "genres": "Adventure|Comedy|Family|Sport",
+    "genres": "Adventure|Comedy|Family|Sport|Sessão da tarde",
     "imdb_score": 6.9,
     "director": "Jon Turteltaub",
     "imdb_id": "tt0106611"
@@ -24627,7 +24627,7 @@
     "title_en": "Thinner",
     "title_pt": "A Maldição",
     "year": 1996,
-    "genres": "Fantasy|Horror",
+    "genres": "Fantasy|Horror|Sessão da tarde",
     "imdb_score": 5.7,
     "director": "Tom Holland",
     "imdb_id": "tt0117894"
@@ -24879,7 +24879,7 @@
     "title_en": "Clueless",
     "title_pt": "As Patricinhas de Beverly Hills",
     "year": 1995,
-    "genres": "Comedy|Romance",
+    "genres": "Comedy|Romance|Sessão da tarde",
     "imdb_score": 6.8,
     "director": "Amy Heckerling",
     "imdb_id": "tt0112697"
@@ -25050,7 +25050,7 @@
     "title_en": "Young Guns",
     "title_pt": "Os Jovens Pistoleiros",
     "year": 1988,
-    "genres": "Action|Crime|Drama|Thriller|Western",
+    "genres": "Action|Crime|Drama|Thriller|Western|Sessão da tarde",
     "imdb_score": 6.8,
     "director": "Christopher Cain",
     "imdb_id": "tt0096487"
@@ -25077,7 +25077,7 @@
     "title_en": "10 Things I Hate About You",
     "title_pt": "10 Coisas Que Eu Odeio em Você",
     "year": 1999,
-    "genres": "Comedy|Drama|Romance",
+    "genres": "Comedy|Drama|Romance|Sessão da tarde",
     "imdb_score": 7.2,
     "director": "Gil Junger",
     "imdb_id": "tt0147800"
@@ -25095,7 +25095,7 @@
     "title_en": "Loaded Weapon 1",
     "title_pt": "Máquina Quase Mortífera",
     "year": 1993,
-    "genres": "Action|Comedy|Crime",
+    "genres": "Action|Comedy|Crime|Sessão da tarde",
     "imdb_score": 6.1,
     "director": "Gene Quintano",
     "imdb_id": "tt0107659"
@@ -25140,7 +25140,7 @@
     "title_en": "Baby Geniuses",
     "title_pt": "Bebês Geniais",
     "year": 1999,
-    "genres": "Comedy|Crime|Family|Sci-Fi",
+    "genres": "Comedy|Crime|Family|Sci-Fi|Sessão da tarde",
     "imdb_score": 2.5,
     "director": "Bob Clark",
     "imdb_id": "tt0118665"
@@ -25167,7 +25167,7 @@
     "title_en": "Child's Play 2",
     "title_pt": "Brinquedo Assassino 2",
     "year": 1990,
-    "genres": "Fantasy|Horror",
+    "genres": "Fantasy|Horror|Sessão da tarde",
     "imdb_score": 5.7,
     "director": "John Lafia",
     "imdb_id": "tt0099253"
@@ -25320,7 +25320,7 @@
     "title_en": "Bubble Boy",
     "title_pt": "Jimmy Bolha",
     "year": 2001,
-    "genres": "Adventure|Comedy|Romance|Sci-Fi",
+    "genres": "Adventure|Comedy|Romance|Sci-Fi|Sessão da tarde",
     "imdb_score": 5.6,
     "director": "Blair Hayes",
     "imdb_id": "tt0258470"
@@ -25716,7 +25716,7 @@
     "title_en": "Jaws",
     "title_pt": "Tubarão",
     "year": 1975,
-    "genres": "Adventure|Drama|Thriller",
+    "genres": "Adventure|Drama|Thriller|Sessão da tarde",
     "imdb_score": 8.0,
     "director": "Steven Spielberg",
     "imdb_id": "tt0073195"
@@ -25743,7 +25743,7 @@
     "title_en": "The Golden Child",
     "title_pt": "O Rapto do Menino Dourado",
     "year": 1986,
-    "genres": "Action|Adventure|Comedy|Fantasy|Mystery",
+    "genres": "Action|Adventure|Comedy|Fantasy|Mystery|Sessão da tarde",
     "imdb_score": 5.9,
     "director": "Michael Ritchie",
     "imdb_id": "tt0091129"
@@ -25779,7 +25779,7 @@
     "title_en": "Ace Ventura: Pet Detective",
     "title_pt": "Ace Ventura: Um Detetive Diferente",
     "year": 1994,
-    "genres": "Comedy",
+    "genres": "Comedy|Sessão da tarde",
     "imdb_score": 6.9,
     "director": "Tom Shadyac",
     "imdb_id": "tt0109040"
@@ -26265,7 +26265,7 @@
     "title_en": "Fortress",
     "title_pt": "A Fortaleza",
     "year": 1992,
-    "genres": "Action|Crime|Sci-Fi|Thriller",
+    "genres": "Action|Crime|Sci-Fi|Thriller|Sessão da tarde",
     "imdb_score": 5.9,
     "director": "Stuart Gordon",
     "imdb_id": "tt0106950"
@@ -26661,7 +26661,7 @@
     "title_en": "Gremlins",
     "title_pt": "Gremlins",
     "year": 1984,
-    "genres": "Comedy|Fantasy|Horror",
+    "genres": "Comedy|Fantasy|Horror|Sessão da tarde",
     "imdb_score": 7.2,
     "director": "Joe Dante",
     "imdb_id": "tt0087363"
@@ -26958,7 +26958,7 @@
     "title_en": "Army of Darkness",
     "title_pt": "Uma Noite Alucinante 3",
     "year": 1992,
-    "genres": "Comedy|Fantasy|Horror",
+    "genres": "Comedy|Fantasy|Horror|Sessão da tarde",
     "imdb_score": 7.6,
     "director": "Sam Raimi",
     "imdb_id": "tt0106308"
@@ -27039,7 +27039,7 @@
     "title_en": "Return to the Blue Lagoon",
     "title_pt": "De Volta à Lagoa Azul",
     "year": 1991,
-    "genres": "Adventure|Drama|Romance",
+    "genres": "Adventure|Drama|Romance|Sessão da tarde",
     "imdb_score": 5.1,
     "director": "William A. Graham",
     "imdb_id": "tt0102782"
@@ -27174,7 +27174,7 @@
     "title_en": "E.T. the Extra-Terrestrial",
     "title_pt": "E.T.: O Extraterrestre",
     "year": 1982,
-    "genres": "Family|Sci-Fi",
+    "genres": "Family|Sci-Fi|Sessão da tarde",
     "imdb_score": 7.9,
     "director": "Steven Spielberg",
     "imdb_id": "tt0083866"
@@ -27273,7 +27273,7 @@
     "title_en": "Stripes",
     "title_pt": "Recrutas da Pesada",
     "year": 1981,
-    "genres": "Action|Comedy|War",
+    "genres": "Action|Comedy|War|Sessão da tarde",
     "imdb_score": 6.9,
     "director": "Ivan Reitman",
     "imdb_id": "tt0083131"
@@ -27363,7 +27363,7 @@
     "title_en": "The Mighty Ducks",
     "title_pt": "Nós Somos os Campeões",
     "year": 1992,
-    "genres": "Comedy|Drama|Family|Sport",
+    "genres": "Comedy|Drama|Family|Sport|Sessão da tarde",
     "imdb_score": 6.4,
     "director": "Stephen Herek",
     "imdb_id": "tt0104868"
@@ -27399,7 +27399,7 @@
     "title_en": "Bill & Ted's Excellent Adventure",
     "title_pt": "Bill & Ted: Uma Aventura Fantástica",
     "year": 1989,
-    "genres": "Adventure|Comedy|Music|Sci-Fi",
+    "genres": "Adventure|Comedy|Music|Sci-Fi|Sessão da tarde",
     "imdb_score": 6.9,
     "director": "Stephen Herek",
     "imdb_id": "tt0096928"
@@ -27435,7 +27435,7 @@
     "title_en": "Mad Max Beyond Thunderdome",
     "title_pt": "Mad Max: Além da Cúpula do Trovão",
     "year": 1985,
-    "genres": "Action|Adventure|Sci-Fi|Thriller",
+    "genres": "Action|Adventure|Sci-Fi|Thriller|Sessão da tarde",
     "imdb_score": 6.2,
     "director": "George Miller",
     "imdb_id": "tt0089530"
@@ -27444,7 +27444,7 @@
     "title_en": "Commando",
     "title_pt": "Comando para Matar",
     "year": 1985,
-    "genres": "Action|Adventure|Thriller",
+    "genres": "Action|Adventure|Thriller|Sessão da tarde",
     "imdb_score": 6.7,
     "director": "Mark L. Lester",
     "imdb_id": "tt0088944"
@@ -27489,7 +27489,7 @@
     "title_en": "The Last Dragon",
     "title_pt": "O Último Dragão",
     "year": 1985,
-    "genres": "Action|Comedy|Drama|Music",
+    "genres": "Action|Comedy|Drama|Music|Sessão da tarde",
     "imdb_score": 6.9,
     "director": "Michael Schultz",
     "imdb_id": "tt0089461"
@@ -29001,7 +29001,7 @@
     "title_en": "Child's Play",
     "title_pt": "Brinquedo Assassino",
     "year": 1988,
-    "genres": "Fantasy|Horror",
+    "genres": "Fantasy|Horror|Sessão da tarde",
     "imdb_score": 6.5,
     "director": "Tom Holland",
     "imdb_id": "tt0094862"
@@ -29064,7 +29064,7 @@
     "title_en": "Trading Places",
     "title_pt": "Trocando as Bolas",
     "year": 1983,
-    "genres": "Comedy",
+    "genres": "Comedy|Sessão da tarde",
     "imdb_score": 7.5,
     "director": "John Landis",
     "imdb_id": "tt0086465"
@@ -29325,7 +29325,7 @@
     "title_en": "Crocodile Dundee",
     "title_pt": "Crocodilo Dundee",
     "year": 1986,
-    "genres": "Adventure|Comedy",
+    "genres": "Adventure|Comedy|Sessão da tarde",
     "imdb_score": 6.5,
     "director": "Peter Faiman",
     "imdb_id": "tt0090555"
@@ -29388,7 +29388,7 @@
     "title_en": "The Lost Boys",
     "title_pt": "Os Garotos Perdidos",
     "year": 1987,
-    "genres": "Comedy|Fantasy|Horror",
+    "genres": "Comedy|Fantasy|Horror|Sessão da tarde",
     "imdb_score": 7.2,
     "director": "Joel Schumacher",
     "imdb_id": "tt0093437"
@@ -29649,7 +29649,7 @@
     "title_en": "Splash",
     "title_pt": "Splash: Uma Sereia em Minha Vida",
     "year": 1984,
-    "genres": "Comedy|Fantasy|Romance",
+    "genres": "Comedy|Fantasy|Romance|Sessão da tarde",
     "imdb_score": 6.2,
     "director": "Ron Howard",
     "imdb_id": "tt0088161"
@@ -29667,7 +29667,7 @@
     "title_en": "Stand by Me",
     "title_pt": "Conta Comigo",
     "year": 1986,
-    "genres": "Adventure|Drama",
+    "genres": "Adventure|Drama|Sessão da tarde",
     "imdb_score": 8.1,
     "director": "Rob Reiner",
     "imdb_id": "tt0092005"
@@ -30000,7 +30000,7 @@
     "title_en": "Showdown in Little Tokyo",
     "title_pt": "Massacre no Bairro Japonês",
     "year": 1991,
-    "genres": "Action|Comedy|Crime|Thriller",
+    "genres": "Action|Comedy|Crime|Thriller|Sessão da tarde",
     "imdb_score": 6.0,
     "director": "Mark L. Lester",
     "imdb_id": "tt0102915"
@@ -30585,7 +30585,7 @@
     "title_en": "Flashdance",
     "title_pt": "Flashdance: Em Ritmo de Embalo",
     "year": 1983,
-    "genres": "Drama|Music|Romance",
+    "genres": "Drama|Music|Romance|Sessão da tarde",
     "imdb_score": 6.1,
     "director": "Adrian Lyne",
     "imdb_id": "tt0085549"
@@ -31359,7 +31359,7 @@
     "title_en": "La Bamba",
     "title_pt": "La Bamba",
     "year": 1987,
-    "genres": "Biography|Drama|Music",
+    "genres": "Biography|Drama|Music|Sessão da tarde",
     "imdb_score": 6.8,
     "director": "Luis Valdez",
     "imdb_id": "tt0093378"
@@ -31566,7 +31566,7 @@
     "title_en": "Grease",
     "title_pt": "Grease: Nos Tempos da Brilhantina",
     "year": 1978,
-    "genres": "Musical|Romance",
+    "genres": "Musical|Romance|Sessão da tarde",
     "imdb_score": 7.2,
     "director": "Randal Kleiser",
     "imdb_id": "tt0077631"
@@ -31746,7 +31746,7 @@
     "title_en": "Mr. Nice Guy",
     "title_pt": "Mr. Nice Guy: Bom de Briga",
     "year": 1997,
-    "genres": "Action|Comedy|Crime",
+    "genres": "Action|Comedy|Crime|Sessão da tarde",
     "imdb_score": 6.2,
     "director": "Sammo Kam-Bo Hung",
     "imdb_id": "tt0117786"
@@ -31944,7 +31944,7 @@
     "title_en": "Only the Strong",
     "title_pt": "Esporte Sangrento",
     "year": 1993,
-    "genres": "Action|Drama",
+    "genres": "Action|Drama|Sessão da tarde",
     "imdb_score": 6.7,
     "director": "Sheldon Lettich",
     "imdb_id": "tt0107750"
@@ -32790,7 +32790,7 @@
     "title_en": "House Party 2",
     "title_pt": "Uma Festa de Arromba 2: O Baile do Pijama",
     "year": 1991,
-    "genres": "Comedy|Drama|Music|Romance",
+    "genres": "Comedy|Drama|Music|Romance|Sessão da tarde",
     "imdb_score": 5.1,
     "director": "George Jackson",
     "imdb_id": "tt0102065"
@@ -33114,7 +33114,7 @@
     "title_en": "Digimon: The Movie",
     "title_pt": "Digimon: O Filme",
     "year": 2000,
-    "genres": "Action|Adventure|Animation|Family|Sci-Fi",
+    "genres": "Action|Adventure|Animation|Family|Sci-Fi|Sessão da tarde",
     "imdb_score": 5.9,
     "director": "Mamoru Hosoda",
     "imdb_id": "tt0259974"
@@ -33861,7 +33861,7 @@
     "title_en": "The Blue Lagoon",
     "title_pt": "A Lagoa Azul",
     "year": 1980,
-    "genres": "Adventure|Drama|Romance",
+    "genres": "Adventure|Drama|Romance|Sessão da tarde",
     "imdb_score": 5.7,
     "director": "Randal Kleiser",
     "imdb_id": "tt0080453"
@@ -33870,7 +33870,7 @@
     "title_en": "Four Weddings and a Funeral",
     "title_pt": "Quatro Casamentos e um Funeral",
     "year": 1994,
-    "genres": "Comedy|Drama|Romance",
+    "genres": "Comedy|Drama|Romance|Sessão da tarde",
     "imdb_score": 7.1,
     "director": "Mike Newell",
     "imdb_id": "tt0109831"
@@ -34239,7 +34239,7 @@
     "title_en": "Night of the Living Dead",
     "title_pt": "A Noite dos Mortos-Vivos",
     "year": 1968,
-    "genres": "Drama|Horror|Mystery",
+    "genres": "Drama|Horror|Mystery|Sessão da tarde",
     "imdb_score": 8.0,
     "director": "George A. Romero",
     "imdb_id": "tt0063350"
@@ -34635,7 +34635,7 @@
     "title_en": "The Barbarians",
     "title_pt": "Os Bárbaros",
     "year": 1987,
-    "genres": "Adventure|Fantasy",
+    "genres": "Adventure|Fantasy|Sessão da tarde",
     "imdb_score": 4.8,
     "director": "Ruggero Deodato",
     "imdb_id": "tt0092615"
@@ -35247,7 +35247,7 @@
     "title_en": "Evil Dead II",
     "title_pt": "Uma Noite Alucinante 2",
     "year": 1987,
-    "genres": "Comedy|Fantasy|Horror|Thriller",
+    "genres": "Comedy|Fantasy|Horror|Thriller|Sessão da tarde",
     "imdb_score": 7.8,
     "director": "Sam Raimi",
     "imdb_id": "tt0092991"
@@ -36525,7 +36525,7 @@
     "title_en": "High Tension",
     "title_pt": "Alta Tensão",
     "year": 2003,
-    "genres": "Horror",
+    "genres": "Horror|Sessão da tarde",
     "imdb_score": 6.8,
     "director": "Alexandre Aja",
     "imdb_id": "tt0338095"
@@ -36813,7 +36813,7 @@
     "title_en": "That Thing You Do!",
     "title_pt": "The Wonders: O Sonho Não Acabou",
     "year": 1996,
-    "genres": "Comedy|Drama|Music",
+    "genres": "Comedy|Drama|Music|Sessão da tarde",
     "imdb_score": 6.9,
     "director": "Tom Hanks",
     "imdb_id": "tt0117887"
@@ -37443,7 +37443,7 @@
     "title_en": "Mad Max 2: The Road Warrior",
     "title_pt": "Mad Max 2: A Caçada Continua",
     "year": 1981,
-    "genres": "Action|Adventure|Sci-Fi|Thriller",
+    "genres": "Action|Adventure|Sci-Fi|Thriller|Sessão da tarde",
     "imdb_score": 7.6,
     "director": "George Miller",
     "imdb_id": "tt0082694"
@@ -38748,7 +38748,7 @@
     "title_en": "Bloodsport",
     "title_pt": "O Grande Dragão Branco",
     "year": 1988,
-    "genres": "Action|Biography|Drama|Sport",
+    "genres": "Action|Biography|Drama|Sport|Sessão da tarde",
     "imdb_score": 6.8,
     "director": "Newt Arnold",
     "imdb_id": "tt0092675"
@@ -39855,7 +39855,7 @@
     "title_en": "Rocky",
     "title_pt": "Rocky: Um Lutador",
     "year": 1976,
-    "genres": "Drama|Sport",
+    "genres": "Drama|Sport|Sessão da tarde",
     "imdb_score": 8.1,
     "director": "John G. Avildsen",
     "imdb_id": "tt0075148"
@@ -43095,7 +43095,7 @@
     "title_en": "Mad Max",
     "title_pt": "Mad Max",
     "year": 1979,
-    "genres": "Action|Adventure|Sci-Fi|Thriller",
+    "genres": "Action|Adventure|Sci-Fi|Thriller|Sessão da tarde",
     "imdb_score": 7.0,
     "director": "George Miller",
     "imdb_id": "tt0079501"
@@ -43680,7 +43680,7 @@
     "title_en": "The Mighty",
     "title_pt": "Sempre Amigos",
     "year": 1998,
-    "genres": "Comedy|Drama",
+    "genres": "Comedy|Drama|Sessão da tarde",
     "imdb_score": 7.3,
     "director": "Peter Chelsom",
     "imdb_id": "tt0119670"
@@ -44301,7 +44301,7 @@
     "title_en": "The Cure",
     "title_pt": "A Cura",
     "year": 1997,
-    "genres": "Crime|Horror|Mystery|Thriller",
+    "genres": "Crime|Horror|Mystery|Thriller|Sessão da tarde",
     "imdb_score": 7.4,
     "director": "Kiyoshi Kurosawa",
     "imdb_id": "tt0123948"
@@ -44436,7 +44436,7 @@
     "title_en": "Song of the South",
     "title_pt": "A Canção do Sul",
     "year": 1946,
-    "genres": "Family|Animation",
+    "genres": "Family|Animation|Sessão da tarde",
     "imdb_score": 6.5,
     "director": "Harve Foster",
     "imdb_id": "tt0038969"
@@ -44463,7 +44463,7 @@
     "title_en": "Roald Dahl's The Witches",
     "title_pt": "Convenção das Bruxas",
     "year": 2020,
-    "genres": "Comedy|Fantasy|Family|Horror",
+    "genres": "Comedy|Fantasy|Family|Horror|Sessão da tarde",
     "imdb_score": 6.3,
     "director": "Robert Zemeckis",
     "imdb_id": "tt0805647"
@@ -44481,7 +44481,7 @@
     "title_en": "The Woman in Red",
     "title_pt": "A Dama de Vermelho",
     "year": 1984,
-    "genres": "Comedy|Romance",
+    "genres": "Comedy|Romance|Sessão da tarde",
     "imdb_score": 6.2,
     "director": "Gene Wilder",
     "imdb_id": "tt0088414"
@@ -44508,7 +44508,7 @@
     "title_en": "Addams Family Values",
     "title_pt": "A Família Addams 2",
     "year": 1993,
-    "genres": "Comedy|Family|Fantasy",
+    "genres": "Comedy|Family|Fantasy|Sessão da tarde",
     "imdb_score": 7.0,
     "director": "Barry Sonnenfeld",
     "imdb_id": "tt0106220"
@@ -44526,7 +44526,7 @@
     "title_en": "A Filha dos Trapalhões",
     "title_pt": "A Filha dos Trapalhões",
     "year": 1984,
-    "genres": "Adventure|Comedy|Family",
+    "genres": "Adventure|Comedy|Family|Sessão da tarde",
     "imdb_score": 4.9,
     "director": "Dedé Santana",
     "imdb_id": "tt0139210"
@@ -44553,7 +44553,7 @@
     "title_en": "Pretty in Pink",
     "title_pt": "A Garota de Rosa Shocking",
     "year": 1986,
-    "genres": "Romance|Drama",
+    "genres": "Romance|Drama|Sessão da tarde",
     "imdb_score": 6.7,
     "director": "Howard Deutch",
     "imdb_id": "tt0091790"
@@ -44580,7 +44580,7 @@
     "title_en": "The Jewel of the Nile",
     "title_pt": "A Joia do Nilo",
     "year": 1985,
-    "genres": "Adventure|Action|Comedy|Romance",
+    "genres": "Adventure|Action|Comedy|Romance|Sessão da tarde",
     "imdb_score": 6.2,
     "director": "Lewis Teague",
     "imdb_id": "tt0089370"
@@ -44607,7 +44607,7 @@
     "title_en": "Curly Sue",
     "title_pt": "A Malandrinha",
     "year": 1991,
-    "genres": "Comedy|Drama|Family|Romance",
+    "genres": "Comedy|Drama|Family|Romance|Sessão da tarde",
     "imdb_score": 6.4,
     "director": "John Hughes",
     "imdb_id": "tt0101635"
@@ -44643,7 +44643,7 @@
     "title_en": "A Princesa Xuxa e os Trapalhões",
     "title_pt": "A Princesa Xuxa e os Trapalhões",
     "year": 1989,
-    "genres": "Adventure|Comedy|Family|Sci-Fi",
+    "genres": "Adventure|Comedy|Family|Sci-Fi|Sessão da tarde",
     "imdb_score": 5.4,
     "director": "José Alvarenga Jr.",
     "imdb_id": "tt0121654"
@@ -44706,7 +44706,7 @@
     "title_en": "Getting Even with Dad",
     "title_pt": "Acertando as Contas com Papai",
     "year": 1994,
-    "genres": "Comedy|Crime|Family",
+    "genres": "Comedy|Crime|Family|Sessão da tarde",
     "imdb_score": 5.3,
     "director": "Howard Deutch",
     "imdb_id": "tt0109891"
@@ -44715,7 +44715,7 @@
     "title_en": "Secret Admirer",
     "title_pt": "Admiradora Secreta",
     "year": 1985,
-    "genres": "Comedy|Romance",
+    "genres": "Comedy|Romance|Sessão da tarde",
     "imdb_score": 6.7,
     "director": "David Greenwalt",
     "imdb_id": "tt0089981"
@@ -44751,7 +44751,7 @@
     "title_en": "Air America",
     "title_pt": "Air America: Loucos Pelo Perigo",
     "year": 1990,
-    "genres": "Action|Adventure|Comedy|Drama",
+    "genres": "Action|Adventure|Comedy|Drama|Sessão da tarde",
     "imdb_score": 5.8,
     "director": "Roger Spottiswoode",
     "imdb_id": "tt0099005"
@@ -44769,7 +44769,7 @@
     "title_en": "Some Kind of Wonderful",
     "title_pt": "Alguém Muito Especial",
     "year": 1987,
-    "genres": "Romance|Comedy",
+    "genres": "Romance|Comedy|Sessão da tarde",
     "imdb_score": 6.9,
     "director": "Howard Deutch",
     "imdb_id": "tt0094006"
@@ -44787,7 +44787,7 @@
     "title_en": "The Upside",
     "title_pt": "Amigos para Sempre",
     "year": 2019,
-    "genres": "Comedy|Drama",
+    "genres": "Comedy|Drama|Sessão da tarde",
     "imdb_score": 7.1,
     "director": "Neil Burger",
     "imdb_id": "tt1987680"
@@ -44823,7 +44823,7 @@
     "title_en": "Milk Money",
     "title_pt": "As Aparências Enganam",
     "year": 1994,
-    "genres": "Comedy|Romance|Drama",
+    "genres": "Comedy|Romance|Drama|Sessão da tarde",
     "imdb_score": 6.4,
     "director": "Richard Benjamin",
     "imdb_id": "tt0110516"
@@ -44850,7 +44850,7 @@
     "title_en": "The Witches of Eastwick",
     "title_pt": "As Bruxas de Eastwick",
     "year": 1987,
-    "genres": "Comedy|Fantasy|Horror",
+    "genres": "Comedy|Fantasy|Horror|Sessão da tarde",
     "imdb_score": 6.5,
     "director": "George Miller",
     "imdb_id": "tt0094332"
@@ -44877,7 +44877,7 @@
     "title_en": "It Takes Two",
     "title_pt": "As Namoradas do Papai",
     "year": 1995,
-    "genres": "Comedy|Family|Romance",
+    "genres": "Comedy|Family|Romance|Sessão da tarde",
     "imdb_score": 6.5,
     "director": "Andy Tennant",
     "imdb_id": "tt0113442"
@@ -44913,7 +44913,7 @@
     "title_en": "Beethoven",
     "title_pt": "Beethoven: O Magnífico",
     "year": 1992,
-    "genres": "Family|Comedy",
+    "genres": "Family|Comedy|Sessão da tarde",
     "imdb_score": 5.8,
     "director": "Brian Levant",
     "imdb_id": "tt0103786"
@@ -44940,7 +44940,7 @@
     "title_en": "Caravana da Coragem",
     "title_pt": "Caravana da Coragem",
     "year": 2024,
-    "genres": "",
+    "genres": "Sessão da tarde",
     "imdb_score": 0.0,
     "director": "Pedro B. Garcia",
     "imdb_id": null
@@ -44958,7 +44958,7 @@
     "title_en": "Gold Diggers: The Secret of Bear Mountain",
     "title_pt": "Caçadoras de Aventuras",
     "year": 1995,
-    "genres": "Drama|Adventure|Family|Mystery",
+    "genres": "Drama|Adventure|Family|Mystery|Sessão da tarde",
     "imdb_score": 6.2,
     "director": "Kevin James Dobson",
     "imdb_id": "tt0113188"
@@ -44967,7 +44967,7 @@
     "title_en": "Point Break",
     "title_pt": "Caçadores de Emoção",
     "year": 1991,
-    "genres": "Action|Thriller|Crime",
+    "genres": "Action|Thriller|Crime|Sessão da tarde",
     "imdb_score": 7.2,
     "director": "Kathryn Bigelow",
     "imdb_id": "tt0102685"
@@ -44976,7 +44976,7 @@
     "title_en": "See No Evil, Hear No Evil",
     "title_pt": "Cegos, Surdos e Loucos",
     "year": 1989,
-    "genres": "Comedy|Crime",
+    "genres": "Comedy|Crime|Sessão da tarde",
     "imdb_score": 6.8,
     "director": "Arthur Hiller",
     "imdb_id": "tt0098282"
@@ -44994,7 +44994,7 @@
     "title_en": "The Breakfast Club",
     "title_pt": "Clube dos Cinco",
     "year": 1985,
-    "genres": "Comedy|Drama",
+    "genres": "Comedy|Drama|Sessão da tarde",
     "imdb_score": 7.7,
     "director": "John Hughes",
     "imdb_id": "tt0088847"
@@ -45003,7 +45003,7 @@
     "title_en": "Cocoon",
     "title_pt": "Cocoon",
     "year": 1985,
-    "genres": "Comedy|Sci-Fi|Mystery|Drama",
+    "genres": "Comedy|Sci-Fi|Mystery|Drama|Sessão da tarde",
     "imdb_score": 6.6,
     "director": "Ron Howard",
     "imdb_id": "tt0088933"
@@ -45075,7 +45075,7 @@
     "title_en": "Big Business",
     "title_pt": "Cuidado Com As Gêmeas",
     "year": 1988,
-    "genres": "Comedy",
+    "genres": "Comedy|Sessão da tarde",
     "imdb_score": 6.3,
     "director": "Jim Abrahams",
     "imdb_id": "tt0094739"
@@ -45093,7 +45093,7 @@
     "title_en": "Summer School",
     "title_pt": "Curso de Verão",
     "year": 1987,
-    "genres": "Comedy",
+    "genres": "Comedy|Sessão da tarde",
     "imdb_score": 6.4,
     "director": "Carl Reiner",
     "imdb_id": "tt0094072"
@@ -45102,7 +45102,7 @@
     "title_en": "Ferris Bueller's Day Off",
     "title_pt": "Curtindo a Vida Adoidado",
     "year": 1986,
-    "genres": "Comedy",
+    "genres": "Comedy|Sessão da tarde",
     "imdb_score": 7.6,
     "director": "John Hughes",
     "imdb_id": "tt0091042"
@@ -45147,7 +45147,7 @@
     "title_en": "Dennis the Menace",
     "title_pt": "Dennis, o Pimentinha",
     "year": 1993,
-    "genres": "Family|Comedy",
+    "genres": "Family|Comedy|Sessão da tarde",
     "imdb_score": 5.9,
     "director": "Nick Castle",
     "imdb_id": "tt0106701"
@@ -45156,7 +45156,7 @@
     "title_en": "Mr. Destiny",
     "title_pt": "Destino em Dose Dupla",
     "year": 1990,
-    "genres": "Fantasy|Comedy|Sci-Fi|Romance",
+    "genres": "Fantasy|Comedy|Sci-Fi|Romance|Sessão da tarde",
     "imdb_score": 6.2,
     "director": "James Orr",
     "imdb_id": "tt0100201"
@@ -45165,7 +45165,7 @@
     "title_en": "The Monster Squad",
     "title_pt": "Deu a Louca nos Monstros",
     "year": 1987,
-    "genres": "Comedy|Action|Fantasy",
+    "genres": "Comedy|Action|Fantasy|Sessão da tarde",
     "imdb_score": 6.7,
     "director": "Fred Dekker",
     "imdb_id": "tt0093560"
@@ -45201,7 +45201,7 @@
     "title_en": "Digby, the Biggest Dog in the World",
     "title_pt": "Digby, o Maior Cão do Mundo",
     "year": 1973,
-    "genres": "",
+    "genres": "Sessão da tarde",
     "imdb_score": 4.6,
     "director": "Joseph McGrath",
     "imdb_id": "tt0069974"
@@ -45264,7 +45264,7 @@
     "title_en": "She-Devil",
     "title_pt": "Ela é o Diabo",
     "year": 1989,
-    "genres": "Comedy",
+    "genres": "Comedy|Sessão da tarde",
     "imdb_score": 6.0,
     "director": "Susan Seidelman",
     "imdb_id": "tt0098309"
@@ -45273,7 +45273,7 @@
     "title_en": "Elvira: Mistress of the Dark",
     "title_pt": "Elvira: a Rainha das Trevas",
     "year": 1988,
-    "genres": "Comedy|Fantasy|Horror",
+    "genres": "Comedy|Fantasy|Horror|Sessão da tarde",
     "imdb_score": 6.7,
     "director": "James Signorelli",
     "imdb_id": "tt0095088"
@@ -45291,7 +45291,7 @@
     "title_en": "The Flood: Who Will Save Our Children?",
     "title_pt": "Enchente: Quem Salvará Nossos Filhos?",
     "year": 1993,
-    "genres": "TV Movie|Drama",
+    "genres": "TV Movie|Drama|Sessão da tarde",
     "imdb_score": 6.2,
     "director": "Chris Thomson",
     "imdb_id": "tt0106930"
@@ -45300,7 +45300,7 @@
     "title_en": "While You Were Sleeping",
     "title_pt": "Enquanto Você Dormia",
     "year": 1995,
-    "genres": "Romance|Comedy",
+    "genres": "Romance|Comedy|Sessão da tarde",
     "imdb_score": 7.0,
     "director": "Jon Turteltaub",
     "imdb_id": "tt0114924"
@@ -45309,7 +45309,7 @@
     "title_en": "If Looks Could Kill",
     "title_pt": "Espião por Engano",
     "year": 1991,
-    "genres": "Action|Comedy",
+    "genres": "Action|Comedy|Sessão da tarde",
     "imdb_score": 6.1,
     "director": "William Dear",
     "imdb_id": "tt0102095"
@@ -45336,7 +45336,7 @@
     "title_en": "Forever Young",
     "title_pt": "Eternamente Jovem",
     "year": 1992,
-    "genres": "Adventure|Fantasy|Drama|Sci-Fi|Romance",
+    "genres": "Adventure|Fantasy|Drama|Sci-Fi|Romance|Sessão da tarde",
     "imdb_score": 6.5,
     "director": "Steve Miner",
     "imdb_id": "tt0104291"
@@ -45345,7 +45345,7 @@
     "title_en": "Ewoks: The Battle for Endor",
     "title_pt": "Ewoks:  A Batalha de Endor",
     "year": 1985,
-    "genres": "Adventure|Family|TV Movie|Sci-Fi|Fantasy",
+    "genres": "Adventure|Family|TV Movie|Sci-Fi|Fantasy|Sessão da tarde",
     "imdb_score": 5.4,
     "director": "Ken Wheat",
     "imdb_id": "tt0089110"
@@ -45354,7 +45354,7 @@
     "title_en": "Over the Top",
     "title_pt": "Falcão: O Campeão dos Campeões",
     "year": 1987,
-    "genres": "Action|Drama",
+    "genres": "Action|Drama|Sessão da tarde",
     "imdb_score": 6.4,
     "director": "Menahem Golan",
     "imdb_id": "tt0093692"
@@ -45363,7 +45363,7 @@
     "title_en": "Made in America",
     "title_pt": "Feita Por Encomenda",
     "year": 1993,
-    "genres": "Comedy",
+    "genres": "Comedy|Sessão da tarde",
     "imdb_score": 5.5,
     "director": "Richard Benjamin",
     "imdb_id": "tt0107478"
@@ -45399,7 +45399,7 @@
     "title_en": "Free Willy",
     "title_pt": "Free Willy",
     "year": 1993,
-    "genres": "Family|Adventure|Drama",
+    "genres": "Family|Adventure|Drama|Sessão da tarde",
     "imdb_score": 6.2,
     "director": "Simon Wincer",
     "imdb_id": "tt0106965"
@@ -45408,7 +45408,7 @@
     "title_en": "National Lampoon's Christmas Vacation",
     "title_pt": "Férias Frustradas de Natal",
     "year": 1989,
-    "genres": "Comedy",
+    "genres": "Comedy|Sessão da tarde",
     "imdb_score": 7.2,
     "director": "Jeremiah S. Chechik",
     "imdb_id": "tt0097958"
@@ -45426,7 +45426,7 @@
     "title_en": "The Sure Thing",
     "title_pt": "Garota Sinal Verde",
     "year": 1985,
-    "genres": "Comedy|Drama|Romance",
+    "genres": "Comedy|Drama|Romance|Sessão da tarde",
     "imdb_score": 6.5,
     "director": "Rob Reiner",
     "imdb_id": "tt0090103"
@@ -45444,7 +45444,7 @@
     "title_en": "Gotcha!",
     "title_pt": "Gotcha!: Uma Arma do Barulho",
     "year": 1985,
-    "genres": "Action|Comedy|Thriller",
+    "genres": "Action|Comedy|Thriller|Sessão da tarde",
     "imdb_score": 5.9,
     "director": "Jeff Kanew",
     "imdb_id": "tt0089222"
@@ -45480,7 +45480,7 @@
     "title_en": "White Men Can't Jump",
     "title_pt": "Homens Brancos Não Sabem Enterrar",
     "year": 1992,
-    "genres": "Comedy|Drama",
+    "genres": "Comedy|Drama|Sessão da tarde",
     "imdb_score": 6.6,
     "director": "Ron Shelton",
     "imdb_id": "tt0105812"
@@ -45498,7 +45498,7 @@
     "title_en": "Joe Versus the Volcano",
     "title_pt": "Joe Contra o Vulcão",
     "year": 1990,
-    "genres": "Comedy|Romance",
+    "genres": "Comedy|Romance|Sessão da tarde",
     "imdb_score": 5.8,
     "director": "John Patrick Shanley",
     "imdb_id": "tt0099892"
@@ -45534,7 +45534,7 @@
     "title_en": "Jumanji",
     "title_pt": "Jumanji",
     "year": 1995,
-    "genres": "Adventure|Fantasy|Family",
+    "genres": "Adventure|Fantasy|Family|Sessão da tarde",
     "imdb_score": 7.2,
     "director": "Joe Johnston",
     "imdb_id": "tt0113497"
@@ -45552,7 +45552,7 @@
     "title_en": "K-9",
     "title_pt": "K-9: Um Policial Bom pra Cachorro",
     "year": 1989,
-    "genres": "Action|Comedy|Crime",
+    "genres": "Action|Comedy|Crime|Sessão da tarde",
     "imdb_score": 6.2,
     "director": "Rod Daniel",
     "imdb_id": "tt0097637"
@@ -45606,7 +45606,7 @@
     "title_en": "Lassie",
     "title_pt": "Lassie",
     "year": 1994,
-    "genres": "Family|Adventure",
+    "genres": "Family|Adventure|Sessão da tarde",
     "imdb_score": 6.1,
     "director": "Daniel Petrie",
     "imdb_id": "tt0110305"
@@ -45615,7 +45615,7 @@
     "title_en": "Fluke",
     "title_pt": "Lembranças de Outra Vida",
     "year": 1995,
-    "genres": "Drama|Adventure|Family",
+    "genres": "Drama|Adventure|Family|Sessão da tarde",
     "imdb_score": 7.1,
     "director": "Carlo Carlei",
     "imdb_id": "tt0113089"
@@ -45642,7 +45642,7 @@
     "title_en": "Loverboy",
     "title_pt": "Loverboy: Garoto de Programa",
     "year": 1989,
-    "genres": "Comedy|Romance",
+    "genres": "Comedy|Romance|Sessão da tarde",
     "imdb_score": 6.1,
     "director": "Joan Micklin Silver",
     "imdb_id": "tt0097790"
@@ -45651,7 +45651,7 @@
     "title_en": "Crystal Moon",
     "title_pt": "Lua de Cristal",
     "year": 1990,
-    "genres": "Romance|Comedy|Family|Fantasy",
+    "genres": "Romance|Comedy|Family|Fantasy|Sessão da tarde",
     "imdb_score": 5.4,
     "director": "Tizuka Yamasaki",
     "imdb_id": "tt0100070"
@@ -45696,7 +45696,7 @@
     "title_en": "Matilda",
     "title_pt": "Matilda",
     "year": 1996,
-    "genres": "Comedy|Family|Fantasy",
+    "genres": "Comedy|Family|Fantasy|Sessão da tarde",
     "imdb_score": 7.2,
     "director": "Danny DeVito",
     "imdb_id": "tt0117008"
@@ -45723,7 +45723,7 @@
     "title_en": "Little Man Tate",
     "title_pt": "Mentes Que Brilham",
     "year": 1991,
-    "genres": "Drama|Family",
+    "genres": "Drama|Family|Sessão da tarde",
     "imdb_score": 6.5,
     "director": "Jodie Foster",
     "imdb_id": "tt0102316"
@@ -45750,7 +45750,7 @@
     "title_en": "Monkey Trouble",
     "title_pt": "Meu Pequeno Ladrão",
     "year": 1994,
-    "genres": "Comedy|Family",
+    "genres": "Comedy|Family|Sessão da tarde",
     "imdb_score": 5.7,
     "director": "Franco Amurri",
     "imdb_id": "tt0110557"
@@ -45759,7 +45759,7 @@
     "title_en": "My Girl 2",
     "title_pt": "Meu Primeiro Amor - Parte 2",
     "year": 1994,
-    "genres": "Comedy|Family",
+    "genres": "Comedy|Family|Sessão da tarde",
     "imdb_score": 6.0,
     "director": "Howard Zieff",
     "imdb_id": "tt0110613"
@@ -45768,7 +45768,7 @@
     "title_en": "The 'Burbs",
     "title_pt": "Meus Vizinhos São um Terror",
     "year": 1989,
-    "genres": "Comedy|Horror|Thriller",
+    "genres": "Comedy|Horror|Thriller|Sessão da tarde",
     "imdb_score": 6.8,
     "director": "Joe Dante",
     "imdb_id": "tt0096734"
@@ -45777,7 +45777,7 @@
     "title_en": "Miracle on 34th Street",
     "title_pt": "Milagre na Rua 34",
     "year": 1994,
-    "genres": "Fantasy|Drama|Family",
+    "genres": "Fantasy|Drama|Family|Sessão da tarde",
     "imdb_score": 6.8,
     "director": "Les Mayfield",
     "imdb_id": "tt0110527"
@@ -45786,7 +45786,7 @@
     "title_en": "Taking Care of Business",
     "title_pt": "Milionário num Instante",
     "year": 1990,
-    "genres": "Comedy",
+    "genres": "Comedy|Sessão da tarde",
     "imdb_score": 6.3,
     "director": "Arthur Hiller",
     "imdb_id": "tt0103035"
@@ -45813,7 +45813,7 @@
     "title_en": "Moonwalker",
     "title_pt": "Moonwalker",
     "year": 1988,
-    "genres": "Fantasy|Music",
+    "genres": "Fantasy|Music|Sessão da tarde",
     "imdb_score": 7.0,
     "director": "Colin Chilvers",
     "imdb_id": "tt0095655"
@@ -45831,7 +45831,7 @@
     "title_en": "Sister Act",
     "title_pt": "Mudança de Hábito",
     "year": 1992,
-    "genres": "Music|Comedy",
+    "genres": "Music|Comedy|Sessão da tarde",
     "imdb_score": 6.8,
     "director": "Emile Ardolino",
     "imdb_id": "tt0105417"
@@ -45840,7 +45840,7 @@
     "title_en": "Weird Science",
     "title_pt": "Mulher Nota 1000",
     "year": 1985,
-    "genres": "Comedy|Fantasy|Sci-Fi|Romance",
+    "genres": "Comedy|Fantasy|Sci-Fi|Romance|Sessão da tarde",
     "imdb_score": 6.5,
     "director": "John Hughes",
     "imdb_id": "tt0090305"
@@ -45849,7 +45849,7 @@
     "title_en": "Lethal Weapon",
     "title_pt": "Máquina Mortífera",
     "year": 1987,
-    "genres": "Action|Comedy|Thriller",
+    "genres": "Action|Comedy|Thriller|Sessão da tarde",
     "imdb_score": 7.3,
     "director": "Richard Donner",
     "imdb_id": "tt0093409"
@@ -45867,7 +45867,7 @@
     "title_en": "Can't Buy Me Love",
     "title_pt": "Namorada de Aluguel",
     "year": 1987,
-    "genres": "Comedy|Romance",
+    "genres": "Comedy|Romance|Sessão da tarde",
     "imdb_score": 6.9,
     "director": "Steve Rash",
     "imdb_id": "tt0092718"
@@ -45876,7 +45876,7 @@
     "title_en": "Nine Months",
     "title_pt": "Nove Meses",
     "year": 1995,
-    "genres": "Romance|Comedy",
+    "genres": "Romance|Comedy|Sessão da tarde",
     "imdb_score": 5.7,
     "director": "Chris Columbus",
     "imdb_id": "tt0113986"
@@ -45912,7 +45912,7 @@
     "title_en": "Runaway Car",
     "title_pt": "O Carro Desgovernado",
     "year": 1997,
-    "genres": "Comedy|TV Movie|Action|Adventure",
+    "genres": "Comedy|TV Movie|Action|Adventure|Sessão da tarde",
     "imdb_score": 5.3,
     "director": "Jack Sholder",
     "imdb_id": "tt0120041"
@@ -45921,7 +45921,7 @@
     "title_en": "O Casamento dos Trapalhões",
     "title_pt": "O Casamento dos Trapalhões",
     "year": 1988,
-    "genres": "Comedy|Family",
+    "genres": "Comedy|Family|Sessão da tarde",
     "imdb_score": 5.9,
     "director": "José Alvarenga Jr.",
     "imdb_id": "tt0139102"
@@ -45984,7 +45984,7 @@
     "title_en": "The Giant of Thunder Mountain",
     "title_pt": "O Gigante da Montanha",
     "year": 1990,
-    "genres": "Western|Drama|Family",
+    "genres": "Western|Drama|Family|Sessão da tarde",
     "imdb_score": 6.0,
     "director": "James W. Roberson",
     "imdb_id": "tt0101951"
@@ -46020,7 +46020,7 @@
     "title_en": "Encino Man",
     "title_pt": "O Homem da Califórnia",
     "year": 1992,
-    "genres": "Comedy",
+    "genres": "Comedy|Sessão da tarde",
     "imdb_score": 5.8,
     "director": "Les Mayfield",
     "imdb_id": "tt0104187"
@@ -46047,7 +46047,7 @@
     "title_en": "The Secret Garden",
     "title_pt": "O Jardim Secreto",
     "year": 2020,
-    "genres": "Family|Fantasy|Drama",
+    "genres": "Family|Fantasy|Drama|Sessão da tarde",
     "imdb_score": 6.3,
     "director": "Marc Munden",
     "imdb_id": "tt2702920"
@@ -46056,7 +46056,7 @@
     "title_en": "*batteries not included",
     "title_pt": "O Milagre Veio do Espaço",
     "year": 1987,
-    "genres": "Family|Comedy|Fantasy|Sci-Fi",
+    "genres": "Family|Comedy|Fantasy|Sci-Fi|Sessão da tarde",
     "imdb_score": 6.7,
     "director": "Matthew Robbins",
     "imdb_id": "tt0092494"
@@ -46083,7 +46083,7 @@
     "title_en": "Frankenstein: The College Years",
     "title_pt": "O Nosso Amigo Frankenstein",
     "year": 1991,
-    "genres": "Comedy|Sci-Fi|TV Movie",
+    "genres": "Comedy|Sci-Fi|TV Movie|Sessão da tarde",
     "imdb_score": 4.9,
     "director": "Tom Shadyac",
     "imdb_id": "tt0101911"
@@ -46119,7 +46119,7 @@
     "title_en": "Problem Child",
     "title_pt": "O Pestinha",
     "year": 1990,
-    "genres": "Comedy|Family",
+    "genres": "Comedy|Family|Sessão da tarde",
     "imdb_score": 6.2,
     "director": "Dennis Dugan",
     "imdb_id": "tt0100419"
@@ -46128,7 +46128,7 @@
     "title_en": "Problem Child 2",
     "title_pt": "O Pestinha 2",
     "year": 1991,
-    "genres": "Comedy|Family",
+    "genres": "Comedy|Family|Sessão da tarde",
     "imdb_score": 5.9,
     "director": "Brian Levant",
     "imdb_id": "tt0102719"
@@ -46155,7 +46155,7 @@
     "title_en": "St. Elmo's Fire",
     "title_pt": "O Primeiro Ano do Resto de Nossas Vidas",
     "year": 1985,
-    "genres": "Drama|Romance|Comedy",
+    "genres": "Drama|Romance|Comedy|Sessão da tarde",
     "imdb_score": 6.1,
     "director": "Joel Schumacher",
     "imdb_id": "tt0090060"
@@ -46182,7 +46182,7 @@
     "title_en": "The Secret of My Success",
     "title_pt": "O Segredo do Meu Sucesso",
     "year": 1987,
-    "genres": "Comedy",
+    "genres": "Comedy|Sessão da tarde",
     "imdb_score": 6.5,
     "director": "Herbert Ross",
     "imdb_id": "tt0093936"
@@ -46209,7 +46209,7 @@
     "title_en": "O Trapalhão nas Minas do Rei Salomão",
     "title_pt": "O Trapalhão nas Minas do Rei Salomão",
     "year": 1977,
-    "genres": "Adventure|Comedy|Family",
+    "genres": "Adventure|Comedy|Family|Sessão da tarde",
     "imdb_score": 5.9,
     "director": "J.B. Tanko",
     "imdb_id": "tt0139655"
@@ -46236,7 +46236,7 @@
     "title_en": "Look Who's Talking",
     "title_pt": "Olha Quem Está Falando",
     "year": 1989,
-    "genres": "Comedy|Romance",
+    "genres": "Comedy|Romance|Sessão da tarde",
     "imdb_score": 6.3,
     "director": "Amy Heckerling",
     "imdb_id": "tt0097778"
@@ -46245,7 +46245,7 @@
     "title_en": "Look Who's Talking Now!",
     "title_pt": "Olha Quem Está Falando Agora",
     "year": 1993,
-    "genres": "Romance|Comedy|Family",
+    "genres": "Romance|Comedy|Family|Sessão da tarde",
     "imdb_score": 5.3,
     "director": "Tom Ropelewski",
     "imdb_id": "tt0107438"
@@ -46254,7 +46254,7 @@
     "title_en": "Look Who's Talking Too",
     "title_pt": "Olha Quem Está Falando Também",
     "year": 1990,
-    "genres": "Romance|Comedy",
+    "genres": "Romance|Comedy|Sessão da tarde",
     "imdb_score": 5.5,
     "director": "Amy Heckerling",
     "imdb_id": "tt0100050"
@@ -46263,7 +46263,7 @@
     "title_en": "Orca",
     "title_pt": "Orca: A Baleia Assassina",
     "year": 1977,
-    "genres": "Horror|Thriller",
+    "genres": "Horror|Thriller|Sessão da tarde",
     "imdb_score": 6.2,
     "director": "Michael Anderson",
     "imdb_id": "tt0076504"
@@ -46272,7 +46272,7 @@
     "title_en": "Angels in the Outfield",
     "title_pt": "Os Anjos Entram em Campo",
     "year": 1994,
-    "genres": "Comedy|Family|Fantasy",
+    "genres": "Comedy|Family|Fantasy|Sessão da tarde",
     "imdb_score": 6.0,
     "director": "William Dear",
     "imdb_id": "tt0109127"
@@ -46281,7 +46281,7 @@
     "title_en": "The Little Rascals",
     "title_pt": "Os Batutinhas",
     "year": 1994,
-    "genres": "Romance|Comedy|Family",
+    "genres": "Romance|Comedy|Family|Sessão da tarde",
     "imdb_score": 6.8,
     "director": "Penelope Spheeris",
     "imdb_id": "tt0110366"
@@ -46290,7 +46290,7 @@
     "title_en": "Ghostbusters II",
     "title_pt": "Os Caça-Fantasmas 2",
     "year": 1989,
-    "genres": "Comedy|Fantasy",
+    "genres": "Comedy|Fantasy|Sessão da tarde",
     "imdb_score": 6.6,
     "director": "Ivan Reitman",
     "imdb_id": "tt0097428"
@@ -46308,7 +46308,7 @@
     "title_en": "The Ghoulish Ghosts",
     "title_pt": "Os Fantasmas Trapalhões",
     "year": 1987,
-    "genres": "Comedy|Family|Fantasy",
+    "genres": "Comedy|Family|Fantasy|Sessão da tarde",
     "imdb_score": 4.8,
     "director": "J.B. Tanko",
     "imdb_id": "tt0138434"
@@ -46317,7 +46317,7 @@
     "title_en": "The Goonies",
     "title_pt": "Os Goonies",
     "year": 1985,
-    "genres": "Adventure|Comedy|Family",
+    "genres": "Adventure|Comedy|Family|Sessão da tarde",
     "imdb_score": 7.5,
     "director": "Richard Donner",
     "imdb_id": "tt0089218"
@@ -46326,7 +46326,7 @@
     "title_en": "Cloak & Dagger",
     "title_pt": "Os Heróis não têm Idade",
     "year": 1984,
-    "genres": "Adventure|Action|Family",
+    "genres": "Adventure|Action|Family|Sessão da tarde",
     "imdb_score": 6.3,
     "director": "Richard Franklin",
     "imdb_id": "tt0087065"
@@ -46335,7 +46335,7 @@
     "title_en": "Os Heróis Trapalhões: Uma Aventura na Selva",
     "title_pt": "Os Heróis Trapalhões: Uma Aventura na Selva",
     "year": 1988,
-    "genres": "Adventure|Comedy|Family",
+    "genres": "Adventure|Comedy|Family|Sessão da tarde",
     "imdb_score": 5.0,
     "director": "José Alvarenga Jr.",
     "imdb_id": "tt0139361"
@@ -46353,7 +46353,7 @@
     "title_en": "Os Saltimbancos Trapalhões",
     "title_pt": "Os Saltimbancos Trapalhões",
     "year": 1981,
-    "genres": "Adventure|Comedy|Family|Music",
+    "genres": "Adventure|Comedy|Family|Music|Sessão da tarde",
     "imdb_score": 6.9,
     "director": "J.B. Tanko",
     "imdb_id": "tt0138073"
@@ -46371,7 +46371,7 @@
     "title_en": "Os Trapalhões e a Árvore da Juventude",
     "title_pt": "Os Trapalhões e a Árvore da Juventude",
     "year": 1991,
-    "genres": "Adventure|Comedy|Family",
+    "genres": "Adventure|Comedy|Family|Sessão da tarde",
     "imdb_score": 5.6,
     "director": "José Alvarenga Jr.",
     "imdb_id": "tt0207166"
@@ -46380,7 +46380,7 @@
     "title_en": "Os Trapalhões e o Rei do Futebol",
     "title_pt": "Os Trapalhões e o Rei do Futebol",
     "year": 1986,
-    "genres": "Comedy|Family",
+    "genres": "Comedy|Family|Sessão da tarde",
     "imdb_score": 5.8,
     "director": "Carlos Manga",
     "imdb_id": "tt0139658"
@@ -46389,7 +46389,7 @@
     "title_en": "The Bunglers in the Planet Wars",
     "title_pt": "Os Trapalhões na Guerra dos Planetas",
     "year": 1978,
-    "genres": "Adventure|Comedy|Family|Sci-Fi",
+    "genres": "Adventure|Comedy|Family|Sci-Fi|Sessão da tarde",
     "imdb_score": 5.1,
     "director": "Adriano Stuart",
     "imdb_id": "tt0195360"
@@ -46398,7 +46398,7 @@
     "title_en": "Os Trapalhões na Serra Pelada",
     "title_pt": "Os Trapalhões na Serra Pelada",
     "year": 1982,
-    "genres": "Family|Comedy|Adventure",
+    "genres": "Family|Comedy|Adventure|Sessão da tarde",
     "imdb_score": 5.8,
     "director": "J.B. Tanko",
     "imdb_id": "tt0201270"
@@ -46407,7 +46407,7 @@
     "title_en": "Os Trapalhões no Auto da Compadecida",
     "title_pt": "Os Trapalhões no Auto da Compadecida",
     "year": 1987,
-    "genres": "Family|Comedy",
+    "genres": "Family|Comedy|Sessão da tarde",
     "imdb_score": 6.4,
     "director": "Roberto Farias",
     "imdb_id": "tt0139660"
@@ -46416,7 +46416,7 @@
     "title_en": "Os Trapalhões no Rabo do Cometa",
     "title_pt": "Os Trapalhões no Rabo do Cometa",
     "year": 1986,
-    "genres": "Adventure|Animation|Comedy|Family",
+    "genres": "Adventure|Animation|Comedy|Family|Sessão da tarde",
     "imdb_score": 4.6,
     "director": "Dedé Santana",
     "imdb_id": "tt0139661"
@@ -46452,7 +46452,7 @@
     "title_en": "Stop! Or My Mom Will Shoot",
     "title_pt": "Pare! Senão Mamãe Atira",
     "year": 1992,
-    "genres": "Action|Comedy",
+    "genres": "Action|Comedy|Sessão da tarde",
     "imdb_score": 5.3,
     "director": "Roger Spottiswoode",
     "imdb_id": "tt0105477"
@@ -46479,7 +46479,7 @@
     "title_en": "Ruthless People",
     "title_pt": "Por Favor, Matem Minha Mulher",
     "year": 1986,
-    "genres": "Comedy",
+    "genres": "Comedy|Sessão da tarde",
     "imdb_score": 6.6,
     "director": "Jim Abrahams",
     "imdb_id": "tt0091877"
@@ -46497,7 +46497,7 @@
     "title_en": "Project X",
     "title_pt": "Projeto Secreto, Macacos",
     "year": 1987,
-    "genres": "Drama|Comedy",
+    "genres": "Drama|Comedy|Sessão da tarde",
     "imdb_score": 6.3,
     "director": "Jonathan Kaplan",
     "imdb_id": "tt0093793"
@@ -46506,7 +46506,7 @@
     "title_en": "Wayne's World 2",
     "title_pt": "Quanto Mais Idiota Melhor 2",
     "year": 1993,
-    "genres": "Comedy",
+    "genres": "Comedy|Sessão da tarde",
     "imdb_score": 6.1,
     "director": "Stephen Surjik",
     "imdb_id": "tt0108525"
@@ -46515,7 +46515,7 @@
     "title_en": "Just One of the Guys",
     "title_pt": "Quase Igual aos Outros",
     "year": 1985,
-    "genres": "Comedy|Romance",
+    "genres": "Comedy|Romance|Sessão da tarde",
     "imdb_score": 6.4,
     "director": "Lisa Gottlieb",
     "imdb_id": "tt0089393"
@@ -46542,7 +46542,7 @@
     "title_en": "Uncle Buck",
     "title_pt": "Quem Vê Cara Não Vê Coração",
     "year": 1989,
-    "genres": "Comedy|Drama|Family",
+    "genres": "Comedy|Drama|Family|Sessão da tarde",
     "imdb_score": 6.8,
     "director": "John Hughes",
     "imdb_id": "tt0098554"
@@ -46560,7 +46560,7 @@
     "title_en": "Who's That Girl",
     "title_pt": "Quem é Essa Garota?",
     "year": 1987,
-    "genres": "Comedy|Romance",
+    "genres": "Comedy|Romance|Sessão da tarde",
     "imdb_score": 5.5,
     "director": "James Foley",
     "imdb_id": "tt0094321"
@@ -46578,7 +46578,7 @@
     "title_en": "Honey, I Blew Up the Kid",
     "title_pt": "Querida, Estiquei o Bebê",
     "year": 1992,
-    "genres": "Adventure|Comedy|Family|Sci-Fi",
+    "genres": "Adventure|Comedy|Family|Sci-Fi|Sessão da tarde",
     "imdb_score": 5.3,
     "director": "Randal Kleiser",
     "imdb_id": "tt0104437"
@@ -46587,7 +46587,7 @@
     "title_en": "Honey, I Shrunk the Kids",
     "title_pt": "Querida, Encolhi as Crianças",
     "year": 1989,
-    "genres": "Adventure|Comedy|Family|Sci-Fi",
+    "genres": "Adventure|Comedy|Family|Sci-Fi|Sessão da tarde",
     "imdb_score": 6.3,
     "director": "Joe Johnston",
     "imdb_id": "tt0097523"
@@ -46605,7 +46605,7 @@
     "title_en": "B.A.P.S",
     "title_pt": "Ricas e Gloriosas",
     "year": 1997,
-    "genres": "Comedy",
+    "genres": "Comedy|Sessão da tarde",
     "imdb_score": 5.2,
     "director": "Robert Townsend",
     "imdb_id": "tt0118663"
@@ -46614,7 +46614,7 @@
     "title_en": "RoboCop 2",
     "title_pt": "RoboCop 2",
     "year": 1990,
-    "genres": "Action|Adventure|Crime|Sci-Fi|Thriller",
+    "genres": "Action|Adventure|Crime|Sci-Fi|Thriller|Sessão da tarde",
     "imdb_score": 6.0,
     "director": "Irvin Kershner",
     "imdb_id": "tt0100502"
@@ -46623,7 +46623,7 @@
     "title_en": "RoboCop",
     "title_pt": "RoboCop - O Policial do Futuro",
     "year": 1987,
-    "genres": "Action|Thriller|Sci-Fi",
+    "genres": "Action|Thriller|Sci-Fi|Sessão da tarde",
     "imdb_score": 7.4,
     "director": "Paul Verhoeven",
     "imdb_id": "tt0093870"
@@ -46695,7 +46695,7 @@
     "title_en": "License to Drive",
     "title_pt": "Sem Licença para Dirigir",
     "year": 1988,
-    "genres": "Comedy|Family|Romance",
+    "genres": "Comedy|Family|Romance|Sessão da tarde",
     "imdb_score": 6.6,
     "director": "Greg Beeman",
     "imdb_id": "tt0095519"
@@ -46758,7 +46758,7 @@
     "title_en": "Super Xuxa Against the Down Mood",
     "title_pt": "Super Xuxa Contra Baixo Astral",
     "year": 1988,
-    "genres": "Fantasy|Family|Music",
+    "genres": "Fantasy|Family|Music|Sessão da tarde",
     "imdb_score": 5.1,
     "director": "Anna Penido",
     "imdb_id": "tt0096194"
@@ -46794,7 +46794,7 @@
     "title_en": "Three O'Clock High",
     "title_pt": "Te Pego Lá Fora",
     "year": 1987,
-    "genres": "Comedy",
+    "genres": "Comedy|Sessão da tarde",
     "imdb_score": 6.8,
     "director": "Phil Joanou",
     "imdb_id": "tt0094138"
@@ -46803,7 +46803,7 @@
     "title_en": "Hot Shots! Part Deux",
     "title_pt": "Top Gang 2! A Missão",
     "year": 1993,
-    "genres": "Action|Comedy|War",
+    "genres": "Action|Comedy|War|Sessão da tarde",
     "imdb_score": 6.5,
     "director": "Jim Abrahams",
     "imdb_id": "tt0107144"
@@ -46812,7 +46812,7 @@
     "title_en": "Hot Shots!",
     "title_pt": "Top Gang! Ases Muito Loucos",
     "year": 1991,
-    "genres": "Action|Comedy|War",
+    "genres": "Action|Comedy|War|Sessão da tarde",
     "imdb_score": 6.6,
     "director": "Jim Abrahams",
     "imdb_id": "tt0102059"
@@ -46830,7 +46830,7 @@
     "title_en": "3 Men and a Little Lady",
     "title_pt": "Três Solteirões e uma Pequena Dama",
     "year": 1990,
-    "genres": "Family|Comedy",
+    "genres": "Family|Comedy|Sessão da tarde",
     "imdb_score": 5.9,
     "director": "Emile Ardolino",
     "imdb_id": "tt0098966"
@@ -46848,7 +46848,7 @@
     "title_en": "Dying Young",
     "title_pt": "Tudo Por Amor",
     "year": 1991,
-    "genres": "Drama|Romance",
+    "genres": "Drama|Romance|Sessão da tarde",
     "imdb_score": 6.7,
     "director": "Joel Schumacher",
     "imdb_id": "tt0101787"
@@ -46857,7 +46857,7 @@
     "title_en": "Romancing the Stone",
     "title_pt": "Tudo Por Uma Esmeralda",
     "year": 1984,
-    "genres": "Romance|Comedy|Action|Adventure",
+    "genres": "Romance|Comedy|Action|Adventure|Sessão da tarde",
     "imdb_score": 6.8,
     "director": "Robert Zemeckis",
     "imdb_id": "tt0088011"
@@ -46875,7 +46875,7 @@
     "title_en": "The Money Pit",
     "title_pt": "Um Dia a Casa Cai",
     "year": 1986,
-    "genres": "Comedy|Romance",
+    "genres": "Comedy|Romance|Sessão da tarde",
     "imdb_score": 6.5,
     "director": "Richard Benjamin",
     "imdb_id": "tt0091541"
@@ -46902,7 +46902,7 @@
     "title_en": "Weekend at Bernie's",
     "title_pt": "Um Morto Muito Louco",
     "year": 1989,
-    "genres": "Comedy|Crime",
+    "genres": "Comedy|Crime|Sessão da tarde",
     "imdb_score": 6.4,
     "director": "Ted Kotcheff",
     "imdb_id": "tt0098627"
@@ -46911,7 +46911,7 @@
     "title_en": "Weekend at Bernie's II",
     "title_pt": "Um Morto Muito Louco 2",
     "year": 1993,
-    "genres": "Comedy|Crime|Adventure",
+    "genres": "Comedy|Crime|Adventure|Sessão da tarde",
     "imdb_score": 5.0,
     "director": "Robert Klane",
     "imdb_id": "tt0108539"
@@ -46920,7 +46920,7 @@
     "title_en": "The Freshman",
     "title_pt": "Um Novato Na Mafia",
     "year": 1990,
-    "genres": "Comedy|Crime",
+    "genres": "Comedy|Crime|Sessão da tarde",
     "imdb_score": 6.3,
     "director": "Andrew Bergman",
     "imdb_id": "tt0099615"
@@ -46938,7 +46938,7 @@
     "title_en": "Coming to America",
     "title_pt": "Um Príncipe em Nova York",
     "year": 1988,
-    "genres": "Comedy|Romance",
+    "genres": "Comedy|Romance|Sessão da tarde",
     "imdb_score": 6.9,
     "director": "John Landis",
     "imdb_id": "tt0094898"
@@ -46947,7 +46947,7 @@
     "title_en": "Short Circuit",
     "title_pt": "Um Robô em Curto Circuito",
     "year": 1986,
-    "genres": "Sci-Fi|Comedy|Family",
+    "genres": "Sci-Fi|Comedy|Family|Sessão da tarde",
     "imdb_score": 6.6,
     "director": "John Badham",
     "imdb_id": "tt0091949"
@@ -46965,7 +46965,7 @@
     "title_en": "Overboard",
     "title_pt": "Um Salto Para a Felicidade",
     "year": 1987,
-    "genres": "Comedy|Romance",
+    "genres": "Comedy|Romance|Sessão da tarde",
     "imdb_score": 6.8,
     "director": "Garry Marshall",
     "imdb_id": "tt0093693"
@@ -47028,7 +47028,7 @@
     "title_en": "Who Framed Roger Rabbit",
     "title_pt": "Uma Cilada para Roger Rabbit",
     "year": 1988,
-    "genres": "Fantasy|Animation|Comedy|Crime",
+    "genres": "Fantasy|Animation|Comedy|Crime|Sessão da tarde",
     "imdb_score": 7.5,
     "director": "Robert Zemeckis",
     "imdb_id": "tt0096438"
@@ -47037,7 +47037,7 @@
     "title_en": "Turner & Hooch",
     "title_pt": "Uma Dupla Quase Perfeita",
     "year": 1989,
-    "genres": "Action|Comedy|Thriller|Crime|Family",
+    "genres": "Action|Comedy|Thriller|Crime|Family|Sessão da tarde",
     "imdb_score": 6.3,
     "director": "Roger Spottiswoode",
     "imdb_id": "tt0098536"
@@ -47046,7 +47046,7 @@
     "title_en": "Funny Farm",
     "title_pt": "Uma Fazenda do Barulho",
     "year": 1988,
-    "genres": "Comedy",
+    "genres": "Comedy|Sessão da tarde",
     "imdb_score": 6.2,
     "director": "George Roy Hill",
     "imdb_id": "tt0095188"
@@ -47055,7 +47055,7 @@
     "title_en": "Just One of the Girls",
     "title_pt": "Uma Garota Muito Especial",
     "year": 1993,
-    "genres": "Comedy",
+    "genres": "Comedy|Sessão da tarde",
     "imdb_score": 5.3,
     "director": "Michael Keusch",
     "imdb_id": "tt0107292"
@@ -47073,7 +47073,7 @@
     "title_en": "Adventures in Babysitting",
     "title_pt": "Uma Noite de Aventuras",
     "year": 1987,
-    "genres": "Comedy",
+    "genres": "Comedy|Sessão da tarde",
     "imdb_score": 6.9,
     "director": "Chris Columbus",
     "imdb_id": "tt0092513"
@@ -47118,7 +47118,7 @@
     "title_en": "Switched",
     "title_pt": "Vice-Versa",
     "year": 2020,
-    "genres": "Family|Comedy",
+    "genres": "Family|Comedy|Sessão da tarde",
     "imdb_score": 6.6,
     "director": "John K.D. Graham",
     "imdb_id": "tt8068826"
@@ -47145,7 +47145,7 @@
     "title_en": "Willow",
     "title_pt": "Willow - Na Terra da Magia",
     "year": 1988,
-    "genres": "Fantasy|Adventure|Action",
+    "genres": "Fantasy|Adventure|Action|Sessão da tarde",
     "imdb_score": 7.0,
     "director": "Ron Howard",
     "imdb_id": "tt0096446"
@@ -47199,7 +47199,7 @@
     "title_en": "The Wizard",
     "title_pt": "O Gênio do Videogame",
     "year": 1989,
-    "genres": "Adventure|Comedy|Drama|Family",
+    "genres": "Adventure|Comedy|Drama|Family|Sessão da tarde",
     "imdb_score": 6.1,
     "director": "Todd Holland",
     "imdb_id": "tt0098663"
@@ -47244,7 +47244,7 @@
     "title_en": "Beverly Hills Ninja",
     "title_pt": "Um Ninja da Pesada",
     "year": 1997,
-    "genres": "Comedy|Action",
+    "genres": "Comedy|Action|Sessão da tarde",
     "imdb_score": 5.6,
     "director": "Dennis Dugan",
     "imdb_id": "tt0118708"
@@ -47253,7 +47253,7 @@
     "title_en": "Don't Be a Menace to South Central While Drinking Your Juice in the Hood",
     "title_pt": "Vizinhança do Barulho",
     "year": 1996,
-    "genres": "Comedy|Crime",
+    "genres": "Comedy|Crime|Sessão da tarde",
     "imdb_score": 7.0,
     "director": "Paris Barclay",
     "imdb_id": "tt0116126"
@@ -47262,7 +47262,7 @@
     "title_en": "Allan Quatermain and the Lost City of Gold",
     "title_pt": "Allan Quatermain e a Cidade do Ouro Perdido",
     "year": 1986,
-    "genres": "Adventure|Action|Comedy|Mystery",
+    "genres": "Adventure|Action|Comedy|Mystery|Sessão da tarde",
     "imdb_score": 4.8,
     "director": "Gary Nelson",
     "imdb_id": "tt0092534"
@@ -47280,7 +47280,7 @@
     "title_en": "Good Burger",
     "title_pt": "A Guerra do Hambúrguer",
     "year": 1997,
-    "genres": "Family|Comedy",
+    "genres": "Family|Comedy|Sessão da tarde",
     "imdb_score": 6.1,
     "director": "Brian Robbins",
     "imdb_id": "tt0119215"
@@ -47298,7 +47298,7 @@
     "title_en": "Risky Business",
     "title_pt": "Negócio Arriscado",
     "year": 1983,
-    "genres": "Romance|Comedy|Drama",
+    "genres": "Romance|Comedy|Drama|Sessão da tarde",
     "imdb_score": 6.6,
     "director": "Paul Brickman",
     "imdb_id": "tt0086200"
@@ -47379,7 +47379,7 @@
     "title_en": "Cocktail",
     "title_pt": "Cocktail",
     "year": 1988,
-    "genres": "Romance|Drama|Comedy",
+    "genres": "Romance|Drama|Comedy|Sessão da tarde",
     "imdb_score": 6.1,
     "director": "Roger Donaldson",
     "imdb_id": "tt0094889"
@@ -47406,7 +47406,7 @@
     "title_en": "Christine",
     "title_pt": "Christine: O Carro Assassino",
     "year": 1983,
-    "genres": "Horror",
+    "genres": "Horror|Sessão da tarde",
     "imdb_score": 6.9,
     "director": "John Carpenter",
     "imdb_id": "tt0085333"
@@ -47433,7 +47433,7 @@
     "title_en": "Hard to Kill",
     "title_pt": "Difícil de Matar",
     "year": 1990,
-    "genres": "Action|Drama|Crime|Thriller",
+    "genres": "Action|Drama|Crime|Thriller|Sessão da tarde",
     "imdb_score": 6.0,
     "director": "Bruce Malmuth",
     "imdb_id": "tt0099739"
@@ -47451,7 +47451,7 @@
     "title_en": "The Nightmare Before Christmas",
     "title_pt": "O Estranho Mundo de Jack",
     "year": 1993,
-    "genres": "Fantasy|Animation|Family",
+    "genres": "Fantasy|Animation|Family|Sessão da tarde",
     "imdb_score": 7.8,
     "director": "Henry Selick",
     "imdb_id": "tt0107688"
@@ -47478,7 +47478,7 @@
     "title_en": "Killer Klowns from Outer Space",
     "title_pt": "Palhaços Assassinos do Espaço Sideral",
     "year": 1988,
-    "genres": "Comedy|Horror|Sci-Fi",
+    "genres": "Comedy|Horror|Sci-Fi|Sessão da tarde",
     "imdb_score": 6.6,
     "director": "Stephen Chiodo",
     "imdb_id": "tt0095444"
@@ -47505,7 +47505,7 @@
     "title_en": "The Love Bug",
     "title_pt": "Se o Meu Fusca Falasse",
     "year": 1997,
-    "genres": "Fantasy|Adventure|Comedy|Family",
+    "genres": "Fantasy|Adventure|Comedy|Family|Sessão da tarde",
     "imdb_score": 5.7,
     "director": "Peyton Reed",
     "imdb_id": "tt0119571"
@@ -47586,7 +47586,7 @@
     "title_en": "48 Hrs.",
     "title_pt": "48 Horas",
     "year": 1982,
-    "genres": "Crime|Action|Comedy",
+    "genres": "Crime|Action|Comedy|Sessão da tarde",
     "imdb_score": 6.7,
     "director": "Walter Hill",
     "imdb_id": "tt0083511"
@@ -47613,7 +47613,7 @@
     "title_en": "Joe's Apartment",
     "title_pt": "Joe e as Baratas",
     "year": 1996,
-    "genres": "Comedy|Fantasy",
+    "genres": "Comedy|Fantasy|Sessão da tarde",
     "imdb_score": 5.8,
     "director": "John Payson",
     "imdb_id": "tt0116707"
@@ -47640,7 +47640,7 @@
     "title_en": "Trojan War",
     "title_pt": "Um Adolescente em Apuros",
     "year": 1997,
-    "genres": "Comedy|Romance",
+    "genres": "Comedy|Romance|Sessão da tarde",
     "imdb_score": 6.0,
     "director": "George Huang",
     "imdb_id": "tt0120376"
@@ -47649,7 +47649,7 @@
     "title_en": "Billy Madison",
     "title_pt": "Billy Madison: Um Herdeiro Bobalhão",
     "year": 1995,
-    "genres": "Comedy",
+    "genres": "Comedy|Sessão da tarde",
     "imdb_score": 6.2,
     "director": "Tamra Davis",
     "imdb_id": "tt0112508"
@@ -47721,7 +47721,7 @@
     "title_en": "Explorers",
     "title_pt": "Viagem ao Mundo dos Sonhos",
     "year": 1985,
-    "genres": "Sci-Fi|Adventure|Family",
+    "genres": "Sci-Fi|Adventure|Family|Sessão da tarde",
     "imdb_score": 6.3,
     "director": "Joe Dante",
     "imdb_id": "tt0089114"
@@ -47739,7 +47739,7 @@
     "title_en": "Cool World",
     "title_pt": "Mundo Proibido",
     "year": 1992,
-    "genres": "Animation|Comedy|Fantasy",
+    "genres": "Animation|Comedy|Fantasy|Sessão da tarde",
     "imdb_score": 5.6,
     "director": "Ralph Bakshi",
     "imdb_id": "tt0104009"
@@ -47784,7 +47784,7 @@
     "title_en": "Enter the Dragon",
     "title_pt": "Operação Dragão",
     "year": 1973,
-    "genres": "Action",
+    "genres": "Action|Sessão da tarde",
     "imdb_score": 7.4,
     "director": "Robert Clouse",
     "imdb_id": "tt0070034"
@@ -47793,7 +47793,7 @@
     "title_en": "Desperately Seeking Susan",
     "title_pt": "Procura-se Susan Desesperadamente",
     "year": 1985,
-    "genres": "Drama|Comedy|Crime",
+    "genres": "Drama|Comedy|Crime|Sessão da tarde",
     "imdb_score": 6.1,
     "director": "Susan Seidelman",
     "imdb_id": "tt0089017"
@@ -47811,7 +47811,7 @@
     "title_en": "Sabrina the Teenage Witch",
     "title_pt": "Sabrina, Aprendiz de Feiticeira",
     "year": 1996,
-    "genres": "TV Movie|Fantasy|Family|Comedy",
+    "genres": "TV Movie|Fantasy|Family|Comedy|Sessão da tarde",
     "imdb_score": 6.7,
     "director": "Tibor Takács",
     "imdb_id": "tt0117534"
@@ -47820,7 +47820,7 @@
     "title_en": "Leap of Faith",
     "title_pt": "Fé Demais Não Cheira Bem",
     "year": 1992,
-    "genres": "Comedy|Drama|Romance",
+    "genres": "Comedy|Drama|Romance|Sessão da tarde",
     "imdb_score": 5.8,
     "director": "Richard Pearce",
     "imdb_id": "tt0104695"
@@ -47838,7 +47838,7 @@
     "title_en": "Under Siege",
     "title_pt": "A Força em Alerta",
     "year": 1992,
-    "genres": "Action|Thriller",
+    "genres": "Action|Thriller|Sessão da tarde",
     "imdb_score": 6.3,
     "director": "Andrew Davis",
     "imdb_id": "tt0105690"
@@ -47847,7 +47847,7 @@
     "title_en": "3 Ninjas Knuckle Up",
     "title_pt": "3 Ninjas em Apuros",
     "year": 1995,
-    "genres": "Family|Adventure|Action|Comedy",
+    "genres": "Family|Adventure|Action|Comedy|Sessão da tarde",
     "imdb_score": 5.0,
     "director": "신상옥",
     "imdb_id": "tt0112255"
@@ -47856,7 +47856,7 @@
     "title_en": "Harry and the Hendersons",
     "title_pt": "Um Hóspede do Barulho",
     "year": 1987,
-    "genres": "Comedy|Family|Fantasy|Drama",
+    "genres": "Comedy|Family|Fantasy|Drama|Sessão da tarde",
     "imdb_score": 6.1,
     "director": "William Dear",
     "imdb_id": "tt0093148"
@@ -47874,7 +47874,7 @@
     "title_en": "The Blob",
     "title_pt": "A Bolha Assassina",
     "year": 1988,
-    "genres": "Horror|Sci-Fi",
+    "genres": "Horror|Sci-Fi|Sessão da tarde",
     "imdb_score": 6.8,
     "director": "Chuck Russell",
     "imdb_id": "tt0094761"
@@ -47955,7 +47955,7 @@
     "title_en": "Carrie",
     "title_pt": "Carrie, A Estranha",
     "year": 1976,
-    "genres": "Horror|Thriller",
+    "genres": "Horror|Thriller|Sessão da tarde",
     "imdb_score": 7.3,
     "director": "Brian De Palma",
     "imdb_id": "tt0074285"
@@ -47973,7 +47973,7 @@
     "title_en": "The Little Princess",
     "title_pt": "A Princesinha",
     "year": 1939,
-    "genres": "Family|Drama|Comedy",
+    "genres": "Family|Drama|Comedy|Sessão da tarde",
     "imdb_score": 6.7,
     "director": "Walter Lang",
     "imdb_id": "tt0031580"
@@ -47982,7 +47982,7 @@
     "title_en": "The War",
     "title_pt": "A Árvore dos Sonhos",
     "year": 1994,
-    "genres": "Drama|War",
+    "genres": "Drama|War|Sessão da tarde",
     "imdb_score": 6.6,
     "director": "Jon Avnet",
     "imdb_id": "tt0111667"
@@ -47991,7 +47991,7 @@
     "title_en": "Never Been Kissed",
     "title_pt": "Nunca Fui Beijada",
     "year": 1999,
-    "genres": "Romance|Comedy|Drama",
+    "genres": "Romance|Comedy|Drama|Sessão da tarde",
     "imdb_score": 6.2,
     "director": "Raja Gosnell",
     "imdb_id": "tt0151738"
@@ -48000,7 +48000,7 @@
     "title_en": "Blank Check",
     "title_pt": "Cheque em Branco",
     "year": 1994,
-    "genres": "Comedy|Family",
+    "genres": "Comedy|Family|Sessão da tarde",
     "imdb_score": 5.9,
     "director": "Rupert Wainwright",
     "imdb_id": "tt0109287"
@@ -48009,7 +48009,7 @@
     "title_en": "Mighty Morphin Power Rangers: The Movie",
     "title_pt": "Power Rangers: O Filme",
     "year": 1995,
-    "genres": "Action|Adventure|Sci-Fi|Fantasy",
+    "genres": "Action|Adventure|Sci-Fi|Fantasy|Sessão da tarde",
     "imdb_score": 5.9,
     "director": "Bryan Spicer",
     "imdb_id": "tt0113820"
@@ -48018,7 +48018,7 @@
     "title_en": "The Pest",
     "title_pt": "O Peste",
     "year": 1997,
-    "genres": "Action|Comedy",
+    "genres": "Action|Comedy|Sessão da tarde",
     "imdb_score": 4.7,
     "director": "Paul Miller",
     "imdb_id": "tt0119887"
@@ -48027,7 +48027,7 @@
     "title_en": "Stargate",
     "title_pt": "Stargate - A Chave para o Futuro da Humanidade",
     "year": 1994,
-    "genres": "Action|Adventure|Sci-Fi",
+    "genres": "Action|Adventure|Sci-Fi|Sessão da tarde",
     "imdb_score": 7.0,
     "director": "Roland Emmerich",
     "imdb_id": "tt0111282"
@@ -48036,7 +48036,7 @@
     "title_en": "Virtual Sexuality",
     "title_pt": "Sensualidade Virtual",
     "year": 1999,
-    "genres": "Comedy|Sci-Fi|Drama",
+    "genres": "Comedy|Sci-Fi|Drama|Sessão da tarde",
     "imdb_score": 5.3,
     "director": "Nick Hurran",
     "imdb_id": "tt0164221"
@@ -48045,7 +48045,7 @@
     "title_en": "Vegas Vacation",
     "title_pt": "Férias Frustradas em Las Vegas",
     "year": 1997,
-    "genres": "Comedy",
+    "genres": "Comedy|Sessão da tarde",
     "imdb_score": 6.0,
     "director": "Stephen Kessler",
     "imdb_id": "tt0120434"
@@ -48054,7 +48054,7 @@
     "title_en": "Wild America",
     "title_pt": "Uma Aventura na América Selvagem",
     "year": 1997,
-    "genres": "Adventure|Comedy|Family",
+    "genres": "Adventure|Comedy|Family|Sessão da tarde",
     "imdb_score": 6.1,
     "director": "William Dear",
     "imdb_id": "tt0120512"
@@ -48063,7 +48063,7 @@
     "title_en": "Jack",
     "title_pt": "Jack",
     "year": 1996,
-    "genres": "Comedy|Family|Drama",
+    "genres": "Comedy|Family|Drama|Sessão da tarde",
     "imdb_score": 6.3,
     "director": "Francis Ford Coppola",
     "imdb_id": "tt0116669"
@@ -48072,7 +48072,7 @@
     "title_en": "Terminal Velocity",
     "title_pt": "Velocidade Terminal",
     "year": 1994,
-    "genres": "Action",
+    "genres": "Action|Sessão da tarde",
     "imdb_score": 5.3,
     "director": "Deran Sarafian",
     "imdb_id": "tt0111400"
@@ -48081,7 +48081,7 @@
     "title_en": "Under Wraps",
     "title_pt": "Um Amor de Múmia",
     "year": 1997,
-    "genres": "Comedy|Family|Horror|TV Movie",
+    "genres": "Comedy|Family|Horror|TV Movie|Sessão da tarde",
     "imdb_score": 5.4,
     "director": "Greg Beeman",
     "imdb_id": "tt0128801"
@@ -48090,7 +48090,7 @@
     "title_en": "Jack Frost",
     "title_pt": "Uma Noite Mágica",
     "year": 1998,
-    "genres": "Comedy|Family|Drama|Fantasy",
+    "genres": "Comedy|Family|Drama|Fantasy|Sessão da tarde",
     "imdb_score": 6.0,
     "director": "Troy Miller",
     "imdb_id": "tt0141109"
@@ -48099,7 +48099,7 @@
     "title_en": "House Party",
     "title_pt": "Uma Festa de Arromba",
     "year": 1990,
-    "genres": "Comedy",
+    "genres": "Comedy|Sessão da tarde",
     "imdb_score": 6.4,
     "director": "Reginald Hudlin",
     "imdb_id": "tt0099800"
@@ -48108,7 +48108,7 @@
     "title_en": "Misery",
     "title_pt": "Louca Obsessão",
     "year": 1990,
-    "genres": "Drama|Thriller",
+    "genres": "Drama|Thriller|Sessão da tarde",
     "imdb_score": 7.7,
     "director": "Rob Reiner",
     "imdb_id": "tt0100157"
@@ -48117,7 +48117,7 @@
     "title_en": "Monster in the Closet",
     "title_pt": "O Monstro do Armário",
     "year": 1986,
-    "genres": "Horror|Comedy",
+    "genres": "Horror|Comedy|Sessão da tarde",
     "imdb_score": 4.9,
     "director": "Bob Dahlin",
     "imdb_id": "tt0091544"
@@ -48126,7 +48126,7 @@
     "title_en": "Corrina, Corrina",
     "title_pt": "Corina, Uma Babá Perfeita",
     "year": 1994,
-    "genres": "Comedy|Family|Romance",
+    "genres": "Comedy|Family|Romance|Sessão da tarde",
     "imdb_score": 6.7,
     "director": "Jessie Nelson",
     "imdb_id": "tt0109484"
@@ -48135,7 +48135,7 @@
     "title_en": "Alligator",
     "title_pt": "Alligator: O Jacaré Gigante",
     "year": 1980,
-    "genres": "Horror|Sci-Fi|Thriller",
+    "genres": "Horror|Sci-Fi|Thriller|Sessão da tarde",
     "imdb_score": 6.1,
     "director": "Lewis Teague",
     "imdb_id": "tt0080354"
@@ -48144,7 +48144,7 @@
     "title_en": "Ernest Scared Stupid",
     "title_pt": "Ernest: O Bobo e A Fera",
     "year": 1991,
-    "genres": "Comedy|Family|Horror",
+    "genres": "Comedy|Family|Horror|Sessão da tarde",
     "imdb_score": 5.2,
     "director": "John Cherry",
     "imdb_id": "tt0101821"
@@ -48153,7 +48153,7 @@
     "title_en": "Powder",
     "title_pt": "Energia Pura",
     "year": 1995,
-    "genres": "Drama|Fantasy",
+    "genres": "Drama|Fantasy|Sessão da tarde",
     "imdb_score": 7.0,
     "director": "Victor Salva",
     "imdb_id": "tt0114168"
@@ -48162,7 +48162,7 @@
     "title_en": "Day-O",
     "title_pt": "Day-O: Um Amigo de Infância",
     "year": 1992,
-    "genres": "Family|Comedy|Fantasy|TV Movie",
+    "genres": "Family|Comedy|Fantasy|TV Movie|Sessão da tarde",
     "imdb_score": 4.7,
     "director": "Michael Schultz",
     "imdb_id": "tt0104059"
@@ -48171,7 +48171,7 @@
     "title_en": "Soul Man",
     "title_pt": "Uma Escola Muito Louca",
     "year": 1986,
-    "genres": "Comedy",
+    "genres": "Comedy|Sessão da tarde",
     "imdb_score": 5.3,
     "director": "Steve Miner",
     "imdb_id": "tt0091991"
@@ -48189,7 +48189,7 @@
     "title_en": "Grumpy Old Men",
     "title_pt": "Dois Velhos Rabugentos",
     "year": 1993,
-    "genres": "Comedy|Romance",
+    "genres": "Comedy|Romance|Sessão da tarde",
     "imdb_score": 6.7,
     "director": "Donald Petrie",
     "imdb_id": "tt0107050"
@@ -48198,7 +48198,7 @@
     "title_en": "Excalibur",
     "title_pt": "Excalibur, a Espada do Poder",
     "year": 1981,
-    "genres": "Adventure|Fantasy",
+    "genres": "Adventure|Fantasy|Sessão da tarde",
     "imdb_score": 7.0,
     "director": "John Boorman",
     "imdb_id": "tt0082348"
@@ -48207,7 +48207,7 @@
     "title_en": "Tommy Boy",
     "title_pt": "Mong & Lóide",
     "year": 1995,
-    "genres": "Comedy",
+    "genres": "Comedy|Sessão da tarde",
     "imdb_score": 6.8,
     "director": "Peter Segal",
     "imdb_id": "tt0114694"
@@ -48216,7 +48216,7 @@
     "title_en": "Camp Cucamonga",
     "title_pt": "Acampamento Cucamonga",
     "year": 1990,
-    "genres": "Comedy|Drama|Family|TV Movie",
+    "genres": "Comedy|Drama|Family|TV Movie|Sessão da tarde",
     "imdb_score": 4.7,
     "director": "Roger Duchowny",
     "imdb_id": "tt0099212"
@@ -48225,7 +48225,7 @@
     "title_en": "New Jack City",
     "title_pt": "New Jack City: A Gangue Brutal",
     "year": 1991,
-    "genres": "Thriller|Crime|Drama",
+    "genres": "Thriller|Crime|Drama|Sessão da tarde",
     "imdb_score": 6.6,
     "director": "Mario Van Peebles",
     "imdb_id": "tt0102526"
@@ -48252,7 +48252,7 @@
     "title_en": "Enemy Mine",
     "title_pt": "Inimigo Meu",
     "year": 1985,
-    "genres": "Drama|Sci-Fi",
+    "genres": "Drama|Sci-Fi|Sessão da tarde",
     "imdb_score": 6.9,
     "director": "Wolfgang Petersen",
     "imdb_id": "tt0089092"
@@ -48261,7 +48261,7 @@
     "title_en": "Toy Soldiers",
     "title_pt": "Rebeldes e Heróis",
     "year": 1991,
-    "genres": "Action|Adventure|Thriller",
+    "genres": "Action|Adventure|Thriller|Sessão da tarde",
     "imdb_score": 6.5,
     "director": "Daniel Petrie Jr.",
     "imdb_id": "tt0103112"
@@ -48270,7 +48270,7 @@
     "title_en": "Don't Tell Mom the Babysitter's Dead",
     "title_pt": "Viva! A Babá Morreu",
     "year": 1991,
-    "genres": "Comedy|Family",
+    "genres": "Comedy|Family|Sessão da tarde",
     "imdb_score": 6.1,
     "director": "Stephen Herek",
     "imdb_id": "tt0101757"
@@ -48279,7 +48279,7 @@
     "title_en": "The Good Son",
     "title_pt": "O Anjo Malvado",
     "year": 1993,
-    "genres": "Drama|Thriller|Horror",
+    "genres": "Drama|Thriller|Horror|Sessão da tarde",
     "imdb_score": 6.8,
     "director": "Joseph Ruben",
     "imdb_id": "tt0107034"
@@ -48432,7 +48432,7 @@
     "title_en": "The Gods Must Be Crazy",
     "title_pt": "Os Deuses Devem Estar Loucos",
     "year": 1980,
-    "genres": "Action|Comedy",
+    "genres": "Action|Comedy|Sessão da tarde",
     "imdb_score": 7.3,
     "director": "Jamie Uys",
     "imdb_id": "tt0080801"
@@ -48441,7 +48441,7 @@
     "title_en": "Napoleon",
     "title_pt": "Napoleon - As Aventuras de um Cãozinho Valente",
     "year": 1995,
-    "genres": "Adventure|Family",
+    "genres": "Adventure|Family|Sessão da tarde",
     "imdb_score": 6.1,
     "director": "Mario Andreacchio",
     "imdb_id": "tt0113932"
@@ -48450,7 +48450,7 @@
     "title_en": "The Psychopath",
     "title_pt": "As Bonecas da Morte",
     "year": 1966,
-    "genres": "Horror|Mystery",
+    "genres": "Horror|Mystery|Sessão da tarde",
     "imdb_score": 6.3,
     "director": "Freddie Francis",
     "imdb_id": "tt0060866"
@@ -48468,7 +48468,7 @@
     "title_en": "Michael",
     "title_pt": "Michael, Anjo e Sedutor",
     "year": 1996,
-    "genres": "Comedy|Drama|Fantasy",
+    "genres": "Comedy|Drama|Fantasy|Sessão da tarde",
     "imdb_score": 5.7,
     "director": "Nora Ephron",
     "imdb_id": "tt0117038"
@@ -48477,7 +48477,7 @@
     "title_en": "It Could Happen to You",
     "title_pt": "Atraídos Pelo Destino",
     "year": 1994,
-    "genres": "Comedy|Drama|Romance",
+    "genres": "Comedy|Drama|Romance|Sessão da tarde",
     "imdb_score": 6.7,
     "director": "Andrew Bergman",
     "imdb_id": "tt0110167"
@@ -48486,7 +48486,7 @@
     "title_en": "Moving",
     "title_pt": "Mudança do Barulho",
     "year": 1988,
-    "genres": "Comedy|Family",
+    "genres": "Comedy|Family|Sessão da tarde",
     "imdb_score": 5.5,
     "director": "Alan Metter",
     "imdb_id": "tt0095662"
@@ -48576,7 +48576,7 @@
     "title_en": "Escape to Witch Mountain",
     "title_pt": "Fuga Para a Montanha Enfeitiçada",
     "year": 1995,
-    "genres": "Adventure|Family|Fantasy|TV Movie",
+    "genres": "Adventure|Family|Fantasy|TV Movie|Sessão da tarde",
     "imdb_score": 5.4,
     "director": "Peter Rader",
     "imdb_id": "tt0112985"
@@ -48594,7 +48594,7 @@
     "title_en": "James and the Giant Peach",
     "title_pt": "James e o Pêssego Gigante",
     "year": 1996,
-    "genres": "Adventure|Animation|Family|Fantasy",
+    "genres": "Adventure|Animation|Family|Fantasy|Sessão da tarde",
     "imdb_score": 6.6,
     "director": "Henry Selick",
     "imdb_id": "tt0116683"
@@ -48675,7 +48675,7 @@
     "title_en": "Twin Sitters",
     "title_pt": "Duas Babás Nada Perfeitas",
     "year": 1994,
-    "genres": "Comedy|Family|Thriller",
+    "genres": "Comedy|Family|Thriller|Sessão da tarde",
     "imdb_score": 6.4,
     "director": "John Paragon",
     "imdb_id": "tt0122768"
@@ -48693,7 +48693,7 @@
     "title_en": "Chasers",
     "title_pt": "Uma Loira Em Apuros",
     "year": 1994,
-    "genres": "Comedy|Romance",
+    "genres": "Comedy|Romance|Sessão da tarde",
     "imdb_score": 5.4,
     "director": "Dennis Hopper",
     "imdb_id": "tt0109403"
@@ -48783,7 +48783,7 @@
     "title_en": "Blankman",
     "title_pt": "Blankman: Um Super-Herói Muito Atrapalhado",
     "year": 1994,
-    "genres": "Adventure|Comedy|Family|Action|Crime",
+    "genres": "Adventure|Comedy|Family|Action|Crime|Sessão da tarde",
     "imdb_score": 5.3,
     "director": "Mike Binder",
     "imdb_id": "tt0109288"
@@ -48828,7 +48828,7 @@
     "title_en": "The Big Green",
     "title_pt": "Pisando na Bola",
     "year": 1995,
-    "genres": "Family|Comedy",
+    "genres": "Family|Comedy|Sessão da tarde",
     "imdb_score": 5.6,
     "director": "Holly Goldberg Sloan",
     "imdb_id": "tt0112499"
@@ -48837,7 +48837,7 @@
     "title_en": "Buried Alive",
     "title_pt": "Sepultado Vivo",
     "year": 1990,
-    "genres": "Thriller|Crime|Horror|TV Movie",
+    "genres": "Thriller|Crime|Horror|TV Movie|Sessão da tarde",
     "imdb_score": 6.6,
     "director": "Frank Darabont",
     "imdb_id": "tt0099188"
@@ -48846,7 +48846,7 @@
     "title_en": "Zoando na TV",
     "title_pt": "Zoando na TV",
     "year": 1999,
-    "genres": "Fantasy|Comedy|Family",
+    "genres": "Fantasy|Comedy|Family|Sessão da tarde",
     "imdb_score": 4.0,
     "director": "José Alvarenga Jr.",
     "imdb_id": "tt0189791"
@@ -49719,7 +49719,7 @@
     "title_en": "Pee-wee's Big Adventure",
     "title_pt": "As Grandes Aventuras de Pee-wee",
     "year": 1985,
-    "genres": "Comedy|Adventure|Family",
+    "genres": "Comedy|Adventure|Family|Sessão da tarde",
     "imdb_score": 6.5,
     "director": "Tim Burton",
     "imdb_id": "tt0089791"
@@ -50097,7 +50097,7 @@
     "title_en": "The Gods Must Be Crazy II",
     "title_pt": "Os Deuses Devem Estar Loucos 2",
     "year": 1989,
-    "genres": "Action|Comedy",
+    "genres": "Action|Comedy|Sessão da tarde",
     "imdb_score": 7.1,
     "director": "Jamie Uys",
     "imdb_id": "tt0097443"
@@ -50376,7 +50376,7 @@
     "title_en": "Sssssss",
     "title_pt": "O Homem Cobra",
     "year": 1973,
-    "genres": "Horror|Sci-Fi",
+    "genres": "Horror|Sci-Fi|Sessão da tarde",
     "imdb_score": 5.2,
     "director": "Bernard L. Kowalski",
     "imdb_id": "tt0070622"
@@ -51195,7 +51195,7 @@
     "title_en": "O Cangaceiro Trapalhão",
     "title_pt": "O Cangaceiro Trapalhão",
     "year": 1983,
-    "genres": "Adventure|Comedy|Family",
+    "genres": "Adventure|Comedy|Family|Sessão da tarde",
     "imdb_score": 5.7,
     "director": "Daniel Filho",
     "imdb_id": "tt0139095"
@@ -56181,7 +56181,7 @@
     "title_en": "Return of the Living Dead: Rave to the Grave",
     "title_pt": "A Volta dos Mortos Vivos: Rave",
     "year": 2005,
-    "genres": "Action|Horror|TV Movie",
+    "genres": "Action|Horror|TV Movie|Sessão da tarde",
     "imdb_score": 5.2,
     "director": "Ellory Elkayem",
     "imdb_id": "tt0411806"
@@ -56829,7 +56829,7 @@
     "title_en": "Critters 2",
     "title_pt": "Criaturas 2",
     "year": 1988,
-    "genres": "Comedy|Horror|Sci-Fi",
+    "genres": "Comedy|Horror|Sci-Fi|Sessão da tarde",
     "imdb_score": 6.2,
     "director": "Mick Garris",
     "imdb_id": "tt0094919"
@@ -57252,7 +57252,7 @@
     "title_en": "The Gate",
     "title_pt": "O Portão",
     "year": 1987,
-    "genres": "Horror|Fantasy",
+    "genres": "Horror|Fantasy|Sessão da tarde",
     "imdb_score": 6.1,
     "director": "Tibor Takács",
     "imdb_id": "tt0093075"
@@ -59277,7 +59277,7 @@
     "title_en": "Killer Tomatoes Strike Back!",
     "title_pt": "Corra que os Tomates Assassinos Vem Aí",
     "year": 1991,
-    "genres": "Sci-Fi|Comedy|Horror",
+    "genres": "Sci-Fi|Comedy|Horror|Sessão da tarde",
     "imdb_score": 4.8,
     "director": "John De Bello",
     "imdb_id": "tt0099935"
@@ -60861,7 +60861,7 @@
     "title_en": "Puppet Master II",
     "title_pt": "O Mestre dos Brinquedos II",
     "year": 1990,
-    "genres": "Horror|Mystery|Sci-Fi",
+    "genres": "Horror|Mystery|Sci-Fi|Sessão da tarde",
     "imdb_score": 5.9,
     "director": "David Allen",
     "imdb_id": "tt0100438"
@@ -62256,7 +62256,7 @@
     "title_en": "Beware! The Blob",
     "title_pt": "Beware! The Blob",
     "year": 1972,
-    "genres": "Comedy|Horror|Sci-Fi",
+    "genres": "Comedy|Horror|Sci-Fi|Sessão da tarde",
     "imdb_score": 4.6,
     "director": "Larry Hagman",
     "imdb_id": "tt0068271"
@@ -73767,7 +73767,7 @@
     "title_en": "The Incredible Hulk Returns",
     "title_pt": "A Volta do Incrível Hulk",
     "year": 1988,
-    "genres": "Action|Drama|Adventure|TV Movie",
+    "genres": "Action|Drama|Adventure|TV Movie|Sessão da tarde",
     "imdb_score": 6.2,
     "director": "Nicholas Corea",
     "imdb_id": "tt0095368"
@@ -74217,7 +74217,7 @@
     "title_en": "Robin Hood, O Trapalhão da Floresta",
     "title_pt": "Robin Hood, O Trapalhão da Floresta",
     "year": 1974,
-    "genres": "Adventure|Comedy|Family",
+    "genres": "Adventure|Comedy|Family|Sessão da tarde",
     "imdb_score": 4.3,
     "director": "J.B. Tanko",
     "imdb_id": "tt0236689"
@@ -95313,7 +95313,7 @@
     "title_en": "Honey, We Shrunk Ourselves",
     "title_pt": "Querida, Encolhi a Gente",
     "year": 1997,
-    "genres": "Adventure|Comedy|Family|Sci-Fi",
+    "genres": "Adventure|Comedy|Family|Sci-Fi|Sessão da tarde",
     "imdb_score": 5.4,
     "director": "Dean Cundey",
     "imdb_id": "tt0119310"
@@ -96861,7 +96861,7 @@
     "title_en": "High School High",
     "title_pt": "Uma Escola Muito Doida",
     "year": 1996,
-    "genres": "Comedy|Crime|Romance",
+    "genres": "Comedy|Crime|Romance|Sessão da tarde",
     "imdb_score": 5.4,
     "director": "Hart Bochner",
     "imdb_id": "tt0116531"
@@ -98193,7 +98193,7 @@
     "title_en": "Great Balls of Fire!",
     "title_pt": "A Fera do Rock",
     "year": 1989,
-    "genres": "Drama|History|Music",
+    "genres": "Drama|History|Music|Sessão da tarde",
     "imdb_score": 6.3,
     "director": "Jim McBride",
     "imdb_id": "tt0097457"
@@ -98346,7 +98346,7 @@
     "title_en": "Black Sheep",
     "title_pt": "A Ovelha Negra",
     "year": 1996,
-    "genres": "Comedy",
+    "genres": "Comedy|Sessão da tarde",
     "imdb_score": 6.1,
     "director": "Penelope Spheeris",
     "imdb_id": "tt0115697"
@@ -98985,7 +98985,7 @@
     "title_en": "Os Trapalhões e o Mágico de Oróz",
     "title_pt": "Os Trapalhões e o Mágico de Oróz",
     "year": 1984,
-    "genres": "Adventure|Comedy|Family|Fantasy|Music",
+    "genres": "Adventure|Comedy|Family|Fantasy|Music|Sessão da tarde",
     "imdb_score": 5.8,
     "director": "Victor Lustosa",
     "imdb_id": "tt0139657"
@@ -118335,7 +118335,7 @@
     "title_en": "Transylvania 6-5000",
     "title_pt": "Transilvânia - Hotel do Outro Lado do Mundo",
     "year": 1985,
-    "genres": "Comedy|Horror",
+    "genres": "Comedy|Horror|Sessão da tarde",
     "imdb_score": 5.3,
     "director": "Rudy De Luca",
     "imdb_id": "tt0090196"
@@ -120180,7 +120180,7 @@
     "title_en": "Simão, o Fantasma Trapalhão",
     "title_pt": "Simão, o Fantasma Trapalhão",
     "year": 1998,
-    "genres": "Comedy|Family|Fantasy|Mystery",
+    "genres": "Comedy|Family|Fantasy|Mystery|Sessão da tarde",
     "imdb_score": 4.6,
     "director": "Paulo Aragão",
     "imdb_id": "tt0192612"
@@ -120283,5 +120283,842 @@
     "imdb_score": 4.7,
     "director": "James Bond III",
     "imdb_id": "tt0099395"
+  },
+  {
+    "title_en": "Mom's Got a Date with a Vampire",
+    "title_pt": "Mamãe Saiu Com Um Vampiro",
+    "year": 2000,
+    "genres": "TV Movie|Comedy|Family|Fantasy|Horror|Sessão da tarde",
+    "imdb_score": 5.7,
+    "director": "Steve Boyum",
+    "imdb_id": "tt0250593"
+  },
+  {
+    "title_en": "Operation Dumbo Drop",
+    "title_pt": "Operação Dumbo",
+    "year": 1995,
+    "genres": "Action|Adventure|Comedy|Family|Sessão da tarde",
+    "imdb_score": 5.2,
+    "director": "Simon Wincer",
+    "imdb_id": "tt0114048"
+  },
+  {
+    "title_en": "Manequim",
+    "title_pt": "Manequim",
+    "year": 2024,
+    "genres": "Drama|Comedy|Sessão da tarde",
+    "imdb_score": 0.0,
+    "director": "Danilo Borges",
+    "imdb_id": null
+  },
+  {
+    "title_en": "Dead Weight",
+    "title_pt": "Peso Morto",
+    "year": 2002,
+    "genres": "Comedy|Sessão da tarde",
+    "imdb_score": 5.8,
+    "director": "Alain Berbérian",
+    "imdb_id": "tt0283957"
+  },
+  {
+    "title_en": "The Pagemaster",
+    "title_pt": "Pagemaster - O Mestre da Fantasia",
+    "year": 1994,
+    "genres": "Family|Fantasy|Animation|Sessão da tarde",
+    "imdb_score": 6.4,
+    "director": "Pixote Hunt",
+    "imdb_id": "tt0110763"
+  },
+  {
+    "title_en": "Born to Race: Fast Track",
+    "title_pt": "Nascido Para Correr 2: Velocidade Máxima",
+    "year": 2014,
+    "genres": "Action",
+    "imdb_score": 6.5,
+    "director": "Alex Ranarivelo",
+    "imdb_id": "tt2547210"
+  },
+  {
+    "title_en": "DragonHeart: A New Beginning",
+    "title_pt": "Coração de Dragão 2 - Um Novo Começo",
+    "year": 2000,
+    "genres": "Fantasy|Action|Adventure|Comedy|Sessão da tarde",
+    "imdb_score": 5.4,
+    "director": "Doug Lefler",
+    "imdb_id": "tt0214641"
+  },
+  {
+    "title_en": "Turbo: A Power Rangers Movie",
+    "title_pt": "Turbo: Power Rangers 2",
+    "year": 1997,
+    "genres": "Action|Adventure|Family|Fantasy|Sci-Fi|Sessão da tarde",
+    "imdb_score": 5.7,
+    "director": "Shuki Levy",
+    "imdb_id": "tt0120389"
+  },
+  {
+    "title_en": "Homeward Bound II: Lost in San Francisco",
+    "title_pt": "A Incrível Jornada II: Perdidos em São Francisco",
+    "year": 1996,
+    "genres": "Adventure|Comedy|Drama|Family|Sessão da tarde",
+    "imdb_score": 6.6,
+    "director": "David R. Ellis",
+    "imdb_id": "tt0116552"
+  },
+  {
+    "title_en": "Homeward Bound: The Incredible Journey",
+    "title_pt": "A Incrível Jornada",
+    "year": 1993,
+    "genres": "Adventure|Comedy|Family|Sessão da tarde",
+    "imdb_score": 7.0,
+    "director": "Duwayne Dunham",
+    "imdb_id": "tt0107131"
+  },
+  {
+    "title_en": "The NeverEnding Story II: The Next Chapter",
+    "title_pt": "A História Sem Fim 2",
+    "year": 1990,
+    "genres": "Family|Fantasy|Adventure|Drama|Sessão da tarde",
+    "imdb_score": 5.8,
+    "director": "George T. Miller",
+    "imdb_id": "tt0100240"
+  },
+  {
+    "title_en": "The Last Unicorn",
+    "title_pt": "O Último Unicórnio",
+    "year": 1982,
+    "genres": "Fantasy|Animation|Family|Adventure|Sessão da tarde",
+    "imdb_score": 7.2,
+    "director": "Jules Bass",
+    "imdb_id": "tt0084237"
+  },
+  {
+    "title_en": "Kazaam",
+    "title_pt": "Kazaam",
+    "year": 1996,
+    "genres": "Fantasy|Comedy|Family|Sessão da tarde",
+    "imdb_score": 4.1,
+    "director": "Paul Michael Glaser",
+    "imdb_id": "tt0116756"
+  },
+  {
+    "title_en": "Casper Meets Wendy",
+    "title_pt": "Gasparzinho e Wendy",
+    "year": 1998,
+    "genres": "Family|Fantasy|Comedy|TV Movie|Sessão da tarde",
+    "imdb_score": 5.9,
+    "director": "Sean McNamara",
+    "imdb_id": "tt0140883"
+  },
+  {
+    "title_en": "Operation Condor",
+    "title_pt": "Operação Condor: Um Kickboxer Muito Louco",
+    "year": 1991,
+    "genres": "Action|Adventure|Crime|Thriller|Sessão da tarde",
+    "imdb_score": 7.3,
+    "director": "Jackie Chan",
+    "imdb_id": "tt0099558"
+  },
+  {
+    "title_en": "Rob-B-Hood",
+    "title_pt": "Três Ladrões e um Bebê",
+    "year": 2006,
+    "genres": "Drama|Action|Comedy|Sessão da tarde",
+    "imdb_score": 7.0,
+    "director": "陳木勝",
+    "imdb_id": "tt0485976"
+  },
+  {
+    "title_en": "K-9: P.I.",
+    "title_pt": "K-9: D.P.: Um Policial Bom pra Cachorro",
+    "year": 2002,
+    "genres": "Action|Comedy|Crime|Sessão da tarde",
+    "imdb_score": 5.9,
+    "director": "Richard J. Lewis",
+    "imdb_id": "tt0328007"
+  },
+  {
+    "title_en": "Addams Family Reunion",
+    "title_pt": "O Retorno da Família Addams",
+    "year": 1998,
+    "genres": "Comedy|Horror|Fantasy|Family|TV Movie|Sessão da tarde",
+    "imdb_score": 4.8,
+    "director": "Dave Payne",
+    "imdb_id": "tt0146402"
+  },
+  {
+    "title_en": "Beethoven's 2nd",
+    "title_pt": "Beethoven 2",
+    "year": 1993,
+    "genres": "Family|Comedy|Sessão da tarde",
+    "imdb_score": 5.6,
+    "director": "Rod Daniel",
+    "imdb_id": "tt0106375"
+  },
+  {
+    "title_en": "Free Willy 2: The Adventure Home",
+    "title_pt": "Free Willy 2 - A Aventura Continua",
+    "year": 1995,
+    "genres": "Family|Adventure|Drama|Comedy|Sessão da tarde",
+    "imdb_score": 5.9,
+    "director": "Dwight H. Little",
+    "imdb_id": "tt0113114"
+  },
+  {
+    "title_en": "In the Army Now",
+    "title_pt": "Um Maluco no Exército",
+    "year": 1994,
+    "genres": "Comedy|Sessão da tarde",
+    "imdb_score": 5.1,
+    "director": "Daniel Petrie Jr.",
+    "imdb_id": "tt0110123"
+  },
+  {
+    "title_en": "Police Academy 2: Their First Assignment",
+    "title_pt": "Loucademia de Polícia 2: A Primeira Missão",
+    "year": 1985,
+    "genres": "Comedy|Crime|Sessão da tarde",
+    "imdb_score": 6.1,
+    "director": "Jerry Paris",
+    "imdb_id": "tt0089822"
+  },
+  {
+    "title_en": "The Other Me",
+    "title_pt": "O Outro Eu",
+    "year": 2000,
+    "genres": "TV Movie|Family|Comedy|Fantasy|Sessão da tarde",
+    "imdb_score": 5.6,
+    "director": "Manny Coto",
+    "imdb_id": "tt0246834"
+  },
+  {
+    "title_en": "My Giant",
+    "title_pt": "Meu Gigante Favorito",
+    "year": 1998,
+    "genres": "Comedy|Drama|Family|Sessão da tarde",
+    "imdb_score": 5.3,
+    "director": "Michael Lehmann",
+    "imdb_id": "tt0120765"
+  },
+  {
+    "title_en": "The Swan Princess",
+    "title_pt": "A Princesa Encantada",
+    "year": 1994,
+    "genres": "Family|Animation|Fantasy|Adventure|Comedy|Sessão da tarde",
+    "imdb_score": 6.6,
+    "director": "Richard Rich",
+    "imdb_id": "tt0111333"
+  },
+  {
+    "title_en": "You Ruined My Life",
+    "title_pt": "A Garota Sapeca",
+    "year": 1987,
+    "genres": "Family|TV Movie|Sessão da tarde",
+    "imdb_score": 5.3,
+    "director": "David Ashwell",
+    "imdb_id": "tt0094360"
+  },
+  {
+    "title_en": "Call Me Claus",
+    "title_pt": "Pode me Chamar de Noel",
+    "year": 2001,
+    "genres": "TV Movie|Family|Sessão da tarde",
+    "imdb_score": 5.7,
+    "director": "Peter Werner",
+    "imdb_id": "tt0272018"
+  },
+  {
+    "title_en": "The Forbidden Dance",
+    "title_pt": "Lambada! A Dança Proibida",
+    "year": 1990,
+    "genres": "Romance|Drama|Sessão da tarde",
+    "imdb_score": 6.1,
+    "director": "Greydon Clark",
+    "imdb_id": "tt0099595"
+  },
+  {
+    "title_en": "Sidekicks",
+    "title_pt": "Unidos Para Vencer",
+    "year": 1992,
+    "genres": "Action|Adventure|Drama|Family|Sessão da tarde",
+    "imdb_score": 5.2,
+    "director": "Aaron Norris",
+    "imdb_id": "tt0105402"
+  },
+  {
+    "title_en": "Police Academy 4: Citizens on Patrol",
+    "title_pt": "Loucademia de Polícia 4: O Cidadão se Defende",
+    "year": 1987,
+    "genres": "Comedy|Crime|Sessão da tarde",
+    "imdb_score": 5.5,
+    "director": "Jim Drake",
+    "imdb_id": "tt0093756"
+  },
+  {
+    "title_en": "Wild Hearts Can't Be Broken",
+    "title_pt": "Mergulho em uma Paixão",
+    "year": 1991,
+    "genres": "Drama|Family|Sessão da tarde",
+    "imdb_score": 7.4,
+    "director": "Steve Miner",
+    "imdb_id": "tt0103262"
+  },
+  {
+    "title_en": "The Great Wallendas",
+    "title_pt": "Os Incríveis Walllendas",
+    "year": 1978,
+    "genres": "Drama|TV Movie|Sessão da tarde",
+    "imdb_score": 6.0,
+    "director": "Larry Elikann",
+    "imdb_id": "tt0077635"
+  },
+  {
+    "title_en": "Grumpier Old Men",
+    "title_pt": "Dois Velhos Mais Rabugentos",
+    "year": 1995,
+    "genres": "Romance|Comedy|Sessão da tarde",
+    "imdb_score": 6.5,
+    "director": "Howard Deutch",
+    "imdb_id": "tt0113228"
+  },
+  {
+    "title_en": "Os Três Mosqueteiros Trapalhões",
+    "title_pt": "Os Três Mosqueteiros Trapalhões",
+    "year": 1980,
+    "genres": "Adventure|Comedy|Family|Sessão da tarde",
+    "imdb_score": 5.4,
+    "director": "Adriano Stuart",
+    "imdb_id": "tt0081653"
+  },
+  {
+    "title_en": "Family Plan",
+    "title_pt": "Acampamento do Barulho",
+    "year": 1997,
+    "genres": "Comedy|Family|Sessão da tarde",
+    "imdb_score": 5.2,
+    "director": "Fred Gerber",
+    "imdb_id": "tt0123832"
+  },
+  {
+    "title_en": "Hercules in the Maze of the Minotaur",
+    "title_pt": "Hércules E O Minotauro",
+    "year": 1994,
+    "genres": "Adventure|Fantasy|TV Movie|Action",
+    "imdb_score": 5.7,
+    "director": "Josh Becker",
+    "imdb_id": "tt0110018"
+  },
+  {
+    "title_en": "O Rei e os Trapalhões",
+    "title_pt": "O Rei e os Trapalhões",
+    "year": 1979,
+    "genres": "Adventure|Comedy|Family|Sessão da tarde",
+    "imdb_score": 4.9,
+    "director": "Adriano Stuart",
+    "imdb_id": "tt0079789"
+  },
+  {
+    "title_en": "O Mundo Mágico dos Trapalhões",
+    "title_pt": "O Mundo Mágico dos Trapalhões",
+    "year": 1981,
+    "genres": "Documentary|Sessão da tarde",
+    "imdb_score": 4.7,
+    "director": "Silvio Tendler",
+    "imdb_id": "tt0139476"
+  },
+  {
+    "title_en": "Os Vagabundos Trapalhões",
+    "title_pt": "Os Vagabundos Trapalhões",
+    "year": 1982,
+    "genres": "Adventure|Comedy|Family|Sessão da tarde",
+    "imdb_score": 5.6,
+    "director": "J.B. Tanko",
+    "imdb_id": "tt0139693"
+  },
+  {
+    "title_en": "O Cinderelo Trapalhão",
+    "title_pt": "O Cinderelo Trapalhão",
+    "year": 1979,
+    "genres": "Adventure|Comedy|Family|Sessão da tarde",
+    "imdb_score": 5.1,
+    "director": "Adriano Stuart",
+    "imdb_id": "tt0139119"
+  },
+  {
+    "title_en": "Os Trapalhões no Reino da Fantasia",
+    "title_pt": "Os Trapalhões no Reino da Fantasia",
+    "year": 1985,
+    "genres": "Adventure|Comedy|Family|Fantasy|Animation|Sessão da tarde",
+    "imdb_score": 5.3,
+    "director": "Dedé Santana",
+    "imdb_id": "tt0139662"
+  },
+  {
+    "title_en": "Os Trapalhões na Terra dos Monstros",
+    "title_pt": "Os Trapalhões na Terra dos Monstros",
+    "year": 1989,
+    "genres": "Adventure|Comedy|Family|Sessão da tarde",
+    "imdb_score": 5.7,
+    "director": "Flávio Migliaccio",
+    "imdb_id": "tt0139659"
+  },
+  {
+    "title_en": "O Trapalhão e a Luz Azul",
+    "title_pt": "O Trapalhão e a Luz Azul",
+    "year": 1999,
+    "genres": "Comedy|Family|Sessão da tarde",
+    "imdb_score": 4.2,
+    "director": "Paulo Aragão",
+    "imdb_id": "tt0228964"
+  },
+  {
+    "title_en": "Simbad, O Marujo Trapalhão",
+    "title_pt": "Simbad, O Marujo Trapalhão",
+    "year": 1976,
+    "genres": "Adventure|Comedy|Family|Romance|Sessão da tarde",
+    "imdb_score": 4.3,
+    "director": "J.B. Tanko",
+    "imdb_id": "tt0139614"
+  },
+  {
+    "title_en": "O Trapalhão na Arca de Noé",
+    "title_pt": "O Trapalhão na Arca de Noé",
+    "year": 1983,
+    "genres": "Adventure|Comedy|Family|Sessão da tarde",
+    "imdb_score": 3.8,
+    "director": "Del Rangel",
+    "imdb_id": "tt0086469"
+  },
+  {
+    "title_en": "O Trapalhão na Ilha do Tesouro",
+    "title_pt": "O Trapalhão na Ilha do Tesouro",
+    "year": 1975,
+    "genres": "Adventure|Comedy|Family|Sessão da tarde",
+    "imdb_score": 5.6,
+    "director": "J.B. Tanko",
+    "imdb_id": "tt0201269"
+  },
+  {
+    "title_en": "Brazilian Planet of the Apes",
+    "title_pt": "O Trapalhão no Planalto dos Macacos",
+    "year": 1976,
+    "genres": "Adventure|Comedy|Fantasy|Sci-Fi|Sessão da tarde",
+    "imdb_score": 5.4,
+    "director": "J.B. Tanko",
+    "imdb_id": "tt0139656"
+  },
+  {
+    "title_en": "O Incrível Monstro Trapalhão",
+    "title_pt": "O Incrível Monstro Trapalhão",
+    "year": 1980,
+    "genres": "Adventure|Comedy|Family|Sessão da tarde",
+    "imdb_score": 4.8,
+    "director": "Adriano Stuart",
+    "imdb_id": "tt0241567"
+  },
+  {
+    "title_en": "Tyler Perry's Madea's Family Reunion - The Play",
+    "title_pt": "Madea - Reunião de Família",
+    "year": 2002,
+    "genres": "Comedy|Drama|Sessão da tarde",
+    "imdb_score": 6.5,
+    "director": "Tyler Perry",
+    "imdb_id": "tt0359639"
+  },
+  {
+    "title_en": "Romy and Michele's High School Reunion",
+    "title_pt": "Romy e Michele",
+    "year": 1997,
+    "genres": "Comedy|Sessão da tarde",
+    "imdb_score": 6.2,
+    "director": "David Mirkin",
+    "imdb_id": "tt0120032"
+  },
+  {
+    "title_en": "D2: The Mighty Ducks",
+    "title_pt": "D2 - Nós Somos os Campeões",
+    "year": 1994,
+    "genres": "Comedy|Action|Family|Drama|Sessão da tarde",
+    "imdb_score": 6.2,
+    "director": "Sam Weisman",
+    "imdb_id": "tt0109520"
+  },
+  {
+    "title_en": "Greedy",
+    "title_pt": "Os Puxa-Sacos",
+    "year": 1994,
+    "genres": "Comedy|Sessão da tarde",
+    "imdb_score": 6.1,
+    "director": "Jonathan Lynn",
+    "imdb_id": "tt0109936"
+  },
+  {
+    "title_en": "Eloise at the Plaza",
+    "title_pt": "Eloise no Plaza",
+    "year": 2003,
+    "genres": "Comedy|Family|Mystery|TV Movie|Sessão da tarde",
+    "imdb_score": 6.1,
+    "director": "Kevin Lima",
+    "imdb_id": "tt0346932"
+  },
+  {
+    "title_en": "My Father the Hero",
+    "title_pt": "Meu Pai Herói",
+    "year": 1994,
+    "genres": "Family|Comedy|Romance|Sessão da tarde",
+    "imdb_score": 5.3,
+    "director": "Steve Miner",
+    "imdb_id": "tt0110612"
+  },
+  {
+    "title_en": "3 Ninjas: High Noon at Mega Mountain",
+    "title_pt": "3 Ninjas: Aventura na Mega Mountain",
+    "year": 1998,
+    "genres": "Family|Action|Comedy|Sessão da tarde",
+    "imdb_score": 4.8,
+    "director": "Sean McNamara",
+    "imdb_id": "tt0118539"
+  },
+  {
+    "title_en": "Beethoven's 3rd",
+    "title_pt": "Beethoven 3: Uma Família em Apuros",
+    "year": 2000,
+    "genres": "Family|Comedy|Sessão da tarde",
+    "imdb_score": 5.2,
+    "director": "David Mickey Evans",
+    "imdb_id": "tt0206588"
+  },
+  {
+    "title_en": "Beethoven's 4th",
+    "title_pt": "Beethoven 4",
+    "year": 2001,
+    "genres": "Family|Comedy|Sessão da tarde",
+    "imdb_score": 5.3,
+    "director": "David Mickey Evans",
+    "imdb_id": "tt0294345"
+  },
+  {
+    "title_en": "Beethoven's 5th",
+    "title_pt": "Beethoven 5",
+    "year": 2003,
+    "genres": "Family|Comedy|Sessão da tarde",
+    "imdb_score": 5.3,
+    "director": "Mark Griffiths",
+    "imdb_id": "tt0342108"
+  },
+  {
+    "title_en": "Lethal Weapon 2",
+    "title_pt": "Máquina Mortífera 2",
+    "year": 1989,
+    "genres": "Action|Adventure|Comedy|Crime|Thriller|Sessão da tarde",
+    "imdb_score": 7.0,
+    "director": "Richard Donner",
+    "imdb_id": "tt0097733"
+  },
+  {
+    "title_en": "The Gods Must Be Crazy: Crazy Safari",
+    "title_pt": "Os Deuses Devem Estar Loucos 3",
+    "year": 1991,
+    "genres": "Comedy|Fantasy|Sessão da tarde",
+    "imdb_score": 5.3,
+    "director": "Billy Chan Wui-Ngai",
+    "imdb_id": "tt0101864"
+  },
+  {
+    "title_en": "Xuxa Requebra",
+    "title_pt": "Xuxa Requebra",
+    "year": 1999,
+    "genres": "Music|Family|Sessão da tarde",
+    "imdb_score": 3.5,
+    "director": "Tizuka Yamasaki",
+    "imdb_id": "tt0228778"
+  },
+  {
+    "title_en": "Xuxa and the Elves 2: The Road of The Fairies",
+    "title_pt": "Xuxa e os Duendes 2: No Caminho das Fadas",
+    "year": 2002,
+    "genres": "Family|Fantasy|Adventure|Sessão da tarde",
+    "imdb_score": 4.4,
+    "director": "Rogério Gomes",
+    "imdb_id": "tt0312043"
+  },
+  {
+    "title_en": "Xuxa Popstar",
+    "title_pt": "Xuxa Popstar",
+    "year": 2000,
+    "genres": "Romance|Comedy|Family|Sessão da tarde",
+    "imdb_score": 3.3,
+    "director": "Tizuka Yamasaki",
+    "imdb_id": "tt0286320"
+  },
+  {
+    "title_en": "Xuxa and the Elves",
+    "title_pt": "Xuxa e os Duendes",
+    "year": 2001,
+    "genres": "Family|Fantasy|Adventure|Comedy|Sessão da tarde",
+    "imdb_score": 3.8,
+    "director": "Paulo Sérgio de Almeida",
+    "imdb_id": "tt0294543"
+  },
+  {
+    "title_en": "Hands of Steel",
+    "title_pt": "Keruak, o Exterminador de Aço",
+    "year": 1986,
+    "genres": "Action|Sci-Fi|Sessão da tarde",
+    "imdb_score": 5.3,
+    "director": "Sergio Martino",
+    "imdb_id": "tt0091166"
+  },
+  {
+    "title_en": "Fathers' Day",
+    "title_pt": "1 Dia, 2 Pais",
+    "year": 1997,
+    "genres": "Comedy|Family|Sessão da tarde",
+    "imdb_score": 5.5,
+    "director": "Ivan Reitman",
+    "imdb_id": "tt0119109"
+  },
+  {
+    "title_en": "The Haunting of Seacliff Inn",
+    "title_pt": "The Haunting of Seacliff Inn",
+    "year": 1994,
+    "genres": "Drama|Mystery|Horror|TV Movie",
+    "imdb_score": 4.8,
+    "director": "Walter Klenhard",
+    "imdb_id": "tt0109997"
+  },
+  {
+    "title_en": "The Cowboy Way",
+    "title_pt": "Jeito de Cowboy",
+    "year": 1994,
+    "genres": "Action|Comedy|Crime|Drama|Thriller|Western|Sessão da tarde",
+    "imdb_score": 5.7,
+    "director": "Gregg Champion",
+    "imdb_id": "tt0109493"
+  },
+  {
+    "title_en": "Firewalker",
+    "title_pt": "Os Aventureiros do Fogo",
+    "year": 1986,
+    "genres": "Action|Adventure|Comedy|Sessão da tarde",
+    "imdb_score": 5.3,
+    "director": "J. Lee Thompson",
+    "imdb_id": "tt0091055"
+  },
+  {
+    "title_en": "Jumping Ship",
+    "title_pt": "Piratas Modernos",
+    "year": 2001,
+    "genres": "TV Movie|Family|Drama|Comedy|Sessão da tarde",
+    "imdb_score": 6.5,
+    "director": "Michael Lange",
+    "imdb_id": "tt0271172"
+  },
+  {
+    "title_en": "Sabrina Goes to Rome",
+    "title_pt": "Sabrina Vai à Roma",
+    "year": 1998,
+    "genres": "TV Movie|Family|Fantasy|Sessão da tarde",
+    "imdb_score": 6.0,
+    "director": "Tibor Takács",
+    "imdb_id": "tt0165456"
+  },
+  {
+    "title_en": "Sabrina, Down Under",
+    "title_pt": "Sabrina Vai Para a Austrália",
+    "year": 1999,
+    "genres": "TV Movie|Comedy|Fantasy|Sessão da tarde",
+    "imdb_score": 6.2,
+    "director": "Kenneth R. Koch",
+    "imdb_id": "tt8942480"
+  },
+  {
+    "title_en": "Dennis the Menace Strikes Again!",
+    "title_pt": "Dennis, o Pimentinha Ataca Novamente",
+    "year": 1998,
+    "genres": "Family|Comedy|Sessão da tarde",
+    "imdb_score": 5.4,
+    "director": "Charles T. Kanganis",
+    "imdb_id": "tt0129868"
+  },
+  {
+    "title_en": "Digimon Adventure",
+    "title_pt": "Digimon Adventure: O Filme",
+    "year": 1999,
+    "genres": "Animation|Adventure|Action|Fantasy",
+    "imdb_score": 7.5,
+    "director": "細田守",
+    "imdb_id": "tt2049430"
+  },
+  {
+    "title_en": "White Water Summer",
+    "title_pt": "Águas Perigosas",
+    "year": 1987,
+    "genres": "Adventure|Drama|Sessão da tarde",
+    "imdb_score": 6.2,
+    "director": "Jeff Bleckner",
+    "imdb_id": "tt0094318"
+  },
+  {
+    "title_en": "Passport to Paris",
+    "title_pt": "Passaporte para Paris",
+    "year": 1999,
+    "genres": "Comedy|Family|Sessão da tarde",
+    "imdb_score": 6.2,
+    "director": "Alan Metter",
+    "imdb_id": "tt0202521"
+  },
+  {
+    "title_en": "MouseHunt",
+    "title_pt": "Um Ratinho Encrenqueiro",
+    "year": 1997,
+    "genres": "Comedy|Family|Sessão da tarde",
+    "imdb_score": 6.5,
+    "director": "Gore Verbinski",
+    "imdb_id": "tt0119715"
+  },
+  {
+    "title_en": "Gargantua",
+    "title_pt": "Gargantua",
+    "year": 1998,
+    "genres": "Sci-Fi|Action|Adventure|TV Movie|Sessão da tarde",
+    "imdb_score": 3.6,
+    "director": "Bradford May",
+    "imdb_id": "tt0156554"
+  },
+  {
+    "title_en": "Police Story",
+    "title_pt": "Police Story: A Guerra das Drogas",
+    "year": 1985,
+    "genres": "Action|Crime|Comedy|Sessão da tarde",
+    "imdb_score": 7.5,
+    "director": "Jackie Chan",
+    "imdb_id": "tt0089374"
+  },
+  {
+    "title_en": "Life-Size",
+    "title_pt": "A Boneca Que Virou Gente",
+    "year": 2000,
+    "genres": "Family|Comedy|Fantasy|TV Movie|Sessão da tarde",
+    "imdb_score": 6.4,
+    "director": "Mark Rosman",
+    "imdb_id": "tt0200809"
+  },
+  {
+    "title_en": "Flipper",
+    "title_pt": "Flipper - O Menino e o Delfim",
+    "year": 1963,
+    "genres": "Adventure|Drama|Family",
+    "imdb_score": 5.8,
+    "director": "James B. Clark",
+    "imdb_id": "tt0057063"
+  },
+  {
+    "title_en": "The Suite Life Movie",
+    "title_pt": "Zack e Cody: O Filme",
+    "year": 2011,
+    "genres": "Adventure|Comedy|Family|Drama|Sci-Fi|TV Movie|Sessão da tarde",
+    "imdb_score": 6.1,
+    "director": "Sean McNamara",
+    "imdb_id": "tt1754799"
+  },
+  {
+    "title_en": "Wizards of Waverly Place: The Movie",
+    "title_pt": "Os Feiticeiros de Waverly Place - O Filme",
+    "year": 2009,
+    "genres": "Family|TV Movie|Adventure|Comedy|Fantasy|Action|Drama|Sessão da tarde",
+    "imdb_score": 7.3,
+    "director": "Lev L. Spiro",
+    "imdb_id": "tt1369845"
+  },
+  {
+    "title_en": "If I Were You",
+    "title_pt": "Se Eu Fosse Você",
+    "year": 2006,
+    "genres": "Comedy|Fantasy|Sessão da tarde",
+    "imdb_score": 6.4,
+    "director": "Daniel Filho",
+    "imdb_id": "tt0448927"
+  },
+  {
+    "title_en": "If I Were You 2",
+    "title_pt": "Se Eu Fosse Você 2",
+    "year": 2009,
+    "genres": "Comedy|Fantasy|Sessão da tarde",
+    "imdb_score": 6.1,
+    "director": "Daniel Filho",
+    "imdb_id": "tt1099227"
+  },
+  {
+    "title_en": "Tainá 2 - A New Amazon Adventure",
+    "title_pt": "Tainá 2: A Aventura Continua",
+    "year": 2004,
+    "genres": "Adventure|Family|Sessão da tarde",
+    "imdb_score": 5.2,
+    "director": "Mauro Lima",
+    "imdb_id": "tt0383001"
+  },
+  {
+    "title_en": "Tainá: An Amazon Adventure",
+    "title_pt": "Tainá: Uma Aventura na Amazônia",
+    "year": 2001,
+    "genres": "Family|Fantasy|Adventure|Sessão da tarde",
+    "imdb_score": 4.8,
+    "director": "Tania Lamarca",
+    "imdb_id": "tt0264079"
+  },
+  {
+    "title_en": "Battle Beyond the Stars",
+    "title_pt": "Mercenários das Galáxias",
+    "year": 1980,
+    "genres": "Sci-Fi|Action|Adventure|Sessão da tarde",
+    "imdb_score": 5.3,
+    "director": "Jimmy T. Murakami",
+    "imdb_id": "tt0080421"
+  },
+  {
+    "title_en": "Manuelita",
+    "title_pt": "A Tartaruga Manuelita",
+    "year": 1999,
+    "genres": "Animation|Family|Comedy|Adventure|Sessão da tarde",
+    "imdb_score": 6.5,
+    "director": "Manuel García Ferré",
+    "imdb_id": "tt0229557"
+  },
+  {
+    "title_en": "Bad Attitudes",
+    "title_pt": "Em Busca de Confusão",
+    "year": 1991,
+    "genres": "Comedy|Family|TV Movie|Sessão da tarde",
+    "imdb_score": 3.8,
+    "director": "Alan Myerson",
+    "imdb_id": "tt0101398"
+  },
+  {
+    "title_en": "Another 48 Hrs.",
+    "title_pt": "48 Horas, Parte 2",
+    "year": 1990,
+    "genres": "Thriller|Action|Comedy|Crime|Sessão da tarde",
+    "imdb_score": 6.0,
+    "director": "Walter Hill",
+    "imdb_id": "tt0099044"
+  },
+  {
+    "title_en": "Mr. Magoo",
+    "title_pt": "Mr. Magoo",
+    "year": 1997,
+    "genres": "Comedy|Family|Sessão da tarde",
+    "imdb_score": 4.5,
+    "director": "唐季禮",
+    "imdb_id": "tt0119718"
+  },
+  {
+    "title_en": "Mr. Nanny",
+    "title_pt": "Mr. Nanny: Uma Babá de Peso",
+    "year": 1993,
+    "genres": "Family|Comedy|Sessão da tarde",
+    "imdb_score": 5.1,
+    "director": "Michael Gottlieb",
+    "imdb_id": "tt0107612"
   }
 ]
