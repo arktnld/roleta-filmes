@@ -36,30 +36,8 @@
 
     <div class="stars"></div>
 
-    <!-- Navbar Mobile -->
-    <nav class="mobile-navbar" id="mobile-navbar">
-        <div class="navbar-title">🎬 Roleta</div>
-        <div class="navbar-actions">
-            <button class="navbar-btn" id="navbar-spin-btn" onclick="spinRoulette()">
-                <span class="icon">🎲</span>
-                <span class="label">Girar</span>
-            </button>
-            <button class="navbar-btn" onclick="toggleListView('watchlist')">
-                <span class="icon">☆</span>
-                <span class="label">Quero Ver</span>
-                <span class="badge" id="navbar-watchlist-count">0</span>
-            </button>
-            <button class="navbar-btn" onclick="toggleListView('watched')">
-                <span class="icon">✓</span>
-                <span class="label">Já Vi</span>
-                <span class="badge" id="navbar-watched-count">0</span>
-            </button>
-            <button class="navbar-btn" onclick="toggleSearchView()">
-                <span class="icon">🔍</span>
-                <span class="label">Buscar</span>
-            </button>
-        </div>
-    </nav>
+    <!-- Botão Flutuante Mobile -->
+    <button class="mobile-fab" id="mobile-fab" onclick="spinRoulette()">🎲</button>
 
     <div class="container">
         <header>

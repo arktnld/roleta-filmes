@@ -341,9 +341,6 @@ function updateListCounts() {
         watchedCountEl.textContent = watchedCount;
         watchedCountEl.style.display = watchedCount > 0 ? 'inline' : 'none';
     }
-
-    // Atualizar contadores da navbar
-    updateNavbarCounts();
 }
 
 // Alias para manter compatibilidade
@@ -387,9 +384,9 @@ function toggleListView(type) {
     listSection.classList.remove('hidden');
     mainContent.forEach(el => el.classList.add('hidden'));
 
-    // Esconder botão de girar na navbar mobile
-    const navbarSpinBtn = document.getElementById('navbar-spin-btn');
-    if (navbarSpinBtn) navbarSpinBtn.style.display = 'none';
+    // Esconder botão flutuante mobile
+    const mobileFab = document.getElementById('mobile-fab');
+    if (mobileFab) mobileFab.classList.add('hidden');
 
     // Atualizar botões ativos
     watchlistBtn.classList.toggle('active', type === 'watchlist');
@@ -427,9 +424,9 @@ function closeListView() {
     watchlistBtn.classList.remove('active');
     watchedBtn.classList.remove('active');
 
-    // Mostrar botão de girar na navbar mobile
-    const navbarSpinBtn = document.getElementById('navbar-spin-btn');
-    if (navbarSpinBtn) navbarSpinBtn.style.display = '';
+    // Mostrar botão flutuante mobile
+    const mobileFab = document.getElementById('mobile-fab');
+    if (mobileFab) mobileFab.classList.remove('hidden');
 
     playSound('click');
 }
@@ -1947,59 +1944,6 @@ function initCustomSelects() {
 }
 
 // ============================================
-// MOBILE NAVBAR (esconde/aparece com scroll)
-// ============================================
-let lastScrollY = 0;
-let ticking = false;
-
-function updateNavbar() {
-    const navbar = document.getElementById('mobile-navbar');
-    if (!navbar) return;
-
-    const currentScrollY = window.scrollY;
-
-    // Mostra quando rola para baixo
-    if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        navbar.classList.add('visible');
-    } else if (currentScrollY < lastScrollY) {
-        // Esconde quando rola para cima
-        navbar.classList.remove('visible');
-    }
-
-    lastScrollY = currentScrollY;
-    ticking = false;
-}
-
-function onScroll() {
-    if (!ticking) {
-        requestAnimationFrame(updateNavbar);
-        ticking = true;
-    }
-}
-
-// Atualizar contadores da navbar
-function updateNavbarCounts() {
-    const watchlistCount = getWatchlist().length;
-    const watchedCount = getWatchedMovies().length;
-
-    const navWatchlistCount = document.getElementById('navbar-watchlist-count');
-    const navWatchedCount = document.getElementById('navbar-watched-count');
-
-    if (navWatchlistCount) {
-        navWatchlistCount.textContent = watchlistCount;
-        navWatchlistCount.style.display = watchlistCount > 0 ? 'flex' : 'none';
-    }
-
-    if (navWatchedCount) {
-        navWatchedCount.textContent = watchedCount;
-        navWatchedCount.style.display = watchedCount > 0 ? 'flex' : 'none';
-    }
-}
-
-// Adicionar listener de scroll
-window.addEventListener('scroll', onScroll, { passive: true });
-
-// ============================================
 // BUSCA DE FILMES
 // ============================================
 let currentSearchView = false;
@@ -2048,9 +1992,9 @@ function toggleSearchView() {
     // Mostrar busca
     searchSection.classList.remove('hidden');
 
-    // Esconder botão de girar na navbar mobile
-    const navbarSpinBtn = document.getElementById('navbar-spin-btn');
-    if (navbarSpinBtn) navbarSpinBtn.style.display = 'none';
+    // Esconder botão flutuante mobile
+    const mobileFab = document.getElementById('mobile-fab');
+    if (mobileFab) mobileFab.classList.add('hidden');
 
     // Focar no input
     const searchInput = document.getElementById('search-input');
@@ -2091,9 +2035,9 @@ function closeSearchView() {
     document.getElementById('search-pagination').innerHTML = '';
     document.getElementById('search-empty').classList.add('hidden');
 
-    // Mostrar botão de girar na navbar mobile
-    const navbarSpinBtn = document.getElementById('navbar-spin-btn');
-    if (navbarSpinBtn) navbarSpinBtn.style.display = '';
+    // Mostrar botão flutuante mobile
+    const mobileFab = document.getElementById('mobile-fab');
+    if (mobileFab) mobileFab.classList.remove('hidden');
 
     playSound('click');
 }
