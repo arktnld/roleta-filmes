@@ -7857,15 +7857,6 @@
     "imdb_id": "tt0344510"
   },
   {
-    "title_en": "Lolita",
-    "title_pt": "Lolita",
-    "year": 1962,
-    "genres": "Crime|Drama|Romance",
-    "imdb_score": 7.7,
-    "director": "Stanley Kubrick",
-    "imdb_id": "tt0056193"
-  },
-  {
     "title_en": "Eye See You",
     "title_pt": "D-Tox",
     "year": 2002,
@@ -13395,7 +13386,7 @@
     "title_en": "Ponyo",
     "title_pt": "Ponyo - Uma Amizade que Veio do Mar",
     "year": 2008,
-    "genres": "Adventure|Animation|Family|Fantasy|Anime",
+    "genres": "Adventure|Animation|Family|Fantasy|Anime|Studio Ghibli",
     "imdb_score": 7.7,
     "director": "Hayao Miyazaki",
     "imdb_id": "tt0876563"
@@ -18075,7 +18066,7 @@
     "title_en": "Howl's Moving Castle",
     "title_pt": "O Castelo Animado",
     "year": 2004,
-    "genres": "Adventure|Animation|Family|Fantasy|Anime",
+    "genres": "Adventure|Animation|Family|Fantasy|Anime|Studio Ghibli",
     "imdb_score": 8.2,
     "director": "Hayao Miyazaki",
     "imdb_id": "tt0347149"
@@ -20505,7 +20496,7 @@
     "title_en": "Princess Mononoke",
     "title_pt": "Princesa Mononoke",
     "year": 1997,
-    "genres": "Adventure|Animation|Fantasy|Anime",
+    "genres": "Adventure|Animation|Fantasy|Anime|Studio Ghibli",
     "imdb_score": 8.4,
     "director": "Hayao Miyazaki",
     "imdb_id": "tt0119698"
@@ -20937,7 +20928,7 @@
     "title_en": "Spirited Away",
     "title_pt": "A Viagem de Chihiro",
     "year": 2001,
-    "genres": "Adventure|Animation|Family|Fantasy|Anime",
+    "genres": "Adventure|Animation|Family|Fantasy|Anime|Studio Ghibli",
     "imdb_score": 8.6,
     "director": "Hayao Miyazaki",
     "imdb_id": "tt0245429"
@@ -72867,7 +72858,7 @@
     "title_en": "When Marnie Was There",
     "title_pt": "As Memórias de Marnie",
     "year": 2014,
-    "genres": "Animation|Drama|Family|Mystery|Anime",
+    "genres": "Animation|Drama|Family|Mystery|Anime|Studio Ghibli",
     "imdb_score": 7.9,
     "director": "米林宏昌",
     "imdb_id": "tt3398268"
@@ -75576,7 +75567,7 @@
     "title_en": "Ocean Waves",
     "title_pt": "Eu Posso Ouvir o Oceano",
     "year": 1993,
-    "genres": "Animation|Drama|Romance|Anime",
+    "genres": "Animation|Drama|Romance|Anime|Studio Ghibli",
     "imdb_score": 6.4,
     "director": "望月智充",
     "imdb_id": "tt0108432"
@@ -75684,7 +75675,7 @@
     "title_en": "The Secret World of Arrietty",
     "title_pt": "O Mundo dos Pequeninos",
     "year": 2010,
-    "genres": "Fantasy|Animation|Family|Anime",
+    "genres": "Fantasy|Animation|Family|Anime|Studio Ghibli",
     "imdb_score": 7.7,
     "director": "米林宏昌",
     "imdb_id": "tt1568921"
@@ -75963,7 +75954,7 @@
     "title_en": "Tales from Earthsea",
     "title_pt": "Contos de Terramar",
     "year": 2006,
-    "genres": "Animation|Fantasy|Adventure|Anime",
+    "genres": "Animation|Fantasy|Adventure|Anime|Studio Ghibli",
     "imdb_score": 6.5,
     "director": "宮崎吾朗",
     "imdb_id": "tt0495596"
@@ -94206,7 +94197,7 @@
     "title_en": "Grave of the Fireflies",
     "title_pt": "O Túmulo dos Vagalumes",
     "year": 2005,
-    "genres": "Drama|Anime",
+    "genres": "Drama|Anime|Studio Ghibli",
     "imdb_score": 7.9,
     "director": "佐藤東弥",
     "imdb_id": "tt0491652"
@@ -95781,7 +95772,7 @@
     "title_en": "My Neighbor Totoro",
     "title_pt": "Meu Amigo Totoro",
     "year": 1988,
-    "genres": "Fantasy|Animation|Family|Anime",
+    "genres": "Fantasy|Animation|Family|Anime|Studio Ghibli",
     "imdb_score": 8.1,
     "director": "Hayao Miyazaki",
     "imdb_id": "tt0096283"
@@ -95997,7 +95988,7 @@
     "title_en": "Whisper of the Heart",
     "title_pt": "Sussurros do Coração",
     "year": 1995,
-    "genres": "Animation|Drama|Family|Anime",
+    "genres": "Animation|Drama|Family|Anime|Studio Ghibli",
     "imdb_score": 7.9,
     "director": "近藤喜文",
     "imdb_id": "tt0113824"
@@ -96078,7 +96069,7 @@
     "title_en": "The Tale of The Princess Kaguya",
     "title_pt": "O Conto da Princesa Kaguya",
     "year": 2013,
-    "genres": "Animation|Drama|Fantasy|Anime",
+    "genres": "Animation|Drama|Fantasy|Anime|Studio Ghibli",
     "imdb_score": 8.1,
     "director": "高畑勲",
     "imdb_id": "tt2576852"
@@ -96492,7 +96483,7 @@
     "title_en": "Nausicaä of the Valley of the Wind",
     "title_pt": "Nausicaä do Vale do Vento",
     "year": 1984,
-    "genres": "Adventure|Animation|Fantasy|Anime",
+    "genres": "Adventure|Animation|Fantasy|Anime|Studio Ghibli",
     "imdb_score": 7.9,
     "director": "Hayao Miyazaki",
     "imdb_id": "tt0087544"
@@ -99102,7 +99093,7 @@
     "title_en": "Kiki's Delivery Service",
     "title_pt": "O Serviço de Entregas da Kiki",
     "year": 1989,
-    "genres": "Animation|Family|Fantasy|Drama|Anime",
+    "genres": "Animation|Family|Fantasy|Drama|Anime|Studio Ghibli",
     "imdb_score": 7.8,
     "director": "Hayao Miyazaki",
     "imdb_id": "tt0097814"
@@ -107751,7 +107742,7 @@
     "title_en": "The Wind Rises",
     "title_pt": "Vidas ao Vento",
     "year": 2013,
-    "genres": "Drama|Animation|Romance|War|History|Anime",
+    "genres": "Drama|Animation|Romance|War|History|Anime|Studio Ghibli",
     "imdb_score": 7.8,
     "director": "Hayao Miyazaki",
     "imdb_id": "tt2013293"
@@ -121296,7 +121287,7 @@
     "title_en": "Castle in the Sky",
     "title_pt": "O Castelo no Céu",
     "year": 1986,
-    "genres": "Adventure|Fantasy|Animation|Action|Family|Anime",
+    "genres": "Adventure|Fantasy|Animation|Action|Family|Anime|Studio Ghibli",
     "imdb_score": 8.0,
     "director": "Hayao Miyazaki",
     "imdb_id": "tt0092067"
@@ -121314,7 +121305,7 @@
     "title_en": "The Cat Returns",
     "title_pt": "O Reino dos Gatos",
     "year": 2002,
-    "genres": "Adventure|Fantasy|Animation|Drama|Family|Anime",
+    "genres": "Adventure|Fantasy|Animation|Drama|Family|Anime|Studio Ghibli",
     "imdb_score": 7.1,
     "director": "森田宏幸",
     "imdb_id": "tt0347618"
@@ -121332,7 +121323,7 @@
     "title_en": "Pom Poko",
     "title_pt": "PomPoko: A Grande Batalha dos Guaxinins",
     "year": 1994,
-    "genres": "Adventure|Animation|Fantasy|Anime",
+    "genres": "Adventure|Animation|Fantasy|Anime|Studio Ghibli",
     "imdb_score": 7.2,
     "director": "高畑勲",
     "imdb_id": "tt0110008"
@@ -121341,7 +121332,7 @@
     "title_en": "Porco Rosso",
     "title_pt": "Porco Rosso: O Último Herói Romântico",
     "year": 1992,
-    "genres": "Family|Comedy|Animation|Adventure|Fantasy|Anime",
+    "genres": "Family|Comedy|Animation|Adventure|Fantasy|Anime|Studio Ghibli",
     "imdb_score": 7.8,
     "director": "Hayao Miyazaki",
     "imdb_id": "tt0104652"
@@ -121557,7 +121548,7 @@
     "title_en": "Only Yesterday",
     "title_pt": "Memórias de Ontem",
     "year": 1991,
-    "genres": "Animation|Drama|Romance|Anime",
+    "genres": "Animation|Drama|Romance|Anime|Studio Ghibli",
     "imdb_score": 7.4,
     "director": "高畑勲",
     "imdb_id": "tt0102587"
@@ -121611,7 +121602,7 @@
     "title_en": "Panda! Go Panda!",
     "title_pt": "As Aventuras de Panda e seus Amigos",
     "year": 1972,
-    "genres": "Animation|Family|Comedy|Anime",
+    "genres": "Animation|Family|Comedy|Anime|Studio Ghibli",
     "imdb_score": 6.2,
     "director": "高畑勲",
     "imdb_id": "tt0069058"
@@ -121674,7 +121665,7 @@
     "title_en": "My Neighbors the Yamadas",
     "title_pt": "Meus Vizinhos, Os Yamadas",
     "year": 1999,
-    "genres": "Animation|Comedy|Family|Anime",
+    "genres": "Animation|Comedy|Family|Anime|Studio Ghibli",
     "imdb_score": 7.0,
     "director": "高畑勲",
     "imdb_id": "tt0206013"
@@ -123096,7 +123087,7 @@
     "title_en": "From Up on Poppy Hill",
     "title_pt": "Da Colina Kokuriko",
     "year": 2011,
-    "genres": "Animation|Drama|Anime",
+    "genres": "Animation|Drama|Anime|Studio Ghibli",
     "imdb_score": 7.5,
     "director": "宮崎吾朗",
     "imdb_id": "tt1798188"
@@ -123195,7 +123186,7 @@
     "title_en": "Koro's Big Day Out",
     "title_pt": "Koro no dai-sanpo",
     "year": 2002,
-    "genres": "Animation|Anime",
+    "genres": "Animation|Anime|Studio Ghibli",
     "imdb_score": 7.1,
     "director": "Hayao Miyazaki",
     "imdb_id": "tt0803021"
@@ -123204,7 +123195,7 @@
     "title_en": "Iblard Time",
     "title_pt": "Iblard Jikan",
     "year": 2007,
-    "genres": "Animation|Fantasy|Adventure|Mystery|Anime",
+    "genres": "Animation|Fantasy|Adventure|Mystery|Anime|Studio Ghibli",
     "imdb_score": 6.6,
     "director": "井上直久",
     "imdb_id": "tt1161426"
@@ -123213,7 +123204,7 @@
     "title_en": "Heidi",
     "title_pt": "Heidi",
     "year": 2015,
-    "genres": "Adventure|Family|Drama|Anime",
+    "genres": "Adventure|Family|Drama|Anime|Studio Ghibli",
     "imdb_score": 7.2,
     "director": "Alain Gsponer",
     "imdb_id": "tt3700392"
@@ -123222,7 +123213,7 @@
     "title_en": "Anne of Green Gables: Road to Green Gables",
     "title_pt": "Anne of Green Gables: Road to Green Gables",
     "year": 2010,
-    "genres": "Drama|Animation|Adventure|Anime",
+    "genres": "Drama|Animation|Adventure|Anime|Studio Ghibli",
     "imdb_score": 7.0,
     "director": "高畑勲",
     "imdb_id": "tt2555422"
@@ -123249,7 +123240,7 @@
     "title_en": "The Red Turtle",
     "title_pt": "A Tartaruga Vermelha",
     "year": 2016,
-    "genres": "Animation|Drama|Fantasy|Family|Anime",
+    "genres": "Animation|Drama|Fantasy|Family|Anime|Studio Ghibli",
     "imdb_score": 7.4,
     "director": "Michael Dudok de Wit",
     "imdb_id": "tt3666024"
@@ -123276,7 +123267,7 @@
     "title_en": "Mon Mon the Water Spider",
     "title_pt": "水グモもんもん",
     "year": 2006,
-    "genres": "Animation|Anime",
+    "genres": "Animation|Anime|Studio Ghibli",
     "imdb_score": 7.1,
     "director": "Hayao Miyazaki",
     "imdb_id": "tt0768132"
@@ -123357,7 +123348,7 @@
     "title_en": "Taro the Dragon Boy",
     "title_pt": "Tatsu no Ko Tarou",
     "year": 1979,
-    "genres": "Fantasy|Animation|Family|Adventure|Anime",
+    "genres": "Fantasy|Animation|Family|Adventure|Anime|Studio Ghibli",
     "imdb_score": 6.5,
     "director": "浦山桐郎",
     "imdb_id": "tt0061069"
@@ -123465,7 +123456,7 @@
     "title_en": "Gauche the Cellist",
     "title_pt": "Goshu: O Violoncelista",
     "year": 1982,
-    "genres": "Animation|Music|Fantasy|Anime",
+    "genres": "Animation|Music|Fantasy|Anime|Studio Ghibli",
     "imdb_score": 7.2,
     "director": "高畑勲",
     "imdb_id": "tt0083053"
@@ -123708,7 +123699,7 @@
     "title_en": "Horus: Prince of the Sun",
     "title_pt": "Horus o Príncipe do Sol",
     "year": 1968,
-    "genres": "Adventure|Drama|Animation|Fantasy|Anime",
+    "genres": "Adventure|Drama|Animation|Fantasy|Anime|Studio Ghibli",
     "imdb_score": 6.3,
     "director": "高畑勲",
     "imdb_id": "tt0063668"
@@ -124306,5 +124297,77 @@
     "imdb_score": 7.9,
     "director": "児玉徹郎",
     "imdb_id": "tt14614892"
+  },
+  {
+    "title_en": "Lupin the Third: Greatest Capers",
+    "title_pt": "Lupin the Third: Greatest Capers",
+    "year": 1995,
+    "genres": "Animation|Adventure|Comedy|Crime",
+    "imdb_score": 6.6,
+    "director": "Hayao Miyazaki",
+    "imdb_id": "tt0159192"
+  },
+  {
+    "title_en": "Yuki's Sun",
+    "title_pt": "O Sol de Yuki",
+    "year": 1972,
+    "genres": "Animation|Drama|Studio Ghibli",
+    "imdb_score": 5.8,
+    "director": "Hayao Miyazaki",
+    "imdb_id": "tt4005642"
+  },
+  {
+    "title_en": "Panda! Go Panda!: Rainy Day Circus",
+    "title_pt": "Espetáculo na Chuva",
+    "year": 1973,
+    "genres": "Animation|Comedy|Family|Studio Ghibli",
+    "imdb_score": 6.3,
+    "director": "高畑勲",
+    "imdb_id": "tt0070505"
+  },
+  {
+    "title_en": "Conan, O Rapaz do Futuro",
+    "title_pt": "Conan, O Rapaz do Futuro",
+    "year": 2019,
+    "genres": "Documentary|Studio Ghibli",
+    "imdb_score": 0.0,
+    "director": "Daniel Mota",
+    "imdb_id": null
+  },
+  {
+    "title_en": "The Story of Yanagawa's Canals",
+    "title_pt": "柳川の運河の物語",
+    "year": 1987,
+    "genres": "Documentary|Animation|Studio Ghibli",
+    "imdb_score": 7.9,
+    "director": "高畑勲",
+    "imdb_id": "tt0094345"
+  },
+  {
+    "title_en": "The Sky-Colored Seed",
+    "title_pt": "そらいろのたね",
+    "year": 1992,
+    "genres": "Animation|Studio Ghibli",
+    "imdb_score": 5.7,
+    "director": "Hayao Miyazaki",
+    "imdb_id": "tt2140421"
+  },
+  {
+    "title_en": "Hayao Miyazaki and the Ghibli Museum",
+    "title_pt": "宮崎駿とジブリ美術館",
+    "year": 2005,
+    "genres": "Documentary",
+    "imdb_score": 8.0,
+    "director": "佐藤順一",
+    "imdb_id": ""
+  },
+  {
+    "title_en": "The Day I Bought a Star",
+    "title_pt": "星をかった日",
+    "year": 2006,
+    "genres": "Animation|Fantasy|Sci-Fi",
+    "imdb_score": 7.8,
+    "director": "Hayao Miyazaki",
+    "imdb_id": "tt0756217"
   }
 ]

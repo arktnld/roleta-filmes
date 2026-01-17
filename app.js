@@ -44,7 +44,7 @@ function translateGenre(genre) {
 
 const CONFIG = {
     TMDB_TOKEN: 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMTE5OTFiNjk5ZGIzYTk5NzhjOTVmYThkOGM5MWM0NiIsIm5iZiI6MTc0NTk1MDE0My45NzYsInN1YiI6IjY4MTExNWJmMjEzN2YzNGMyNGVhZDY4ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.6yHJrMiDYHRrIlA9Fy9q5qikkGmjnVK23cBuYc-aJ-k',
-    TMDB_IMG_BASE: 'https://image.tmdb.org/t/p/w500',
+    TMDB_IMG_BASE: 'https://image.tmdb.org/t/p/w780',
     MOVIES_PER_SPIN: 3,
     MAX_MOVIES_PER_SPIN: 9, // Limite máximo para não sobrecarregar a API
     HISTORY_CACHE_SIZE: 30, // Quantidade de filmes no cache circular
@@ -237,36 +237,50 @@ function createActionButtons(imdbId) {
 // ============================================
 // EFEITOS DE GAME OVER BASEADOS NA NOTA
 // ============================================
-function getGameOverEffect(rating) {
-    // Nota < 4: Efeitos pesados (imagem acinzentada + overlay)
-    if (rating < 4) {
-        const heavyEffects = [
-            'effect-wasted',
-            'effect-skull',
-            'effect-rip',
-            'effect-glitch',
-            'effect-bomb',
-            'effect-wanted',
-            'effect-tomato',
-            'effect-ghost'
-        ];
-        return heavyEffects[Math.floor(Math.random() * heavyEffects.length)];
-    }
+const ALL_GAME_OVER_EFFECTS = [
+    'effect-wasted',      // GTA WASTED
+    'effect-skull',       // Caveira flutuante
+    'effect-rip',         // Lápide R.I.P.
+    'effect-glitch',      // TV sem sinal
+    'effect-bomb',        // Bomba explodindo
+    'effect-wanted',      // GTA WANTED
+    'effect-tomato',      // Tomate podre
+    'effect-ghost',       // Fantasma
+    'effect-fire',        // Em chamas
+    'effect-matrix',      // Matrix glitch
+    'effect-thanos'       // Thanos snap
+];
 
-    // Nota 4-5: Efeitos leves (só um emoji no canto)
+let availableEffects = [];
+
+function shuffleArray(array) {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+}
+
+function resetAvailableEffects() {
+    availableEffects = shuffleArray(ALL_GAME_OVER_EFFECTS);
+}
+
+function getGameOverEffect(rating) {
+    // Nota < 5: Efeitos de Game Over
     if (rating < 5) {
-        const lightEffects = [
-            'effect-meh',
-            'effect-sleepy',
-            'effect-clown',
-            'effect-trash',
-            'effect-warning'
-        ];
-        return lightEffects[Math.floor(Math.random() * lightEffects.length)];
+        // Se não tem mais efeitos disponíveis, reseta a lista
+        if (availableEffects.length === 0) {
+            resetAvailableEffects();
+        }
+        return availableEffects.pop();
     }
 
     return ''; // Nota >= 5: sem efeito
 }
+
+// Inicializa os efeitos
+resetAvailableEffects();
 
 async function handleWatchedClick(event, imdbId) {
     event.stopPropagation();
@@ -352,6 +366,17 @@ function toggleListView(type) {
     // Atualizar estado
     currentListView = type;
 
+    // Resetar filtros e paginação
+    listPage = 1;
+    const searchInput = document.getElementById('list-search-input');
+    const genreSelect = document.getElementById('list-filter-genre');
+    const decadeSelect = document.getElementById('list-filter-decade');
+    const sortSelect = document.getElementById('list-filter-sort');
+    if (searchInput) searchInput.value = '';
+    if (genreSelect) genreSelect.value = '';
+    if (decadeSelect) decadeSelect.value = '';
+    if (sortSelect) sortSelect.value = 'rating-desc';
+
     // Atualizar título
     const titleEl = document.getElementById('list-title');
     if (titleEl) {
@@ -401,18 +426,36 @@ function closeListView() {
     playSound('click');
 }
 
+// Estado para filtros e paginação da lista
+let listFilteredMovies = [];
+let listPage = 1;
+const LIST_PER_PAGE = 12;
+
 async function displayList(type) {
     const grid = document.getElementById('list-grid');
     const emptyMsg = document.getElementById('list-empty');
+    const info = document.getElementById('list-results-info');
+    const pagination = document.getElementById('list-pagination');
+
+    // Popular gêneros no filtro se ainda não populado
+    const listGenreSelect = document.getElementById('list-filter-genre');
+    if (listGenreSelect && listGenreSelect.options.length <= 1) {
+        const genres = [...new Set(movies.flatMap(m => m.genres ? m.genres.split('|') : []))].sort();
+        genres.forEach(genre => {
+            const option = document.createElement('option');
+            option.value = genre;
+            option.textContent = translateGenre(genre);
+            listGenreSelect.appendChild(option);
+        });
+    }
 
     // Obter IDs da lista correta
     const listIds = type === 'watchlist' ? getWatchlist() : getWatchedMovies();
 
-    console.log(`${type} IDs:`, listIds);
-    console.log('Total movies loaded:', movies.length);
-
     if (listIds.length === 0) {
         grid.innerHTML = '';
+        info.innerHTML = '';
+        pagination.innerHTML = '';
         emptyMsg.textContent = type === 'watchlist'
             ? 'Sua lista de filmes para assistir está vazia!'
             : 'Você ainda não marcou nenhum filme como visto!';
@@ -420,24 +463,86 @@ async function displayList(type) {
         return;
     }
 
-    emptyMsg.classList.add('hidden');
-    grid.innerHTML = '<div class="loading"><div class="loading-spinner"></div><div class="loading-text"></div></div>';
+    // Obter valores dos filtros
+    const searchQuery = normalizeText(document.getElementById('list-search-input')?.value || '');
+    const genre = document.getElementById('list-filter-genre')?.value || '';
+    const decade = document.getElementById('list-filter-decade')?.value || '';
+    const sortOrder = document.getElementById('list-filter-sort')?.value || 'rating-desc';
 
-    // Buscar filmes da lista e ordenar por nota (maior para menor)
-    const listMovies = movies
+    // Filtrar filmes da lista
+    listFilteredMovies = movies
         .filter(m => listIds.includes(m.imdb_id))
-        .sort((a, b) => b.imdb_score - a.imdb_score);
-    console.log(`${type} movies found:`, listMovies.length);
+        .filter(movie => {
+            // Filtro de busca
+            if (searchQuery) {
+                const titlePt = normalizeText(movie.title_pt || '');
+                const titleEn = normalizeText(movie.title_en || '');
+                const director = normalizeText(movie.director || '');
+                if (!titlePt.includes(searchQuery) && !titleEn.includes(searchQuery) && !director.includes(searchQuery)) {
+                    return false;
+                }
+            }
 
-    // Se não encontrou filmes mas a lista não está vazia
-    if (listMovies.length === 0) {
+            // Filtro de gênero
+            if (genre && (!movie.genres || !movie.genres.includes(genre))) {
+                return false;
+            }
+
+            // Filtro de década
+            if (decade) {
+                const decadeNum = parseInt(decade);
+                if (decadeNum === 1970) {
+                    if (movie.year >= 1980) return false;
+                } else {
+                    if (movie.year < decadeNum || movie.year >= decadeNum + 10) return false;
+                }
+            }
+
+            return true;
+        });
+
+    // Ordenar
+    switch (sortOrder) {
+        case 'rating-desc':
+            listFilteredMovies.sort((a, b) => b.imdb_score - a.imdb_score);
+            break;
+        case 'rating-asc':
+            listFilteredMovies.sort((a, b) => a.imdb_score - b.imdb_score);
+            break;
+        case 'year-desc':
+            listFilteredMovies.sort((a, b) => b.year - a.year);
+            break;
+        case 'year-asc':
+            listFilteredMovies.sort((a, b) => a.year - b.year);
+            break;
+        case 'title-asc':
+            listFilteredMovies.sort((a, b) => (a.title_pt || '').localeCompare(b.title_pt || ''));
+            break;
+    }
+
+    if (listFilteredMovies.length === 0) {
         grid.innerHTML = '';
-        emptyMsg.textContent = 'Não foi possível carregar os filmes da lista.';
+        info.innerHTML = '';
+        pagination.innerHTML = '';
+        emptyMsg.textContent = 'Nenhum filme encontrado com esses filtros.';
         emptyMsg.classList.remove('hidden');
         return;
     }
 
-    const cards = await Promise.all(listMovies.map(async (movie) => {
+    emptyMsg.classList.add('hidden');
+
+    // Paginação
+    const totalPages = Math.ceil(listFilteredMovies.length / LIST_PER_PAGE);
+    const start = (listPage - 1) * LIST_PER_PAGE;
+    const end = start + LIST_PER_PAGE;
+    const pageMovies = listFilteredMovies.slice(start, end);
+
+    // Info
+    info.innerHTML = `<span class="list-count">${listFilteredMovies.length} filme${listFilteredMovies.length !== 1 ? 's' : ''}</span>`;
+
+    grid.innerHTML = '<div class="loading"><div class="loading-spinner"></div></div>';
+
+    const cards = await Promise.all(pageMovies.map(async (movie) => {
         const details = await fetchMovieDetails(movie.imdb_id);
 
         const posterUrl = details?.poster_path
@@ -449,21 +554,17 @@ async function displayList(type) {
             <button class="action-btn watched ${isWatched(movie.imdb_id) ? 'active' : ''}"
                     onclick="event.stopPropagation(); handleWatchedClick(event, '${movie.imdb_id}')">
                 <span class="icon">${isWatched(movie.imdb_id) ? '✓' : '👁'}</span>
-                <span>${isWatched(movie.imdb_id) ? 'VISTO' : 'JÁ VI'}</span>
             </button>
             <button class="action-btn remove" onclick="event.stopPropagation(); removeFromListView('${movie.imdb_id}', 'watchlist')">
                 <span class="icon">✕</span>
-                <span>REMOVER</span>
             </button>
         ` : `
             <button class="action-btn watchlist ${isInWatchlist(movie.imdb_id) ? 'active' : ''}"
                     onclick="event.stopPropagation(); handleWatchlistClick(event, '${movie.imdb_id}')">
                 <span class="icon">${isInWatchlist(movie.imdb_id) ? '★' : '☆'}</span>
-                <span>${isInWatchlist(movie.imdb_id) ? 'NA LISTA' : 'QUERO VER'}</span>
             </button>
             <button class="action-btn remove" onclick="event.stopPropagation(); removeFromListView('${movie.imdb_id}', 'watched')">
                 <span class="icon">✕</span>
-                <span>REMOVER</span>
             </button>
         `;
 
@@ -490,6 +591,46 @@ async function displayList(type) {
     }));
 
     grid.innerHTML = cards.join('');
+
+    // Renderizar paginação
+    if (totalPages > 1) {
+        let paginationHTML = '';
+
+        if (listPage > 1) {
+            paginationHTML += `<button onclick="listGoToPage(${listPage - 1})">←</button>`;
+        }
+
+        for (let i = 1; i <= totalPages; i++) {
+            if (i === 1 || i === totalPages || (i >= listPage - 1 && i <= listPage + 1)) {
+                paginationHTML += `<button class="${i === listPage ? 'active' : ''}" onclick="listGoToPage(${i})">${i}</button>`;
+            } else if (i === listPage - 2 || i === listPage + 2) {
+                paginationHTML += `<span class="pagination-dots">...</span>`;
+            }
+        }
+
+        if (listPage < totalPages) {
+            paginationHTML += `<button onclick="listGoToPage(${listPage + 1})">→</button>`;
+        }
+
+        pagination.innerHTML = paginationHTML;
+    } else {
+        pagination.innerHTML = '';
+    }
+}
+
+// Filtrar lista atual
+function filterCurrentList() {
+    if (!currentListView) return;
+    listPage = 1;
+    displayList(currentListView);
+}
+
+// Ir para página na lista
+function listGoToPage(page) {
+    listPage = page;
+    displayList(currentListView);
+    // Scroll para o topo da lista
+    document.getElementById('list-section').scrollIntoView({ behavior: 'smooth' });
 }
 
 async function removeFromListView(imdbId, type) {
@@ -916,8 +1057,12 @@ function applyFilters() {
         }
 
         // Filtro de nota
-        if (minRating && movie.imdb_score < parseFloat(minRating)) {
-            return false;
+        if (minRating) {
+            if (minRating === 'below5') {
+                if (movie.imdb_score >= 5) return false;
+            } else if (movie.imdb_score < parseFloat(minRating)) {
+                return false;
+            }
         }
 
         return true;
@@ -927,89 +1072,119 @@ function applyFilters() {
 }
 
 // ============================================
-// EFEITO DE ROLETA
+// EFEITO DE ROLETA - SLOT MACHINE LAS VEGAS
 // ============================================
-async function showRouletteAnimation() {
-    const moviesCount = getMoviesPerSpin();
-    return new Promise(resolve => {
-        const slotMachine = document.createElement('div');
-        slotMachine.className = 'slot-machine';
+const SLOT_ITEMS_COUNT = 15;
 
-        // Criar reels dinamicamente
-        let reelsHtml = `
-            <div class="slot-machine-title">★ GIRANDO ★</div>
-            <div class="slot-machine-reels">
-        `;
-        for (let i = 1; i <= moviesCount; i++) {
-            reelsHtml += `<div class="slot-reel spinning" id="reel${i}">???</div>`;
-        }
-        reelsHtml += `
+// Criar slot machine overlay
+function createSlotMachine() {
+    const existing = document.querySelector('.slot-machine');
+    if (existing) existing.remove();
+
+    const moviesCount = getMoviesPerSpin();
+    const reelMovies = [];
+
+    // Pegar filmes aleatórios para cada rolo
+    for (let i = 0; i < moviesCount; i++) {
+        const movies = getRandomMovies(SLOT_ITEMS_COUNT);
+        reelMovies.push(movies);
+    }
+
+    const slotMachine = document.createElement('div');
+    slotMachine.className = 'slot-machine';
+    slotMachine.innerHTML = `
+        <div class="slot-machine-cabinet">
+            <div class="slot-machine-title">★ JACKPOT ★</div>
+            <div class="slot-machine-display">
+                <div class="slot-machine-reels">
+                    ${reelMovies.map((movies, reelIndex) => `
+                        <div class="slot-reel-container">
+                            <div class="slot-reel" data-reel="${reelIndex}">
+                                ${movies.map(m => `
+                                    <div class="slot-reel-item">${(m.title_pt || '???').substring(0, 18)}</div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
             </div>
             <div class="slot-machine-lights">
-                <div class="slot-light"></div>
-                <div class="slot-light"></div>
-                <div class="slot-light"></div>
-                <div class="slot-light"></div>
-                <div class="slot-light"></div>
+                <span class="slot-light"></span>
+                <span class="slot-light"></span>
+                <span class="slot-light"></span>
+                <span class="slot-light"></span>
+                <span class="slot-light"></span>
             </div>
-        `;
-        slotMachine.innerHTML = reelsHtml;
-        document.body.appendChild(slotMachine);
+            <div class="slot-machine-status">GIRANDO...</div>
+            <div class="slot-machine-handle"></div>
+        </div>
+    `;
 
-        let flashCount = 0;
-        const maxFlashes = CONFIG.ROULETTE_FLASHES;
+    document.body.appendChild(slotMachine);
+    return { slotMachine, reelMovies };
+}
 
-        const interval = setInterval(() => {
-            // Mostrar filmes aleatórios rapidamente
-            const randomMovies = getRandomMovies(moviesCount);
-            for (let i = 1; i <= moviesCount; i++) {
-                const reel = document.getElementById(`reel${i}`);
-                if (reel && reel.classList.contains('spinning')) {
-                    reel.textContent = randomMovies[i - 1]?.title_pt || '???';
-                }
+async function showRouletteAnimation() {
+    const moviesCount = getMoviesPerSpin();
+
+    return new Promise(resolve => {
+        const { slotMachine } = createSlotMachine();
+        const reels = slotMachine.querySelectorAll('.slot-reel');
+        const status = slotMachine.querySelector('.slot-machine-status');
+        const lights = slotMachine.querySelectorAll('.slot-light');
+
+        // Iniciar spin de todos os rolos
+        reels.forEach(reel => reel.classList.add('spinning'));
+
+        // Animação das luzes
+        lights.forEach((light, i) => {
+            light.style.animationDelay = `${i * 0.15}s`;
+        });
+
+        // Som de spinning
+        const spinSound = setInterval(() => playSound('spin'), 200);
+
+        // Parar rolos um a um
+        const stopReel = (index) => {
+            if (index >= moviesCount) {
+                clearInterval(spinSound);
+                status.textContent = '★ JACKPOT! ★';
+                status.style.color = '#FFD700';
+                playSound('reveal');
+
+                // Remover slot machine após delay
+                setTimeout(() => {
+                    slotMachine.style.animation = 'slot-fade-out 0.3s ease forwards';
+                    setTimeout(() => {
+                        slotMachine.remove();
+                        resolve();
+                    }, 300);
+                }, 800);
+                return;
             }
 
-            playSound('spin');
-            flashCount++;
+            const reel = reels[index];
+            reel.classList.remove('spinning');
+            reel.classList.add('stopping');
 
-            // Parar reels um por um
-            if (flashCount >= maxFlashes) {
-                clearInterval(interval);
-                stopReelsSequentially(moviesCount, slotMachine, resolve);
+            // Atualizar rolo com filme selecionado
+            const selectedMovie = selectedMovies[index];
+            if (selectedMovie) {
+                const title = (selectedMovie.title_pt || '???').substring(0, 18);
+                reel.innerHTML = `<div class="slot-reel-item winner">${title}</div>`;
             }
-        }, CONFIG.ROULETTE_DURATION / maxFlashes);
+
+            playSound('click');
+
+            // Próximo rolo após delay
+            setTimeout(() => stopReel(index + 1), 600);
+        };
+
+        // Começar a parar após tempo inicial
+        setTimeout(() => stopReel(0), 1500);
     });
 }
 
-function stopReelsSequentially(moviesCount, slotMachine, resolve) {
-    let stopped = 0;
-    const stopInterval = setInterval(() => {
-        const reel = document.getElementById(`reel${stopped + 1}`);
-        if (reel) {
-            reel.classList.remove('spinning');
-            reel.classList.add('stopped');
-            reel.textContent = selectedMovies[stopped]?.title_pt || '???';
-            playSound('reveal');
-        }
-        stopped++;
-
-        if (stopped >= moviesCount) {
-            clearInterval(stopInterval);
-
-            // Atualizar título
-            const title = slotMachine.querySelector('.slot-machine-title');
-            if (title) {
-                title.textContent = '★ PRONTO! ★';
-                title.style.color = 'var(--luigi-green)';
-            }
-
-            setTimeout(() => {
-                slotMachine.remove();
-                resolve();
-            }, 800);
-        }
-    }, 300);
-}
 
 // ============================================
 // OBTER FILMES ALEATÓRIOS
@@ -1037,6 +1212,7 @@ function getRandomMovies(count, excludeHistory = false) {
 // ============================================
 async function spinRoulette() {
     initAudio();
+    resetAvailableEffects(); // Resetar efeitos para garantir variedade
     const spinBtn = document.getElementById('spin-btn');
     const resultsSection = document.getElementById('results');
     const moviesCount = getMoviesPerSpin();
@@ -1120,12 +1296,12 @@ async function fetchMovieDetails(imdbId) {
 }
 
 // ============================================
-// CRIAR HEART BAR (Zelda style)
+// CRIAR RATING DISPLAY
 // ============================================
 function createHPBar(rating) {
     // Convert rating to hearts (0-10 = 0-5 hearts)
     const totalHearts = 5;
-    const filledHearts = Math.round((rating / 10) * totalHearts * 2) / 2; // Allow half hearts
+    const filledHearts = Math.round((rating / 10) * totalHearts * 2) / 2;
 
     let hearts = '';
     for (let i = 1; i <= totalHearts; i++) {
@@ -1138,43 +1314,45 @@ function createHPBar(rating) {
         }
     }
 
-    // Mensagens baseadas na nota
+    // Mensagens aleatórias baseadas na nota
     let label = 'SUPER STAR!';
     if (rating < 4) {
-        // Mensagens engraçadas para filmes muito ruins
         const gameOverMsgs = [
-            'WASTED!',
-            'YOU DIED',
-            'FATALITY!',
-            'K.O.!',
-            'MISSION FAILED',
-            'CONTINUE? 9..8..7..',
-            'INSERT COIN',
-            'RETRY?',
-            'F',
-            'PRESS F',
-            'RIP',
-            'NOT STONKS',
-            'BRUH...'
+            'WASTED!', 'YOU DIED', 'FATALITY!', 'K.O.!', 'MISSION FAILED',
+            'CONTINUE? 9..8..7..', 'INSERT COIN', 'RETRY?', 'F', 'PRESS F',
+            'RIP', 'NOT STONKS', 'BRUH...', 'SKILL ISSUE', 'GIT GUD',
+            'RAGE QUIT', 'CTRL+ALT+DEL', 'UNINSTALL', '404 QUALITY'
         ];
         label = gameOverMsgs[Math.floor(Math.random() * gameOverMsgs.length)];
     } else if (rating < 5) {
-        const badMsgs = ['MEH...', 'GAME OVER', 'TRY AGAIN', 'OOF!'];
+        const badMsgs = [
+            'MEH...', 'GAME OVER', 'TRY AGAIN', 'OOF!', 'BRUH',
+            'NAH...', 'SKIP!', 'PASS...', 'YIKES', 'CRINGE',
+            'MID AF', 'NOT IT', 'NOPE!', 'EH...', 'WHATEVER'
+        ];
         label = badMsgs[Math.floor(Math.random() * badMsgs.length)];
     } else if (rating < 6) {
-        label = 'OK...';
+        const okMsgs = ['OK...', 'NOT BAD', 'COULD BE WORSE'];
+        label = okMsgs[Math.floor(Math.random() * okMsgs.length)];
     } else if (rating < 7) {
-        label = 'NICE!';
+        const niceMsgs = ['NICE!', 'GOOD JOB!', 'LEVEL UP!'];
+        label = niceMsgs[Math.floor(Math.random() * niceMsgs.length)];
     } else if (rating < 8) {
-        label = 'GREAT!';
+        const greatMsgs = ['GREAT!', 'AWESOME!', 'EPIC!'];
+        label = greatMsgs[Math.floor(Math.random() * greatMsgs.length)];
     } else if (rating < 9) {
-        label = 'AMAZING!';
+        const amazingMsgs = ['AMAZING!', 'LEGENDARY!', 'GODLIKE!'];
+        label = amazingMsgs[Math.floor(Math.random() * amazingMsgs.length)];
+    } else {
+        const superMsgs = ['SUPER STAR!', 'MASTERPIECE!', 'FLAWLESS!', 'PERFECT!'];
+        label = superMsgs[Math.floor(Math.random() * superMsgs.length)];
     }
 
     return `
         <div class="heart-bar">
             <div class="hearts">${hearts}</div>
-            <div class="heart-label">${rating}/10 ${label}</div>
+            <div class="heart-label">${rating}</div>
+            <div class="heart-phrase">${label}</div>
         </div>
     `;
 }
@@ -1215,7 +1393,6 @@ async function displayResults() {
                     <h3 class="movie-title">${movie.title_pt}</h3>
                     <div class="movie-meta">
                         <span>${movie.year}</span>
-                        <span class="movie-rating">★ ${movie.imdb_score}</span>
                     </div>
                     ${createHPBar(movie.imdb_score)}
                     <p class="movie-overview">${overview}</p>
@@ -1289,7 +1466,7 @@ async function openModal(index) {
                     <div class="modal-section">
                         <h4 class="modal-section-title">Diretor</h4>
                         <div class="cast-list">
-                            ${crew.map(c => `<span class="cast-item">${c.name}</span>`).join('')}
+                            ${crew.map(c => `<span class="cast-item clickable" data-person="${c.name.replace(/"/g, '&quot;')}">${c.name}</span>`).join('')}
                         </div>
                     </div>
                 ` : ''}
@@ -1298,7 +1475,7 @@ async function openModal(index) {
                     <div class="modal-section">
                         <h4 class="modal-section-title">Elenco</h4>
                         <div class="cast-list">
-                            ${cast.map(c => `<span class="cast-item">${c.name}</span>`).join('')}
+                            ${cast.map(c => `<span class="cast-item clickable" data-person="${c.name.replace(/"/g, '&quot;')}">${c.name}</span>`).join('')}
                         </div>
                     </div>
                 ` : ''}
@@ -1312,6 +1489,14 @@ async function openModal(index) {
             </div>
         </div>
     `;
+
+    // Adicionar event listeners para os nomes clicáveis
+    modalBody.querySelectorAll('.cast-item.clickable').forEach(item => {
+        item.addEventListener('click', () => {
+            const personName = item.dataset.person;
+            if (personName) searchByPerson(personName);
+        });
+    });
 
     playSound('reveal');
 }
@@ -1377,7 +1562,7 @@ async function openModalByImdbId(imdbId) {
                     <div class="modal-section">
                         <h4 class="modal-section-title">Diretor</h4>
                         <div class="cast-list">
-                            ${crew.map(c => `<span class="cast-item">${c.name}</span>`).join('')}
+                            ${crew.map(c => `<span class="cast-item clickable" data-person="${c.name.replace(/"/g, '&quot;')}">${c.name}</span>`).join('')}
                         </div>
                     </div>
                 ` : ''}
@@ -1386,7 +1571,7 @@ async function openModalByImdbId(imdbId) {
                     <div class="modal-section">
                         <h4 class="modal-section-title">Elenco</h4>
                         <div class="cast-list">
-                            ${cast.map(c => `<span class="cast-item">${c.name}</span>`).join('')}
+                            ${cast.map(c => `<span class="cast-item clickable" data-person="${c.name.replace(/"/g, '&quot;')}">${c.name}</span>`).join('')}
                         </div>
                     </div>
                 ` : ''}
@@ -1403,6 +1588,14 @@ async function openModalByImdbId(imdbId) {
         </div>
     `;
 
+    // Adicionar event listeners para os nomes clicáveis
+    modalBody.querySelectorAll('.cast-item.clickable').forEach(item => {
+        item.addEventListener('click', () => {
+            const personName = item.dataset.person;
+            if (personName) searchByPerson(personName);
+        });
+    });
+
     playSound('reveal');
 }
 
@@ -1412,6 +1605,64 @@ async function openModalByImdbId(imdbId) {
 function closeModal() {
     playSound('click');
     document.getElementById('modal').classList.add('hidden');
+}
+
+// ============================================
+// BUSCAR POR PESSOA (diretor/ator)
+// ============================================
+function searchByPerson(name) {
+    // Fechar modal
+    closeModal();
+
+    // Sempre abrir seção de busca (não toggle)
+    openSearchView();
+
+    // Preencher o campo de busca com o nome
+    const searchInput = document.getElementById('search-input');
+    searchInput.value = name;
+
+    // Executar a busca
+    setTimeout(() => {
+        performSearch();
+    }, 100);
+}
+
+// Função para sempre abrir a busca (não toggle)
+function openSearchView() {
+    const searchSection = document.getElementById('search-section');
+    const mainContent = document.querySelectorAll('.filters, .roulette-container, #results, #list-section');
+
+    // Se já está aberta, não fazer nada
+    if (currentSearchView) {
+        return;
+    }
+
+    // Fechar lista se estiver aberta
+    if (currentListView) {
+        currentListView = null;
+    }
+
+    currentSearchView = true;
+
+    // Esconder conteúdo principal
+    mainContent.forEach(el => el.classList.add('hidden'));
+
+    // Mostrar busca
+    searchSection.classList.remove('hidden');
+
+    // Popular gêneros se ainda não populado
+    const searchGenreSelect = document.getElementById('search-genre');
+    if (searchGenreSelect && searchGenreSelect.options.length <= 1) {
+        const genres = [...new Set(movies.flatMap(m => m.genres ? m.genres.split('|') : []))].sort();
+        genres.forEach(genre => {
+            const option = document.createElement('option');
+            option.value = genre;
+            option.textContent = translateGenre(genre);
+            searchGenreSelect.appendChild(option);
+        });
+    }
+
+    playSound('click');
 }
 
 // ============================================
@@ -1847,19 +2098,33 @@ function closeSearchView() {
     playSound('click');
 }
 
-function performSearch() {
-    const query = document.getElementById('search-input').value.trim().toLowerCase();
+// Normalizar texto (remover acentos)
+function normalizeText(text) {
+    return text
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '');
+}
+
+async function performSearch() {
+    const rawQuery = document.getElementById('search-input').value.trim();
+    const query = normalizeText(rawQuery);
     const genre = document.getElementById('search-genre').value;
     const decade = document.getElementById('search-year').value;
     const minRating = document.getElementById('search-rating').value;
     const sortOrder = document.getElementById('search-sort').value;
 
-    searchResults = movies.filter(movie => {
-        // Filtro de palavra-chave (título PT, EN ou diretor)
+    // Mostrar loading se for buscar por pessoa
+    const searchBtn = document.getElementById('search-submit');
+    const originalText = searchBtn.textContent;
+
+    // Primeiro, busca local por título e diretor
+    let localResults = movies.filter(movie => {
+        // Filtro de palavra-chave (título PT, EN ou diretor) - normalizado sem acentos
         if (query) {
-            const titlePt = (movie.title_pt || '').toLowerCase();
-            const titleEn = (movie.title_en || '').toLowerCase();
-            const director = (movie.director || '').toLowerCase();
+            const titlePt = normalizeText(movie.title_pt || '');
+            const titleEn = normalizeText(movie.title_en || '');
+            const director = normalizeText(movie.director || '');
 
             if (!titlePt.includes(query) && !titleEn.includes(query) && !director.includes(query)) {
                 return false;
@@ -1882,12 +2147,82 @@ function performSearch() {
         }
 
         // Filtro de nota
-        if (minRating && movie.imdb_score < parseFloat(minRating)) {
-            return false;
+        if (minRating) {
+            if (minRating === 'below5') {
+                if (movie.imdb_score >= 5) return false;
+            } else if (movie.imdb_score < parseFloat(minRating)) {
+                return false;
+            }
         }
 
         return true;
     });
+
+    // Se a busca parece ser por pessoa (tem espaço ou poucos resultados locais), buscar por ator na TMDB
+    let actorResults = [];
+    if (query && query.includes(' ')) {
+        searchBtn.textContent = '...';
+        searchBtn.disabled = true;
+
+        try {
+            // Buscar pessoa na TMDB e pegar seus filmes
+            const personMovies = await searchPersonMoviesWithTitles(query);
+
+            if (personMovies.length > 0) {
+                // Encontrar filmes locais que correspondem aos títulos da TMDB
+                actorResults = movies.filter(movie => {
+                    // Verificar se o filme está na lista de filmes do ator (normalizado)
+                    const titlePt = normalizeText(movie.title_pt || '');
+                    const titleEn = normalizeText(movie.title_en || '');
+
+                    const matchesActor = personMovies.some(pm => {
+                        const tmdbTitle = normalizeText(pm.title || '');
+                        const tmdbOriginal = normalizeText(pm.original_title || '');
+                        return titlePt === tmdbTitle ||
+                               titleEn === tmdbTitle ||
+                               titlePt === tmdbOriginal ||
+                               titleEn === tmdbOriginal;
+                    });
+
+                    if (!matchesActor) return false;
+
+                    // Aplicar filtros adicionais
+                    if (genre && (!movie.genres || !movie.genres.includes(genre))) {
+                        return false;
+                    }
+                    if (decade) {
+                        const decadeNum = parseInt(decade);
+                        if (decadeNum === 1970) {
+                            if (movie.year >= 1980) return false;
+                        } else {
+                            if (movie.year < decadeNum || movie.year >= decadeNum + 10) return false;
+                        }
+                    }
+                    if (minRating) {
+                        if (minRating === 'below5') {
+                            if (movie.imdb_score >= 5) return false;
+                        } else if (movie.imdb_score < parseFloat(minRating)) {
+                            return false;
+                        }
+                    }
+
+                    return true;
+                });
+            }
+        } catch (error) {
+            console.error('Error searching by actor:', error);
+        }
+
+        searchBtn.textContent = originalText;
+        searchBtn.disabled = false;
+    }
+
+    // Combinar resultados (local + ator), removendo duplicatas
+    const combinedMap = new Map();
+    [...localResults, ...actorResults].forEach(movie => {
+        combinedMap.set(movie.imdb_id, movie);
+    });
+    searchResults = Array.from(combinedMap.values());
 
     // Ordenar por nota conforme selecionado
     if (sortOrder === 'desc') {
@@ -1900,6 +2235,59 @@ function performSearch() {
     searchPage = 1;
     displaySearchResults();
     playSound('click');
+}
+
+// Buscar filmes de uma pessoa na TMDB (retorna títulos para match local)
+async function searchPersonMoviesWithTitles(personName) {
+    try {
+        // Buscar pessoa pelo nome
+        const searchResponse = await fetch(
+            `https://api.themoviedb.org/3/search/person?query=${encodeURIComponent(personName)}&language=pt-BR`,
+            {
+                headers: {
+                    'Authorization': `Bearer ${CONFIG.TMDB_TOKEN}`,
+                    'accept': 'application/json'
+                }
+            }
+        );
+
+        const searchData = await searchResponse.json();
+
+        if (!searchData.results || searchData.results.length === 0) {
+            return [];
+        }
+
+        // Pegar o primeiro resultado (mais relevante)
+        const personId = searchData.results[0].id;
+
+        // Buscar créditos de filmes dessa pessoa
+        const creditsResponse = await fetch(
+            `https://api.themoviedb.org/3/person/${personId}/movie_credits?language=pt-BR`,
+            {
+                headers: {
+                    'Authorization': `Bearer ${CONFIG.TMDB_TOKEN}`,
+                    'accept': 'application/json'
+                }
+            }
+        );
+
+        const creditsData = await creditsResponse.json();
+
+        // Combinar cast e crew para pegar todos os filmes
+        const allMovies = [
+            ...(creditsData.cast || []),
+            ...(creditsData.crew || [])
+        ];
+
+        // Retornar filmes com título para match
+        return allMovies.map(m => ({
+            title: m.title,
+            original_title: m.original_title
+        }));
+    } catch (error) {
+        console.error('Error searching person movies:', error);
+        return [];
+    }
 }
 
 async function displaySearchResults() {
@@ -1939,7 +2327,7 @@ async function displaySearchResults() {
             : null;
 
         return `
-            <div class="search-card" data-imdb="${movie.imdb_id}" onclick="openModalByImdbId('${movie.imdb_id}')">
+            <div class="search-card" data-imdb="${movie.imdb_id}" data-rating="★ ${movie.imdb_score}" onclick="openModalByImdbId('${movie.imdb_id}')">
                 <div class="search-poster-wrapper">
                     ${posterUrl
                         ? `<img class="search-poster" src="${posterUrl}" alt="${movie.title_pt}" loading="lazy">`
@@ -1950,9 +2338,8 @@ async function displaySearchResults() {
                     <h3 class="search-title">${movie.title_pt}</h3>
                     <div class="search-meta">
                         <span>${movie.year}</span>
-                        <span class="movie-rating">★ ${movie.imdb_score}</span>
+                        ${movie.director ? `<span>• ${movie.director}</span>` : ''}
                     </div>
-                    ${movie.director ? `<div class="search-director">${movie.director}</div>` : ''}
                     <div class="search-actions">
                         <button class="action-btn watched ${isWatched(movie.imdb_id) ? 'active' : ''}"
                                 onclick="event.stopPropagation(); handleSearchWatchedClick(event, '${movie.imdb_id}')">

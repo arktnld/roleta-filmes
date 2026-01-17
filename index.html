@@ -22,7 +22,8 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/pricedown" rel="stylesheet">
 </head>
 <body>
     <!-- Loading Overlay -->
@@ -122,6 +123,7 @@
                         <div class="custom-select-option" data-value="8">8+ Excelente</div>
                         <div class="custom-select-option" data-value="7">7+ Bom</div>
                         <div class="custom-select-option" data-value="6">6+ Regular</div>
+                        <div class="custom-select-option" data-value="below5">&lt;5 Ruim</div>
                     </div>
                 </div>
                 <select id="rating" class="hidden-select">
@@ -129,6 +131,7 @@
                     <option value="8">8+ Excelente</option>
                     <option value="7">7+ Bom</option>
                     <option value="6">6+ Regular</option>
+                    <option value="below5">&lt;5 Ruim</option>
                 </select>
             </div>
             <div class="filter-group">
@@ -174,10 +177,10 @@
         </section>
 
         <!-- Botão da Roleta -->
-        <div class="roulette-container">
+        <div class="roulette-wrapper">
             <button id="spin-btn" class="spin-button">
-                <span class="spin-icon">🎬</span>
-                <span class="spin-text">Girar Roleta</span>
+                <span class="spin-icon">🎰</span>
+                <span class="spin-text">FILME ALEATÓRIO</span>
             </button>
         </div>
 
@@ -187,9 +190,45 @@
                 <h2 id="list-title">Quero Ver</h2>
                 <button class="list-close" onclick="closeListView()">✕ Voltar</button>
             </div>
+
+            <!-- Busca e Filtros da Lista -->
+            <div class="list-filters">
+                <div class="list-search-container">
+                    <input type="text" id="list-search-input" placeholder="Buscar na lista..." onkeyup="filterCurrentList()">
+                </div>
+                <div class="list-filter-row">
+                    <select id="list-filter-genre" onchange="filterCurrentList()">
+                        <option value="">Todos os gêneros</option>
+                    </select>
+                    <select id="list-filter-decade" onchange="filterCurrentList()">
+                        <option value="">Todas as décadas</option>
+                        <option value="2020">2020s</option>
+                        <option value="2010">2010s</option>
+                        <option value="2000">2000s</option>
+                        <option value="1990">1990s</option>
+                        <option value="1980">1980s</option>
+                        <option value="1970">Antes de 1980</option>
+                    </select>
+                    <select id="list-filter-sort" onchange="filterCurrentList()">
+                        <option value="rating-desc">Nota ↓</option>
+                        <option value="rating-asc">Nota ↑</option>
+                        <option value="year-desc">Ano ↓</option>
+                        <option value="year-asc">Ano ↑</option>
+                        <option value="title-asc">A-Z</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Info dos resultados -->
+            <div class="list-results-info" id="list-results-info"></div>
+
             <div class="list-grid" id="list-grid">
                 <!-- Cards serão inseridos via JS -->
             </div>
+
+            <!-- Paginação -->
+            <div class="list-pagination" id="list-pagination"></div>
+
             <p class="list-empty hidden" id="list-empty">
                 Sua lista está vazia!
             </p>
@@ -235,6 +274,7 @@
                         <option value="8">8+ Excelente</option>
                         <option value="7">7+ Bom</option>
                         <option value="6">6+ Regular</option>
+                        <option value="below5">&lt;5 Ruim</option>
                     </select>
                 </div>
                 <div class="search-filter-group">

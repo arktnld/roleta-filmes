@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Efeitos - Roleta de Filmes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/pricedown" rel="stylesheet">
+    <style>
+        body {
+            padding: 2rem;
+            min-height: 100vh;
+        }
+        .test-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .test-header h1 {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 1.5rem;
+            color: var(--star-yellow);
+            margin-bottom: 0.5rem;
+        }
+        .test-header p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        .movie-info-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+        }
+        .movie-info-header h2 {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 1rem;
+            color: var(--cyan);
+            margin-bottom: 0.5rem;
+        }
+        .movie-info-header p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        .effects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .effect-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        .effect-label {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.6rem;
+            color: var(--cyan);
+            text-align: center;
+            padding: 0.5rem 1rem;
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid var(--cyan);
+            border-radius: 4px;
+        }
+        .movie-card {
+            width: 100%;
+            max-width: 280px;
+        }
+        .btn-row {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        .action-btn {
+            padding: 1rem 2rem;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.7rem;
+            color: var(--star-yellow);
+            background: transparent;
+            border: 2px solid var(--star-yellow);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .action-btn:hover {
+            background: var(--star-yellow);
+            color: #000;
+        }
+        .section-title {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 0.8rem;
+            color: var(--mario-red);
+            text-align: center;
+            margin: 2rem 0 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--mario-red);
+        }
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            font-family: 'Press Start 2P', monospace;
+            color: var(--cyan);
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+
+    <div class="test-header">
+        <h1>TESTE DE EFEITOS</h1>
+        <p>Recarregue a página para ver outro filme</p>
+    </div>
+
+    <div id="movie-info-header" class="movie-info-header">
+        <h2 id="selected-movie-title">Carregando...</h2>
+        <p id="selected-movie-info"></p>
+    </div>
+
+    <h2 class="section-title">EFEITOS GAME OVER (nota < 5)</h2>
+
+    <div id="effects-grid" class="effects-grid">
+        <div class="loading">CARREGANDO...</div>
+    </div>
+
+    <div class="btn-row">
+        <a href="index.html" class="action-btn">VOLTAR</a>
+    </div>
+
+    <script>
+        const TMDB_IMG_BASE = 'https://image.tmdb.org/t/p/w780';
+        const TMDB_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMTE5OTFiNjk5ZGIzYTk5NzhjOTVmYThkOGM5MWM0NiIsIm5iZiI6MTc0NTk1MDE0My45NzYsInN1YiI6IjY4MTExNWJmMjEzN2YzNGMyNGVhZDY4ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.6yHJrMiDYHRrIlA9Fy9q5qikkGmjnVK23cBuYc-aJ-k';
+
+        const EFFECTS = [
+            { name: 'effect-wasted', label: 'WASTED (GTA)' },
+            { name: 'effect-skull', label: 'SKULL' },
+            { name: 'effect-rip', label: 'R.I.P.' },
+            { name: 'effect-glitch', label: 'GLITCH / NO SIGNAL' },
+            { name: 'effect-bomb', label: 'BOMB' },
+            { name: 'effect-wanted', label: 'WANTED (Faroeste)' },
+            { name: 'effect-tomato', label: 'ROTTEN TOMATO' },
+            { name: 'effect-ghost', label: 'GHOST' },
+            { name: 'effect-fire', label: 'FIRE / TRASH' },
+            { name: 'effect-matrix', label: 'MATRIX' },
+            { name: 'effect-thanos', label: 'THANOS SNAP' }
+        ];
+
+        const GAME_OVER_MSGS = [
+            'WASTED!', 'YOU DIED', 'FATALITY!', 'K.O.!', 'MISSION FAILED',
+            'CONTINUE? 9..8..7..', 'INSERT COIN', 'RETRY?', 'F', 'PRESS F',
+            'RIP', 'NOT STONKS', 'BRUH...', 'SKILL ISSUE', 'GIT GUD',
+            'RAGE QUIT', 'CTRL+ALT+DEL', 'UNINSTALL', '404 QUALITY'
+        ];
+
+        function getRandomMsg() {
+            return GAME_OVER_MSGS[Math.floor(Math.random() * GAME_OVER_MSGS.length)];
+        }
+
+        function createHearts(rating) {
+            const totalHearts = 5;
+            const filledHearts = Math.round((rating / 10) * totalHearts * 2) / 2;
+            let hearts = '';
+            for (let i = 1; i <= totalHearts; i++) {
+                if (i <= filledHearts) {
+                    hearts += '<span class="heart full">♥</span>';
+                } else if (i - 0.5 === filledHearts) {
+                    hearts += '<span class="heart half">♥</span>';
+                } else {
+                    hearts += '<span class="heart empty">♡</span>';
+                }
+            }
+            return hearts;
+        }
+
+        async function fetchPoster(imdbId) {
+            try {
+                const response = await fetch(
+                    `https://api.themoviedb.org/3/find/${imdbId}?external_source=imdb_id&language=pt-BR`,
+                    {
+                        headers: {
+                            'Authorization': `Bearer ${TMDB_TOKEN}`,
+                            'accept': 'application/json'
+                        }
+                    }
+                );
+                const data = await response.json();
+                if (data.movie_results && data.movie_results[0]?.poster_path) {
+                    return `${TMDB_IMG_BASE}${data.movie_results[0].poster_path}`;
+                }
+            } catch (e) {
+                console.error('Erro ao buscar poster:', e);
+            }
+            return 'https://via.placeholder.com/500x750/1a1a2e/ffffff?text=NO+POSTER';
+        }
+
+        async function init() {
+            try {
+                const response = await fetch('movies.json');
+                const allMovies = await response.json();
+
+                // Filtra filmes com nota < 5
+                let lowRatedMovies = allMovies.filter(m => m.imdb_score < 5);
+
+                // Se não tiver filmes com nota < 5, pega os com nota mais baixa
+                if (lowRatedMovies.length === 0) {
+                    const sorted = [...allMovies].sort((a, b) => a.imdb_score - b.imdb_score);
+                    lowRatedMovies = sorted.slice(0, 20);
+                }
+
+                // Seleciona UM filme aleatório
+                const randomIndex = Math.floor(Math.random() * lowRatedMovies.length);
+                const movie = lowRatedMovies[randomIndex];
+
+                // Busca o poster
+                const posterUrl = await fetchPoster(movie.imdb_id);
+
+                // Atualiza o header com info do filme
+                document.getElementById('selected-movie-title').textContent = movie.title_pt || movie.title_en;
+                document.getElementById('selected-movie-info').textContent = `${movie.year} • Nota: ${movie.imdb_score}`;
+
+                // Gera os cards com todos os efeitos usando o MESMO filme
+                const grid = document.getElementById('effects-grid');
+                let html = '';
+
+                for (const effect of EFFECTS) {
+                    const msg = getRandomMsg();
+                    html += `
+                        <div class="effect-item">
+                            <div class="effect-label">${effect.label}</div>
+                            <div class="movie-card ${effect.name}">
+                                <div class="movie-poster">
+                                    <img src="${posterUrl}" alt="${movie.title_pt || movie.title_en}">
+                                </div>
+                                <div class="movie-info">
+                                    <h3 class="movie-title">${movie.title_pt || movie.title_en}</h3>
+                                    <div class="movie-meta"><span>${movie.year}</span></div>
+                                    <div class="heart-bar">
+                                        <div class="hearts">${createHearts(movie.imdb_score)}</div>
+                                        <div class="heart-label">${movie.imdb_score}</div>
+                                        <div class="heart-phrase">${msg}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                grid.innerHTML = html;
+
+            } catch (error) {
+                console.error('Erro ao carregar filmes:', error);
+                document.getElementById('effects-grid').innerHTML = '<div class="loading">ERRO AO CARREGAR FILMES</div>';
+            }
+        }
+
+        // Inicializa
+        init();
+    </script>
+
+</body>
+</html>
