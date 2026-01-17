@@ -71,12 +71,19 @@
                 </select>
             </div>
             <div class="filter-group">
-                <label>Lista</label>
-                <button id="watchlist-btn" class="watchlist-filter-btn" onclick="toggleWatchlistView()">
-                    <span class="icon">☆</span>
-                    <span class="text">Minha Lista</span>
-                    <span class="count" id="watchlist-count">0</span>
-                </button>
+                <label>Listas</label>
+                <div class="list-buttons">
+                    <button id="watchlist-btn" class="list-filter-btn watchlist" onclick="toggleListView('watchlist')">
+                        <span class="icon">☆</span>
+                        <span class="text">Quero Ver</span>
+                        <span class="count" id="watchlist-count">0</span>
+                    </button>
+                    <button id="watched-btn" class="list-filter-btn watched" onclick="toggleListView('watched')">
+                        <span class="icon">✓</span>
+                        <span class="text">Já Vi</span>
+                        <span class="count" id="watched-count">0</span>
+                    </button>
+                </div>
             </div>
         </section>
 
@@ -88,17 +95,17 @@
             </button>
         </div>
 
-        <!-- Watchlist -->
-        <section id="watchlist-section" class="watchlist-section hidden">
-            <div class="watchlist-header">
-                <h2>Minha Lista</h2>
-                <button class="watchlist-close" onclick="toggleWatchlistView()">✕ Voltar</button>
+        <!-- Lista de Filmes (Quero Ver / Já Vi) -->
+        <section id="list-section" class="list-section hidden">
+            <div class="list-header">
+                <h2 id="list-title">Quero Ver</h2>
+                <button class="list-close" onclick="closeListView()">✕ Voltar</button>
             </div>
-            <div class="watchlist-grid" id="watchlist-grid">
+            <div class="list-grid" id="list-grid">
                 <!-- Cards serão inseridos via JS -->
             </div>
-            <p class="watchlist-empty hidden" id="watchlist-empty">
-                Sua lista está vazia! Clique em "☆ QUERO VER" nos filmes para adicionar.
+            <p class="list-empty hidden" id="list-empty">
+                Sua lista está vazia!
             </p>
         </section>
 

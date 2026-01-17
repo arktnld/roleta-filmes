@@ -201,6 +201,8 @@ function handleWatchedClick(event, imdbId) {
     btn.querySelector('.icon').textContent = added ? '✓' : '👁';
     btn.querySelector('span:last-child').textContent = added ? 'VISTO' : 'JÁ VI';
 
+    updateListCounts();
+
     if (added) {
         showPowerUp('WATCHED!');
     }
@@ -223,60 +225,112 @@ function handleWatchlistClick(event, imdbId) {
 }
 
 // ============================================
-// VISUALIZAÇÃO DA WATCHLIST
+// VISUALIZAÇÃO DAS LISTAS (QUERO VER / JÁ VI)
 // ============================================
-let watchlistViewActive = false;
+let currentListView = null; // 'watchlist' ou 'watched'
 
+function updateListCounts() {
+    // Atualizar contador de Quero Ver
+    const watchlistCount = getWatchlist().length;
+    const watchlistCountEl = document.getElementById('watchlist-count');
+    if (watchlistCountEl) {
+        watchlistCountEl.textContent = watchlistCount;
+        watchlistCountEl.style.display = watchlistCount > 0 ? 'inline' : 'none';
+    }
+
+    // Atualizar contador de Já Vi
+    const watchedCount = getWatchedMovies().length;
+    const watchedCountEl = document.getElementById('watched-count');
+    if (watchedCountEl) {
+        watchedCountEl.textContent = watchedCount;
+        watchedCountEl.style.display = watchedCount > 0 ? 'inline' : 'none';
+    }
+}
+
+// Alias para manter compatibilidade
 function updateWatchlistCount() {
-    const count = getWatchlist().length;
-    const countEl = document.getElementById('watchlist-count');
-    if (countEl) {
-        countEl.textContent = count;
-        countEl.style.display = count > 0 ? 'inline' : 'none';
-    }
+    updateListCounts();
 }
 
-function toggleWatchlistView() {
-    watchlistViewActive = !watchlistViewActive;
-
-    const watchlistSection = document.getElementById('watchlist-section');
+function toggleListView(type) {
+    const listSection = document.getElementById('list-section');
     const mainContent = document.querySelectorAll('.filters, .roulette-container, #results');
-    const btn = document.getElementById('watchlist-btn');
+    const watchlistBtn = document.getElementById('watchlist-btn');
+    const watchedBtn = document.getElementById('watched-btn');
 
-    if (watchlistViewActive) {
-        // Mostrar watchlist
-        watchlistSection.classList.remove('hidden');
-        mainContent.forEach(el => el.classList.add('hidden'));
-        btn.classList.add('active');
-        displayWatchlist();
-        playSound('click');
-    } else {
-        // Esconder watchlist
-        watchlistSection.classList.add('hidden');
-        mainContent.forEach(el => {
-            if (!el.id || el.id !== 'results' || selectedMovies.length > 0) {
-                el.classList.remove('hidden');
-            }
-        });
-        // Esconder resultados se não tiver filmes selecionados
-        if (selectedMovies.length === 0) {
-            document.getElementById('results').classList.add('hidden');
-        }
-        btn.classList.remove('active');
-        playSound('click');
+    // Se já está mostrando a mesma lista, fecha
+    if (currentListView === type) {
+        closeListView();
+        return;
     }
+
+    // Atualizar estado
+    currentListView = type;
+
+    // Atualizar título
+    const titleEl = document.getElementById('list-title');
+    if (titleEl) {
+        titleEl.textContent = type === 'watchlist' ? 'Quero Ver' : 'Já Vi';
+    }
+
+    // Mostrar seção de lista
+    listSection.classList.remove('hidden');
+    mainContent.forEach(el => el.classList.add('hidden'));
+
+    // Atualizar botões ativos
+    watchlistBtn.classList.toggle('active', type === 'watchlist');
+    watchedBtn.classList.toggle('active', type === 'watched');
+
+    // Exibir lista
+    displayList(type);
+    playSound('click');
 }
 
-async function displayWatchlist() {
-    const grid = document.getElementById('watchlist-grid');
-    const emptyMsg = document.getElementById('watchlist-empty');
-    const watchlist = getWatchlist();
+function closeListView() {
+    currentListView = null;
 
-    console.log('Watchlist IDs:', watchlist);
+    const listSection = document.getElementById('list-section');
+    const mainContent = document.querySelectorAll('.filters, .roulette-container, #results');
+    const watchlistBtn = document.getElementById('watchlist-btn');
+    const watchedBtn = document.getElementById('watched-btn');
+
+    // Esconder lista
+    listSection.classList.add('hidden');
+
+    // Mostrar conteúdo principal
+    mainContent.forEach(el => {
+        if (!el.id || el.id !== 'results' || selectedMovies.length > 0) {
+            el.classList.remove('hidden');
+        }
+    });
+
+    // Esconder resultados se não tiver filmes selecionados
+    if (selectedMovies.length === 0) {
+        document.getElementById('results').classList.add('hidden');
+    }
+
+    // Remover estado ativo dos botões
+    watchlistBtn.classList.remove('active');
+    watchedBtn.classList.remove('active');
+
+    playSound('click');
+}
+
+async function displayList(type) {
+    const grid = document.getElementById('list-grid');
+    const emptyMsg = document.getElementById('list-empty');
+
+    // Obter IDs da lista correta
+    const listIds = type === 'watchlist' ? getWatchlist() : getWatchedMovies();
+
+    console.log(`${type} IDs:`, listIds);
     console.log('Total movies loaded:', movies.length);
 
-    if (watchlist.length === 0) {
+    if (listIds.length === 0) {
         grid.innerHTML = '';
+        emptyMsg.textContent = type === 'watchlist'
+            ? 'Sua lista de filmes para assistir está vazia!'
+            : 'Você ainda não marcou nenhum filme como visto!';
         emptyMsg.classList.remove('hidden');
         return;
     }
@@ -284,49 +338,64 @@ async function displayWatchlist() {
     emptyMsg.classList.add('hidden');
     grid.innerHTML = '<div class="loading"><div class="loading-spinner"></div><div class="loading-text"></div></div>';
 
-    // Buscar filmes da watchlist
-    const watchlistMovies = movies.filter(m => watchlist.includes(m.imdb_id));
-    console.log('Watchlist movies found:', watchlistMovies.length);
+    // Buscar filmes da lista
+    const listMovies = movies.filter(m => listIds.includes(m.imdb_id));
+    console.log(`${type} movies found:`, listMovies.length);
 
-    // Se não encontrou filmes mas a watchlist não está vazia, mostrar mensagem
-    if (watchlistMovies.length === 0) {
+    // Se não encontrou filmes mas a lista não está vazia
+    if (listMovies.length === 0) {
         grid.innerHTML = '';
         emptyMsg.textContent = 'Não foi possível carregar os filmes da lista.';
         emptyMsg.classList.remove('hidden');
         return;
     }
 
-    const cards = await Promise.all(watchlistMovies.map(async (movie) => {
+    const cards = await Promise.all(listMovies.map(async (movie) => {
         const details = await fetchMovieDetails(movie.imdb_id);
 
         const posterUrl = details?.poster_path
             ? `${CONFIG.TMDB_IMG_BASE}${details.poster_path}`
             : null;
 
+        // Botões diferentes para cada tipo de lista
+        const actionButtons = type === 'watchlist' ? `
+            <button class="action-btn watched ${isWatched(movie.imdb_id) ? 'active' : ''}"
+                    onclick="event.stopPropagation(); handleWatchedClick(event, '${movie.imdb_id}')">
+                <span class="icon">${isWatched(movie.imdb_id) ? '✓' : '👁'}</span>
+                <span>${isWatched(movie.imdb_id) ? 'VISTO' : 'JÁ VI'}</span>
+            </button>
+            <button class="action-btn remove" onclick="event.stopPropagation(); removeFromListView('${movie.imdb_id}', 'watchlist')">
+                <span class="icon">✕</span>
+                <span>REMOVER</span>
+            </button>
+        ` : `
+            <button class="action-btn watchlist ${isInWatchlist(movie.imdb_id) ? 'active' : ''}"
+                    onclick="event.stopPropagation(); handleWatchlistClick(event, '${movie.imdb_id}')">
+                <span class="icon">${isInWatchlist(movie.imdb_id) ? '★' : '☆'}</span>
+                <span>${isInWatchlist(movie.imdb_id) ? 'NA LISTA' : 'QUERO VER'}</span>
+            </button>
+            <button class="action-btn remove" onclick="event.stopPropagation(); removeFromListView('${movie.imdb_id}', 'watched')">
+                <span class="icon">✕</span>
+                <span>REMOVER</span>
+            </button>
+        `;
+
         return `
-            <div class="watchlist-card" data-imdb="${movie.imdb_id}" onclick="openModalByImdbId('${movie.imdb_id}')">
-                <div class="watchlist-poster-wrapper">
+            <div class="list-card" data-imdb="${movie.imdb_id}" onclick="openModalByImdbId('${movie.imdb_id}')">
+                <div class="list-poster-wrapper">
                     ${posterUrl
-                        ? `<img class="watchlist-poster" src="${posterUrl}" alt="${movie.title_pt}" loading="lazy">`
-                        : `<div class="no-poster watchlist-poster"></div>`
+                        ? `<img class="list-poster" src="${posterUrl}" alt="${movie.title_pt}" loading="lazy">`
+                        : `<div class="no-poster list-poster"></div>`
                     }
                 </div>
-                <div class="watchlist-info">
-                    <h3 class="watchlist-title">${movie.title_pt}</h3>
-                    <div class="watchlist-meta">
+                <div class="list-info">
+                    <h3 class="list-title">${movie.title_pt}</h3>
+                    <div class="list-meta">
                         <span>${movie.year}</span>
                         <span class="movie-rating">★ ${movie.imdb_score}</span>
                     </div>
-                    <div class="watchlist-actions">
-                        <button class="action-btn watched ${isWatched(movie.imdb_id) ? 'active' : ''}"
-                                onclick="event.stopPropagation(); handleWatchedClick(event, '${movie.imdb_id}')">
-                            <span class="icon">${isWatched(movie.imdb_id) ? '✓' : '👁'}</span>
-                            <span>${isWatched(movie.imdb_id) ? 'VISTO' : 'JÁ VI'}</span>
-                        </button>
-                        <button class="action-btn remove" onclick="event.stopPropagation(); removeFromWatchlistView('${movie.imdb_id}')">
-                            <span class="icon">✕</span>
-                            <span>REMOVER</span>
-                        </button>
+                    <div class="list-actions">
+                        ${actionButtons}
                     </div>
                 </div>
             </div>
@@ -336,9 +405,13 @@ async function displayWatchlist() {
     grid.innerHTML = cards.join('');
 }
 
-function removeFromWatchlistView(imdbId) {
-    toggleWatchlist(imdbId);
-    updateWatchlistCount();
+function removeFromListView(imdbId, type) {
+    if (type === 'watchlist') {
+        toggleWatchlist(imdbId);
+    } else {
+        toggleWatched(imdbId);
+    }
+    updateListCounts();
 
     // Remover card com animação
     const card = document.querySelector(`[data-imdb="${imdbId}"]`);
@@ -348,8 +421,13 @@ function removeFromWatchlistView(imdbId) {
         setTimeout(() => {
             card.remove();
             // Verificar se lista ficou vazia
-            if (getWatchlist().length === 0) {
-                document.getElementById('watchlist-empty').classList.remove('hidden');
+            const listIds = type === 'watchlist' ? getWatchlist() : getWatchedMovies();
+            if (listIds.length === 0) {
+                const emptyMsg = document.getElementById('list-empty');
+                emptyMsg.textContent = type === 'watchlist'
+                    ? 'Sua lista de filmes para assistir está vazia!'
+                    : 'Você ainda não marcou nenhum filme como visto!';
+                emptyMsg.classList.remove('hidden');
             }
         }, 200);
     }
@@ -656,8 +734,8 @@ async function loadMovies() {
         console.log(`Loaded ${movies.length} movies`);
         showPowerUp(`${movies.length} FILMES!`);
 
-        // Atualizar contador da watchlist
-        updateWatchlistCount();
+        // Atualizar contadores das listas
+        updateListCounts();
     } catch (error) {
         console.error('Error loading movies:', error);
         showPowerUp('ERROR LOADING!');
@@ -1109,11 +1187,14 @@ async function openModal(index) {
 // ABRIR MODAL POR IMDB ID (para watchlist)
 // ============================================
 async function openModalByImdbId(imdbId) {
+    console.log('openModalByImdbId called with:', imdbId);
+
     const movie = movies.find(m => m.imdb_id === imdbId);
     if (!movie) {
         console.error('Movie not found:', imdbId);
         return;
     }
+    console.log('Movie found:', movie.title_pt);
 
     initAudio();
     playSound('click');
