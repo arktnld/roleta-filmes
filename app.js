@@ -1591,7 +1591,7 @@ async function openModal(index) {
         <div class="modal-movie">
             <div>
                 ${posterUrl
-                    ? `<img class="modal-poster" src="${posterUrl}" alt="${movie.title_pt}">`
+                    ? `<img class="modal-poster clickable-poster" src="${posterUrl}" alt="${movie.title_pt}" onclick="openImageLightbox('${posterUrl.replace('/w780/', '/original/')}')">`
                     : `<div class="no-poster modal-poster"></div>`
                 }
             </div>
@@ -1687,7 +1687,7 @@ async function openModalByImdbId(imdbId) {
         <div class="modal-movie">
             <div>
                 ${posterUrl
-                    ? `<img class="modal-poster" src="${posterUrl}" alt="${movie.title_pt}">`
+                    ? `<img class="modal-poster clickable-poster" src="${posterUrl}" alt="${movie.title_pt}" onclick="openImageLightbox('${posterUrl.replace('/w780/', '/original/')}')">`
                     : `<div class="no-poster modal-poster"></div>`
                 }
             </div>
@@ -1755,6 +1755,46 @@ async function openModalByImdbId(imdbId) {
 function closeModal() {
     playSound('click');
     document.getElementById('modal').classList.add('hidden');
+}
+
+// ============================================
+// LIGHTBOX PARA IMAGEM DO POSTER
+// ============================================
+function openImageLightbox(imageUrl) {
+    // Evitar propagação para não fechar o modal
+    event.stopPropagation();
+
+    // Criar overlay do lightbox
+    const lightbox = document.createElement('div');
+    lightbox.className = 'image-lightbox';
+    lightbox.innerHTML = `
+        <div class="lightbox-overlay" onclick="closeImageLightbox()"></div>
+        <div class="lightbox-content">
+            <img src="${imageUrl}" alt="Poster em tamanho grande" onclick="event.stopPropagation()">
+            <button class="lightbox-close" onclick="closeImageLightbox()">✕</button>
+        </div>
+    `;
+
+    document.body.appendChild(lightbox);
+
+    // Animar entrada
+    setTimeout(() => lightbox.classList.add('active'), 10);
+
+    // Fechar com ESC
+    document.addEventListener('keydown', lightboxEscHandler);
+}
+
+function lightboxEscHandler(e) {
+    if (e.key === 'Escape') closeImageLightbox();
+}
+
+function closeImageLightbox() {
+    const lightbox = document.querySelector('.image-lightbox');
+    if (lightbox) {
+        lightbox.classList.remove('active');
+        setTimeout(() => lightbox.remove(), 300);
+    }
+    document.removeEventListener('keydown', lightboxEscHandler);
 }
 
 // ============================================
