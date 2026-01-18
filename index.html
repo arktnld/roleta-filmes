@@ -113,6 +113,29 @@
                 </select>
             </div>
             <div class="filter-group">
+                <label>Ordenar</label>
+                <div class="custom-select" data-target="sort-order">
+                    <div class="custom-select-trigger">
+                        <span class="custom-select-value">Aleatório</span>
+                        <span class="custom-select-arrow">▼</span>
+                    </div>
+                    <div class="custom-select-options">
+                        <div class="custom-select-option selected" data-value="">Aleatório</div>
+                        <div class="custom-select-option" data-value="year-desc">Mais Recentes</div>
+                        <div class="custom-select-option" data-value="year-asc">Mais Antigos</div>
+                        <div class="custom-select-option" data-value="rating-desc">Melhor Nota</div>
+                        <div class="custom-select-option" data-value="rating-asc">Pior Nota</div>
+                    </div>
+                </div>
+                <select id="sort-order" class="hidden-select">
+                    <option value="">Aleatório</option>
+                    <option value="year-desc">Mais Recentes</option>
+                    <option value="year-asc">Mais Antigos</option>
+                    <option value="rating-desc">Melhor Nota</option>
+                    <option value="rating-asc">Pior Nota</option>
+                </select>
+            </div>
+            <div class="filter-group">
                 <label>Filmes</label>
                 <div class="custom-select" data-target="movies-count">
                     <div class="custom-select-trigger">
@@ -261,6 +284,8 @@
                         <option value="">Sem ordenação</option>
                         <option value="desc">Nota: Maior → Menor</option>
                         <option value="asc">Nota: Menor → Maior</option>
+                        <option value="year-desc">Ano: Recente → Antigo</option>
+                        <option value="year-asc">Ano: Antigo → Recente</option>
                     </select>
                 </div>
             </div>

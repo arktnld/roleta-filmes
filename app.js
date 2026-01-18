@@ -1149,6 +1149,7 @@ function applyFilters() {
     const genre = document.getElementById('genre').value;
     const decade = document.getElementById('year').value;
     const minRating = document.getElementById('rating').value;
+    const sortOrder = document.getElementById('sort-order')?.value || '';
 
     filteredMovies = movies.filter(movie => {
         // Filtro de gênero
@@ -1178,7 +1179,34 @@ function applyFilters() {
         return true;
     });
 
+    // Aplicar ordenação
+    if (sortOrder) {
+        filteredMovies = sortMovies(filteredMovies, sortOrder);
+    }
+
     playSound('click');
+}
+
+// Função para ordenar filmes
+function sortMovies(movieList, sortOrder) {
+    const sorted = [...movieList];
+
+    switch (sortOrder) {
+        case 'year-desc':
+            sorted.sort((a, b) => (b.year || 0) - (a.year || 0));
+            break;
+        case 'year-asc':
+            sorted.sort((a, b) => (a.year || 0) - (b.year || 0));
+            break;
+        case 'rating-desc':
+            sorted.sort((a, b) => (b.imdb_score || 0) - (a.imdb_score || 0));
+            break;
+        case 'rating-asc':
+            sorted.sort((a, b) => (a.imdb_score || 0) - (b.imdb_score || 0));
+            break;
+    }
+
+    return sorted;
 }
 
 // ============================================
@@ -1955,6 +1983,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isTouch) vibrate([20]);
         applyFilters();
     });
+    document.getElementById('sort-order')?.addEventListener('change', () => {
+        if (isTouch) vibrate([20]);
+        applyFilters();
+    });
     document.getElementById('movies-count').addEventListener('change', () => {
         if (isTouch) vibrate([20]);
         playSound('click');
@@ -2268,11 +2300,15 @@ async function performSearch() {
     });
     searchResults = Array.from(combinedMap.values());
 
-    // Ordenar por nota conforme selecionado
+    // Ordenar conforme selecionado
     if (sortOrder === 'desc') {
         searchResults.sort((a, b) => b.imdb_score - a.imdb_score);
     } else if (sortOrder === 'asc') {
         searchResults.sort((a, b) => a.imdb_score - b.imdb_score);
+    } else if (sortOrder === 'year-desc') {
+        searchResults.sort((a, b) => (b.year || 0) - (a.year || 0));
+    } else if (sortOrder === 'year-asc') {
+        searchResults.sort((a, b) => (a.year || 0) - (b.year || 0));
     }
     // Se sortOrder vazio, mantém ordem original (sem ordenação)
 
