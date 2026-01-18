@@ -23,31 +23,23 @@ Uma roleta interativa de filmes com visual retrô estilo 16-bit/Nintendo. Escolh
 - **APIs**:
   - [TMDB](https://www.themoviedb.org/) - Detalhes dos filmes, posters, trailers
   - [Supabase](https://supabase.com/) - Autenticação e listas de usuário
-- **Scripts Python**: Importação de listas do Filmow, gerenciamento de categorias
-
 ## Estrutura do Projeto
 
 ```
-roleta_filmes/
-├── web/                    # Site estático
-│   ├── index.html          # Página principal
-│   ├── app.js              # Lógica da aplicação
-│   ├── style.css           # Estilos 16-bit
-│   ├── movies.json         # Base de dados (15k+ filmes)
-│   └── manifest.json       # PWA manifest
-├── listas/                 # Listas extraídas do Filmow
-├── import_filmow.py        # Importa listas do Filmow
-├── add_category.py         # Gerencia categorias/gêneros
-├── fix_duplicates.py       # Remove filmes duplicados
-└── add_movie.py            # Adiciona filme manualmente
+roleta-filmes/
+├── index.html          # Página principal
+├── app.js              # Lógica da aplicação
+├── style.css           # Estilos 16-bit
+├── movies.json         # Base de dados (15k+ filmes)
+└── manifest.json       # PWA manifest
 ```
 
 ## Como Usar Localmente
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/roleta-filmes.git
-cd roleta-filmes/web
+git clone https://github.com/arktnld/roleta-filmes.git
+cd roleta-filmes
 ```
 
 2. Sirva os arquivos (qualquer servidor HTTP):
@@ -66,122 +58,50 @@ php -S localhost:8000
 
 ## Deploy (Publicar Online)
 
-### GitHub Pages (Recomendado)
+### GitHub Pages
 
-1. Crie um repositório no GitHub
-2. Faça push do conteúdo da pasta `web/`:
-```bash
-cd web
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/seu-usuario/roleta-filmes.git
-git push -u origin main
-```
-
-3. Vá em **Settings > Pages**
-4. Em "Source", selecione **Deploy from a branch**
-5. Selecione branch `main` e pasta `/ (root)`
-6. Clique **Save**
+1. Fork este repositório
+2. Vá em **Settings > Pages**
+3. Em "Source", selecione **Deploy from a branch**
+4. Selecione branch `master` e pasta `/ (root)`
+5. Clique **Save**
 
 Seu site estará em: `https://seu-usuario.github.io/roleta-filmes/`
 
 ### Netlify
 
 1. Acesse [netlify.com](https://www.netlify.com/) e faça login
-2. Arraste a pasta `web/` para a área de deploy
+2. Arraste a pasta do projeto para a área de deploy
 3. Pronto! Você receberá uma URL tipo `random-name.netlify.app`
-
-Ou via CLI:
-```bash
-npm install -g netlify-cli
-cd web
-netlify deploy --prod --dir=.
-```
 
 ### Vercel
 
 1. Acesse [vercel.com](https://vercel.com/) e conecte seu GitHub
 2. Importe o repositório
-3. Configure:
-   - **Root Directory**: `web`
-   - **Framework Preset**: Other
-4. Deploy!
+3. Deploy!
 
 ### Cloudflare Pages
 
 1. Acesse [pages.cloudflare.com](https://pages.cloudflare.com/)
 2. Conecte seu GitHub
 3. Selecione o repositório
-4. Configure:
-   - **Build output directory**: `web`
-5. Deploy!
+4. Deploy!
 
-## Scripts Python
+## Configuração do Supabase (Obrigatório)
 
-### Importar lista do Filmow
+**As listas "Quero Ver" e "Já Vi" requerem um banco de dados Supabase.** Sem essa configuração, essas funcionalidades não funcionarão.
 
-```bash
-# Instalar dependências
-pip install requests beautifulsoup4 aiohttp rapidfuzz
+### Passo a passo:
 
-# Importar uma lista
-python import_filmow.py https://filmow.com/listas/sessao-da-tarde/ --import
-
-# Importar com categoria
-python import_filmow.py https://filmow.com/listas/sessao-da-tarde/ --import --category "Sessão da Tarde"
-
-# Importar várias listas de arquivo
-python import_filmow.py --batch urls.txt --import
-
-# Importar com configuração JSON
-python import_filmow.py --config listas.json
-```
-
-Formato do arquivo de configuração (`listas.json`):
-```json
-[
-  {
-    "urls": ["https://filmow.com/listas/lista1/", "https://filmow.com/listas/lista2/"],
-    "categories": ["Categoria1", "Categoria2"]
-  }
-]
-```
-
-### Gerenciar categorias
-
-```bash
-# Adicionar categoria a uma lista
-python add_category.py listas/sessao-da-tarde.json "Sessão da Tarde"
-
-# Remover categoria
-python add_category.py --remove "Categoria"
-
-# Listar todas as categorias
-python add_category.py --list-genres
-
-# Adicionar por IMDB ID
-python add_category.py --imdb tt0111161 "Clássico"
-```
-
-### Corrigir duplicados
-
-```bash
-# Ver duplicados
-python fix_duplicates.py
-
-# Remover duplicados
-python fix_duplicates.py --fix
-```
-
-## Configuração do Supabase
-
-Para salvar listas "Quero Ver" e "Já Vi":
-
-1. Crie uma conta em [supabase.com](https://supabase.com/)
-2. Crie um novo projeto
-3. Vá em **SQL Editor** e execute:
+1. Acesse [supabase.com](https://supabase.com/) e clique em **Start your project**
+2. Crie uma conta (pode usar GitHub, Google ou email)
+3. Clique em **New Project**
+4. Preencha:
+   - **Name**: nome do projeto (ex: `roleta-filmes`)
+   - **Database Password**: gere uma senha qualquer
+   - **Region**: escolha a mais próxima de você
+5. Aguarde ~2 minutos enquanto o projeto é criado
+6. Vá em **SQL Editor** (menu lateral) e execute:
 
 ```sql
 -- Tabela de filmes já vistos
@@ -206,14 +126,31 @@ CREATE POLICY "Allow all on watched" ON watched FOR ALL USING (true) WITH CHECK 
 CREATE POLICY "Allow all on watchlist" ON watchlist FOR ALL USING (true) WITH CHECK (true);
 ```
 
-4. Vá em **Settings > API** e copie:
-   - Project URL
-   - anon public key
+7. Vá em **Settings > API** (menu lateral) e copie:
+   - **Project URL** (ex: `https://abc123.supabase.co`)
+   - **anon public key** (a chave longa que começa com `eyJ...`)
 
-5. Atualize em `app.js` no objeto `CONFIG`:
+8. Atualize em `app.js` no objeto `CONFIG`:
 ```javascript
 SUPABASE_URL: 'https://seu-projeto.supabase.co',
 SUPABASE_KEY: 'sua-anon-key'
+```
+
+## Configuração do TMDB (Obrigatório)
+
+**O TMDB é usado para buscar detalhes dos filmes, posters e trailers.** Sem o token, o modal de detalhes não funcionará.
+
+### Passo a passo:
+
+1. Acesse [themoviedb.org](https://www.themoviedb.org/) e crie uma conta
+2. Vá em **Settings > API** (ou acesse direto: [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api))
+3. Clique em **Create** ou **Request an API Key**
+4. Selecione **Developer** e aceite os termos
+5. Preencha o formulário (pode colocar dados básicos, é só para registro)
+6. Copie o **API Read Access Token** (Bearer token, começa com `eyJ...`)
+7. Atualize em `app.js` no objeto `CONFIG`:
+```javascript
+TMDB_TOKEN: 'seu-token-aqui'
 ```
 
 ## Licença
