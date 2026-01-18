@@ -1,0 +1,5 @@
+# Local Netlify folder
+.netlify
+
+# Credenciais (não commitar!)
+config.js

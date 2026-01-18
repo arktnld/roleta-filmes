@@ -43,16 +43,17 @@ function translateGenre(genre) {
 }
 
 const CONFIG = {
-    TMDB_TOKEN: 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMTE5OTFiNjk5ZGIzYTk5NzhjOTVmYThkOGM5MWM0NiIsIm5iZiI6MTc0NTk1MDE0My45NzYsInN1YiI6IjY4MTExNWJmMjEzN2YzNGMyNGVhZDY4ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.6yHJrMiDYHRrIlA9Fy9q5qikkGmjnVK23cBuYc-aJ-k',
+    // Credenciais carregadas de config.js (API_CONFIG)
+    TMDB_TOKEN: typeof API_CONFIG !== 'undefined' ? API_CONFIG.TMDB_TOKEN : '',
     TMDB_IMG_BASE: 'https://image.tmdb.org/t/p/w780',
     MOVIES_PER_SPIN: 3,
     MAX_MOVIES_PER_SPIN: 9, // Limite máximo para não sobrecarregar a API
     HISTORY_CACHE_SIZE: 30, // Quantidade de filmes no cache circular
     ROULETTE_DURATION: 2000, // ms
     ROULETTE_FLASHES: 15,
-    // Supabase
-    SUPABASE_URL: 'https://cfoqjlqtrhdvjelqhgvq.supabase.co',
-    SUPABASE_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNmb3FqbHF0cmhkdmplbHFoZ3ZxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njg2MjExMDYsImV4cCI6MjA4NDE5NzEwNn0.ix5s_gHMC7qjLmARPNbPrbbqHUFq2UbrWRfZCJej2Wc'
+    // Supabase (carregado de config.js)
+    SUPABASE_URL: typeof API_CONFIG !== 'undefined' ? API_CONFIG.SUPABASE_URL : '',
+    SUPABASE_KEY: typeof API_CONFIG !== 'undefined' ? API_CONFIG.SUPABASE_KEY : ''
 };
 
 // ============================================

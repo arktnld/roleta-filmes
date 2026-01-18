@@ -31,10 +31,12 @@ roleta-filmes/
 ├── app.js              # Lógica da aplicação
 ├── style.css           # Estilos 16-bit
 ├── movies.json         # Base de dados (15k+ filmes)
+├── config.example.js   # Template de configuração
+├── config.js           # Suas credenciais (não commitado)
 └── manifest.json       # PWA manifest
 ```
 
-## Como Usar Localmente
+## Como Usar
 
 1. Clone o repositório:
 ```bash
@@ -42,7 +44,14 @@ git clone https://github.com/arktnld/roleta-filmes.git
 cd roleta-filmes
 ```
 
-2. Sirva os arquivos (qualquer servidor HTTP):
+2. Copie o arquivo de configuração:
+```bash
+cp config.example.js config.js
+```
+
+3. Edite `config.js` com suas credenciais (veja seções abaixo)
+
+4. Sirva os arquivos (qualquer servidor HTTP):
 ```bash
 # Python
 python -m http.server 8000
@@ -54,7 +63,7 @@ npx serve .
 php -S localhost:8000
 ```
 
-3. Acesse `http://localhost:8000`
+5. Acesse `http://localhost:8000`
 
 ## Deploy (Publicar Online)
 
@@ -130,7 +139,7 @@ CREATE POLICY "Allow all on watchlist" ON watchlist FOR ALL USING (true) WITH CH
    - **Project URL** (ex: `https://abc123.supabase.co`)
    - **anon public key** (a chave longa que começa com `eyJ...`)
 
-8. Atualize em `app.js` no objeto `CONFIG`:
+8. Atualize em `config.js`:
 ```javascript
 SUPABASE_URL: 'https://seu-projeto.supabase.co',
 SUPABASE_KEY: 'sua-anon-key'
@@ -148,7 +157,7 @@ SUPABASE_KEY: 'sua-anon-key'
 4. Selecione **Developer** e aceite os termos
 5. Preencha o formulário (pode colocar dados básicos, é só para registro)
 6. Copie o **API Read Access Token** (Bearer token, começa com `eyJ...`)
-7. Atualize em `app.js` no objeto `CONFIG`:
+7. Atualize em `config.js`:
 ```javascript
 TMDB_TOKEN: 'seu-token-aqui'
 ```
