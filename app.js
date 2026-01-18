@@ -66,6 +66,103 @@ function getMoviesPerSpin() {
 }
 
 // ============================================
+// CACHE E QUEUE PARA API TMDB
+// ============================================
+const tmdbCache = new Map();
+const CACHE_EXPIRY = 30 * 60 * 1000; // 30 minutos
+
+// Queue de requisições com limite de concorrência
+const requestQueue = {
+    pending: [],
+    active: 0,
+    maxConcurrent: 5,
+
+    async add(fn) {
+        return new Promise((resolve, reject) => {
+            this.pending.push({ fn, resolve, reject });
+            this.process();
+        });
+    },
+
+    async process() {
+        if (this.active >= this.maxConcurrent || this.pending.length === 0) return;
+
+        this.active++;
+        const { fn, resolve, reject } = this.pending.shift();
+
+        try {
+            const result = await fn();
+            resolve(result);
+        } catch (error) {
+            reject(error);
+        } finally {
+            this.active--;
+            this.process();
+        }
+    }
+};
+
+// Cache com expiração
+function getCached(key) {
+    const item = tmdbCache.get(key);
+    if (!item) return null;
+    if (Date.now() > item.expiry) {
+        tmdbCache.delete(key);
+        return null;
+    }
+    return item.data;
+}
+
+function setCache(key, data) {
+    tmdbCache.set(key, {
+        data,
+        expiry: Date.now() + CACHE_EXPIRY
+    });
+}
+
+// ============================================
+// LAZY LOADING DE IMAGENS
+// ============================================
+const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const img = entry.target;
+            if (img.dataset.src) {
+                img.src = img.dataset.src;
+                img.removeAttribute('data-src');
+                img.classList.add('loaded');
+            }
+            observer.unobserve(img);
+        }
+    });
+}, {
+    rootMargin: '100px', // Carrega 100px antes de entrar na tela
+    threshold: 0.1
+});
+
+// Configura lazy loading para novas imagens
+function setupLazyImages(container = document) {
+    const images = container.querySelectorAll('img[data-src]');
+    images.forEach(img => imageObserver.observe(img));
+}
+
+// Preload de imagens em background
+function preloadImages(urls) {
+    urls.forEach(url => {
+        if (url) {
+            const img = new Image();
+            img.src = url;
+        }
+    });
+}
+
+// Helper para criar img com lazy loading
+function createLazyImage(src, alt, className) {
+    if (!src) return `<div class="${className} no-poster">🎬</div>`;
+    return `<img class="${className}" data-src="${src}" alt="${alt}" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">`;
+}
+
+// ============================================
 // ESTADO DA APLICAÇÃO
 // ============================================
 let movies = [];
@@ -600,6 +697,9 @@ async function displayList(type) {
     }));
 
     grid.innerHTML = cards.join('');
+
+    // Ativar lazy loading para as novas imagens
+    setupLazyImages(grid);
 
     // Renderizar paginação
     if (totalPages > 1) {
@@ -1229,6 +1329,9 @@ async function spinRoulette() {
     // Adicionar ao histórico
     addToHistory(selectedMovies);
 
+    // Prefetch detalhes enquanto animação roda
+    prefetchMovieDetails(selectedMovies.map(m => m.imdb_id));
+
     // Mostrar animação de roleta
     await showRouletteAnimation();
 
@@ -1250,42 +1353,64 @@ async function spinRoulette() {
 // BUSCAR DETALHES DO FILME NA TMDB
 // ============================================
 async function fetchMovieDetails(imdbId) {
-    try {
-        // Primeiro, encontrar o ID do TMDB pelo IMDB ID
-        const findResponse = await fetch(
-            `https://api.themoviedb.org/3/find/${imdbId}?external_source=imdb_id&language=pt-BR`,
-            {
-                headers: {
-                    'Authorization': `Bearer ${CONFIG.TMDB_TOKEN}`,
-                    'accept': 'application/json'
+    // Verificar cache primeiro
+    const cached = getCached(imdbId);
+    if (cached) return cached;
+
+    // Usar request queue para limitar concorrência
+    return requestQueue.add(async () => {
+        try {
+            // Primeiro, encontrar o ID do TMDB pelo IMDB ID
+            const findResponse = await fetch(
+                `https://api.themoviedb.org/3/find/${imdbId}?external_source=imdb_id&language=pt-BR`,
+                {
+                    headers: {
+                        'Authorization': `Bearer ${CONFIG.TMDB_TOKEN}`,
+                        'accept': 'application/json'
+                    }
                 }
+            );
+
+            const findData = await findResponse.json();
+
+            if (!findData.movie_results || findData.movie_results.length === 0) {
+                return null;
             }
-        );
 
-        const findData = await findResponse.json();
+            const tmdbId = findData.movie_results[0].id;
 
-        if (!findData.movie_results || findData.movie_results.length === 0) {
+            // Buscar detalhes completos
+            const detailsResponse = await fetch(
+                `https://api.themoviedb.org/3/movie/${tmdbId}?language=pt-BR&append_to_response=credits`,
+                {
+                    headers: {
+                        'Authorization': `Bearer ${CONFIG.TMDB_TOKEN}`,
+                        'accept': 'application/json'
+                    }
+                }
+            );
+
+            const details = await detailsResponse.json();
+
+            // Salvar no cache
+            if (details) setCache(imdbId, details);
+
+            return details;
+        } catch (error) {
+            console.error('Error fetching movie details:', error);
             return null;
         }
+    });
+}
 
-        const tmdbId = findData.movie_results[0].id;
-
-        // Buscar detalhes completos
-        const detailsResponse = await fetch(
-            `https://api.themoviedb.org/3/movie/${tmdbId}?language=pt-BR&append_to_response=credits`,
-            {
-                headers: {
-                    'Authorization': `Bearer ${CONFIG.TMDB_TOKEN}`,
-                    'accept': 'application/json'
-                }
-            }
-        );
-
-        return await detailsResponse.json();
-    } catch (error) {
-        console.error('Error fetching movie details:', error);
-        return null;
-    }
+// Prefetch de detalhes para filmes que provavelmente serão exibidos
+async function prefetchMovieDetails(imdbIds) {
+    // Prefetch em background sem bloquear
+    imdbIds.forEach(id => {
+        if (!getCached(id)) {
+            fetchMovieDetails(id).catch(() => {});
+        }
+    });
 }
 
 // ============================================
@@ -1399,6 +1524,9 @@ async function displayResults() {
     }));
 
     grid.innerHTML = cards.join('');
+
+    // Ativar lazy loading para as novas imagens
+    setupLazyImages(grid);
 
     // Som de reveal para cada card
     selectedMovies.forEach((_, index) => {
@@ -2271,6 +2399,9 @@ async function displaySearchResults() {
     }));
 
     grid.innerHTML = cards.join('');
+
+    // Ativar lazy loading para as novas imagens
+    setupLazyImages(grid);
 
     // Paginação
     if (totalPages > 1) {
