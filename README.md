@@ -2,7 +2,7 @@
 
 Uma roleta interativa de filmes com visual retrô estilo 16-bit/Nintendo. Escolha filtros e deixe a sorte decidir o que assistir!
 
-**[Demo Online](https://roleta-filmes-demo.netlify.app)**
+**<a href="https://roleta-filmes-demo.netlify.app" target="_blank">Demo Online</a>**
 
 ![Preview](https://img.shields.io/badge/Filmes-15000+-blue) ![License](https://img.shields.io/badge/license-MIT-green)
 
