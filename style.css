@@ -634,7 +634,7 @@
         height: 30px;
         background: linear-gradient(180deg, #FFD700 0%, #FFA500 100%);
         border-radius: 10px 10px 0 0;
-        box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
 
     .slot-machine-title {
@@ -643,10 +643,7 @@
         color: #FFD700;
         text-align: center;
         margin-bottom: 1rem;
-        text-shadow:
-            0 0 10px #FFD700,
-            0 0 20px #FFA500,
-            2px 2px 0 #8B4513;
+        text-shadow: 2px 2px 0 #8B4513;
         animation: neon-flicker 2s infinite;
     }
 
