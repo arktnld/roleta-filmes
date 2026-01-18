@@ -197,26 +197,72 @@
                 <div class="list-search-container">
                     <input type="text" id="list-search-input" placeholder="Buscar na lista..." onkeyup="filterCurrentList()">
                 </div>
-                <div class="list-filter-row">
-                    <select id="list-filter-genre" onchange="filterCurrentList()">
-                        <option value="">Todos os gêneros</option>
-                    </select>
-                    <select id="list-filter-decade" onchange="filterCurrentList()">
-                        <option value="">Todas as décadas</option>
-                        <option value="2020">2020s</option>
-                        <option value="2010">2010s</option>
-                        <option value="2000">2000s</option>
-                        <option value="1990">1990s</option>
-                        <option value="1980">1980s</option>
-                        <option value="1970">Antes de 1980</option>
-                    </select>
-                    <select id="list-filter-sort" onchange="filterCurrentList()">
-                        <option value="rating-desc">Nota ↓</option>
-                        <option value="rating-asc">Nota ↑</option>
-                        <option value="year-desc">Ano ↓</option>
-                        <option value="year-asc">Ano ↑</option>
-                        <option value="title-asc">A-Z</option>
-                    </select>
+                <div class="list-filter-row filters">
+                    <div class="filter-group">
+                        <label>Gênero</label>
+                        <div class="custom-select" data-target="list-filter-genre">
+                            <div class="custom-select-trigger">
+                                <span class="custom-select-value">Todos</span>
+                                <span class="custom-select-arrow">▼</span>
+                            </div>
+                            <div class="custom-select-options">
+                                <div class="custom-select-option selected" data-value="">Todos</div>
+                            </div>
+                        </div>
+                        <select id="list-filter-genre" class="hidden-select" onchange="filterCurrentList()">
+                            <option value="">Todos</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Década</label>
+                        <div class="custom-select" data-target="list-filter-decade">
+                            <div class="custom-select-trigger">
+                                <span class="custom-select-value">Todas</span>
+                                <span class="custom-select-arrow">▼</span>
+                            </div>
+                            <div class="custom-select-options">
+                                <div class="custom-select-option selected" data-value="">Todas</div>
+                                <div class="custom-select-option" data-value="2020">2020s</div>
+                                <div class="custom-select-option" data-value="2010">2010s</div>
+                                <div class="custom-select-option" data-value="2000">2000s</div>
+                                <div class="custom-select-option" data-value="1990">1990s</div>
+                                <div class="custom-select-option" data-value="1980">1980s</div>
+                                <div class="custom-select-option" data-value="1970">Antes de 1980</div>
+                            </div>
+                        </div>
+                        <select id="list-filter-decade" class="hidden-select" onchange="filterCurrentList()">
+                            <option value="">Todas</option>
+                            <option value="2020">2020s</option>
+                            <option value="2010">2010s</option>
+                            <option value="2000">2000s</option>
+                            <option value="1990">1990s</option>
+                            <option value="1980">1980s</option>
+                            <option value="1970">Antes de 1980</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Ordenar</label>
+                        <div class="custom-select" data-target="list-filter-sort">
+                            <div class="custom-select-trigger">
+                                <span class="custom-select-value">Nota ↓</span>
+                                <span class="custom-select-arrow">▼</span>
+                            </div>
+                            <div class="custom-select-options">
+                                <div class="custom-select-option selected" data-value="rating-desc">Nota ↓</div>
+                                <div class="custom-select-option" data-value="rating-asc">Nota ↑</div>
+                                <div class="custom-select-option" data-value="year-desc">Ano ↓</div>
+                                <div class="custom-select-option" data-value="year-asc">Ano ↑</div>
+                                <div class="custom-select-option" data-value="title-asc">A-Z</div>
+                            </div>
+                        </div>
+                        <select id="list-filter-sort" class="hidden-select" onchange="filterCurrentList()">
+                            <option value="rating-desc">Nota ↓</option>
+                            <option value="rating-asc">Nota ↑</option>
+                            <option value="year-desc">Ano ↓</option>
+                            <option value="year-asc">Ano ↑</option>
+                            <option value="title-asc">A-Z</option>
+                        </select>
+                    </div>
                 </div>
             </div>
 
@@ -249,16 +295,40 @@
             </div>
 
             <!-- Filtros de busca -->
-            <div class="search-filters">
-                <div class="search-filter-group">
+            <div class="search-filters filters">
+                <div class="filter-group">
                     <label>Gênero</label>
-                    <select id="search-genre">
+                    <div class="custom-select" data-target="search-genre">
+                        <div class="custom-select-trigger">
+                            <span class="custom-select-value">Todos</span>
+                            <span class="custom-select-arrow">▼</span>
+                        </div>
+                        <div class="custom-select-options">
+                            <div class="custom-select-option selected" data-value="">Todos</div>
+                        </div>
+                    </div>
+                    <select id="search-genre" class="hidden-select">
                         <option value="">Todos</option>
                     </select>
                 </div>
-                <div class="search-filter-group">
+                <div class="filter-group">
                     <label>Década</label>
-                    <select id="search-year">
+                    <div class="custom-select" data-target="search-year">
+                        <div class="custom-select-trigger">
+                            <span class="custom-select-value">Todas</span>
+                            <span class="custom-select-arrow">▼</span>
+                        </div>
+                        <div class="custom-select-options">
+                            <div class="custom-select-option selected" data-value="">Todas</div>
+                            <div class="custom-select-option" data-value="2020">2020s</div>
+                            <div class="custom-select-option" data-value="2010">2010s</div>
+                            <div class="custom-select-option" data-value="2000">2000s</div>
+                            <div class="custom-select-option" data-value="1990">1990s</div>
+                            <div class="custom-select-option" data-value="1980">1980s</div>
+                            <div class="custom-select-option" data-value="1970">Antes de 1980</div>
+                        </div>
+                    </div>
+                    <select id="search-year" class="hidden-select">
                         <option value="">Todas</option>
                         <option value="2020">2020s</option>
                         <option value="2010">2010s</option>
@@ -268,9 +338,22 @@
                         <option value="1970">Antes de 1980</option>
                     </select>
                 </div>
-                <div class="search-filter-group">
+                <div class="filter-group">
                     <label>Nota mínima</label>
-                    <select id="search-rating">
+                    <div class="custom-select" data-target="search-rating">
+                        <div class="custom-select-trigger">
+                            <span class="custom-select-value">Qualquer</span>
+                            <span class="custom-select-arrow">▼</span>
+                        </div>
+                        <div class="custom-select-options">
+                            <div class="custom-select-option selected" data-value="">Qualquer</div>
+                            <div class="custom-select-option" data-value="8">8+ Excelente</div>
+                            <div class="custom-select-option" data-value="7">7+ Bom</div>
+                            <div class="custom-select-option" data-value="6">6+ Regular</div>
+                            <div class="custom-select-option" data-value="below5">&lt;5 Ruim</div>
+                        </div>
+                    </div>
+                    <select id="search-rating" class="hidden-select">
                         <option value="">Qualquer</option>
                         <option value="8">8+ Excelente</option>
                         <option value="7">7+ Bom</option>
@@ -278,9 +361,22 @@
                         <option value="below5">&lt;5 Ruim</option>
                     </select>
                 </div>
-                <div class="search-filter-group">
+                <div class="filter-group">
                     <label>Ordenar</label>
-                    <select id="search-sort">
+                    <div class="custom-select" data-target="search-sort">
+                        <div class="custom-select-trigger">
+                            <span class="custom-select-value">Sem ordenação</span>
+                            <span class="custom-select-arrow">▼</span>
+                        </div>
+                        <div class="custom-select-options">
+                            <div class="custom-select-option selected" data-value="">Sem ordenação</div>
+                            <div class="custom-select-option" data-value="desc">Nota: Maior → Menor</div>
+                            <div class="custom-select-option" data-value="asc">Nota: Menor → Maior</div>
+                            <div class="custom-select-option" data-value="year-desc">Ano: Recente → Antigo</div>
+                            <div class="custom-select-option" data-value="year-asc">Ano: Antigo → Recente</div>
+                        </div>
+                    </div>
+                    <select id="search-sort" class="hidden-select">
                         <option value="">Sem ordenação</option>
                         <option value="desc">Nota: Maior → Menor</option>
                         <option value="asc">Nota: Menor → Maior</option>

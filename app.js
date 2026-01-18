@@ -546,13 +546,33 @@ async function displayList(type) {
 
     // Popular gêneros no filtro se ainda não populado
     const listGenreSelect = document.getElementById('list-filter-genre');
+    const listGenreCustomOptions = document.querySelector('.custom-select[data-target="list-filter-genre"] .custom-select-options');
     if (listGenreSelect && listGenreSelect.options.length <= 1) {
         const genres = [...new Set(movies.flatMap(m => m.genres ? m.genres.split('|') : []))].sort();
         genres.forEach(genre => {
+            // Popular select escondido
             const option = document.createElement('option');
             option.value = genre;
             option.textContent = translateGenre(genre);
             listGenreSelect.appendChild(option);
+
+            // Popular custom-select
+            if (listGenreCustomOptions) {
+                const customOption = document.createElement('div');
+                customOption.className = 'custom-select-option';
+                customOption.dataset.value = genre;
+                customOption.textContent = translateGenre(genre);
+                customOption.addEventListener('click', () => {
+                    listGenreCustomOptions.querySelectorAll('.custom-select-option').forEach(o => o.classList.remove('selected'));
+                    customOption.classList.add('selected');
+                    document.querySelector('.custom-select[data-target="list-filter-genre"] .custom-select-value').textContent = translateGenre(genre);
+                    listGenreSelect.value = genre;
+                    listGenreSelect.dispatchEvent(new Event('change'));
+                    customOption.closest('.custom-select').classList.remove('open');
+                    playSound('click');
+                });
+                listGenreCustomOptions.appendChild(customOption);
+            }
         });
     }
 
@@ -2122,6 +2142,7 @@ const SEARCH_PER_PAGE = 12;
 
 function populateSearchGenres() {
     const searchGenreSelect = document.getElementById('search-genre');
+    const searchGenreCustomOptions = document.querySelector('.custom-select[data-target="search-genre"] .custom-select-options');
     if (!searchGenreSelect) return;
 
     const genres = new Set();
@@ -2132,10 +2153,28 @@ function populateSearchGenres() {
     });
 
     Array.from(genres).sort().forEach(genre => {
+        // Popular select escondido
         const option = document.createElement('option');
         option.value = genre;
         option.textContent = translateGenre(genre);
         searchGenreSelect.appendChild(option);
+
+        // Popular custom-select
+        if (searchGenreCustomOptions) {
+            const customOption = document.createElement('div');
+            customOption.className = 'custom-select-option';
+            customOption.dataset.value = genre;
+            customOption.textContent = translateGenre(genre);
+            customOption.addEventListener('click', () => {
+                searchGenreCustomOptions.querySelectorAll('.custom-select-option').forEach(o => o.classList.remove('selected'));
+                customOption.classList.add('selected');
+                document.querySelector('.custom-select[data-target="search-genre"] .custom-select-value').textContent = translateGenre(genre);
+                searchGenreSelect.value = genre;
+                customOption.closest('.custom-select').classList.remove('open');
+                playSound('click');
+            });
+            searchGenreCustomOptions.appendChild(customOption);
+        }
     });
 }
 
