@@ -95,12 +95,17 @@
 
     body {
         font-family: 'Inter', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
-        background: linear-gradient(180deg,
+        background: linear-gradient(
+            135deg,
             #1a1f3d 0%,
-            #252b4a 50%,
-            #2c3354 100%
+            #2d1f4d 20%,
+            #1e3a5f 40%,
+            #2a2050 60%,
+            #1f2d4a 80%,
+            #1a1f3d 100%
         );
-        background-attachment: fixed;
+        background-size: 300% 300%;
+        animation: gradient-shift 8s ease infinite;
         color: var(--text-primary);
         min-height: 100dvh;
         overflow-x: hidden;
@@ -112,6 +117,12 @@
         /* Modern smooth scrolling */
         scroll-behavior: smooth;
         scrollbar-gutter: stable;
+    }
+
+    @keyframes gradient-shift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
     }
 
     /* Custom scrollbar - Modern glass style */
@@ -232,40 +243,87 @@
         z-index: 9999;
     }
 
-    /* Subtle stars background - toned down */
+    /* Floating particles background */
     .stars {
         position: fixed;
         inset: 0;
         pointer-events: none;
         overflow: hidden;
-        opacity: 0.15;
+        z-index: 0;
     }
 
-    .stars::before {
-        content: '★ ✦ ● ★ ✦ ● ★ ✦ ● ★';
+    /* Partículas - estrelas e faíscas */
+    .stars .particle {
         position: absolute;
-        font-size: 20px;
-        color: var(--star-yellow);
-        white-space: nowrap;
-        animation: float-stars 30s linear infinite;
-        top: 10%;
-        left: -100%;
+        pointer-events: none;
     }
 
-    .stars::after {
-        content: '● ★ ✦ ● ★ ✦ ● ★ ✦ ●';
-        position: absolute;
-        font-size: 16px;
-        color: var(--star-yellow);
-        white-space: nowrap;
-        animation: float-stars 40s linear infinite reverse;
-        top: 60%;
-        left: -100%;
+    /* Estrela dourada ★ */
+    .stars .particle.star {
+        color: #ffd700;
+        text-shadow: 0 0 8px rgba(255, 215, 0, 0.8), 0 0 15px rgba(255, 215, 0, 0.4);
+        animation: fall-sway linear infinite;
     }
 
-    @keyframes float-stars {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(200vw); }
+    /* Faísca branca (círculo) */
+    .stars .particle.spark {
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 70%);
+        border-radius: 50%;
+        box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+        animation: fall-straight linear infinite;
+    }
+
+    /* Partícula azul (círculo) */
+    .stars .particle.blue {
+        background: radial-gradient(circle, rgba(93, 173, 226, 0.9) 0%, rgba(93, 173, 226, 0) 70%);
+        border-radius: 50%;
+        box-shadow: 0 0 8px rgba(93, 173, 226, 0.5);
+        animation: fall-sway linear infinite;
+    }
+
+    /* Queda com balanço suave (zigzag) */
+    @keyframes fall-sway {
+        0% {
+            transform: translateY(-20px) translateX(0) rotate(0deg);
+            opacity: 0;
+        }
+        5% {
+            opacity: 1;
+        }
+        25% {
+            transform: translateY(25vh) translateX(15px) rotate(90deg);
+        }
+        50% {
+            transform: translateY(50vh) translateX(-10px) rotate(180deg);
+        }
+        75% {
+            transform: translateY(75vh) translateX(10px) rotate(270deg);
+        }
+        95% {
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(105vh) translateX(-5px) rotate(360deg);
+            opacity: 0;
+        }
+    }
+
+    /* Queda reta simples */
+    @keyframes fall-straight {
+        0% {
+            transform: translateY(-20px);
+            opacity: 0;
+        }
+        5% {
+            opacity: 1;
+        }
+        95% {
+            opacity: 0.8;
+        }
+        100% {
+            transform: translateY(105vh);
+            opacity: 0;
+        }
     }
 
     /* Remove floating question block for cleaner look */

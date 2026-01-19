@@ -228,6 +228,7 @@ async function tursoExecute(sql, args = []) {
 // Cache local para evitar muitas requisições
 let watchedCache = null;
 let watchedRatings = {}; // {imdb_id: rating}
+let watchedDates = {}; // {imdb_id: created_at} - para métricas futuras
 let watchlistCache = null;
 
 // ============================================
@@ -235,11 +236,13 @@ let watchlistCache = null;
 // ============================================
 async function fetchWatchedMovies() {
     try {
-        const data = await tursoExecute('SELECT imdb_id, rating FROM watched');
+        const data = await tursoExecute('SELECT imdb_id, rating, created_at FROM watched');
         watchedCache = data.map(item => item.imdb_id);
         watchedRatings = {};
+        watchedDates = {};
         data.forEach(item => {
             if (item.rating) watchedRatings[item.imdb_id] = parseInt(item.rating);
+            if (item.created_at) watchedDates[item.imdb_id] = item.created_at;
         });
         return watchedCache;
     } catch (error) {
@@ -261,6 +264,7 @@ async function toggleWatched(imdbId, rating = null) {
             await tursoExecute('DELETE FROM watched WHERE imdb_id = ?', [imdbId]);
             watchedCache = watched.filter(id => id !== imdbId);
             delete watchedRatings[imdbId];
+            delete watchedDates[imdbId];
             playSound('remove');
         } else {
             if (rating) {
@@ -270,6 +274,7 @@ async function toggleWatched(imdbId, rating = null) {
                 await tursoExecute('INSERT INTO watched (imdb_id) VALUES (?)', [imdbId]);
             }
             watchedCache = [...watched, imdbId];
+            watchedDates[imdbId] = new Date().toISOString(); // Salva data local
             playSound('coin');
         }
     } catch (error) {
@@ -295,6 +300,10 @@ async function updateWatchedRating(imdbId, rating) {
 
 function getWatchedRating(imdbId) {
     return watchedRatings[imdbId] || null;
+}
+
+function getWatchedDate(imdbId) {
+    return watchedDates[imdbId] || null;
 }
 
 function isWatched(imdbId) {
@@ -2166,6 +2175,70 @@ function handleOrientationChange() {
 }
 
 // ============================================
+// PARTÍCULAS FLUTUANTES
+// ============================================
+function createParticles() {
+    const container = document.querySelector('.stars');
+    if (!container) return;
+
+    const particleCount = window.innerWidth < 768 ? 20 : 40;
+    const types = ['star', 'spark', 'spark', 'spark', 'spark', 'spark', 'spark', 'blue', 'blue', 'blue', 'blue', 'blue', 'blue', 'blue'];
+
+    for (let i = 0; i < particleCount; i++) {
+        createParticle(container, types, true);
+    }
+}
+
+function createParticle(container, types, initialSpawn = false) {
+    const particle = document.createElement('div');
+    const type = types[Math.floor(Math.random() * types.length)];
+
+    // Camadas: partículas menores = mais longe = mais lentas
+    const layer = Math.random(); // 0-1
+    const size = type === 'star'
+        ? (layer < 0.3 ? 8 : layer < 0.7 ? 12 : 18)  // Estrelas: pequena, média, grande
+        : (layer < 0.3 ? 2 : layer < 0.7 ? 4 : 6);   // Círculos: pequeno, médio, grande
+
+    const duration = layer < 0.3 ? 40 + Math.random() * 20   // Longe: lento
+                   : layer < 0.7 ? 25 + Math.random() * 15   // Meio: médio
+                   : 15 + Math.random() * 10;                 // Perto: rápido
+
+    const opacity = layer < 0.3 ? 0.3 : layer < 0.7 ? 0.6 : 1;
+    const x = Math.random() * 100;
+
+    particle.className = `particle ${type}`;
+
+    // Estrelas usam caractere ★
+    if (type === 'star') {
+        particle.textContent = '★';
+        particle.style.cssText = `
+            left: ${x}%;
+            font-size: ${size}px;
+            opacity: ${opacity};
+            animation-duration: ${duration}s;
+            animation-delay: ${initialSpawn ? -Math.random() * duration : 0}s;
+        `;
+    } else {
+        particle.style.cssText = `
+            left: ${x}%;
+            width: ${size}px;
+            height: ${size}px;
+            opacity: ${opacity};
+            animation-duration: ${duration}s;
+            animation-delay: ${initialSpawn ? -Math.random() * duration : 0}s;
+        `;
+    }
+
+    container.appendChild(particle);
+
+    // Recriar partícula quando animação terminar
+    particle.addEventListener('animationend', () => {
+        particle.remove();
+        createParticle(container, types, false);
+    });
+}
+
+// ============================================
 // EVENT LISTENERS
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -2175,6 +2248,9 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(reg => console.log('Service Worker registrado:', reg.scope))
             .catch(err => console.log('Service Worker erro:', err));
     }
+
+    // Iniciar partículas flutuantes
+    createParticles();
 
     initCustomSelects();
     loadMovies();
