@@ -3450,10 +3450,10 @@
     }
 
     .mobile-fab {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 1000;
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        z-index: 99999 !important;
         width: 60px;
         height: 60px;
         display: flex;
@@ -3465,7 +3465,7 @@
         border-radius: 50%;
         box-shadow: 0 4px 0 #997a00, 0 6px 20px rgba(0, 0, 0, 0.4);
         cursor: pointer;
-        transition: all 0.15s ease;
+        transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
     }
 
     .mobile-fab:active {
