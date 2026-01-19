@@ -2713,18 +2713,27 @@ function searchGoToPage(page) {
 async function handleSearchWatchedClick(event, imdbId) {
     event.stopPropagation();
     const btn = event.currentTarget;
-    btn.disabled = true;
+    const isCurrentlyWatched = isWatched(imdbId);
 
-    const added = await toggleWatched(imdbId);
-
-    btn.classList.toggle('active', added);
-    btn.querySelector('.icon').textContent = added ? '✓' : '👁';
-    btn.disabled = false;
-
-    updateListCounts();
-
-    if (added) {
-        showPowerUp('WATCHED!');
+    if (isCurrentlyWatched) {
+        // Remover - não precisa de picker
+        btn.disabled = true;
+        await toggleWatched(imdbId);
+        btn.classList.remove('active');
+        btn.querySelector('.icon').textContent = '👁';
+        btn.disabled = false;
+        updateListCounts();
+    } else {
+        // Adicionar - mostrar picker de nota
+        showRatingPicker(imdbId, async (id, rating) => {
+            btn.disabled = true;
+            await toggleWatched(id, rating);
+            btn.classList.add('active');
+            btn.querySelector('.icon').textContent = '✓';
+            btn.disabled = false;
+            updateListCounts();
+            showPowerUp(rating ? `NOTA ${rating}!` : 'WATCHED!');
+        });
     }
 }
 
