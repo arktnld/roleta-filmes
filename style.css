@@ -1532,6 +1532,9 @@
         gap: 0.3rem;
         background: rgba(0, 0, 0, 0.5);
         color: var(--text-secondary);
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
     }
 
     /* Watched button - Luigi Green */
@@ -2735,6 +2738,9 @@
         background: rgba(0, 0, 0, 0.5);
         transition: all 0.2s ease;
         font-size: 1rem;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
     }
 
     /* Esconde texto, mostra só ícone */
@@ -3704,6 +3710,9 @@
     transition: all 0.2s ease;
     border: 1px solid;
     background: rgba(0, 0, 0, 0.5);
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
 }
 
 .search-actions .action-btn.watched {

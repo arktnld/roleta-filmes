@@ -306,9 +306,14 @@ let ratingPickerCallback = null;
 let ratingPickerImdbId = null;
 
 function showRatingPicker(imdbId, callback) {
+    console.log('showRatingPicker chamado!', imdbId);
     ratingPickerImdbId = imdbId;
     ratingPickerCallback = callback;
-    document.getElementById('rating-picker').classList.remove('hidden');
+    const picker = document.getElementById('rating-picker');
+    console.log('rating-picker elemento:', picker);
+    console.log('Classes antes:', picker.className);
+    picker.classList.remove('hidden');
+    console.log('Classes depois:', picker.className);
     playSound('click');
 }
 
@@ -453,9 +458,11 @@ function getGameOverEffect(rating) {
 resetAvailableEffects();
 
 async function handleWatchedClick(event, imdbId) {
+    console.log('handleWatchedClick chamado!', imdbId);
     event.stopPropagation();
     const btn = event.currentTarget;
     const isCurrentlyWatched = isWatched(imdbId);
+    console.log('isCurrentlyWatched:', isCurrentlyWatched);
 
     if (isCurrentlyWatched) {
         // Remover - não precisa de picker
@@ -468,6 +475,7 @@ async function handleWatchedClick(event, imdbId) {
         updateListCounts();
     } else {
         // Adicionar - mostrar picker de nota
+        console.log('Vai mostrar rating picker...');
         showRatingPicker(imdbId, async (id, rating) => {
             btn.disabled = true;
             await toggleWatched(id, rating);
