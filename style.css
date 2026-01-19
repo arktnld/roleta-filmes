@@ -2939,6 +2939,7 @@
         .results { order: 4; }
         #list-section { order: 2; }
         #search-section { order: 2; }
+        .site-footer { order: 99; }
 
 
         /* Cards: prevenir clique durante scroll */
