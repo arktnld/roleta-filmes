@@ -2142,6 +2142,13 @@ function handleOrientationChange() {
 // EVENT LISTENERS
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
+    // Registrar Service Worker para PWA
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('Service Worker registrado'))
+            .catch(err => console.log('Service Worker erro:', err));
+    }
+
     initCustomSelects();
     loadMovies();
 
