@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background preenche tudo (será cortado nas bordas) -->
+  <rect width="512" height="512" fill="#1a1f3d"/>
+
+  <!-- Conteúdo centralizado na zona segura (80% = 410px, margem 51px) -->
+  <g transform="translate(256, 256) scale(0.75) translate(-256, -256)">
+    <!-- Popcorn bucket (red with white stripes) -->
+    <path d="M128 210 L160 450 L352 450 L384 210 Z" fill="#e53935"/>
+
+    <!-- White stripes on bucket -->
+    <path d="M148 210 L172 450 L192 450 L168 210 Z" fill="#fff"/>
+    <path d="M208 210 L224 450 L244 450 L228 210 Z" fill="#fff"/>
+    <path d="M268 210 L276 450 L296 450 L288 210 Z" fill="#fff"/>
+    <path d="M328 210 L328 450 L348 450 L348 210 Z" fill="#fff"/>
+
+    <!-- Bucket rim -->
+    <ellipse cx="256" cy="210" rx="130" ry="25" fill="#c62828"/>
+
+    <!-- Popcorn pieces -->
+    <circle cx="200" cy="140" r="45" fill="#fff8e1"/>
+    <circle cx="256" cy="110" r="50" fill="#fffde7"/>
+    <circle cx="312" cy="140" r="45" fill="#fff8e1"/>
+    <circle cx="180" cy="100" r="35" fill="#fff9c4"/>
+    <circle cx="332" cy="100" r="35" fill="#fff9c4"/>
+    <circle cx="220" cy="75" r="40" fill="#fffde7"/>
+    <circle cx="290" cy="75" r="40" fill="#fff8e1"/>
+    <circle cx="256" cy="55" r="35" fill="#fff9c4"/>
+
+    <!-- Popcorn shadows/details -->
+    <circle cx="205" cy="145" r="20" fill="#ffe082" opacity="0.5"/>
+    <circle cx="260" cy="115" r="22" fill="#ffe082" opacity="0.5"/>
+    <circle cx="315" cy="145" r="20" fill="#ffe082" opacity="0.5"/>
+  </g>
+</svg>
