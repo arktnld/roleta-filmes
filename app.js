@@ -1199,7 +1199,7 @@ async function loadMovies() {
     const loadingOverlay = document.getElementById('app-loading');
 
     try {
-        // Carregar filmes e listas do Supabase em paralelo
+        // Carregar filmes e listas do Turso em paralelo
         const [moviesResponse] = await Promise.all([
             fetch('movies.json'),
             fetchWatchlist(),
@@ -1353,17 +1353,20 @@ function createSlotMachine(selected) {
 
     const moviesCount = selected.length;
 
-    // Criar 3 rolos com filmes aleatórios
+    // Criar item de rolo com poster ou título
+    const createReelItem = (movie) => {
+        const posterUrl = movie.poster_path ? `${CONFIG.TMDB_IMG_BASE}${movie.poster_path}` : null;
+        return `
+            <div class="slot-reel-item">
+                ${posterUrl ? `<img src="${posterUrl}" alt="">` : `<span>${(movie.title_pt || '?').substring(0, 12)}</span>`}
+            </div>
+        `;
+    };
+
+    // Criar rolo com filmes aleatórios (o sorteado será inserido quando parar)
     const createReelItems = () => {
         const randomMovies = getRandomMovies(SLOT_ITEMS_COUNT);
-        return randomMovies.map(m => {
-            const posterUrl = m.poster_path ? `${CONFIG.TMDB_IMG_BASE}${m.poster_path}` : null;
-            return `
-                <div class="slot-reel-item">
-                    ${posterUrl ? `<img src="${posterUrl}" alt="">` : `<span>${(m.title_pt || '?').substring(0, 12)}</span>`}
-                </div>
-            `;
-        }).join('');
+        return randomMovies.map(m => createReelItem(m)).join('');
     };
 
     const slotMachine = document.createElement('div');
@@ -1434,9 +1437,25 @@ async function showRouletteAnimation() {
             const stopDelays = [1500, 2000, 2500];
             reels.forEach((reel, i) => {
                 setTimeout(() => {
+                    // Substituir primeiro item pelo filme sorteado antes de parar
+                    const movieIndex = Math.min(i, selectedMovies.length - 1);
+                    const movie = selectedMovies[movieIndex];
+                    const posterUrl = movie.poster_path ? `${CONFIG.TMDB_IMG_BASE}${movie.poster_path}` : null;
+                    const firstItem = reel.querySelector('.slot-reel-item');
+                    if (firstItem) {
+                        firstItem.innerHTML = posterUrl
+                            ? `<img src="${posterUrl}" alt="">`
+                            : `<span>${(movie.title_pt || '?').substring(0, 12)}</span>`;
+                    }
+
                     reel.classList.remove('spinning');
                     reel.classList.add('stopping');
-                    playSound('click');
+
+                    // Só toca som se o rolo está visível (no mobile só 1 rolo aparece)
+                    const container = reel.closest('.slot-reel-container');
+                    if (container && getComputedStyle(container).display !== 'none') {
+                        playSound('click');
+                    }
 
                     // No último rolo, mostrar resultado
                     if (i === reels.length - 1) {
@@ -1507,6 +1526,10 @@ async function spinRoulette() {
     spinBtn.disabled = true;
     spinBtn.classList.add('spinning');
 
+    // Esconder botão flutuante mobile durante animação
+    const mobileFab = document.getElementById('mobile-fab');
+    if (mobileFab) mobileFab.classList.add('hidden');
+
     // Shake screen
     shakeScreen();
 
@@ -1534,6 +1557,9 @@ async function spinRoulette() {
     spinBtn.disabled = false;
     spinBtn.classList.remove('spinning');
     resultsSection.classList.remove('hidden');
+
+    // Mostrar botão flutuante mobile novamente
+    if (mobileFab) mobileFab.classList.remove('hidden');
 }
 
 // ============================================

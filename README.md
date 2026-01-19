@@ -2,19 +2,23 @@
 
 Uma roleta interativa de filmes com visual retrô estilo 16-bit/Nintendo. Escolha filtros e deixe a sorte decidir o que assistir!
 
-**<a href="https://roleta-filmes-demo.netlify.app" target="_blank">Demo Online</a>**
+**[Demo Online](https://filmes-demo.surge.sh)**
 
 ![Preview](https://img.shields.io/badge/Filmes-15000+-blue) ![License](https://img.shields.io/badge/license-MIT-green)
 
 ## Funcionalidades
 
-- **Roleta Animada**: Animação estilo slot machine para escolher filmes aleatórios
-- **Filtros Avançados**: Filtre por gênero, década e nota mínima
-- **Busca**: Encontre filmes por nome com filtros combinados
-- **Listas Pessoais**: Salve filmes em "Quero Ver" e "Já Vi" (sincronizado via Supabase)
-- **Detalhes Completos**: Modal com sinopse, elenco, diretor, trailer e streaming
-- **PWA**: Instale como app no celular
-- **Responsivo**: Funciona em desktop e mobile
+- **Roleta Animada**: Animação estilo slot machine com 1, 3, 6 ou 9 filmes por sorteio
+- **Filtros Avançados**: Gênero, década, nota mínima e ordenação (ano, nota, aleatório)
+- **Busca Inteligente**: Por título ou por pessoa (ator/diretor) com filtros combinados
+- **Listas Pessoais**: "Quero Ver" e "Já Vi" sincronizadas na nuvem via Turso
+- **Sistema de Notas**: Avalie filmes de 1 a 10 estrelas ao marcar como assistido
+- **Detalhes Completos**: Sinopse, elenco, diretor, trailer e onde assistir (streaming)
+- **Histórico Inteligente**: Evita repetir filmes sorteados recentemente
+- **Efeitos Sonoros**: Sons retrô com opção de mudo
+- **PWA**: Instale como app no celular (funciona offline)
+- **Responsivo**: Interface adaptada para desktop e mobile
+- **Easter Egg**: Konami Code para modo secreto
 
 ## Tecnologias
 
@@ -22,7 +26,9 @@ Uma roleta interativa de filmes com visual retrô estilo 16-bit/Nintendo. Escolh
 - **Estilo**: Visual 16-bit retrô com pixel art
 - **APIs**:
   - [TMDB](https://www.themoviedb.org/) - Detalhes dos filmes, posters, trailers
-  - [Supabase](https://supabase.com/) - Autenticação e listas de usuário
+  - [Turso](https://turso.tech/) - Banco de dados SQLite para listas de usuário
+- **Hospedagem**: [Surge.sh](https://surge.sh/) - Deploy gratuito de sites estáticos
+
 ## Estrutura do Projeto
 
 ```
@@ -67,82 +73,85 @@ php -S localhost:8000
 
 ## Deploy (Publicar Online)
 
+### Surge.sh (Recomendado)
+
+1. Instale o Surge:
+```bash
+npm install -g surge
+```
+
+2. Faça deploy:
+```bash
+surge . seu-site.surge.sh
+```
+
+3. Pronto! Seu site estará em `https://seu-site.surge.sh`
+
 ### GitHub Pages
 
 1. Fork este repositório
 2. Vá em **Settings > Pages**
-3. Em "Source", selecione **Deploy from a branch**
-4. Selecione branch `master` e pasta `/ (root)`
-5. Clique **Save**
-
-Seu site estará em: `https://seu-usuario.github.io/roleta-filmes/`
+3. Selecione branch `master` e pasta `/ (root)`
+4. Seu site estará em: `https://seu-usuario.github.io/roleta-filmes/`
 
 ### Netlify
 
 1. Acesse [netlify.com](https://www.netlify.com/) e faça login
 2. Arraste a pasta do projeto para a área de deploy
-3. Pronto! Você receberá uma URL tipo `random-name.netlify.app`
 
 ### Vercel
 
 1. Acesse [vercel.com](https://vercel.com/) e conecte seu GitHub
-2. Importe o repositório
-3. Deploy!
+2. Importe o repositório e faça deploy
 
 ### Cloudflare Pages
 
 1. Acesse [pages.cloudflare.com](https://pages.cloudflare.com/)
-2. Conecte seu GitHub
-3. Selecione o repositório
-4. Deploy!
+2. Conecte seu GitHub e selecione o repositório
 
-## Configuração do Supabase (Obrigatório)
+## Configuração do Turso (Obrigatório)
 
-**As listas "Quero Ver" e "Já Vi" requerem um banco de dados Supabase.** Sem essa configuração, essas funcionalidades não funcionarão.
+**As listas "Quero Ver" e "Já Vi" requerem um banco de dados Turso.** Sem essa configuração, essas funcionalidades não funcionarão.
 
 ### Passo a passo:
 
-1. Acesse [supabase.com](https://supabase.com/) e clique em **Start your project**
-2. Crie uma conta (pode usar GitHub, Google ou email)
-3. Clique em **New Project**
-4. Preencha:
-   - **Name**: nome do projeto (ex: `roleta-filmes`)
-   - **Database Password**: gere uma senha qualquer
-   - **Region**: escolha a mais próxima de você
-5. Aguarde ~2 minutos enquanto o projeto é criado
-6. Vá em **SQL Editor** (menu lateral) e execute:
-
-```sql
--- Tabela de filmes já vistos
-CREATE TABLE watched (
-  id SERIAL PRIMARY KEY,
-  imdb_id TEXT NOT NULL UNIQUE,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-);
-
--- Tabela de filmes para assistir
-CREATE TABLE watchlist (
-  id SERIAL PRIMARY KEY,
-  imdb_id TEXT NOT NULL UNIQUE,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-);
-
--- Permissões públicas
-ALTER TABLE watched ENABLE ROW LEVEL SECURITY;
-ALTER TABLE watchlist ENABLE ROW LEVEL SECURITY;
-
-CREATE POLICY "Allow all on watched" ON watched FOR ALL USING (true) WITH CHECK (true);
-CREATE POLICY "Allow all on watchlist" ON watchlist FOR ALL USING (true) WITH CHECK (true);
+1. Acesse [turso.tech](https://turso.tech/) e crie uma conta
+2. Instale o CLI:
+```bash
+curl -sSfL https://get.tur.so/install.sh | bash
+turso auth login
 ```
 
-7. Vá em **Settings > API** (menu lateral) e copie:
-   - **Project URL** (ex: `https://abc123.supabase.co`)
-   - **anon public key** (a chave longa que começa com `eyJ...`)
+3. Crie um banco de dados:
+```bash
+turso db create roleta-filmes
+turso db show roleta-filmes --url  # Copie a URL
+turso db tokens create roleta-filmes  # Copie o token
+```
 
-8. Atualize em `config.js`:
+4. Crie as tabelas:
+```bash
+turso db shell roleta-filmes
+```
+```sql
+CREATE TABLE watched (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  imdb_id TEXT NOT NULL UNIQUE,
+  rating INTEGER,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE watchlist (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  imdb_id TEXT NOT NULL UNIQUE,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+5. Atualize em `config.js`:
 ```javascript
-SUPABASE_URL: 'https://seu-projeto.supabase.co',
-SUPABASE_KEY: 'sua-anon-key'
+TURSO_URL: 'libsql://seu-banco-seu-usuario.turso.io',
+TURSO_TOKEN: 'seu-token'
 ```
 
 ## Configuração do TMDB (Obrigatório)

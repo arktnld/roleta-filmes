@@ -3460,23 +3460,28 @@
         align-items: center;
         justify-content: center;
         font-size: 1.8rem;
-        background: linear-gradient(145deg, var(--mario-red) 0%, #b71c1c 100%);
-        border: 3px solid var(--coin-gold);
+        background: linear-gradient(145deg, var(--neon-blue) 0%, #2980b9 100%);
+        border: 3px solid rgba(255, 255, 255, 0.3);
         border-radius: 50%;
-        box-shadow: 0 4px 0 #997a00, 0 6px 20px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 4px 0 #1a5276, 0 6px 20px rgba(93, 173, 226, 0.4);
         cursor: pointer;
         transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
     }
 
     .mobile-fab:active {
         transform: translateY(2px);
-        box-shadow: 0 2px 0 #997a00, 0 4px 10px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 2px 0 #1a5276, 0 4px 10px rgba(93, 173, 226, 0.4);
     }
 
     .mobile-fab.hidden {
         transform: scale(0);
         opacity: 0;
         pointer-events: none;
+    }
+
+    .mobile-fab .fab-icon {
+        width: 40px;
+        height: 40px;
     }
 }
 

@@ -1,5 +1,5 @@
 // Service Worker para Roleta de Filmes (PWA)
-const CACHE_NAME = 'filmes-v3';
+const CACHE_NAME = 'filmes-v4';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
