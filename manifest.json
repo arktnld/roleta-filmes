@@ -2,34 +2,34 @@
   "name": "Roleta de Filmes",
   "short_name": "Filmes",
   "description": "Deixe o destino escolher seu próximo filme!",
-  "start_url": "/",
-  "scope": "/",
-  "id": "/",
+  "start_url": "./index.html",
+  "scope": "./",
+  "id": "roleta-filmes",
   "display": "standalone",
   "background_color": "#1a1f3d",
   "theme_color": "#e53935",
   "orientation": "portrait",
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "./icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "icon-512.png",
+      "src": "./icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "icon-192.png",
+      "src": "./icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "icon-512.png",
+      "src": "./icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"

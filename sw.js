@@ -1,13 +1,13 @@
 // Service Worker para Roleta de Filmes (PWA)
-const CACHE_NAME = 'filmes-v2';
+const CACHE_NAME = 'filmes-v3';
 const ASSETS_TO_CACHE = [
-    '/',
-    '/index.html',
-    '/style.css',
-    '/app.js',
-    '/manifest.json',
-    '/icon-192.png',
-    '/icon-512.png'
+    './',
+    './index.html',
+    './style.css',
+    './app.js',
+    './manifest.json',
+    './icon-192.png',
+    './icon-512.png'
 ];
 
 // Instalação - cacheia assets essenciais

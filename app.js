@@ -306,20 +306,10 @@ let ratingPickerCallback = null;
 let ratingPickerImdbId = null;
 
 function showRatingPicker(imdbId, callback) {
-    console.log('showRatingPicker chamado!', imdbId);
     ratingPickerImdbId = imdbId;
     ratingPickerCallback = callback;
     const picker = document.getElementById('rating-picker');
-    console.log('rating-picker elemento:', picker);
-    console.log('Classes antes:', picker.className);
     picker.classList.remove('hidden');
-    console.log('Classes depois:', picker.className);
-
-    // DEBUG: Força o picker a aparecer na frente
-    picker.style.display = 'flex';
-    picker.style.visibility = 'visible';
-    picker.style.opacity = '1';
-
     playSound('click');
 }
 
@@ -464,11 +454,9 @@ function getGameOverEffect(rating) {
 resetAvailableEffects();
 
 async function handleWatchedClick(event, imdbId) {
-    console.log('handleWatchedClick chamado!', imdbId);
     event.stopPropagation();
     const btn = event.currentTarget;
     const isCurrentlyWatched = isWatched(imdbId);
-    console.log('isCurrentlyWatched:', isCurrentlyWatched);
 
     if (isCurrentlyWatched) {
         // Remover - não precisa de picker
@@ -481,7 +469,6 @@ async function handleWatchedClick(event, imdbId) {
         updateListCounts();
     } else {
         // Adicionar - mostrar picker de nota
-        console.log('Vai mostrar rating picker...');
         showRatingPicker(imdbId, async (id, rating) => {
             btn.disabled = true;
             await toggleWatched(id, rating);
@@ -2158,8 +2145,8 @@ function handleOrientationChange() {
 document.addEventListener('DOMContentLoaded', () => {
     // Registrar Service Worker para PWA
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js')
-            .then(reg => console.log('Service Worker registrado'))
+        navigator.serviceWorker.register('./sw.js')
+            .then(reg => console.log('Service Worker registrado:', reg.scope))
             .catch(err => console.log('Service Worker erro:', err));
     }
 
