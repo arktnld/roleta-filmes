@@ -1443,9 +1443,12 @@
         font-size: 0.9rem;
         cursor: pointer;
         transition: all 0.15s ease;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
     }
 
-    .rating-picker-numbers button:hover {
+    .rating-picker-numbers button:hover,
+    .rating-picker-numbers button:active {
         background: var(--mario-gold);
         color: #000;
         border-color: var(--mario-gold);
@@ -1463,6 +1466,8 @@
         font-size: 0.85rem;
         cursor: pointer;
         transition: all 0.15s ease;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
     }
 
     .rating-skip:hover {
