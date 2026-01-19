@@ -51,9 +51,9 @@ const CONFIG = {
     HISTORY_CACHE_SIZE: 30, // Quantidade de filmes no cache circular
     ROULETTE_DURATION: 2000, // ms
     ROULETTE_FLASHES: 15,
-    // Supabase (carregado de config.js)
-    SUPABASE_URL: typeof API_CONFIG !== 'undefined' ? API_CONFIG.SUPABASE_URL : '',
-    SUPABASE_KEY: typeof API_CONFIG !== 'undefined' ? API_CONFIG.SUPABASE_KEY : ''
+    // Turso (carregado de config.js)
+    TURSO_URL: typeof API_CONFIG !== 'undefined' ? API_CONFIG.TURSO_URL : '',
+    TURSO_TOKEN: typeof API_CONFIG !== 'undefined' ? API_CONFIG.TURSO_TOKEN : ''
 };
 
 // ============================================
@@ -193,37 +193,54 @@ function saveMovieHistory(history) {
 }
 
 // ============================================
-// SUPABASE API HELPERS
+// TURSO API HELPERS
 // ============================================
-async function supabaseRequest(table, method = 'GET', body = null, query = '') {
-    const url = `${CONFIG.SUPABASE_URL}/rest/v1/${table}${query}`;
-    const options = {
-        method,
+async function tursoExecute(sql, args = []) {
+    const url = `${CONFIG.TURSO_URL}/v2/pipeline`;
+    const response = await fetch(url, {
+        method: 'POST',
         headers: {
-            'apikey': CONFIG.SUPABASE_KEY,
-            'Authorization': `Bearer ${CONFIG.SUPABASE_KEY}`,
-            'Content-Type': 'application/json',
-            'Prefer': method === 'POST' ? 'return=minimal' : undefined
+            'Authorization': `Bearer ${CONFIG.TURSO_TOKEN}`,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            requests: [
+                { type: 'execute', stmt: { sql, args: args.map(a => ({ type: 'text', value: String(a) })) } },
+                { type: 'close' }
+            ]
+        })
+    });
+    const data = await response.json();
+    if (data.results && data.results[0] && data.results[0].response) {
+        const result = data.results[0].response.result;
+        if (result && result.rows) {
+            const cols = result.cols.map(c => c.name);
+            return result.rows.map(row => {
+                const obj = {};
+                row.forEach((cell, i) => obj[cols[i]] = cell.value);
+                return obj;
+            });
         }
-    };
-    if (body) options.body = JSON.stringify(body);
-
-    const response = await fetch(url, options);
-    if (method === 'GET') return response.json();
-    return response.ok;
+    }
+    return [];
 }
 
 // Cache local para evitar muitas requisições
 let watchedCache = null;
+let watchedRatings = {}; // {imdb_id: rating}
 let watchlistCache = null;
 
 // ============================================
-// WATCHED MOVIES (Supabase - global)
+// WATCHED MOVIES (Turso - global)
 // ============================================
 async function fetchWatchedMovies() {
     try {
-        const data = await supabaseRequest('watched', 'GET', null, '?select=imdb_id');
+        const data = await tursoExecute('SELECT imdb_id, rating FROM watched');
         watchedCache = data.map(item => item.imdb_id);
+        watchedRatings = {};
+        data.forEach(item => {
+            if (item.rating) watchedRatings[item.imdb_id] = parseInt(item.rating);
+        });
         return watchedCache;
     } catch (error) {
         console.error('Error fetching watched:', error);
@@ -235,37 +252,91 @@ function getWatchedMovies() {
     return watchedCache || [];
 }
 
-async function toggleWatched(imdbId) {
+async function toggleWatched(imdbId, rating = null) {
     const watched = getWatchedMovies();
     const isCurrentlyWatched = watched.includes(imdbId);
 
     try {
         if (isCurrentlyWatched) {
-            await supabaseRequest('watched', 'DELETE', null, `?imdb_id=eq.${imdbId}`);
+            await tursoExecute('DELETE FROM watched WHERE imdb_id = ?', [imdbId]);
             watchedCache = watched.filter(id => id !== imdbId);
-            playSound('click');
+            delete watchedRatings[imdbId];
+            playSound('remove');
         } else {
-            await supabaseRequest('watched', 'POST', { imdb_id: imdbId });
+            if (rating) {
+                await tursoExecute('INSERT INTO watched (imdb_id, rating) VALUES (?, ?)', [imdbId, rating]);
+                watchedRatings[imdbId] = rating;
+            } else {
+                await tursoExecute('INSERT INTO watched (imdb_id) VALUES (?)', [imdbId]);
+            }
             watchedCache = [...watched, imdbId];
             playSound('coin');
         }
     } catch (error) {
         console.error('Error toggling watched:', error);
+        playSound('error');
     }
 
     return !isCurrentlyWatched;
+}
+
+async function updateWatchedRating(imdbId, rating) {
+    try {
+        await tursoExecute('UPDATE watched SET rating = ? WHERE imdb_id = ?', [rating, imdbId]);
+        watchedRatings[imdbId] = rating;
+        playSound('coin');
+        return true;
+    } catch (error) {
+        console.error('Error updating rating:', error);
+        playSound('error');
+        return false;
+    }
+}
+
+function getWatchedRating(imdbId) {
+    return watchedRatings[imdbId] || null;
 }
 
 function isWatched(imdbId) {
     return getWatchedMovies().includes(imdbId);
 }
 
+// Rating Picker
+let ratingPickerCallback = null;
+let ratingPickerImdbId = null;
+
+function showRatingPicker(imdbId, callback) {
+    ratingPickerImdbId = imdbId;
+    ratingPickerCallback = callback;
+    document.getElementById('rating-picker').classList.remove('hidden');
+    playSound('click');
+}
+
+function closeRatingPicker() {
+    document.getElementById('rating-picker').classList.add('hidden');
+    ratingPickerCallback = null;
+    ratingPickerImdbId = null;
+    playSound('click');
+}
+
+async function selectRating(rating) {
+    const picker = document.getElementById('rating-picker');
+    picker.classList.add('hidden');
+
+    if (ratingPickerCallback) {
+        await ratingPickerCallback(ratingPickerImdbId, rating);
+    }
+
+    ratingPickerCallback = null;
+    ratingPickerImdbId = null;
+}
+
 // ============================================
-// WATCHLIST (Supabase - global)
+// WATCHLIST (Turso - global)
 // ============================================
 async function fetchWatchlist() {
     try {
-        const data = await supabaseRequest('watchlist', 'GET', null, '?select=imdb_id');
+        const data = await tursoExecute('SELECT imdb_id FROM watchlist');
         watchlistCache = data.map(item => item.imdb_id);
         return watchlistCache;
     } catch (error) {
@@ -291,17 +362,18 @@ async function toggleWatchlist(imdbId) {
 
     try {
         if (isCurrentlyInList) {
-            await supabaseRequest('watchlist', 'DELETE', null, `?imdb_id=eq.${imdbId}`);
+            await tursoExecute('DELETE FROM watchlist WHERE imdb_id = ?', [imdbId]);
             watchlistCache = watchlist.filter(id => id !== imdbId);
-            playSound('click');
+            playSound('remove');
         } else {
-            await supabaseRequest('watchlist', 'POST', { imdb_id: imdbId });
+            await tursoExecute('INSERT INTO watchlist (imdb_id) VALUES (?)', [imdbId]);
             watchlistCache = [...watchlist, imdbId];
             playSound('powerup');
         }
         console.log('Watchlist updated:', watchlistCache);
     } catch (error) {
         console.error('Error toggling watchlist:', error);
+        playSound('error');
     }
 
     return !isCurrentlyInList;
@@ -383,19 +455,29 @@ resetAvailableEffects();
 async function handleWatchedClick(event, imdbId) {
     event.stopPropagation();
     const btn = event.currentTarget;
-    btn.disabled = true;
+    const isCurrentlyWatched = isWatched(imdbId);
 
-    const added = await toggleWatched(imdbId);
-
-    btn.classList.toggle('active', added);
-    btn.querySelector('.icon').textContent = added ? '✓' : '👁';
-    btn.querySelector('span:last-child').textContent = added ? 'VISTO' : 'JÁ VI';
-    btn.disabled = false;
-
-    updateListCounts();
-
-    if (added) {
-        showPowerUp('WATCHED!');
+    if (isCurrentlyWatched) {
+        // Remover - não precisa de picker
+        btn.disabled = true;
+        await toggleWatched(imdbId);
+        btn.classList.remove('active');
+        btn.querySelector('.icon').textContent = '👁';
+        btn.querySelector('span:last-child').textContent = 'JÁ VI';
+        btn.disabled = false;
+        updateListCounts();
+    } else {
+        // Adicionar - mostrar picker de nota
+        showRatingPicker(imdbId, async (id, rating) => {
+            btn.disabled = true;
+            await toggleWatched(id, rating);
+            btn.classList.add('active');
+            btn.querySelector('.icon').textContent = '✓';
+            btn.querySelector('span:last-child').textContent = rating ? `NOTA ${rating}` : 'VISTO';
+            btn.disabled = false;
+            updateListCounts();
+            showPowerUp(rating ? `NOTA ${rating}!` : 'WATCHED!');
+        });
     }
 }
 
@@ -446,9 +528,9 @@ function updateWatchlistCount() {
     updateListCounts();
 }
 
-function toggleListView(type) {
+async function toggleListView(type) {
     const listSection = document.getElementById('list-section');
-    const mainContent = document.querySelectorAll('.filters, .roulette-container, #results');
+    const mainContent = document.querySelectorAll('.filters, .roulette-wrapper, #results');
     const watchlistBtn = document.getElementById('watchlist-btn');
     const watchedBtn = document.getElementById('watched-btn');
 
@@ -456,6 +538,13 @@ function toggleListView(type) {
     if (currentListView === type) {
         closeListView();
         return;
+    }
+
+    // Recarregar dados do banco para pegar notas atualizadas
+    if (type === 'watched') {
+        await fetchWatchedMovies();
+    } else {
+        await fetchWatchlist();
     }
 
     // Atualizar estado
@@ -503,7 +592,7 @@ function closeListView() {
     currentListView = null;
 
     const listSection = document.getElementById('list-section');
-    const mainContent = document.querySelectorAll('.filters, .roulette-container, #results');
+    const mainContent = document.querySelectorAll('.filters, .roulette-wrapper, #results');
     const watchlistBtn = document.getElementById('watchlist-btn');
     const watchedBtn = document.getElementById('watched-btn');
 
@@ -695,9 +784,12 @@ async function displayList(type) {
             </button>
         `;
 
+        const userRating = type === 'watched' ? getWatchedRating(movie.imdb_id) : null;
+
         return `
             <div class="list-card" data-imdb="${movie.imdb_id}" onclick="openModalByImdbId('${movie.imdb_id}')">
                 <div class="list-poster-wrapper">
+                    ${userRating ? `<div class="rating-badge">${userRating}</div>` : ''}
                     ${posterUrl
                         ? `<img class="list-poster" src="${posterUrl}" alt="${movie.title_pt}" loading="lazy">`
                         : `<div class="no-poster list-poster"></div>`
@@ -815,15 +907,32 @@ function addToHistory(moviesArr) {
 // ============================================
 const AudioCtx = window.AudioContext || window.webkitAudioContext;
 let audioCtx = null;
+let soundMuted = localStorage.getItem('soundMuted') === 'true';
 
 function initAudio() {
     if (!audioCtx) {
         audioCtx = new AudioCtx();
     }
+    updateMuteButton();
+}
+
+function toggleMute() {
+    soundMuted = !soundMuted;
+    localStorage.setItem('soundMuted', soundMuted);
+    updateMuteButton();
+    if (!soundMuted) playSound('click');
+}
+
+function updateMuteButton() {
+    const btn = document.getElementById('mute-btn');
+    if (btn) {
+        btn.textContent = soundMuted ? '🚫' : '🔊';
+        btn.title = soundMuted ? 'Ativar sons' : 'Desativar sons';
+    }
 }
 
 function playSound(type) {
-    if (!audioCtx) return;
+    if (!audioCtx || soundMuted) return;
 
     const oscillator = audioCtx.createOscillator();
     const gainNode = audioCtx.createGain();
@@ -833,13 +942,15 @@ function playSound(type) {
 
     // Nintendo-style sounds (more melodic and cheerful)
     const sounds = {
-        spin: { freq: [440, 554, 659, 880], duration: 0.08, type: 'square' },      // Coin spin
-        reveal: { freq: [523, 659, 784, 1047], duration: 0.12, type: 'square' },   // Power-up!
+        spin: { freq: [440, 554, 659, 880], duration: 0.08, type: 'square' },      // Roleta girando
+        reveal: { freq: [523, 659, 784, 1047], duration: 0.12, type: 'square' },   // Filme revelado
         click: { freq: [987, 1318], duration: 0.04, type: 'square' },              // Menu select
-        powerup: { freq: [523, 659, 784, 1047, 1318], duration: 0.08, type: 'square' }, // 1-UP!
-        gameover: { freq: [392, 349, 330, 294, 262], duration: 0.15, type: 'triangle' }, // Sad trombone
-        secret: { freq: [659, 784, 880, 987, 1047, 1175, 1318, 1568], duration: 0.06, type: 'square' }, // Zelda secret
-        coin: { freq: [988, 1319], duration: 0.08, type: 'square' }                // Coin!
+        powerup: { freq: [392, 523, 659], duration: 0.1, type: 'triangle' },       // Quero Ver (bookmark)
+        gameover: { freq: [392, 349, 330, 294, 262], duration: 0.15, type: 'triangle' }, // Nenhum resultado
+        secret: { freq: [659, 784, 880, 987, 1047, 1175, 1318, 1568], duration: 0.06, type: 'square' }, // Easter egg
+        coin: { freq: [784, 988, 1175, 1568], duration: 0.07, type: 'square' },    // Já Vi (achievement!)
+        error: { freq: [330, 277, 233], duration: 0.12, type: 'sawtooth' },        // Erro
+        remove: { freq: [659, 440, 330], duration: 0.06, type: 'triangle' }        // Remover da lista
     };
 
     const sound = sounds[type] || sounds.click;
@@ -1241,9 +1352,18 @@ function createSlotMachine(selected) {
 
     const moviesCount = selected.length;
 
-    // Misturar filmes aleatórios com os selecionados para a animação
-    const randomMovies = getRandomMovies(SLOT_ITEMS_COUNT - selected.length);
-    const reelMovies = [...randomMovies, ...selected].sort(() => Math.random() - 0.5);
+    // Criar 3 rolos com filmes aleatórios
+    const createReelItems = () => {
+        const randomMovies = getRandomMovies(SLOT_ITEMS_COUNT);
+        return randomMovies.map(m => {
+            const posterUrl = m.poster_path ? `${CONFIG.TMDB_IMG_BASE}${m.poster_path}` : null;
+            return `
+                <div class="slot-reel-item">
+                    ${posterUrl ? `<img src="${posterUrl}" alt="">` : `<span>${(m.title_pt || '?').substring(0, 12)}</span>`}
+                </div>
+            `;
+        }).join('');
+    };
 
     const slotMachine = document.createElement('div');
     slotMachine.className = 'slot-machine';
@@ -1253,15 +1373,19 @@ function createSlotMachine(selected) {
             <div class="slot-machine-display">
                 <div class="slot-machine-reels">
                     <div class="slot-reel-container">
-                        <div class="slot-reel" data-reel="0">
-                            ${reelMovies.map(m => `
-                                <div class="slot-reel-item">${(m.title_pt || '???').substring(0, 20)}</div>
-                            `).join('')}
-                        </div>
+                        <div class="slot-reel" data-reel="0">${createReelItems()}</div>
+                    </div>
+                    <div class="slot-reel-container">
+                        <div class="slot-reel" data-reel="1">${createReelItems()}</div>
+                    </div>
+                    <div class="slot-reel-container">
+                        <div class="slot-reel" data-reel="2">${createReelItems()}</div>
                     </div>
                 </div>
             </div>
             <div class="slot-machine-lights">
+                <span class="slot-light"></span>
+                <span class="slot-light"></span>
                 <span class="slot-light"></span>
                 <span class="slot-light"></span>
                 <span class="slot-light"></span>
@@ -1274,7 +1398,7 @@ function createSlotMachine(selected) {
     `;
 
     document.body.appendChild(slotMachine);
-    return { slotMachine, reelMovies };
+    return { slotMachine };
 }
 
 async function showRouletteAnimation() {
@@ -1282,48 +1406,61 @@ async function showRouletteAnimation() {
 
     return new Promise(resolve => {
         const { slotMachine } = createSlotMachine(selectedMovies);
-        const reel = slotMachine.querySelector('.slot-reel');
+        const reels = slotMachine.querySelectorAll('.slot-reel');
         const status = slotMachine.querySelector('.slot-machine-status');
         const lights = slotMachine.querySelectorAll('.slot-light');
+        const handle = slotMachine.querySelector('.slot-machine-handle');
 
-        // Iniciar spin do rolo
-        reel.classList.add('spinning');
+        // Animação da alavanca
+        handle.classList.add('pulling');
+        playSound('click');
 
-        // Animação das luzes
-        lights.forEach((light, i) => {
-            light.style.animationDelay = `${i * 0.15}s`;
-        });
-
-        // Som de spinning
-        const spinSound = setInterval(() => playSound('spin'), 200);
-
-        // Parar após 2 segundos
         setTimeout(() => {
-            clearInterval(spinSound);
-            reel.classList.remove('spinning');
-            reel.classList.add('stopping');
+            handle.classList.remove('pulling');
 
-            // Mostrar o primeiro filme selecionado quando parar
-            const firstMovie = selectedMovies[0];
-            if (firstMovie) {
-                const title = (firstMovie.title_pt || '???').substring(0, 20);
-                reel.innerHTML = `<div class="slot-reel-item winner">${title}</div>`;
-            }
+            // Iniciar spin de todos os rolos
+            reels.forEach(reel => reel.classList.add('spinning'));
 
-            // Mostrar mensagem de sucesso
-            status.textContent = `★ ${moviesCount} FILME${moviesCount > 1 ? 'S' : ''} SORTEADO${moviesCount > 1 ? 'S' : ''}! ★`;
-            status.style.color = '#FFD700';
-            playSound('reveal');
+            // Animação das luzes
+            lights.forEach((light, i) => {
+                light.style.animationDelay = `${i * 0.1}s`;
+            });
 
-            // Remover slot machine após delay
-            setTimeout(() => {
-                slotMachine.style.animation = 'slot-fade-out 0.3s ease forwards';
+            // Som de spinning
+            const spinSound = setInterval(() => playSound('spin'), 200);
+
+            // Parar rolos um por um
+            const stopDelays = [1500, 2000, 2500];
+            reels.forEach((reel, i) => {
                 setTimeout(() => {
-                    slotMachine.remove();
-                    resolve();
-                }, 300);
-            }, 800);
-        }, 2000);
+                    reel.classList.remove('spinning');
+                    reel.classList.add('stopping');
+                    playSound('click');
+
+                    // No último rolo, mostrar resultado
+                    if (i === reels.length - 1) {
+                        clearInterval(spinSound);
+
+                        setTimeout(() => {
+                            // Mostrar mensagem de sucesso
+                            status.textContent = `★ JACKPOT! ${moviesCount} FILME${moviesCount > 1 ? 'S' : ''}! ★`;
+                            status.classList.add('jackpot');
+                            playSound('reveal');
+                            createConfetti();
+
+                            // Remover slot machine após delay
+                            setTimeout(() => {
+                                slotMachine.style.animation = 'slot-fade-out 0.3s ease forwards';
+                                setTimeout(() => {
+                                    slotMachine.remove();
+                                    resolve();
+                                }, 300);
+                            }, 1000);
+                        }, 500);
+                    }
+                }, stopDelays[i]);
+            });
+        }, 300);
     });
 }
 
@@ -1518,7 +1655,6 @@ function createHPBar(rating) {
     return `
         <div class="heart-bar">
             <div class="hearts">${hearts}</div>
-            <div class="heart-label">${rating}</div>
             <div class="heart-phrase">${label}</div>
         </div>
     `;
@@ -1577,10 +1713,7 @@ async function displayResults() {
     // Ativar lazy loading para as novas imagens
     setupLazyImages(grid);
 
-    // Som de reveal para cada card
-    selectedMovies.forEach((_, index) => {
-        setTimeout(() => playSound('reveal'), 100 + index * 200);
-    });
+    // Som removido - já toca no jackpot
 }
 
 // ============================================
@@ -1840,7 +1973,7 @@ function searchByPerson(name) {
 // Função para sempre abrir a busca (não toggle)
 function openSearchView() {
     const searchSection = document.getElementById('search-section');
-    const mainContent = document.querySelectorAll('.filters, .roulette-container, #results, #list-section');
+    const mainContent = document.querySelectorAll('.filters, .roulette-wrapper, #results, #list-section');
 
     // Se já está aberta, não fazer nada
     if (currentSearchView) {
@@ -2180,7 +2313,7 @@ function populateSearchGenres() {
 
 function toggleSearchView() {
     const searchSection = document.getElementById('search-section');
-    const mainContent = document.querySelectorAll('.filters, .roulette-container, #results, #list-section');
+    const mainContent = document.querySelectorAll('.filters, .roulette-wrapper, #results, #list-section');
 
     if (currentSearchView) {
         closeSearchView();
@@ -2226,7 +2359,7 @@ function closeSearchView() {
     currentSearchView = false;
 
     const searchSection = document.getElementById('search-section');
-    const mainContent = document.querySelectorAll('.filters, .roulette-container');
+    const mainContent = document.querySelectorAll('.filters, .roulette-wrapper');
 
     // Esconder busca
     searchSection.classList.add('hidden');

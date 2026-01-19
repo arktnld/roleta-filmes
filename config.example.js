@@ -11,11 +11,12 @@ const API_CONFIG = {
     // Obtenha em: https://www.themoviedb.org/settings/api
     TMDB_TOKEN: 'seu-token-tmdb-aqui',
 
-    // URL do projeto Supabase (obrigatório)
-    // Obtenha em: Supabase Dashboard > Settings > API
-    SUPABASE_URL: 'https://seu-projeto.supabase.co',
+    // URL do banco Turso (obrigatório)
+    // Obtenha com: turso db show <nome-db> --url
+    // Troque libsql:// por https://
+    TURSO_URL: 'https://seu-banco.turso.io',
 
-    // Chave anon do Supabase (obrigatório)
-    // Obtenha em: Supabase Dashboard > Settings > API
-    SUPABASE_KEY: 'sua-chave-anon-aqui'
+    // Token do Turso (obrigatório)
+    // Obtenha com: turso db tokens create <nome-db>
+    TURSO_TOKEN: 'seu-token-turso-aqui'
 };

@@ -282,19 +282,20 @@
         z-index: 1;
     }
 
-    /* Header - Miyamoto Style: BRIGHT & FUN */
+    /* Header - Compact vertical */
     header {
         text-align: center;
-        margin-block-end: var(--space-lg);
-        padding: var(--space-md);
+        padding: 2rem 0;
+        margin-block-end: 4rem;
+        position: relative;
     }
 
     h1 {
         font-family: 'Inter', 'Noto Sans JP', sans-serif;
-        font-size: clamp(1.5rem, 4vw, 2.5rem);
+        font-size: 2rem;
         font-weight: 700;
         color: var(--text-primary);
-        margin-block-end: var(--space-sm);
+        margin: 0 0 0.35rem 0;
         letter-spacing: -0.02em;
         display: flex;
         align-items: center;
@@ -303,15 +304,33 @@
     }
 
     .title-logo {
-        width: 36px;
-        height: 36px;
+        width: 34px;
+        height: 34px;
     }
 
     .subtitle {
         color: var(--text-secondary);
-        font-size: clamp(0.875rem, 2vw, 1rem);
+        font-size: 1rem;
         font-weight: 400;
-        letter-spacing: 0.02em;
+        margin: 0;
+        opacity: 0.8;
+    }
+
+    .mute-btn {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        background: transparent;
+        border: none;
+        font-size: 1.2rem;
+        cursor: pointer;
+        opacity: 0.6;
+        transition: opacity 0.2s;
+        padding: 0.25rem;
+    }
+
+    .mute-btn:hover {
+        opacity: 1;
     }
 
     .download-btn {
@@ -387,6 +406,7 @@
         border-radius: var(--radius-md);
         color: var(--text-primary);
         padding: 0.75rem 2.5rem 0.75rem 1rem;
+        font-family: 'Inter', 'Noto Sans JP', sans-serif;
         font-size: 0.875rem;
         font-weight: 500;
         cursor: pointer;
@@ -439,6 +459,7 @@
     }
 
     .custom-select-option {
+        font-family: 'Inter', 'Noto Sans JP', sans-serif;
         font-size: 0.875rem;
         padding: 0.75rem 1rem;
         cursor: pointer;
@@ -595,7 +616,7 @@
         justify-content: center;
         padding: 0.75rem;
         font-family: 'Press Start 2P', monospace;
-        font-size: clamp(0.5rem, 2vw, 0.7rem);
+        font-size: clamp(0.7rem, 3vw, 1rem);
         font-weight: 600;
         color: #00FFFF;
         text-align: center;
@@ -608,7 +629,7 @@
     .slot-reel-item.winner {
         color: #FFD700;
         animation: winner-glow 0.5s ease infinite alternate;
-        font-size: clamp(0.55rem, 2.2vw, 0.75rem);
+        font-size: clamp(0.75rem, 3.2vw, 1.1rem);
     }
 
     .slot-machine-cabinet {
@@ -616,10 +637,7 @@
         border: 8px solid #8B4513;
         border-radius: 20px;
         padding: 1.5rem;
-        box-shadow:
-            inset 0 0 30px rgba(0, 0, 0, 0.5),
-            0 0 60px rgba(139, 69, 19, 0.3),
-            0 20px 60px rgba(0, 0, 0, 0.8);
+        box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
         position: relative;
         max-width: 90vw;
     }
@@ -738,7 +756,7 @@
         justify-content: center;
         padding: 0.5rem;
         font-family: 'Inter', 'Noto Sans JP', sans-serif;
-        font-size: clamp(0.5rem, 2vw, 0.7rem);
+        font-size: clamp(0.7rem, 3vw, 1rem);
         font-weight: 600;
         color: #fff;
         text-align: center;
@@ -829,6 +847,44 @@
         margin-top: 1rem;
         text-shadow: 0 0 10px #00FF00;
         min-height: 1.5em;
+        transition: all 0.3s ease;
+    }
+
+    .slot-machine-status.jackpot {
+        color: #FFD700;
+        text-shadow: 0 0 10px #FFD700, 0 0 20px #FFA500, 0 0 30px #FF6600;
+        animation: jackpot-pulse 0.3s ease infinite alternate;
+    }
+
+    @keyframes jackpot-pulse {
+        from { transform: scale(1); }
+        to { transform: scale(1.05); }
+    }
+
+    /* Handle pulling animation */
+    .slot-machine-handle.pulling {
+        animation: handle-pull 0.3s ease;
+    }
+
+    @keyframes handle-pull {
+        0% { transform: translateY(-50%) rotate(0deg); }
+        50% { transform: translateY(-30%) rotate(30deg); }
+        100% { transform: translateY(-50%) rotate(0deg); }
+    }
+
+    /* Slot reel item with poster */
+    .slot-reel-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+
+    .slot-reel-item span {
+        font-family: 'Press Start 2P', monospace;
+        font-size: 0.5rem;
+        color: #00FFFF;
+        text-shadow: 0 0 5px currentColor;
     }
 
     /* Results Section */
@@ -846,6 +902,27 @@
 
     .hidden {
         display: none !important;
+    }
+
+    /* Footer */
+    .site-footer {
+        text-align: center;
+        padding: 2rem 0;
+        margin-top: 3rem;
+        border-top: 1px solid var(--border-glass);
+        color: var(--text-muted);
+        font-size: 0.85rem;
+    }
+
+    .site-footer a {
+        color: var(--mario-blue);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s ease;
+    }
+
+    .site-footer a:hover {
+        color: var(--cyan);
     }
 
     /* Movies Grid */
@@ -1316,6 +1393,115 @@
     .loading-text {
         color: var(--text-secondary);
         font-size: 0.875rem;
+    }
+
+    /* Rating Picker */
+    .rating-picker {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(10px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+    }
+
+    .rating-picker-content {
+        background: var(--bg-card);
+        border: 4px solid var(--mario-gold);
+        border-radius: 16px;
+        padding: 1.5rem;
+        text-align: center;
+        position: relative;
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+        max-width: 90vw;
+    }
+
+    .rating-picker-content h3 {
+        font-family: 'Press Start 2P', monospace;
+        font-size: 1rem;
+        color: var(--mario-gold);
+        margin-bottom: 1rem;
+    }
+
+    .rating-picker-numbers {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .rating-picker-numbers button {
+        width: 48px;
+        height: 48px;
+        border: 3px solid var(--border-glass);
+        border-radius: 8px;
+        background: var(--bg-secondary);
+        color: var(--text-primary);
+        font-family: 'Press Start 2P', monospace;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all 0.15s ease;
+    }
+
+    .rating-picker-numbers button:hover {
+        background: var(--mario-gold);
+        color: #000;
+        border-color: var(--mario-gold);
+        transform: scale(1.1);
+    }
+
+    .rating-skip {
+        display: block;
+        width: 100%;
+        padding: 0.75rem;
+        border: 2px solid var(--border-glass);
+        border-radius: 8px;
+        background: transparent;
+        color: var(--text-secondary);
+        font-size: 0.85rem;
+        cursor: pointer;
+        transition: all 0.15s ease;
+    }
+
+    .rating-skip:hover {
+        background: var(--bg-secondary);
+        color: var(--text-primary);
+    }
+
+    .rating-cancel {
+        position: absolute;
+        top: -12px;
+        right: -12px;
+        width: 32px;
+        height: 32px;
+        border: 3px solid #ff6666;
+        border-radius: 50%;
+        background: var(--mario-red);
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+        box-shadow: 0 2px 0 #8b0000;
+    }
+
+    /* Rating badge on cards */
+    .rating-badge {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        background: #FFD700 !important;
+        color: #000 !important;
+        font-family: 'Press Start 2P', monospace;
+        font-size: 0.65rem;
+        padding: 6px 10px;
+        border-radius: 4px;
+        font-weight: bold;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        z-index: 100;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
 
     /* Action Buttons (Já vi / Quero assistir) */
@@ -2492,6 +2678,7 @@
 
     .list-poster-wrapper {
         flex-shrink: 0;
+        position: relative;
     }
 
     .list-poster {
@@ -2737,8 +2924,10 @@
             justify-content: center;
         }
 
-        /* Quando os resultados aparecem, voltar ao normal */
-        .container:has(.results:not(.hidden)) {
+        /* Quando os resultados/listas/busca aparecem, voltar ao normal */
+        .container:has(.results:not(.hidden)),
+        .container:has(.list-section:not(.hidden)),
+        .container:has(.search-section:not(.hidden)) {
             justify-content: flex-start;
             padding-top: var(--space-md);
         }
@@ -2748,6 +2937,8 @@
         .roulette-wrapper { order: 2; margin-block: var(--space-md); }
         .filters { order: 3; }
         .results { order: 4; }
+        #list-section { order: 2; }
+        #search-section { order: 2; }
 
 
         /* Cards: prevenir clique durante scroll */
@@ -2756,13 +2947,11 @@
         }
 
         h1 {
-            font-size: 2rem;
-            letter-spacing: 0.05em;
+            font-size: 1.8rem;
         }
 
         .subtitle {
-            font-size: 1rem;
-            line-height: 1.8;
+            font-size: 0.95rem;
         }
 
         /* Stack filters vertically */
@@ -2808,6 +2997,20 @@
 
         .roulette-pointer {
             font-size: 1.5rem;
+        }
+
+        /* Slot machine mobile - só 1 rolo */
+        .slot-reel-container:nth-child(2),
+        .slot-reel-container:nth-child(3) {
+            display: none;
+        }
+
+        .slot-reel-container {
+            width: clamp(180px, 60vw, 250px);
+        }
+
+        .slot-machine-handle {
+            display: none;
         }
 
         /* Bigger spin button for mobile */
@@ -3030,12 +3233,11 @@
         }
 
         header {
-            margin-block-end: var(--space-sm);
+            margin-block-end: 4rem;
         }
 
         h1 {
-            font-size: 2rem;
-            margin-block-end: 0.5rem;
+            font-size: 1.9rem;
         }
 
         .subtitle {
