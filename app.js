@@ -314,6 +314,12 @@ function showRatingPicker(imdbId, callback) {
     console.log('Classes antes:', picker.className);
     picker.classList.remove('hidden');
     console.log('Classes depois:', picker.className);
+
+    // DEBUG: Força o picker a aparecer na frente
+    picker.style.display = 'flex';
+    picker.style.visibility = 'visible';
+    picker.style.opacity = '1';
+
     playSound('click');
 }
 
