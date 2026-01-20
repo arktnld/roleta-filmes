@@ -2996,6 +2996,7 @@ async function loadReleases() {
         return `
             <div class="releases-card" data-tmdb-id="${movie.id}" onclick="openReleasesModal(${movie.id})">
                 ${statusBadge}
+                <div class="releases-date-badge">${releaseDate}</div>
                 <div class="releases-poster-wrapper">
                     ${posterUrl
                         ? `<img class="releases-poster" src="${posterUrl}" alt="${movie.title}" loading="lazy">`
@@ -3005,7 +3006,6 @@ async function loadReleases() {
                 <div class="releases-info">
                     <h3 class="releases-title">${movie.title}</h3>
                     <div class="releases-meta">
-                        <span class="release-date">${releaseDate}</span>
                         ${vote && vote > 0 ? `<span class="vote">★ ${vote}</span>` : ''}
                     </div>
                     ${genreNames ? `<p class="releases-genres">${genreNames}</p>` : ''}
@@ -3197,99 +3197,80 @@ async function openReleasesModal(tmdbId) {
 
         const modalBody = document.getElementById('modal-body');
         modalBody.innerHTML = `
-            <div class="apple-movie-detail">
-                <!-- Botão Fechar -->
-                <button class="apple-close-btn" onclick="closeModal()">✕</button>
+            <div class="modal-movie">
+                <div>
+                    ${posterUrl
+                        ? `<img class="modal-poster" src="${posterUrl}" alt="${movie.title}">`
+                        : `<div class="no-poster modal-poster"></div>`
+                    }
+                </div>
+                <div class="modal-details">
+                    <h2 class="modal-title">${movie.title}</h2>
+                    ${movieEn.title && movieEn.title !== movie.title
+                        ? `<p class="modal-original-title">${movieEn.title}</p>`
+                        : ''
+                    }
 
-                <div class="apple-content">
-                    <!-- Poster e Info Principal -->
-                    <div class="apple-main">
-                        <div class="apple-poster-section">
-                            ${posterUrl
-                                ? `<img class="apple-poster" src="${posterUrl}" alt="${movie.title}">`
-                                : `<div class="no-poster apple-poster"></div>`
-                            }
-                        </div>
-
-                        <div class="apple-info-section">
-                            <!-- Título -->
-                            <h1 class="apple-title">${movie.title}</h1>
-                            ${movieEn.title && movieEn.title !== movie.title
-                                ? `<p class="apple-original-title">${movieEn.title}</p>`
-                                : ''
-                            }
-
-                            <!-- Meta Tags -->
-                            <div class="apple-meta-tags">
-                                ${metaTags.map(tag => `<span class="apple-tag">${tag}</span>`).join('')}
-                            </div>
-
-                            <!-- Nota -->
-                            ${movie.vote_average > 0 ? `
-                            <div class="apple-rating">
-                                <span class="apple-rating-star">★</span>
-                                <span class="apple-rating-value">${movie.vote_average.toFixed(1)}</span>
-                                <span class="apple-rating-max">/ 10</span>
-                            </div>
-                            ` : ''}
-
-                            <!-- Botões de Ação -->
-                            <div class="apple-actions">
-                                ${trailer ? `
-                                <button class="apple-btn apple-btn-primary" onclick="playReleasesTrailer('${trailer.key}')">
-                                    <span class="apple-btn-icon">▶</span>
-                                    Assistir Trailer
-                                </button>
-                                ` : ''}
-                            </div>
-
-                            <!-- Sinopse -->
-                            ${movie.overview ? `
-                            <div class="apple-synopsis">
-                                <p>${movie.overview}</p>
-                            </div>
-                            ` : ''}
-                        </div>
+                    <div class="modal-meta">
+                        <span class="modal-meta-item">${year || 'TBA'}</span>
+                        ${runtime ? `<span class="modal-meta-item">${runtime}</span>` : ''}
+                        ${movie.vote_average > 0 ? `<span class="modal-meta-item rating">★ ${movie.vote_average.toFixed(1)}</span>` : ''}
                     </div>
 
-                    <!-- Informações Adicionais -->
-                    <div class="apple-details">
-                        ${releaseDate ? `
-                        <div class="apple-detail-item">
-                            <span class="apple-detail-label">Data de Lançamento</span>
-                            <span class="apple-detail-value">${releaseDate}</span>
-                        </div>
-                        ` : ''}
+                    <!-- Data de Lançamento em Destaque -->
+                    ${releaseDate ? `
+                    <div class="release-date-highlight">
+                        <span class="release-date-icon">📅</span>
+                        <span class="release-date-text">${releaseDate}</span>
+                    </div>
+                    ` : ''}
 
-                        ${director ? `
-                        <div class="apple-detail-item">
-                            <span class="apple-detail-label">Direção</span>
-                            <span class="apple-detail-value">${director}</span>
-                        </div>
-                        ` : ''}
+                    <!-- Botão Trailer -->
+                    ${trailer ? `
+                    <div class="modal-section">
+                        <button class="trailer-btn" onclick="playReleasesTrailer('${trailer.key}')">
+                            <span>▶</span> Assistir Trailer
+                        </button>
+                    </div>
+                    ` : ''}
 
-                        ${cast.length > 0 ? `
-                        <div class="apple-detail-item">
-                            <span class="apple-detail-label">Elenco</span>
-                            <span class="apple-detail-value">${cast.join(', ')}</span>
-                        </div>
-                        ` : ''}
-
-                        ${genres.length > 0 ? `
-                        <div class="apple-detail-item">
-                            <span class="apple-detail-label">Gêneros</span>
-                            <span class="apple-detail-value">${genres.join(', ')}</span>
-                        </div>
-                        ` : ''}
+                    <div class="modal-section">
+                        <h4 class="modal-section-title">Sinopse</h4>
+                        <p class="modal-overview">${movie.overview || 'Sinopse não disponível.'}</p>
                     </div>
 
-                    <!-- Container do Trailer (inicialmente oculto) -->
-                    <div id="releases-trailer-container" class="apple-trailer-container hidden">
-                        <button class="apple-trailer-close" onclick="closeReleasesTrailer()">✕</button>
-                        <div class="apple-trailer-wrapper">
-                            <div id="releases-trailer-embed"></div>
+                    ${director ? `
+                    <div class="modal-section">
+                        <h4 class="modal-section-title">Direção</h4>
+                        <div class="cast-list">
+                            <span class="cast-item">${director}</span>
                         </div>
                     </div>
+                    ` : ''}
+
+                    ${cast.length > 0 ? `
+                    <div class="modal-section">
+                        <h4 class="modal-section-title">Elenco</h4>
+                        <div class="cast-list">
+                            ${cast.map(c => `<span class="cast-item">${c}</span>`).join('')}
+                        </div>
+                    </div>
+                    ` : ''}
+
+                    <div class="modal-section">
+                        <h4 class="modal-section-title">Gêneros</h4>
+                        <div class="movie-genres">
+                            ${genres.map(g => `<span class="genre-tag">${g}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Container do Trailer (inicialmente oculto) -->
+            <div id="releases-trailer-container" class="releases-trailer-overlay hidden">
+                <button class="releases-trailer-close" onclick="closeReleasesTrailer()">✕</button>
+                <div class="releases-trailer-wrapper">
+                    <div id="releases-trailer-embed"></div>
                 </div>
             </div>
         `;
