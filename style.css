@@ -4526,42 +4526,39 @@
     min-height: 100%;
     background: var(--bg-primary);
     overflow: hidden;
+    padding: var(--space-lg);
 }
 
-/* Hero Section com Backdrop */
-.apple-hero {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-}
-
-.apple-hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 20%;
-    filter: brightness(0.7);
-}
-
-.apple-hero-gradient {
+/* Botão Fechar */
+.apple-close-btn {
     position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to bottom,
-        transparent 0%,
-        rgba(15, 15, 20, 0.4) 40%,
-        rgba(15, 15, 20, 0.9) 70%,
-        var(--bg-primary) 100%
-    );
+    top: var(--space-md);
+    right: var(--space-md);
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.apple-close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--text-primary);
+    transform: scale(1.1);
 }
 
 /* Content Section */
 .apple-content {
     position: relative;
-    margin-top: -180px;
-    padding: 0 var(--space-xl) var(--space-xl);
-    z-index: 2;
+    padding: var(--space-md) 0;
 }
 
 .apple-main {
@@ -4743,16 +4740,17 @@
     line-height: 1.4;
 }
 
-/* Trailer Container */
+/* Trailer Container - Fullscreen overlay */
 .apple-trailer-container {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(0, 0, 0, 0.97);
     z-index: 2000;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: var(--space-lg);
+    padding: var(--space-xl);
     animation: fadeIn 0.3s ease;
 }
 
@@ -4763,7 +4761,8 @@
 .apple-trailer-wrapper {
     position: relative;
     width: 100%;
-    max-width: 1100px;
+    max-width: 90vw;
+    max-height: 80vh;
     aspect-ratio: 16/9;
     background: #000;
     border-radius: var(--radius-lg);
@@ -4779,36 +4778,42 @@
 
 .apple-trailer-close {
     position: absolute;
-    top: -50px;
-    right: 0;
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    top: var(--space-lg);
+    right: var(--space-lg);
+    width: 48px;
+    height: 48px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
     color: white;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.2s ease;
+    z-index: 10;
+    backdrop-filter: blur(10px);
 }
 
 .apple-trailer-close:hover {
     background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
     transform: scale(1.1);
 }
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-    .apple-hero {
-        height: 280px;
+    .apple-movie-detail {
+        padding: var(--space-md);
     }
 
-    .apple-content {
-        margin-top: -100px;
-        padding: 0 var(--space-md) var(--space-lg);
+    .apple-close-btn {
+        top: var(--space-sm);
+        right: var(--space-sm);
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
     }
 
     .apple-main {
@@ -4823,7 +4828,7 @@
     }
 
     .apple-poster {
-        max-width: 180px;
+        max-width: 160px;
     }
 
     .apple-info-section {
@@ -4856,12 +4861,19 @@
         text-align: left;
     }
 
-    .apple-trailer-wrapper {
-        border-radius: var(--radius-md);
+    .apple-trailer-container {
+        padding: var(--space-md);
     }
 
     .apple-trailer-close {
-        top: -45px;
+        top: var(--space-md);
+        right: var(--space-md);
+        width: 40px;
+        height: 40px;
+    }
+
+    .apple-trailer-wrapper {
+        border-radius: var(--radius-md);
     }
 }
 

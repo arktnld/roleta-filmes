@@ -3198,13 +3198,8 @@ async function openReleasesModal(tmdbId) {
         const modalBody = document.getElementById('modal-body');
         modalBody.innerHTML = `
             <div class="apple-movie-detail">
-                <!-- Hero Backdrop -->
-                ${backdropUrl ? `
-                <div class="apple-hero">
-                    <img src="${backdropUrl}" alt="" class="apple-hero-image">
-                    <div class="apple-hero-gradient"></div>
-                </div>
-                ` : ''}
+                <!-- Botão Fechar -->
+                <button class="apple-close-btn" onclick="closeModal()">✕</button>
 
                 <div class="apple-content">
                     <!-- Poster e Info Principal -->
@@ -3290,8 +3285,8 @@ async function openReleasesModal(tmdbId) {
 
                     <!-- Container do Trailer (inicialmente oculto) -->
                     <div id="releases-trailer-container" class="apple-trailer-container hidden">
+                        <button class="apple-trailer-close" onclick="closeReleasesTrailer()">✕</button>
                         <div class="apple-trailer-wrapper">
-                            <button class="apple-trailer-close" onclick="closeReleasesTrailer()">✕</button>
                             <div id="releases-trailer-embed"></div>
                         </div>
                     </div>
