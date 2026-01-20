@@ -122,22 +122,29 @@ function setCache(key, data) {
 }
 
 // ============================================
-// LAZY LOADING DE IMAGENS
+// LAZY LOADING DE IMAGENS COM BLUR-UP
 // ============================================
+const TMDB_IMG_THUMB = 'https://image.tmdb.org/t/p/w92'; // Thumbnail para blur-up
+
 const imageObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const img = entry.target;
             if (img.dataset.src) {
-                img.src = img.dataset.src;
-                img.removeAttribute('data-src');
-                img.classList.add('loaded');
+                // Criar nova imagem para carregar em background
+                const fullImg = new Image();
+                fullImg.onload = () => {
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                    img.classList.add('loaded');
+                };
+                fullImg.src = img.dataset.src;
             }
             observer.unobserve(img);
         }
     });
 }, {
-    rootMargin: '100px', // Carrega 100px antes de entrar na tela
+    rootMargin: '100px',
     threshold: 0.1
 });
 
@@ -157,10 +164,13 @@ function preloadImages(urls) {
     });
 }
 
-// Helper para criar img com lazy loading
+// Helper para criar img com lazy loading e blur-up
 function createLazyImage(src, alt, className) {
     if (!src) return `<div class="${className} no-poster">🎬</div>`;
-    return `<img class="${className}" data-src="${src}" alt="${alt}" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">`;
+    // Extrai o path da imagem para criar thumbnail
+    const pathMatch = src.match(/\/p\/w\d+(.+)$/);
+    const thumbSrc = pathMatch ? `${TMDB_IMG_THUMB}${pathMatch[1]}` : src;
+    return `<img class="${className} blur-up" data-src="${src}" alt="${alt}" src="${thumbSrc}">`;
 }
 
 // ============================================
@@ -1715,19 +1725,17 @@ async function displayResults() {
             : null;
 
         const overview = details?.overview || 'No description available.';
-        const genres = details?.genres?.map(g => g.name) || movie.genres?.split('|') || [];
+        const genres = movie.genres?.split('|') || [];
 
         const gameOverEffect = getGameOverEffect(movie.imdb_score);
 
         return `
             <div class="movie-card ${gameOverEffect}" onclick="openModalByImdbId('${movie.imdb_id}')" data-index="${index}">
                 <div class="rank-badge">${rank}</div>
-                <div class="poster-wrapper">
-                    ${posterUrl
-                        ? `<img class="movie-poster" src="${posterUrl}" alt="${movie.title_pt}" loading="lazy">`
-                        : `<div class="no-poster"></div>`
-                    }
-                </div>
+                ${posterUrl
+                    ? `<img class="movie-poster" src="${posterUrl}" alt="${movie.title_pt}" loading="lazy">`
+                    : `<div class="movie-poster no-poster">🎬</div>`
+                }
                 <div class="movie-info">
                     <h3 class="movie-title">${movie.title_pt}</h3>
                     <div class="movie-meta">
@@ -1822,7 +1830,7 @@ async function openModal(index) {
                 <div class="modal-section">
                     <h4 class="modal-section-title">Gêneros</h4>
                     <div class="movie-genres">
-                        ${(details?.genres || []).map(g => `<span class="genre-tag">${translateGenre(g.name)}</span>`).join('')}
+                        ${(movie.genres?.split('|') || []).map(g => `<span class="genre-tag clickable" data-genre="${g}">${g}</span>`).join('')}
                     </div>
                 </div>
             </div>
@@ -1834,6 +1842,14 @@ async function openModal(index) {
         item.addEventListener('click', () => {
             const personName = item.dataset.person;
             if (personName) searchByPerson(personName);
+        });
+    });
+
+    // Adicionar event listeners para os gêneros clicáveis
+    modalBody.querySelectorAll('.genre-tag.clickable').forEach(item => {
+        item.addEventListener('click', () => {
+            const genre = item.dataset.genre;
+            if (genre) filterByGenre(genre);
         });
     });
 
@@ -1918,7 +1934,7 @@ async function openModalByImdbId(imdbId) {
                 <div class="modal-section">
                     <h4 class="modal-section-title">Gêneros</h4>
                     <div class="movie-genres">
-                        ${(details?.genres || []).map(g => `<span class="genre-tag">${translateGenre(g.name)}</span>`).join('')}
+                        ${(movie.genres?.split('|') || []).map(g => `<span class="genre-tag clickable" data-genre="${g}">${g}</span>`).join('')}
                     </div>
                 </div>
 
@@ -1932,6 +1948,14 @@ async function openModalByImdbId(imdbId) {
         item.addEventListener('click', () => {
             const personName = item.dataset.person;
             if (personName) searchByPerson(personName);
+        });
+    });
+
+    // Adicionar event listeners para os gêneros clicáveis
+    modalBody.querySelectorAll('.genre-tag.clickable').forEach(item => {
+        item.addEventListener('click', () => {
+            const genre = item.dataset.genre;
+            if (genre) filterByGenre(genre);
         });
     });
 
@@ -1999,6 +2023,35 @@ function searchByPerson(name) {
     // Preencher o campo de busca com o nome
     const searchInput = document.getElementById('search-input');
     searchInput.value = name;
+
+    // Executar a busca
+    setTimeout(() => {
+        performSearch();
+    }, 100);
+}
+
+// ============================================
+// FILTRAR POR GÊNERO (clique no gênero)
+// ============================================
+function filterByGenre(genre) {
+    // Fechar modal
+    closeModal();
+
+    // Sempre abrir seção de busca (não toggle)
+    openSearchView();
+
+    // Limpar busca de texto
+    const searchInput = document.getElementById('search-input');
+    if (searchInput) searchInput.value = '';
+
+    // Selecionar o gênero no dropdown
+    const searchGenreSelect = document.getElementById('search-genre');
+    if (searchGenreSelect) {
+        searchGenreSelect.value = genre;
+        // Atualizar custom select visual se existir
+        const customValue = document.querySelector('.custom-select[data-target="search-genre"] .custom-select-value');
+        if (customValue) customValue.textContent = genre;
+    }
 
     // Executar a busca
     setTimeout(() => {
@@ -2175,70 +2228,6 @@ function handleOrientationChange() {
 }
 
 // ============================================
-// PARTÍCULAS FLUTUANTES
-// ============================================
-function createParticles() {
-    const container = document.querySelector('.stars');
-    if (!container) return;
-
-    const particleCount = window.innerWidth < 768 ? 20 : 40;
-    const types = ['star', 'spark', 'spark', 'spark', 'spark', 'spark', 'spark', 'blue', 'blue', 'blue', 'blue', 'blue', 'blue', 'blue'];
-
-    for (let i = 0; i < particleCount; i++) {
-        createParticle(container, types, true);
-    }
-}
-
-function createParticle(container, types, initialSpawn = false) {
-    const particle = document.createElement('div');
-    const type = types[Math.floor(Math.random() * types.length)];
-
-    // Camadas: partículas menores = mais longe = mais lentas
-    const layer = Math.random(); // 0-1
-    const size = type === 'star'
-        ? (layer < 0.3 ? 8 : layer < 0.7 ? 12 : 18)  // Estrelas: pequena, média, grande
-        : (layer < 0.3 ? 2 : layer < 0.7 ? 4 : 6);   // Círculos: pequeno, médio, grande
-
-    const duration = layer < 0.3 ? 40 + Math.random() * 20   // Longe: lento
-                   : layer < 0.7 ? 25 + Math.random() * 15   // Meio: médio
-                   : 15 + Math.random() * 10;                 // Perto: rápido
-
-    const opacity = layer < 0.3 ? 0.3 : layer < 0.7 ? 0.6 : 1;
-    const x = Math.random() * 100;
-
-    particle.className = `particle ${type}`;
-
-    // Estrelas usam caractere ★
-    if (type === 'star') {
-        particle.textContent = '★';
-        particle.style.cssText = `
-            left: ${x}%;
-            font-size: ${size}px;
-            opacity: ${opacity};
-            animation-duration: ${duration}s;
-            animation-delay: ${initialSpawn ? -Math.random() * duration : 0}s;
-        `;
-    } else {
-        particle.style.cssText = `
-            left: ${x}%;
-            width: ${size}px;
-            height: ${size}px;
-            opacity: ${opacity};
-            animation-duration: ${duration}s;
-            animation-delay: ${initialSpawn ? -Math.random() * duration : 0}s;
-        `;
-    }
-
-    container.appendChild(particle);
-
-    // Recriar partícula quando animação terminar
-    particle.addEventListener('animationend', () => {
-        particle.remove();
-        createParticle(container, types, false);
-    });
-}
-
-// ============================================
 // EVENT LISTENERS
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -2248,9 +2237,6 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(reg => console.log('Service Worker registrado:', reg.scope))
             .catch(err => console.log('Service Worker erro:', err));
     }
-
-    // Iniciar partículas flutuantes
-    createParticles();
 
     initCustomSelects();
     loadMovies();
@@ -2846,3 +2832,418 @@ async function handleSearchWatchlistClick(event, imdbId) {
 
 console.log('%c🎬 ROLETA DE FILMES 🎬', 'font-size: 24px; color: #00fff5; text-shadow: 2px 2px #ff00ff;');
 console.log('%cTry the Konami Code! ↑↑↓↓←→←→BA', 'color: #ffff00;');
+
+// ============================================
+// SEÇÃO DE LANÇAMENTOS (TMDB em tempo real)
+// ============================================
+
+let currentReleasesTab = 'now_playing';
+let releasesPage = 1;
+
+// Mapa de gêneros TMDB
+const TMDB_GENRES = {
+    28: 'Ação', 12: 'Aventura', 16: 'Animação', 35: 'Comédia',
+    80: 'Crime', 99: 'Documentário', 18: 'Drama', 10751: 'Família',
+    14: 'Fantasia', 36: 'História', 27: 'Terror', 10402: 'Música',
+    9648: 'Mistério', 10749: 'Romance', 878: 'Ficção Científica',
+    10770: 'Filme de TV', 53: 'Suspense', 10752: 'Guerra', 37: 'Faroeste'
+};
+
+function getReleasesFilters() {
+    const region = document.getElementById('releases-region')?.value || 'BR';
+    const genre = document.getElementById('releases-genre')?.value || '';
+    const period = document.getElementById('releases-period')?.value || '';
+    return { region, genre, period };
+}
+
+function getDateRange(period, isUpcoming) {
+    const today = new Date();
+    const formatDate = (d) => d.toISOString().split('T')[0];
+
+    if (isUpcoming) {
+        // Próximos lançamentos
+        const startDate = formatDate(today);
+        let endDate;
+
+        switch (period) {
+            case 'week':
+                endDate = formatDate(new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000));
+                break;
+            case 'month':
+                endDate = formatDate(new Date(today.getFullYear(), today.getMonth() + 1, today.getDate()));
+                break;
+            case '3months':
+                endDate = formatDate(new Date(today.getFullYear(), today.getMonth() + 3, today.getDate()));
+                break;
+            default:
+                endDate = formatDate(new Date(today.getFullYear(), today.getMonth() + 2, today.getDate()));
+        }
+
+        return { gte: startDate, lte: endDate };
+    } else {
+        // Em cartaz (passado recente até hoje)
+        let startDate;
+        const endDate = formatDate(today);
+
+        switch (period) {
+            case 'week':
+                startDate = formatDate(new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000));
+                break;
+            case 'month':
+                startDate = formatDate(new Date(today.getFullYear(), today.getMonth() - 1, today.getDate()));
+                break;
+            case '3months':
+                startDate = formatDate(new Date(today.getFullYear(), today.getMonth() - 3, today.getDate()));
+                break;
+            default:
+                startDate = formatDate(new Date(today.getTime() - 21 * 24 * 60 * 60 * 1000));
+        }
+
+        return { gte: startDate, lte: endDate };
+    }
+}
+
+async function fetchReleasesFromTMDB(type, page = 1) {
+    const { region, genre, period } = getReleasesFilters();
+    const isUpcoming = type === 'upcoming';
+
+    // Usar discover para ter filtros de gênero e data
+    let url = `https://api.themoviedb.org/3/discover/movie?language=pt-BR&page=${page}&sort_by=popularity.desc`;
+
+    // Região
+    if (region) {
+        url += `&region=${region}&with_release_type=3`; // 3 = Theatrical
+    }
+
+    // Gênero
+    if (genre) {
+        url += `&with_genres=${genre}`;
+    }
+
+    // Datas
+    const dates = getDateRange(period, isUpcoming);
+    url += `&primary_release_date.gte=${dates.gte}&primary_release_date.lte=${dates.lte}`;
+
+    try {
+        const response = await fetch(url, {
+            headers: {
+                'Authorization': `Bearer ${CONFIG.TMDB_TOKEN}`,
+                'accept': 'application/json'
+            }
+        });
+
+        if (!response.ok) throw new Error('Erro na API TMDB');
+
+        const data = await response.json();
+        return {
+            results: data.results || [],
+            total_pages: Math.min(data.total_pages || 1, 500),
+            total_results: data.total_results || 0
+        };
+    } catch (error) {
+        console.error('Erro ao buscar lançamentos:', error);
+        return { results: [], total_pages: 1, total_results: 0 };
+    }
+}
+
+async function loadReleases() {
+    const grid = document.getElementById('releases-grid');
+    const info = document.getElementById('releases-results-info');
+    const pagination = document.getElementById('releases-pagination');
+    const emptyMsg = document.getElementById('releases-empty');
+
+    // Loading
+    grid.innerHTML = '<div class="loading"><div class="loading-spinner"></div></div>';
+    info.innerHTML = '';
+    pagination.innerHTML = '';
+    emptyMsg.classList.add('hidden');
+
+    const data = await fetchReleasesFromTMDB(currentReleasesTab, releasesPage);
+
+    if (data.results.length === 0) {
+        grid.innerHTML = '';
+        emptyMsg.classList.remove('hidden');
+        return;
+    }
+
+    // Info
+    const tabName = currentReleasesTab === 'now_playing' ? 'em cartaz' : 'próximos';
+    info.innerHTML = `<span class="releases-count">${data.total_results} filme${data.total_results !== 1 ? 's' : ''} ${tabName}</span>`;
+
+    const isUpcoming = currentReleasesTab === 'upcoming';
+
+    // Gerar cards no padrão list-card
+    const cards = data.results.map(movie => {
+        const posterUrl = movie.poster_path
+            ? `${CONFIG.TMDB_IMG_BASE}${movie.poster_path}`
+            : null;
+
+        const releaseDate = movie.release_date
+            ? new Date(movie.release_date).toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' })
+            : 'A definir';
+
+        const vote = movie.vote_average ? movie.vote_average.toFixed(1) : null;
+
+        // Gêneros
+        const genreNames = movie.genre_ids
+            ? movie.genre_ids.slice(0, 3).map(id => TMDB_GENRES[id] || '').filter(Boolean).join(', ')
+            : '';
+
+        const statusBadge = isUpcoming
+            ? '<span class="status-badge upcoming">Em Breve</span>'
+            : '<span class="status-badge now-playing">Em Cartaz</span>';
+
+        return `
+            <div class="releases-card" data-tmdb-id="${movie.id}" onclick="openReleasesModal(${movie.id})">
+                <div class="releases-poster-wrapper">
+                    ${statusBadge}
+                    ${posterUrl
+                        ? `<img class="releases-poster" src="${posterUrl}" alt="${movie.title}" loading="lazy">`
+                        : `<div class="no-poster releases-poster"></div>`
+                    }
+                </div>
+                <div class="releases-info">
+                    <h3 class="releases-title">${movie.title}</h3>
+                    ${genreNames ? `<p class="releases-genres">${genreNames}</p>` : ''}
+                    <div class="releases-meta">
+                        <div class="releases-meta-row">
+                            <span class="release-date">📅 ${releaseDate}</span>
+                            ${vote ? `<span class="vote">★ ${vote}</span>` : ''}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    grid.innerHTML = cards;
+
+    // Paginação
+    if (data.total_pages > 1) {
+        let paginationHtml = '<div class="pagination-buttons">';
+
+        if (releasesPage > 1) {
+            paginationHtml += `<button class="pagination-btn" onclick="releasesGoToPage(${releasesPage - 1})">◀ Anterior</button>`;
+        }
+
+        paginationHtml += `<span class="pagination-info">Página ${releasesPage} de ${data.total_pages}</span>`;
+
+        if (releasesPage < data.total_pages) {
+            paginationHtml += `<button class="pagination-btn" onclick="releasesGoToPage(${releasesPage + 1})">Próxima ▶</button>`;
+        }
+
+        paginationHtml += '</div>';
+        pagination.innerHTML = paginationHtml;
+    }
+}
+
+function releasesGoToPage(page) {
+    releasesPage = page;
+    loadReleases();
+
+    const releasesSection = document.getElementById('releases-section');
+    if (releasesSection) {
+        releasesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    playSound('click');
+}
+
+function switchReleasesTab(tab) {
+    currentReleasesTab = tab;
+    releasesPage = 1;
+
+    // Atualizar tabs
+    document.getElementById('tab-now-playing').classList.toggle('active', tab === 'now_playing');
+    document.getElementById('tab-upcoming').classList.toggle('active', tab === 'upcoming');
+
+    loadReleases();
+    playSound('click');
+}
+
+function toggleReleasesView() {
+    const releasesSection = document.getElementById('releases-section');
+    const mainContent = document.querySelectorAll('.filters, .roulette-wrapper, #results');
+    const releasesBtn = document.getElementById('releases-btn');
+
+    // Se já está mostrando, fecha
+    if (!releasesSection.classList.contains('hidden')) {
+        closeReleasesView();
+        return;
+    }
+
+    // Esconder outras seções
+    document.getElementById('list-section')?.classList.add('hidden');
+    document.getElementById('search-section')?.classList.add('hidden');
+
+    // Mostrar lançamentos
+    releasesSection.classList.remove('hidden');
+    mainContent.forEach(el => el.classList.add('hidden'));
+
+    // Esconder botão flutuante mobile
+    const mobileFab = document.getElementById('mobile-fab');
+    if (mobileFab) mobileFab.classList.add('hidden');
+
+    // Atualizar botão ativo
+    releasesBtn?.classList.add('active');
+    document.getElementById('watchlist-btn')?.classList.remove('active');
+    document.getElementById('watched-btn')?.classList.remove('active');
+    document.getElementById('search-btn')?.classList.remove('active');
+
+    // Carregar dados
+    releasesPage = 1;
+    loadReleases();
+
+    // Scroll para o topo
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    playSound('click');
+}
+
+function closeReleasesView() {
+    const releasesSection = document.getElementById('releases-section');
+    const mainContent = document.querySelectorAll('.filters, .roulette-wrapper, #results');
+    const releasesBtn = document.getElementById('releases-btn');
+
+    releasesSection.classList.add('hidden');
+
+    mainContent.forEach(el => {
+        if (!el.id || el.id !== 'results' || selectedMovies.length > 0) {
+            el.classList.remove('hidden');
+        }
+    });
+
+    if (selectedMovies.length === 0) {
+        document.getElementById('results').classList.add('hidden');
+    }
+
+    releasesBtn?.classList.remove('active');
+
+    const mobileFab = document.getElementById('mobile-fab');
+    if (mobileFab) mobileFab.classList.remove('hidden');
+
+    playSound('click');
+}
+
+async function openReleasesModal(tmdbId) {
+    // Buscar detalhes completos do filme da TMDB
+    const url = `https://api.themoviedb.org/3/movie/${tmdbId}?language=pt-BR&append_to_response=credits,videos,release_dates`;
+
+    try {
+        const response = await fetch(url, {
+            headers: {
+                'Authorization': `Bearer ${CONFIG.TMDB_TOKEN}`,
+                'accept': 'application/json'
+            }
+        });
+
+        if (!response.ok) throw new Error('Erro ao buscar detalhes');
+
+        const movie = await response.json();
+
+        // Buscar título em inglês
+        const urlEn = `https://api.themoviedb.org/3/movie/${tmdbId}?language=en-US`;
+        const responseEn = await fetch(urlEn, {
+            headers: {
+                'Authorization': `Bearer ${CONFIG.TMDB_TOKEN}`,
+                'accept': 'application/json'
+            }
+        });
+        const movieEn = await responseEn.json();
+
+        // Diretor
+        const director = movie.credits?.crew?.find(c => c.job === 'Director')?.name || 'Desconhecido';
+
+        // Gêneros
+        const genres = movie.genres?.map(g => g.name).join(', ') || '';
+
+        // Trailer - preferir PT-BR, depois EN
+        let trailer = movie.videos?.results?.find(v => v.type === 'Trailer' && v.site === 'YouTube' && v.iso_639_1 === 'pt');
+        if (!trailer) {
+            trailer = movie.videos?.results?.find(v => v.type === 'Trailer' && v.site === 'YouTube');
+        }
+
+        // Datas de lançamento no Brasil
+        const brRelease = movie.release_dates?.results?.find(r => r.iso_3166_1 === 'BR');
+        const theatricalRelease = brRelease?.release_dates?.find(r => r.type === 3); // 3 = Theatrical
+
+        const posterUrl = movie.poster_path
+            ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+            : null;
+
+        const backdropUrl = movie.backdrop_path
+            ? `https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`
+            : null;
+
+        const releaseDate = movie.release_date
+            ? new Date(movie.release_date).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })
+            : 'A definir';
+
+        const runtime = movie.runtime ? `${Math.floor(movie.runtime / 60)}h ${movie.runtime % 60}min` : '';
+
+        const modalBody = document.getElementById('modal-body');
+        modalBody.innerHTML = `
+            <div class="movie-detail" ${backdropUrl ? `style="--backdrop: url(${backdropUrl})"` : ''}>
+                <div class="movie-backdrop" ${backdropUrl ? `style="background-image: url(${backdropUrl})"` : ''}></div>
+                <div class="movie-detail-content">
+                    <div class="movie-poster-section">
+                        ${posterUrl
+                            ? `<img class="movie-poster" src="${posterUrl}" alt="${movie.title}">`
+                            : `<div class="no-poster movie-poster"></div>`
+                        }
+                    </div>
+                    <div class="movie-info-section">
+                        <h2 class="movie-title">${movie.title}</h2>
+                        ${movieEn.title !== movie.title ? `<p class="movie-title-original">${movieEn.title}</p>` : ''}
+
+                        <div class="movie-meta">
+                            <span class="movie-year">📅 ${releaseDate}</span>
+                            ${runtime ? `<span class="movie-runtime">⏱️ ${runtime}</span>` : ''}
+                            ${movie.vote_average > 0 ? `<span class="movie-rating">★ ${movie.vote_average.toFixed(1)}</span>` : ''}
+                        </div>
+
+                        <div class="movie-details-grid">
+                            <div class="detail-item">
+                                <span class="detail-label">Diretor</span>
+                                <span class="detail-value">${director}</span>
+                            </div>
+                            ${genres ? `
+                            <div class="detail-item">
+                                <span class="detail-label">Gêneros</span>
+                                <span class="detail-value">${genres}</span>
+                            </div>
+                            ` : ''}
+                        </div>
+
+                        ${movie.overview ? `
+                        <div class="movie-synopsis">
+                            <h3>Sinopse</h3>
+                            <p>${movie.overview}</p>
+                        </div>
+                        ` : ''}
+
+                        ${trailer ? `
+                        <div class="movie-trailer">
+                            <h3>Trailer</h3>
+                            <div class="movie-trailer-embed">
+                                <iframe
+                                    src="https://www.youtube.com/embed/${trailer.key}?rel=0"
+                                    title="Trailer de ${movie.title}"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                        ` : ''}
+                    </div>
+                </div>
+            </div>
+        `;
+
+        document.getElementById('modal').classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+
+    } catch (error) {
+        console.error('Erro ao abrir modal de lançamento:', error);
+    }
+}

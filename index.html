@@ -34,8 +34,6 @@
         </div>
     </div>
 
-    <div class="stars"></div>
-
     <!-- Botão Flutuante Mobile -->
     <button class="mobile-fab" id="mobile-fab" onclick="spinRoulette()">🎲</button>
 
@@ -174,6 +172,10 @@
                         <span class="icon">🔍</span>
                         <span class="text">Buscar</span>
                     </button>
+                    <button id="releases-btn" class="list-filter-btn releases" onclick="toggleReleasesView()">
+                        <span class="icon">🎬</span>
+                        <span class="text">Lançamentos</span>
+                    </button>
                 </div>
             </div>
         </section>
@@ -301,6 +303,80 @@
             <div class="search-pagination" id="search-pagination"></div>
 
             <p class="list-empty hidden" id="search-empty">Nenhum filme encontrado</p>
+        </section>
+
+        <!-- Seção de Lançamentos -->
+        <section id="releases-section" class="releases-section hidden">
+            <div class="releases-header">
+                <h2>Lançamentos</h2>
+                <button class="list-close" onclick="closeReleasesView()">✕ Voltar</button>
+            </div>
+
+            <!-- Tabs Em Cartaz / Próximos -->
+            <div class="releases-tabs">
+                <button id="tab-now-playing" class="releases-tab active" onclick="switchReleasesTab('now_playing')">
+                    🎬 Em Cartaz
+                </button>
+                <button id="tab-upcoming" class="releases-tab" onclick="switchReleasesTab('upcoming')">
+                    📅 Próximos
+                </button>
+            </div>
+
+            <!-- Filtros -->
+            <div class="releases-filters">
+                <div class="releases-filter-group">
+                    <label>Região</label>
+                    <select id="releases-region" onchange="loadReleases()">
+                        <option value="BR">Brasil</option>
+                        <option value="US">EUA</option>
+                        <option value="">Global</option>
+                    </select>
+                </div>
+                <div class="releases-filter-group">
+                    <label>Gênero</label>
+                    <select id="releases-genre" onchange="loadReleases()">
+                        <option value="">Todos</option>
+                        <option value="28">Ação</option>
+                        <option value="12">Aventura</option>
+                        <option value="16">Animação</option>
+                        <option value="35">Comédia</option>
+                        <option value="80">Crime</option>
+                        <option value="99">Documentário</option>
+                        <option value="18">Drama</option>
+                        <option value="10751">Família</option>
+                        <option value="14">Fantasia</option>
+                        <option value="36">História</option>
+                        <option value="27">Terror</option>
+                        <option value="10402">Música</option>
+                        <option value="9648">Mistério</option>
+                        <option value="10749">Romance</option>
+                        <option value="878">Ficção Científica</option>
+                        <option value="53">Suspense</option>
+                        <option value="10752">Guerra</option>
+                        <option value="37">Faroeste</option>
+                    </select>
+                </div>
+                <div class="releases-filter-group">
+                    <label>Período</label>
+                    <select id="releases-period" onchange="loadReleases()">
+                        <option value="">Padrão</option>
+                        <option value="week">Esta semana</option>
+                        <option value="month">Este mês</option>
+                        <option value="3months">Próximos 3 meses</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Info dos resultados -->
+            <div class="releases-results-info" id="releases-results-info"></div>
+
+            <!-- Grid de resultados -->
+            <div class="releases-grid" id="releases-grid"></div>
+
+            <!-- Paginação -->
+            <div class="releases-pagination" id="releases-pagination"></div>
+
+            <p class="list-empty hidden" id="releases-empty">Nenhum lançamento encontrado</p>
         </section>
 
         <!-- Resultado dos Filmes -->
