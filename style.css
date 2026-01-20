@@ -4096,56 +4096,57 @@
     color: var(--text-secondary);
 }
 
-/* Releases Grid - padrão list-card */
+/* Releases Grid - mesmo padrão do search-grid */
 .releases-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: var(--space-md);
     margin-bottom: var(--space-md);
 }
 
-/* Releases Card - padrão horizontal como list-card */
+/* Releases Card - mesmo padrão do search-card (poster com overlay) */
 .releases-card {
-    background: var(--bg-glass);
-    border: 1px solid var(--border-glass);
+    position: relative;
+    aspect-ratio: 2/3;
     border-radius: var(--radius-md);
     overflow: hidden;
-    display: flex;
-    gap: var(--space-sm);
-    padding: var(--space-sm);
-    transition: all 0.2s ease;
     cursor: pointer;
+    border: 1px solid var(--border-glass);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
 }
 
 .releases-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    transform: scale(1.03);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
     border-color: var(--nintendo-red);
+    z-index: 10;
 }
 
 .releases-poster-wrapper {
-    flex-shrink: 0;
-    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 .releases-poster {
-    width: 100px;
-    height: 150px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-radius: var(--radius-sm);
+    display: block;
 }
 
-/* Badge "Em Breve" ou "Em Cartaz" */
+/* Badge no canto superior */
 .releases-card .status-badge {
     position: absolute;
-    top: 4px;
-    left: 4px;
-    padding: 0.2rem 0.4rem;
-    font-size: 0.55rem;
+    top: var(--space-xs);
+    left: var(--space-xs);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.6rem;
     font-weight: 700;
     text-transform: uppercase;
     border-radius: var(--radius-sm);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    z-index: 2;
 }
 
 .releases-card .status-badge.now-playing {
@@ -4158,29 +4159,40 @@
     color: white;
 }
 
-/* Info do card */
+/* Overlay com info - aparece no hover (igual search-card) */
 .releases-info {
-    flex: 1;
-    min-width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-md);
+    background: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.9) 40%, rgba(0, 0, 0, 0.98) 100%);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
+    gap: 0.5rem;
+}
+
+.releases-card:hover .releases-info {
+    transform: translateY(0);
 }
 
 .releases-title {
-    font-size: 0.95rem;
+    font-size: 0.875rem;
     font-weight: 600;
-    color: var(--text-primary);
-    line-height: 1.3;
+    color: white;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    overflow: hidden;
 }
 
 .releases-genres {
     font-size: 0.75rem;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.6);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -4188,11 +4200,10 @@
 
 .releases-meta {
     display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-    margin-top: auto;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .releases-meta .release-date {
@@ -4200,20 +4211,8 @@
     font-weight: 600;
 }
 
-.releases-meta .end-date {
-    color: var(--text-muted);
-    font-size: 0.75rem;
-}
-
 .releases-meta .vote {
-    color: var(--star-gold);
-    font-weight: 600;
-}
-
-.releases-meta-row {
-    display: flex;
-    gap: 0.75rem;
-    align-items: center;
+    color: var(--star-yellow);
 }
 
 /* Paginação */
@@ -4285,30 +4284,36 @@
     }
 
     .releases-tabs {
-        flex-direction: column;
+        flex-direction: row;
     }
 
     .releases-tab {
-        font-size: 0.55rem;
-        padding: 0.75rem;
+        font-size: 0.5rem;
+        padding: 0.6rem 0.5rem;
     }
 
     .releases-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
         gap: var(--space-sm);
     }
 
-    .releases-card {
-        padding: var(--space-xs);
-    }
-
-    .releases-poster {
-        width: 80px;
-        height: 120px;
+    .releases-info {
+        padding: var(--space-sm);
+        transform: translateY(0);
+        background: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.85) 30%, rgba(0, 0, 0, 0.95) 100%);
     }
 
     .releases-title {
-        font-size: 0.85rem;
+        font-size: 0.7rem;
+        -webkit-line-clamp: 1;
+    }
+
+    .releases-genres {
+        display: none;
+    }
+
+    .releases-meta {
+        font-size: 0.65rem;
     }
 
     .releases-filters {
@@ -4317,6 +4322,546 @@
 
     .releases-filter-group select {
         width: 100%;
+    }
+
+    .status-badge {
+        font-size: 0.5rem !important;
+        padding: 0.15rem 0.35rem !important;
+    }
+}
+
+/* ============================================
+   MODAL DE DETALHES - ESTILO APPLE
+   ============================================ */
+.movie-detail {
+    position: relative;
+}
+
+.movie-detail-content {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: var(--space-lg);
+    padding: var(--space-lg);
+}
+
+.movie-poster-section {
+    position: relative;
+}
+
+.movie-poster-section .movie-poster {
+    width: 100%;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.movie-info-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.movie-info-section .movie-title {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.movie-info-section .movie-title-original {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0;
+    font-weight: 400;
+}
+
+.movie-info-section .movie-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.movie-info-section .movie-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+}
+
+.movie-info-section .movie-rating {
+    color: var(--star-yellow);
+    font-weight: 600;
+}
+
+.movie-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--space-md);
+    padding: var(--space-md) 0;
+    border-top: 1px solid var(--border-glass);
+    border-bottom: 1px solid var(--border-glass);
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.detail-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.detail-value {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+.movie-synopsis {
+    line-height: 1.7;
+}
+
+.movie-synopsis h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin-bottom: var(--space-sm);
+    font-weight: 600;
+}
+
+.movie-synopsis p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.movie-trailer {
+    margin-top: auto;
+}
+
+.movie-trailer h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin-bottom: var(--space-sm);
+    font-weight: 600;
+}
+
+.movie-trailer-embed {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.movie-trailer-embed iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border: none;
+    display: block;
+}
+
+/* Backdrop blur no modal de detalhes */
+.movie-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 300px;
+    background-size: cover;
+    background-position: center top;
+    opacity: 0.3;
+    mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+}
+
+/* Mobile para modal de detalhes */
+@media (max-width: 768px) {
+    .movie-detail-content {
+        grid-template-columns: 1fr;
+        padding: var(--space-md);
+        text-align: center;
+    }
+
+    .movie-poster-section {
+        display: flex;
+        justify-content: center;
+    }
+
+    .movie-poster-section .movie-poster {
+        max-width: 200px;
+    }
+
+    .movie-info-section .movie-title {
+        font-size: 1.25rem;
+    }
+
+    .movie-info-section .movie-meta {
+        justify-content: center;
+    }
+
+    .movie-details-grid {
+        text-align: left;
+    }
+
+    .movie-synopsis {
+        text-align: left;
+    }
+}
+
+/* ============================================
+   APPLE TV STYLE MODAL - RELEASES
+   ============================================ */
+
+.apple-movie-detail {
+    position: relative;
+    min-height: 100%;
+    background: var(--bg-primary);
+    overflow: hidden;
+}
+
+/* Hero Section com Backdrop */
+.apple-hero {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.apple-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    filter: brightness(0.7);
+}
+
+.apple-hero-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(15, 15, 20, 0.4) 40%,
+        rgba(15, 15, 20, 0.9) 70%,
+        var(--bg-primary) 100%
+    );
+}
+
+/* Content Section */
+.apple-content {
+    position: relative;
+    margin-top: -180px;
+    padding: 0 var(--space-xl) var(--space-xl);
+    z-index: 2;
+}
+
+.apple-main {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: var(--space-xl);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Poster */
+.apple-poster-section {
+    position: relative;
+}
+
+.apple-poster {
+    width: 100%;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.apple-poster.no-poster {
+    background: var(--bg-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Info Section */
+.apple-info-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    padding-top: var(--space-lg);
+}
+
+.apple-title {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.apple-original-title {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin: 0;
+    margin-top: -0.5rem;
+}
+
+/* Meta Tags */
+.apple-meta-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.apple-tag {
+    padding: 0.35rem 0.75rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 100px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Rating */
+.apple-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.apple-rating-star {
+    font-size: 1.5rem;
+    color: var(--star-yellow);
+}
+
+.apple-rating-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.apple-rating-max {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+/* Actions */
+.apple-actions {
+    display: flex;
+    gap: var(--space-sm);
+    margin-top: var(--space-sm);
+}
+
+.apple-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.5rem;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    text-decoration: none;
+}
+
+.apple-btn-primary {
+    background: linear-gradient(135deg, #e53935, #c62828);
+    color: white;
+    box-shadow: 0 4px 15px rgba(229, 57, 53, 0.4);
+}
+
+.apple-btn-primary:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 25px rgba(229, 57, 53, 0.5);
+}
+
+.apple-btn-icon {
+    font-size: 0.9rem;
+}
+
+/* Synopsis */
+.apple-synopsis {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 600px;
+}
+
+.apple-synopsis p {
+    margin: 0;
+}
+
+/* Details Grid */
+.apple-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--border-glass);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.apple-detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.apple-detail-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.apple-detail-value {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+/* Trailer Container */
+.apple-trailer-container {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-lg);
+    animation: fadeIn 0.3s ease;
+}
+
+.apple-trailer-container.hidden {
+    display: none;
+}
+
+.apple-trailer-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    aspect-ratio: 16/9;
+    background: #000;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 30px 100px rgba(0, 0, 0, 0.8);
+}
+
+.apple-trailer-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.apple-trailer-close {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: white;
+    font-size: 1.25rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.apple-trailer-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .apple-hero {
+        height: 280px;
+    }
+
+    .apple-content {
+        margin-top: -100px;
+        padding: 0 var(--space-md) var(--space-lg);
+    }
+
+    .apple-main {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+        text-align: center;
+    }
+
+    .apple-poster-section {
+        display: flex;
+        justify-content: center;
+    }
+
+    .apple-poster {
+        max-width: 180px;
+    }
+
+    .apple-info-section {
+        align-items: center;
+        padding-top: 0;
+    }
+
+    .apple-title {
+        font-size: 1.5rem;
+    }
+
+    .apple-meta-tags {
+        justify-content: center;
+    }
+
+    .apple-rating {
+        justify-content: center;
+    }
+
+    .apple-actions {
+        justify-content: center;
+    }
+
+    .apple-synopsis {
+        text-align: left;
+    }
+
+    .apple-details {
+        grid-template-columns: 1fr 1fr;
+        text-align: left;
+    }
+
+    .apple-trailer-wrapper {
+        border-radius: var(--radius-md);
+    }
+
+    .apple-trailer-close {
+        top: -45px;
     }
 }
 

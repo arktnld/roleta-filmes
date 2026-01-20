@@ -2972,21 +2972,21 @@ async function loadReleases() {
 
     const isUpcoming = currentReleasesTab === 'upcoming';
 
-    // Gerar cards no padrão list-card
+    // Gerar cards no padrão search-card (poster com overlay no hover)
     const cards = data.results.map(movie => {
         const posterUrl = movie.poster_path
             ? `${CONFIG.TMDB_IMG_BASE}${movie.poster_path}`
             : null;
 
         const releaseDate = movie.release_date
-            ? new Date(movie.release_date).toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' })
-            : 'A definir';
+            ? new Date(movie.release_date).toLocaleDateString('pt-BR', { day: '2-digit', month: 'short' })
+            : 'TBA';
 
         const vote = movie.vote_average ? movie.vote_average.toFixed(1) : null;
 
         // Gêneros
         const genreNames = movie.genre_ids
-            ? movie.genre_ids.slice(0, 3).map(id => TMDB_GENRES[id] || '').filter(Boolean).join(', ')
+            ? movie.genre_ids.slice(0, 2).map(id => TMDB_GENRES[id] || '').filter(Boolean).join(' • ')
             : '';
 
         const statusBadge = isUpcoming
@@ -2995,8 +2995,8 @@ async function loadReleases() {
 
         return `
             <div class="releases-card" data-tmdb-id="${movie.id}" onclick="openReleasesModal(${movie.id})">
+                ${statusBadge}
                 <div class="releases-poster-wrapper">
-                    ${statusBadge}
                     ${posterUrl
                         ? `<img class="releases-poster" src="${posterUrl}" alt="${movie.title}" loading="lazy">`
                         : `<div class="no-poster releases-poster"></div>`
@@ -3004,13 +3004,11 @@ async function loadReleases() {
                 </div>
                 <div class="releases-info">
                     <h3 class="releases-title">${movie.title}</h3>
-                    ${genreNames ? `<p class="releases-genres">${genreNames}</p>` : ''}
                     <div class="releases-meta">
-                        <div class="releases-meta-row">
-                            <span class="release-date">📅 ${releaseDate}</span>
-                            ${vote ? `<span class="vote">★ ${vote}</span>` : ''}
-                        </div>
+                        <span class="release-date">${releaseDate}</span>
+                        ${vote && vote > 0 ? `<span class="vote">★ ${vote}</span>` : ''}
                     </div>
+                    ${genreNames ? `<p class="releases-genres">${genreNames}</p>` : ''}
                 </div>
             </div>
         `;
@@ -3152,10 +3150,13 @@ async function openReleasesModal(tmdbId) {
         const movieEn = await responseEn.json();
 
         // Diretor
-        const director = movie.credits?.crew?.find(c => c.job === 'Director')?.name || 'Desconhecido';
+        const director = movie.credits?.crew?.find(c => c.job === 'Director')?.name || null;
+
+        // Elenco principal (top 5)
+        const cast = movie.credits?.cast?.slice(0, 5).map(c => c.name) || [];
 
         // Gêneros
-        const genres = movie.genres?.map(g => g.name).join(', ') || '';
+        const genres = movie.genres?.map(g => g.name) || [];
 
         // Trailer - preferir PT-BR, depois EN
         let trailer = movie.videos?.results?.find(v => v.type === 'Trailer' && v.site === 'YouTube' && v.iso_639_1 === 'pt');
@@ -3165,7 +3166,8 @@ async function openReleasesModal(tmdbId) {
 
         // Datas de lançamento no Brasil
         const brRelease = movie.release_dates?.results?.find(r => r.iso_3166_1 === 'BR');
-        const theatricalRelease = brRelease?.release_dates?.find(r => r.type === 3); // 3 = Theatrical
+        const brTheatrical = brRelease?.release_dates?.find(r => r.type === 3);
+        const certification = brRelease?.release_dates?.find(r => r.certification)?.certification || null;
 
         const posterUrl = movie.poster_path
             ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
@@ -3175,66 +3177,123 @@ async function openReleasesModal(tmdbId) {
             ? `https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`
             : null;
 
+        // Formatar data
         const releaseDate = movie.release_date
-            ? new Date(movie.release_date).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })
-            : 'A definir';
+            ? new Date(movie.release_date).toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' })
+            : null;
 
-        const runtime = movie.runtime ? `${Math.floor(movie.runtime / 60)}h ${movie.runtime % 60}min` : '';
+        const year = movie.release_date ? new Date(movie.release_date).getFullYear() : '';
+
+        // Duração formatada
+        const runtime = movie.runtime ? `${Math.floor(movie.runtime / 60)}h ${movie.runtime % 60}min` : null;
+
+        // Meta tags (ano, duração, classificação, gêneros)
+        const metaTags = [
+            year,
+            runtime,
+            certification,
+            ...genres.slice(0, 3)
+        ].filter(Boolean);
 
         const modalBody = document.getElementById('modal-body');
         modalBody.innerHTML = `
-            <div class="movie-detail" ${backdropUrl ? `style="--backdrop: url(${backdropUrl})"` : ''}>
-                <div class="movie-backdrop" ${backdropUrl ? `style="background-image: url(${backdropUrl})"` : ''}></div>
-                <div class="movie-detail-content">
-                    <div class="movie-poster-section">
-                        ${posterUrl
-                            ? `<img class="movie-poster" src="${posterUrl}" alt="${movie.title}">`
-                            : `<div class="no-poster movie-poster"></div>`
-                        }
-                    </div>
-                    <div class="movie-info-section">
-                        <h2 class="movie-title">${movie.title}</h2>
-                        ${movieEn.title !== movie.title ? `<p class="movie-title-original">${movieEn.title}</p>` : ''}
+            <div class="apple-movie-detail">
+                <!-- Hero Backdrop -->
+                ${backdropUrl ? `
+                <div class="apple-hero">
+                    <img src="${backdropUrl}" alt="" class="apple-hero-image">
+                    <div class="apple-hero-gradient"></div>
+                </div>
+                ` : ''}
 
-                        <div class="movie-meta">
-                            <span class="movie-year">📅 ${releaseDate}</span>
-                            ${runtime ? `<span class="movie-runtime">⏱️ ${runtime}</span>` : ''}
-                            ${movie.vote_average > 0 ? `<span class="movie-rating">★ ${movie.vote_average.toFixed(1)}</span>` : ''}
+                <div class="apple-content">
+                    <!-- Poster e Info Principal -->
+                    <div class="apple-main">
+                        <div class="apple-poster-section">
+                            ${posterUrl
+                                ? `<img class="apple-poster" src="${posterUrl}" alt="${movie.title}">`
+                                : `<div class="no-poster apple-poster"></div>`
+                            }
                         </div>
 
-                        <div class="movie-details-grid">
-                            <div class="detail-item">
-                                <span class="detail-label">Diretor</span>
-                                <span class="detail-value">${director}</span>
+                        <div class="apple-info-section">
+                            <!-- Título -->
+                            <h1 class="apple-title">${movie.title}</h1>
+                            ${movieEn.title && movieEn.title !== movie.title
+                                ? `<p class="apple-original-title">${movieEn.title}</p>`
+                                : ''
+                            }
+
+                            <!-- Meta Tags -->
+                            <div class="apple-meta-tags">
+                                ${metaTags.map(tag => `<span class="apple-tag">${tag}</span>`).join('')}
                             </div>
-                            ${genres ? `
-                            <div class="detail-item">
-                                <span class="detail-label">Gêneros</span>
-                                <span class="detail-value">${genres}</span>
+
+                            <!-- Nota -->
+                            ${movie.vote_average > 0 ? `
+                            <div class="apple-rating">
+                                <span class="apple-rating-star">★</span>
+                                <span class="apple-rating-value">${movie.vote_average.toFixed(1)}</span>
+                                <span class="apple-rating-max">/ 10</span>
+                            </div>
+                            ` : ''}
+
+                            <!-- Botões de Ação -->
+                            <div class="apple-actions">
+                                ${trailer ? `
+                                <button class="apple-btn apple-btn-primary" onclick="playReleasesTrailer('${trailer.key}')">
+                                    <span class="apple-btn-icon">▶</span>
+                                    Assistir Trailer
+                                </button>
+                                ` : ''}
+                            </div>
+
+                            <!-- Sinopse -->
+                            ${movie.overview ? `
+                            <div class="apple-synopsis">
+                                <p>${movie.overview}</p>
                             </div>
                             ` : ''}
                         </div>
+                    </div>
 
-                        ${movie.overview ? `
-                        <div class="movie-synopsis">
-                            <h3>Sinopse</h3>
-                            <p>${movie.overview}</p>
+                    <!-- Informações Adicionais -->
+                    <div class="apple-details">
+                        ${releaseDate ? `
+                        <div class="apple-detail-item">
+                            <span class="apple-detail-label">Data de Lançamento</span>
+                            <span class="apple-detail-value">${releaseDate}</span>
                         </div>
                         ` : ''}
 
-                        ${trailer ? `
-                        <div class="movie-trailer">
-                            <h3>Trailer</h3>
-                            <div class="movie-trailer-embed">
-                                <iframe
-                                    src="https://www.youtube.com/embed/${trailer.key}?rel=0"
-                                    title="Trailer de ${movie.title}"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen>
-                                </iframe>
-                            </div>
+                        ${director ? `
+                        <div class="apple-detail-item">
+                            <span class="apple-detail-label">Direção</span>
+                            <span class="apple-detail-value">${director}</span>
                         </div>
                         ` : ''}
+
+                        ${cast.length > 0 ? `
+                        <div class="apple-detail-item">
+                            <span class="apple-detail-label">Elenco</span>
+                            <span class="apple-detail-value">${cast.join(', ')}</span>
+                        </div>
+                        ` : ''}
+
+                        ${genres.length > 0 ? `
+                        <div class="apple-detail-item">
+                            <span class="apple-detail-label">Gêneros</span>
+                            <span class="apple-detail-value">${genres.join(', ')}</span>
+                        </div>
+                        ` : ''}
+                    </div>
+
+                    <!-- Container do Trailer (inicialmente oculto) -->
+                    <div id="releases-trailer-container" class="apple-trailer-container hidden">
+                        <div class="apple-trailer-wrapper">
+                            <button class="apple-trailer-close" onclick="closeReleasesTrailer()">✕</button>
+                            <div id="releases-trailer-embed"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -3246,4 +3305,29 @@ async function openReleasesModal(tmdbId) {
     } catch (error) {
         console.error('Erro ao abrir modal de lançamento:', error);
     }
+}
+
+// Funções para controle do trailer
+function playReleasesTrailer(videoKey) {
+    const container = document.getElementById('releases-trailer-container');
+    const embedDiv = document.getElementById('releases-trailer-embed');
+
+    embedDiv.innerHTML = `
+        <iframe
+            src="https://www.youtube.com/embed/${videoKey}?autoplay=1&rel=0"
+            title="Trailer"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    `;
+
+    container.classList.remove('hidden');
+}
+
+function closeReleasesTrailer() {
+    const container = document.getElementById('releases-trailer-container');
+    const embedDiv = document.getElementById('releases-trailer-embed');
+
+    container.classList.add('hidden');
+    embedDiv.innerHTML = '';
 }
