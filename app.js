@@ -1968,6 +1968,7 @@ async function openModalByImdbId(imdbId) {
 function closeModal() {
     playSound('click');
     document.getElementById('modal').classList.add('hidden');
+    document.body.style.overflow = '';
 }
 
 // ============================================

@@ -4307,11 +4307,23 @@
     cursor: pointer;
     transition: all 0.2s ease;
     text-decoration: none;
+    font-size: 0.875rem;
 }
 
 .trailer-btn:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+}
+
+@media (max-width: 700px) {
+    .trailer-btn {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        padding: 1rem;
+        font-size: 0.8rem;
+        margin-top: var(--space-sm);
+    }
 }
 
 /* Releases Trailer Overlay */
